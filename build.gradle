@@ -1,6 +1,11 @@
-plugins {
-    id 'java'
-}
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'checkstyle'
+apply plugin: 'pmd'
+apply plugin: 'findbugs'
+apply plugin: 'jacoco'
 
 group 'Convertor-AT08-A'
 version '1.0-SNAPSHOT'
