@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.fundacionjala.convertor.model.FileSearcherTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-10-21T18:21:02" hostname="DESKTOP-33EVOH6" time="0.006">
+  <properties/>
+  <testcase name="testSearchAll" classname="com.fundacionjala.convertor.model.FileSearcherTest" time="0.001"/>
+  <testcase name="testSearchByExt" classname="com.fundacionjala.convertor.model.FileSearcherTest" time="0.001"/>
+  <testcase name="testSearchFiles" classname="com.fundacionjala.convertor.model.FileSearcherTest" time="0.001"/>
+  <testcase name="testHasExtention" classname="com.fundacionjala.convertor.model.FileSearcherTest" time="0.0"/>
+  <testcase name="testDfinitiveList" classname="com.fundacionjala.convertor.model.FileSearcherTest" time="0.001"/>
+  <testcase name="testSearchBySize" classname="com.fundacionjala.convertor.model.FileSearcherTest" time="0.001"/>
+  <testcase name="testSearchByNamePass" classname="com.fundacionjala.convertor.model.FileSearcherTest" time="0.0"/>
+  <testcase name="testIsSize" classname="com.fundacionjala.convertor.model.FileSearcherTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
