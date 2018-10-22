@@ -17,10 +17,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Convertor_AT08_A$FileSearcherTest_testIsSize.ic" NAME="FileSearcherTest.testIsSize Coverage Results" MODIFIED="1540143665726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$FileSearcherTest.ic" NAME="FileSearcherTest Coverage Results" MODIFIED="1540145259367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.fundacionjala.convertor.model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Convertor_AT08_A$FileSearcherTest.ic" NAME="FileSearcherTest Coverage Results" MODIFIED="1540145259367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$FileSearcherTest_testIsSize.ic" NAME="FileSearcherTest.testIsSize Coverage Results" MODIFIED="1540143665726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.fundacionjala.convertor.model.*</FILTER>
     </SUITE>
   </component>
