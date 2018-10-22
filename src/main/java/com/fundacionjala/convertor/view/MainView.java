@@ -93,10 +93,10 @@ public class MainView extends JFrame implements ActionListener {
     /**
      * @param args arguments
      */
-    public static void main(final String[] args) {
+/*    public static void main(final String[] args) {
         MainView v = new MainView();
         v.setVisible(true);
-    }
+    }*/
 
     /**
      * @param e event buttoms.

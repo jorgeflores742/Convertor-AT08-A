@@ -1,5 +1,7 @@
 package com.fundacionjala.convertor.view;
 
+import com.fundacionjala.convertor.model.FileSearcher;
+
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -18,6 +20,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -331,8 +334,19 @@ public class SearchView extends JDialog implements ActionListener {
     public void actionPerformed(final ActionEvent e) {
         if (e.getSource() == btnSearch) {
             //hardcoded result from controller
-            searchResultList.add(new SearchResult("c:\\test\\test.txt", "test.txt"));
-            searchResultList.add(new SearchResult("c:\\test2\\test2.txt", "test2.txt"));
+            FileSearcher fs = new FileSearcher();
+            //fs.searchAll(txtPath.getText());
+            ArrayList<File> files = new ArrayList<>(1);
+            files = fs.searchAll(txtPath.getText());
+            for(File file : files) {
+                searchResultList.add(new SearchResult(file.getPath(), file.getName()));
+            }
+
+            //searchResultList.add(new SearchResult("c:\\test\\test.txt", "test.txt"));
+            //searchResultList.add(new SearchResult("c:\\test2\\test2.txt", "test2.txt"));
+
+
+
 
             for (SearchResult resu : searchResultList) {
                 listModel.addElement(resu.getFullPath());
