@@ -22,11 +22,10 @@ public class FileSearcher {
     }
 
     /**
-     *
      * @param path path for searching.
      * @param name name of file.
-     * @param ext extension for searching.
-     * @param siz size for searching.
+     * @param ext  extension for searching.
+     * @param siz  size for searching.
      * @return list of files that meet the criteria searching.
      */
     public ArrayList<File> searchFiles(String path, String name, String ext, String siz) {
@@ -50,9 +49,8 @@ public class FileSearcher {
     }
 
     /**
-     *
      * @param nameFile name of file.
-     * @param address path.
+     * @param address  path.
      * @return list of files.
      */
     public ArrayList<File> searchByName(String nameFile, String address) {
@@ -69,8 +67,7 @@ public class FileSearcher {
     }
 
     /**
-     *
-     * @param ext extention.
+     * @param ext     extention.
      * @param address path.
      * @return list of files.
      */
@@ -80,7 +77,7 @@ public class FileSearcher {
         for (File file : dir.listFiles()) {
             if (file.isDirectory()) {
                 fileList.addAll(searchByName(ext, file.getPath()));
-            } else if (hasExtention(file, ext)){
+            } else if (hasExtention(file, ext)) {
                 fileList.add(file);
             }
         }
@@ -88,9 +85,8 @@ public class FileSearcher {
     }
 
     /**
-     *
      * @param file file.
-     * @param ext extention.
+     * @param ext  extention.
      * @return true if the extentios is the same.
      */
     public boolean hasExtention(File file, String ext) {
@@ -99,8 +95,7 @@ public class FileSearcher {
     }
 
     /**
-     *
-     * @param siz size.
+     * @param siz     size.
      * @param address path.
      * @return list of files.
      */
@@ -110,7 +105,7 @@ public class FileSearcher {
         for (File file : dir.listFiles()) {
             if (file.isDirectory()) {
                 fileList.addAll(searchByName(siz, file.getPath()));
-            } else if (isSize(file, siz)){
+            } else if (isSize(file, siz)) {
                 fileList.add(file);
             }
         }
@@ -118,9 +113,8 @@ public class FileSearcher {
     }
 
     /**
-     *
      * @param file file.
-     * @param siz size.
+     * @param siz  size.
      * @return true if file is in range of size.
      */
     public boolean isSize(File file, String siz) {
@@ -144,7 +138,6 @@ public class FileSearcher {
     }
 
     /**
-     *
      * @param address path.
      * @return list of files.
      */
@@ -162,7 +155,6 @@ public class FileSearcher {
     }
 
     /**
-     *
      * @param container list of files.
      * @param nCriteria number of criteria for searching.
      * @return list of files that match the search criteria.
