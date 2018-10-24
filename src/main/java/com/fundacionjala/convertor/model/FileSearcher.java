@@ -25,10 +25,10 @@ import java.util.Objects;
  */
 public class FileSearcher {
 
-    public static final long MINUS = 10240;
-    public static final long LITTLE = 102400;
-    public static final long MEDIUM = 1024000;
-    public static final long BIG = 10240000;
+    public static final long MINUS = 102400000L;
+    public static final long LITTLE = 512000000L;
+    public static final long MEDIUM = 1024000000L;
+    private static final long BIG = 10240000000L;
 
     /**
      * This program searchs files using criteria of name,
