@@ -13,7 +13,6 @@
  * information or have any questions.
  */
 
-
 package com.fundacionjala.convertor.model;
 
 import java.io.File;
