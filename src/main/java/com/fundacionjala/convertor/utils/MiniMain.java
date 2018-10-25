@@ -1,8 +1,9 @@
 package com.fundacionjala.convertor.utils;
 
+import java.io.IOException;
 import java.util.logging.Logger;
 /**
- *It's just a test
+ *The MiniMain class
  **/
 public class MiniMain {
 
@@ -10,15 +11,16 @@ public class MiniMain {
 
     /**
      *Class Main.
+     * @param args is of type String.
      **/
     public static void main(String[] args) {
-        sL.setLogger(Logger.GLOBAL_LOGGER_NAME);
+        sL.getInstance();
+        sL.setLogger(MiniMain.class.getName());
         try {
             int a=4,b=0;
             int c=a/b;
-            sL.register(null,"FINE","Successful multiplication");//
+            sL.register(null,"FINE","Successful multiplication");
         }catch (Exception ex){
-            System.out.println("the log file is in the src folder with the name of SingleLogger.log");
             sL.register(ex,"SEVERE","Multiplication failed");
         }
     }

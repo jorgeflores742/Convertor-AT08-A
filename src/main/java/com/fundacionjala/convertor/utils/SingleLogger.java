@@ -17,6 +17,7 @@
 package com.fundacionjala.convertor.utils;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.logging.*;
 
 /**
@@ -28,9 +29,19 @@ import java.util.logging.*;
 public class SingleLogger {
 
     private static SingleLogger ourInstance = null;
-    private static Logger logRaiz = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-    private static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
+
+    private static Logger LOGGER = null;
+
+    static {
+        InputStream stream = SingleLogger.class.getClassLoader().
+                getResourceAsStream("logging.properties");
+        try {
+            LogManager.getLogManager().readConfiguration(stream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     /**
      * Method to get an Instance.
      *
@@ -47,7 +58,7 @@ public class SingleLogger {
      * @param className type String.
      */
     public void setLogger(final String className) {
-        logger = Logger.getLogger(className);
+        LOGGER = Logger.getLogger(className);
     }
 
     private synchronized static void createInstance() {
@@ -60,6 +71,10 @@ public class SingleLogger {
      * Private constructor in order to implement Singleton Pattern.
      */
     protected SingleLogger() {
+        String path = SingleLogger.class.getClassLoader()
+                .getResource("logging.properties")
+                .getFile();
+        System.setProperty("java.util.logging.config.file", path);
     }
 
     /**
@@ -68,34 +83,24 @@ public class SingleLogger {
      * @param ex container.
      * @param msg is type String.
      */
-    public static void register(Exception ex, String logLevels, String msg) {
+    public static void register(Exception ex, String logLevels, String msg){
         try {
-            Handler consoleHandler = new ConsoleHandler();
-            Handler fileHandler = new FileHandler("./SingleLogger.log", true);
-            SimpleFormatter simpleFormatter = new SimpleFormatter();
-            fileHandler.setFormatter(simpleFormatter);
-            logRaiz.addHandler(consoleHandler);
-            logRaiz.addHandler(fileHandler);
-            consoleHandler.setLevel(Level.ALL);
-            fileHandler.setLevel(Level.ALL);
-
             switch (logLevels) {
                 case "INFO":
-                    logger.info(msg);
+                    LOGGER.info(msg);
                     break;
                 case "SEVERE":
-                    logger.log(Level.SEVERE, msg, ex);
+                    LOGGER.log(Level.SEVERE, msg, ex);
                     break;
                 case "WARNING":
-                    logger.log(Level.WARNING, msg, ex);
+                    LOGGER.log(Level.WARNING, msg, ex);
                     break;
                 case "FINE":
-                    logger.fine(msg);
+                    LOGGER.fine(msg);
                     break;
             }
-        } catch (IOException | SecurityException ex1) {
-            logger.log(Level.SEVERE, null, ex1);
+        } catch (SecurityException ex1) {
+            LOGGER.log(Level.SEVERE, null, ex1);
         }
     }
 }
-
