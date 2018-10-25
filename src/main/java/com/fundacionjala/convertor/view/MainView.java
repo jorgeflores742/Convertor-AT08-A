@@ -1,5 +1,8 @@
 package com.fundacionjala.convertor.view;
 
+import com.fundacionjala.convertor.controller.SearchController;
+import com.fundacionjala.convertor.model.FileSearcher;
+
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
@@ -91,14 +94,6 @@ public class MainView extends JFrame implements ActionListener {
     }
 
     /**
-     * @param args arguments
-     */
-    public static void main(final String[] args) {
-        MainView v = new MainView();
-        v.setVisible(true);
-    }
-
-    /**
      * @param e event buttoms.
      */
     @Override
@@ -106,7 +101,8 @@ public class MainView extends JFrame implements ActionListener {
         if (e.getSource() == btnSearch) {
 
             SearchView searchView = new SearchView(this);
-
+            FileSearcher fileSearcher = new FileSearcher();
+            SearchController searchController = new SearchController(searchView, fileSearcher);
             // searchView.pack();
             searchView.setVisible(true);
             if (searchView.getIsOk()) {

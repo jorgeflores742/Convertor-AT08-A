@@ -62,7 +62,7 @@ public class SearchView extends JDialog implements ActionListener {
 
     private JPanel pnlMain;
     private JLabel lblPath;
-    private JTextField txtPath;
+    public JTextField txtPath;
 
     /**
      * @return txtpath
@@ -73,7 +73,7 @@ public class SearchView extends JDialog implements ActionListener {
 
     private JButton btnPath;
     private JLabel lblName;
-    private JTextField txtName;
+    public JTextField txtName;
 
     /**
      * @return txtname
@@ -83,14 +83,7 @@ public class SearchView extends JDialog implements ActionListener {
     }
 
     private JLabel lblFileFormat;
-    private JComboBox cmbFileFormat;
-
-    /**
-     * @return cmbfileformat
-     */
-    public JComboBox getCmbFileFormat() {
-        return cmbFileFormat;
-    }
+    public JComboBox cmbFileFormat;
 
     private JLabel lblFileType;
     private JComboBox cmbFileType;
@@ -103,7 +96,7 @@ public class SearchView extends JDialog implements ActionListener {
     }
 
     private JLabel lblSize;
-    private JComboBox cmbSize;
+    public JComboBox cmbSize;
 
     /**
      * @return cmbSize
@@ -112,9 +105,9 @@ public class SearchView extends JDialog implements ActionListener {
         return cmbSize;
     }
 
-    private JButton btnSearch;
+    public JButton btnSearch;
     private JScrollPane scrlSearchResult;
-    private DefaultListModel listModel = new DefaultListModel();
+    public DefaultListModel listModel = new DefaultListModel();
     private JList lstSearchResult;
     private JButton btnOk;
     private JButton btnCancel;
@@ -167,7 +160,6 @@ public class SearchView extends JDialog implements ActionListener {
         lblFileType.setText("File Type :");
         lblSize.setText("Size :");
         btnSearch.setText("Search");
-        btnSearch.addActionListener(this);
         lstSearchResult.setPreferredSize(new Dimension(350, 250));
         scrlSearchResult.setPreferredSize(new Dimension(350, 250));
         btnOk.setText("Ok");
@@ -329,7 +321,7 @@ public class SearchView extends JDialog implements ActionListener {
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
-        if (e.getSource() == btnSearch) {
+       /* if (e.getSource() == btnSearch) {
             //hardcoded result from controller
             searchResultList.add(new SearchResult("c:\\test\\test.txt", "test.txt"));
             searchResultList.add(new SearchResult("c:\\test2\\test2.txt", "test2.txt"));
@@ -338,18 +330,8 @@ public class SearchView extends JDialog implements ActionListener {
                 listModel.addElement(resu.getFullPath());
             }
 
-          /*  JFileChooser chooser = new JFileChooser();
-            FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                    "JPG & GIF Images", "jpg", "gif");
-            chooser.setFileFilter(filter);
-            int returnVal = chooser.showOpenDialog(this);
-            if(returnVal == JFileChooser.APPROVE_OPTION) {
-                selectedPath= chooser.getSelectedFile().getAbsolutePath();
-                txtPath.setText(selectedPath);
-            }*/
-
-
-        } else if (e.getSource() == btnCancel) {
+        } else*/
+        if (e.getSource() == btnCancel) {
             this.setVisible(false);
         } else if (e.getSource() == btnOk) {
            /* if (selectedPath ==""){
