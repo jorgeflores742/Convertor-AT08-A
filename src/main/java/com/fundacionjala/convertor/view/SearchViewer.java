@@ -1,12 +1,24 @@
+/*
+ * @Controller.java Copyright (c) 2018 Fundacion Jala. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * Please contact Fundacion Jala, 2643 Av Melchor Perez de Olguin, Colquiri
+ * Sud, Cochabamba, Bolivia. www.fundacion-jala.org if you need additional
+ * information or have any questions.
+ */
 package com.fundacionjala.convertor.view;
 
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.GridBagConstraints;
@@ -14,7 +26,6 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 /**
  * Module View Searchview.
@@ -24,93 +35,26 @@ import java.util.ArrayList;
  */
 public class SearchViewer extends JDialog implements ActionListener {
 
-    private ArrayList<String> selectedResult = new ArrayList<String>();
-
-    /**
-     * @return selected result
-     */
-    public ArrayList getSelectedResult() {
-        return selectedResult;
-    }
-
-    /**
-     * @param selectedResult selected result
-     */
-    public void setSelectedResult(final ArrayList selectedResult) {
-        this.selectedResult = selectedResult;
-    }
-
-    private ArrayList<SearchResult> searchResultList = new ArrayList<SearchResult>();
-
-    /**
-     * @return searchresultlist
-     */
-    public ArrayList getSearchResultList() {
-        return searchResultList;
-    }
-
-    /**
-     * @param searchResultList search result
-     */
-    public void setSearchResultList(final ArrayList searchResultList) {
-        this.searchResultList = searchResultList;
-    }
-
     private JPanel pnlMain;
+
     private JLabel lblPath;
     private JTextField txtPath;
-
     private JButton btnPath;
+
     private JLabel lblName;
     private JTextField txtName;
-
-    /**
-     * @return txtname
-     */
-    public JTextField getTxtName() {
-        return txtName;
-    }
-
-    private JLabel lblFileFormat;
-    private JComboBox cmbFileFormat;
-
-    /**
-     * @return cmbfileformat
-     */
-    public JComboBox getCmbFileFormat() {
-        return cmbFileFormat;
-    }
 
     private JLabel lblFileType;
     private JComboBox cmbFileType;
 
-    /**
-     * @return cmdfiletype
-     */
-    public JComboBox getCmbFileType() {
-        return cmbFileType;
-    }
-
     private JLabel lblSize;
     private JComboBox cmbSize;
 
-    /**
-     * @return cmbSize
-     */
-    public JComboBox getCmbSize() {
-        return cmbSize;
-    }
-
     private JButton btnSearch;
-    private boolean isOk = false;
 
     /**
-     * @return is Ok
+     * Pane for default search.
      */
-    public boolean getIsOk() {
-        return isOk;
-    }
-
     public SearchViewer() {
         pnlMain = new JPanel(new GridBagLayout());
         lblPath = new JLabel();
@@ -118,19 +62,17 @@ public class SearchViewer extends JDialog implements ActionListener {
         btnPath = new JButton();
         lblName = new JLabel();
         txtName = new JTextField();
-        lblFileType = new JLabel();
-        cmbFileType = new JComboBox(FileTypeEnum.values());
-        lblFileFormat = new JLabel();
-        cmbFileFormat = new JComboBox();
         lblSize = new JLabel();
         cmbSize = new JComboBox(FileSizeEnum.values());
+        lblFileType = new JLabel();
+        cmbFileType = new JComboBox(FileTypeEnum.values());
         btnSearch = new JButton();
         initializeControls();
         initializeFrame();
     }
 
     /**
-     *
+     * Initialize elements.
      */
     private void initializeControls() {
         lblPath.setText("Path :");
@@ -140,14 +82,13 @@ public class SearchViewer extends JDialog implements ActionListener {
         btnPath.addActionListener(this);
         lblName.setText("File Name :");
         txtName.setColumns(20);
-        lblFileFormat.setText("FileFormat :");
-        lblFileType.setText("File Type :");
         lblSize.setText("Size :");
+        lblFileType.setText("File Type :");
         btnSearch.setText("Search");
     }
 
     /**
-     *
+     * initialize panes.
      */
     private void initializeFrame() {
         GridBagConstraints gridPane = new GridBagConstraints();
@@ -187,7 +128,7 @@ public class SearchViewer extends JDialog implements ActionListener {
         pnlMain.add(txtName, gridPane);
 
         gridPane.gridx = 0;
-        gridPane.gridy = 3;
+        gridPane.gridy = 5;
         gridPane.fill = GridBagConstraints.NONE;
         gridPane.anchor = GridBagConstraints.LINE_END;
         gridPane.ipady = 0;
@@ -196,7 +137,7 @@ public class SearchViewer extends JDialog implements ActionListener {
         pnlMain.add(lblFileType, gridPane);
 
         gridPane.gridx = 1;
-        gridPane.gridy = 3;
+        gridPane.gridy = 5;
         gridPane.fill = GridBagConstraints.HORIZONTAL;
         gridPane.anchor = GridBagConstraints.CENTER;
         gridPane.ipady = 0;
@@ -205,26 +146,7 @@ public class SearchViewer extends JDialog implements ActionListener {
         pnlMain.add(cmbFileType, gridPane);
 
         gridPane.gridx = 0;
-        gridPane.gridy = 4;
-        gridPane.fill = GridBagConstraints.NONE;
-        gridPane.anchor = GridBagConstraints.LINE_END;
-        gridPane.ipady = 0;
-        gridPane.weightx = 0.4;
-        gridPane.weighty = 0;
-        pnlMain.add(lblFileFormat, gridPane);
-
-        gridPane.gridx = 1;
-        gridPane.gridy = 4;
-        gridPane.fill = GridBagConstraints.HORIZONTAL;
-        gridPane.anchor = GridBagConstraints.CENTER;
-        gridPane.ipady = 0;
-        gridPane.weightx = 0.6;
-        gridPane.weighty = 0;
-        pnlMain.add(cmbFileFormat, gridPane);
-
-
-        gridPane.gridx = 0;
-        gridPane.gridy = 5;
+        gridPane.gridy = 3;
         gridPane.fill = GridBagConstraints.NONE;
         gridPane.anchor = GridBagConstraints.LINE_END;
         gridPane.ipady = 0;
@@ -233,7 +155,7 @@ public class SearchViewer extends JDialog implements ActionListener {
         pnlMain.add(lblSize, gridPane);
 
         gridPane.gridx = 1;
-        gridPane.gridy = 5;
+        gridPane.gridy = 3;
         gridPane.fill = GridBagConstraints.HORIZONTAL;
         gridPane.anchor = GridBagConstraints.CENTER;
         gridPane.ipady = 0;
@@ -257,7 +179,7 @@ public class SearchViewer extends JDialog implements ActionListener {
     }
 
     /**
-     * @param e event
+     * @param e choose a path.
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
@@ -273,9 +195,30 @@ public class SearchViewer extends JDialog implements ActionListener {
     }
 
     /**
-     * @return txtpath
+     * @return txtpath path.
      */
     public JTextField getTxtPath() {
         return txtPath;
+    }
+
+    /**
+     * @return txtname name of file.
+     */
+    public JTextField getTxtName() {
+        return txtName;
+    }
+
+    /**
+     * @return cmbSize size of file.
+     */
+    public JComboBox getCmbSize() {
+        return cmbSize;
+    }
+
+    /**
+     * @return cmdfiletype type of file.
+     */
+    public JComboBox getCmbFileType() {
+        return cmbFileType;
     }
 }

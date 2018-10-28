@@ -1,15 +1,37 @@
+/*
+ * @Controller.java Copyright (c) 2018 Fundacion Jala. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * Please contact Fundacion Jala, 2643 Av Melchor Perez de Olguin, Colquiri
+ * Sud, Cochabamba, Bolivia. www.fundacion-jala.org if you need additional
+ * information or have any questions.
+ */
 package com.fundacionjala.convertor.view;
 
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author Dennis Montaño
+ * List of results.
+ */
 public class ListFileView extends JDialog{
 
     private JScrollPane scrlSearchResult;
     private DefaultListModel listModel = new DefaultListModel();
     private JList lstSearchResult;
     private JPanel pnlMain;
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
+    /**
+     * List of data received.
+     */
     public ListFileView() {
         pnlMain = new JPanel(new GridBagLayout());
         lstSearchResult = new JList(listModel);
@@ -18,6 +40,9 @@ public class ListFileView extends JDialog{
         initializeFrame();
     }
 
+    /**
+     * initialize elements.
+     */
     private void initializeFrame() {
 
         GridBagConstraints c = new GridBagConstraints();
@@ -37,8 +62,11 @@ public class ListFileView extends JDialog{
 
     }
 
+    /**
+     *  Set of size.
+     */
     private void initializeControls() {
-        //lstSearchResult.setPreferredSize(new Dimension(350, 250));
-        //scrlSearchResult.setPreferredSize(new Dimension(350, 250));
+        lstSearchResult.setPreferredSize(new Dimension(((int) dim.getWidth())/3, ((int) dim.getHeight())-440));
+        scrlSearchResult.setPreferredSize(new Dimension(((int) dim.getWidth())/3, ((int) dim.getHeight())-440));
     }
 }
