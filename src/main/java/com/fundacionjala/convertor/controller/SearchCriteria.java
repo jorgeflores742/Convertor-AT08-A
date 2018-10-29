@@ -11,6 +11,11 @@ public class SearchCriteria {
     private String name;
     private String ext;
     private String size;
+    //Advanced
+    private int fps;
+    private String aspectRatio;
+    private String resolution;
+
 
     /**
      * @return path
@@ -66,5 +71,53 @@ public class SearchCriteria {
      */
     public void setSize(String size) {
         this.size = size;
+    }
+
+    /**
+     *
+     * @return fps
+     */
+    public int getFps() {
+        return fps;
+    }
+
+    /**
+     *
+     * @param fps fps
+     */
+    public void setFps(int fps) {
+        this.fps = fps;
+    }
+
+    /**
+     *
+     * @return aspect ratio
+     */
+    public String getAspectRatio() {
+        return aspectRatio;
+    }
+
+    /**
+     *
+     * @param aspectRatio aspect ratio
+     */
+    public void setAspectRatio(String aspectRatio) {
+        this.aspectRatio = aspectRatio;
+    }
+
+    /**
+     *
+     * @return resolution
+     */
+    public String getResolution() {
+        return resolution;
+    }
+
+    /**
+     *
+     * @param resolution resolution
+     */
+    public void setResolution(String resolution) {
+        this.resolution = resolution;
     }
 }
