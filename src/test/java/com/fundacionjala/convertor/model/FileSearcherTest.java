@@ -23,7 +23,7 @@ public class FileSearcherTest {
     public void testSearchByNamePass() {
         String nameFile = "Charada";
         String files = "[E:\\UnitTest\\Charada.avi]";
-        assertEquals(files, search.searchByName(nameFile, PATH).toString());
+        assertEquals(files, search.search(PATH, nameFile, null, null));
     }
 
     /**
@@ -33,7 +33,7 @@ public class FileSearcherTest {
     public void testSearchByExt() {
         String ext = "mkv";
         String files = "[E:\\UnitTest\\Clair de lune Debussy (guitare).mkv]";
-        assertEquals(files, search.searchByExt(ext, PATH).toString());
+        assertEquals(files, search.search(PATH, null, ext, null));
     }
 
     /**
@@ -44,16 +44,6 @@ public class FileSearcherTest {
         File file = new File("E:\\UnitTest\\ch1.mp4");
         String ext = "mp4";
         assertTrue("Pass", search.hasExtention(file, ext));
-    }
-
-    /**
-     *
-     */
-    @Test
-    public void testSearchBySize() {
-        String size = "very big";
-        String files = "[E:\\UnitTest\\Charada.avi, E:\\UnitTest\\OpenShot-v2.4.1-x86_64.exe, E:\\UnitTest\\TD1a.mp4]";
-        assertEquals(files, search.searchBySize(size, PATH).toString());
     }
 
     /**
@@ -72,7 +62,7 @@ public class FileSearcherTest {
     @Test
     public void testSearchFiles() {
         String files = "[E:\\UnitTest2\\Charada.avi, E:\\UnitTest2\\TD1a.mp4]";
-        assertEquals(files, search.searchFiles(PATH2, null, null, "very big").toString());
+        assertEquals(files, search.search(PATH2, null, null, "very big"));
     }
 
     /**
@@ -81,7 +71,7 @@ public class FileSearcherTest {
     @Test
     public void testDfinitiveList() {
         String files = "[E:\\UnitTest2\\Charada.avi]";
-        assertEquals(files, search.searchFiles(PATH2, "Charada", "avi", null).toString());
+        assertEquals(files, search.search(PATH2, "Charada", "avi", null));
     }
 
     /**
@@ -90,6 +80,6 @@ public class FileSearcherTest {
     @Test
     public void testSearchAll() {
         String files = "[E:\\UnitTest2\\Charada.avi, E:\\UnitTest2\\fourier.pdf, E:\\UnitTest2\\TD1a.mp4]";
-        assertEquals(files, search.searchAll(PATH2).toString());
+        assertEquals(files, search.search(PATH2, null, null, null).toString());
     }
 }

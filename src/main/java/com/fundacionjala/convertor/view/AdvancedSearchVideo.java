@@ -32,9 +32,13 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
 
     private JPanel pnlVideoMain;
 
+    JLabel lblType;
+    JComboBox cmbType;
+    ArrayList<String> typeList = new ArrayList<>(1);
+
     JLabel lblFps;
     JComboBox cmbFps;
-    ArrayList<Integer> fpsList = new ArrayList(1);
+    ArrayList<Float> fpsList = new ArrayList(1);
 
 
     JLabel lblAspectRatio;
@@ -50,38 +54,47 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
      */
     public AdvancedSearchVideo() {
         pnlVideoMain = new JPanel(new GridBagLayout());
+
+        lblType = new JLabel();
+        cmbType = new JComboBox();
+        cmbType.addItem("None");
+        cmbType.addItem("avi");
+        cmbType.addItem("mpg");
+        cmbType.addItem("mp4");
+        cmbType.addItem("flv");
+        cmbType.addItem("wmv");
+
         lblFps = new JLabel();
         cmbFps = new JComboBox();
-        fpsList.add(24);
-        fpsList.add(25);
-        fpsList.add(30);
-        fpsList.add(48);
-        fpsList.add(60);
-        fpsList.add(120);
-        fpsList.add(144);
-        fpsList.add(240);
-        cmbFps.setModel(new DefaultComboBoxModel(fpsList.toArray()));
+        cmbFps.addItem("None");
+        cmbFps.addItem(24f);
+        cmbFps.addItem(27f);
+        cmbFps.addItem(29.9f);
+        cmbFps.addItem(30f);
+        cmbFps.addItem(60f);
+        cmbFps.addItem(120f);
+        cmbFps.addItem(144f);
+        cmbFps.addItem(240f);
 
         lblAspectRatio = new JLabel();
         cmbAspectRatio = new JComboBox();
-        aspectRatioList.add("4:3");
-        aspectRatioList.add("12:5");
-        aspectRatioList.add("16:9");
-        aspectRatioList.add("17:9");
-        cmbAspectRatio.setModel(new DefaultComboBoxModel(aspectRatioList.toArray()));
+        cmbAspectRatio.addItem("None");
+        cmbAspectRatio.addItem("4:3");
+        cmbAspectRatio.addItem("12:5");
+        cmbAspectRatio.addItem("16:9");
+        cmbAspectRatio.addItem("17:9");
 
         lblResolution = new JLabel();
         cmbResolution = new JComboBox();
-        resolutionList.add("740 x 480 DVD");
-        resolutionList.add("1280 x 720 DVD-HD");
-        resolutionList.add("1280 x 720 720p HD Ready");
-        resolutionList.add("1920 x 1080 1080p Full HD");
-        resolutionList.add("2048 x 1080 2K");
-        resolutionList.add("3840 x 2160 4k");
-        resolutionList.add("4096 x 2160 Full 4K");
-        resolutionList.add("7680 x 4320 8K");
-        resolutionList.add("2560 x 1440 1440p Quad HD");
-        cmbResolution.setModel(new DefaultComboBoxModel(resolutionList.toArray()));
+        cmbResolution.addItem("None");
+        cmbResolution.addItem("740 x 480");
+        cmbResolution.addItem("1280 x 720");
+        cmbResolution.addItem("1920 x 1080");
+        cmbResolution.addItem("2048 x 1080");
+        cmbResolution.addItem("3840 x 2160");
+        cmbResolution.addItem("4096 x 2160");
+        cmbResolution.addItem("7680 x 4320");
+        cmbResolution.addItem("2560 x 1440");
 
         initializeControls();
         initializeFrame();
@@ -91,6 +104,7 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
      *
      */
     private void initializeControls() {
+        lblType.setText("Video type: ");
         lblFps.setText("Frames Per Second:");
         lblAspectRatio.setText("Aspect Ratio: ");
         lblResolution.setText("Resolution: ");
@@ -107,7 +121,11 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
         gridPane.gridy = 0;
         gridPane.fill = GridBagConstraints.NONE;
         gridPane.anchor = GridBagConstraints.LINE_END;
-        pnlVideoMain.add(lblFps, gridPane);
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.6;
+        gridPane.weighty = 0;
+        pnlVideoMain.add(lblType, gridPane);
+
 
         gridPane.gridx = 1;
         gridPane.gridy = 0;
@@ -116,16 +134,13 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
         gridPane.ipady = 0;
         gridPane.weightx = 0.6;
         gridPane.weighty = 0;
-        pnlVideoMain.add(cmbFps, gridPane);
+        pnlVideoMain.add(cmbType, gridPane);
 
         gridPane.gridx = 0;
         gridPane.gridy = 1;
         gridPane.fill = GridBagConstraints.NONE;
         gridPane.anchor = GridBagConstraints.LINE_END;
-        gridPane.ipady = 0;
-        gridPane.weightx = 0.6;
-        gridPane.weighty = 0;
-        pnlVideoMain.add(lblAspectRatio, gridPane);
+        pnlVideoMain.add(lblFps, gridPane);
 
         gridPane.gridx = 1;
         gridPane.gridy = 1;
@@ -134,7 +149,7 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
         gridPane.ipady = 0;
         gridPane.weightx = 0.6;
         gridPane.weighty = 0;
-        pnlVideoMain.add(cmbAspectRatio, gridPane);
+        pnlVideoMain.add(cmbFps, gridPane);
 
         gridPane.gridx = 0;
         gridPane.gridy = 2;
@@ -143,10 +158,28 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
         gridPane.ipady = 0;
         gridPane.weightx = 0.6;
         gridPane.weighty = 0;
-        pnlVideoMain.add(lblResolution, gridPane);
+        pnlVideoMain.add(lblAspectRatio, gridPane);
 
         gridPane.gridx = 1;
         gridPane.gridy = 2;
+        gridPane.fill = GridBagConstraints.HORIZONTAL;
+        gridPane.anchor = GridBagConstraints.CENTER;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.6;
+        gridPane.weighty = 0;
+        pnlVideoMain.add(cmbAspectRatio, gridPane);
+
+        gridPane.gridx = 0;
+        gridPane.gridy = 3;
+        gridPane.fill = GridBagConstraints.NONE;
+        gridPane.anchor = GridBagConstraints.LINE_END;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.6;
+        gridPane.weighty = 0;
+        pnlVideoMain.add(lblResolution, gridPane);
+
+        gridPane.gridx = 1;
+        gridPane.gridy = 3;
         gridPane.fill = GridBagConstraints.HORIZONTAL;
         gridPane.anchor = GridBagConstraints.CENTER;
         gridPane.ipady = 0;
@@ -157,6 +190,14 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
 
         this.setSize(350, 550);
         this.setResizable(false);
+    }
+
+    /**
+     *
+     * @return ComboBox.
+     */
+    public JComboBox getCmbType() {
+        return cmbType;
     }
 
     /**

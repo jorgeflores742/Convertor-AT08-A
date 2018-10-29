@@ -31,6 +31,7 @@ public class ViewConverter extends JFrame {
     JPanel advanceSearchPane = new JPanel();
     SearchViewer sView;
     AdvancedSearchVideo advanceVideo;
+    AdvancedSearchAudio advanceAudio;
 
     /**
      * Constructor.
@@ -78,16 +79,22 @@ public class ViewConverter extends JFrame {
         JLabel textAll = new JLabel();
         textAll.setText("Busqueda por defecto");
         advanceSearchPane.add(textAll);
-        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(55,0,55,0));
+        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(70,0,70,0));
 
         JPanel listLayout = new JPanel();
         ListFileView listFile = new ListFileView();
         listLayout.setLayout(new GridLayout());
         listLayout.add(listFile.getContentPane());
 
+//        JPanel dataFilePane = new JPanel();
+//        DataFiles data = new DataFiles();
+//        dataFilePane.add(data.getContentPane());
+//        dataFilePane.setBorder(BorderFactory.createEmptyBorder(50,0,50,0));
+
         searchPanel.add(defaultSearchPanel, BorderLayout.NORTH);
         searchPanel.add(listLayout, BorderLayout.SOUTH);
         searchPanel.add(advanceSearchPane, BorderLayout.CENTER);
+
 
         mainPanel.add(searchPanel);
 
@@ -98,18 +105,29 @@ public class ViewConverter extends JFrame {
         JPanel converterPanel = new JPanel();
         converterPanel.setBackground(Color.green);
         converterPanel.setLayout(new BorderLayout());
-//        converterPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
         JPanel playerPanel = new JPanel();
-        playerPanel.setLayout(new BoxLayout(playerPanel, BoxLayout.Y_AXIS));
+        PlayerMedia playerM = new PlayerMedia();
+        playerPanel.add(playerM.getContentPane());
+        playerPanel.setBorder(BorderFactory.createEmptyBorder(150,335,150,335));
+        playerPanel.setBackground(Color.BLACK);
+
+        JPanel ConverterOptions = new JPanel();
+        Converter converting = new Converter();
+        ConverterOptions.add(converting.getContentPane());
+        ConverterOptions.setBorder(BorderFactory.createEmptyBorder(150,205,150,205));
+        ConverterOptions.setBackground(Color.darkGray);
 
         JPanel listConvertorPanel = new JPanel();
-        listConvertorPanel.setLayout(new BoxLayout(listConvertorPanel, BoxLayout.Y_AXIS));
+        ListConverting listConv = new ListConverting();
+        listConvertorPanel.setLayout(new GridLayout());
+        listConvertorPanel.add(listConv.getContentPane());
 
-        converterPanel.add(playerPanel);
-        converterPanel.add(listConvertorPanel);
+        converterPanel.add(playerPanel, BorderLayout.NORTH);
+        converterPanel.add(ConverterOptions, BorderLayout.CENTER);
+        converterPanel.add(listConvertorPanel, BorderLayout.SOUTH);
 
-        mainPanel.add(converterPanel, BorderLayout.CENTER);
+        mainPanel.add(converterPanel);
 
         ActionListener advanced = e -> {
             String type = sView.getCmbFileType().getSelectedItem().toString();
@@ -117,6 +135,8 @@ public class ViewConverter extends JFrame {
                 loadAdSearchVideo();
             } else if (type.equals("All")) {
                 loadAllVideo();
+            } else if (type.equals("Audio")) {
+                loadAdSearchAudio();
             }
         };
 
@@ -143,7 +163,15 @@ public class ViewConverter extends JFrame {
         JLabel textAll = new JLabel();
         textAll.setText("Busqueda por defecto");
         advanceSearchPane.add(textAll);
-        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(55,0,55,0));
+        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(70,0,70,0));
+        mainPanel.updateUI();
+    }
+
+    public void loadAdSearchAudio() {
+        advanceSearchPane.removeAll();
+        advanceAudio = new AdvancedSearchAudio();
+        advanceSearchPane.add(advanceAudio.getContentPane());
+        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(49,0,49,0));
         mainPanel.updateUI();
     }
 
@@ -181,10 +209,18 @@ public class ViewConverter extends JFrame {
 
     /**
      *
+     * @return item selected.
+     */
+    public String getVideoType() {
+        return advanceVideo.getCmbType().getSelectedItem().toString();
+    }
+
+    /**
+     *
      * @return item Selected.
      */
-    public String getFPS() {
-        return advanceVideo.getCmbFps().getSelectedItem().toString();
+    public int getFPS() {
+        return Integer.parseInt(advanceVideo.getCmbFps().getSelectedItem().toString());
     }
 
     /**
@@ -201,6 +237,22 @@ public class ViewConverter extends JFrame {
      */
     public String getResolution() {
         return advanceVideo.getCmbResolution().getSelectedItem().toString();
+    }
+
+    /**
+     *
+     * @return item selected.
+     */
+    public String getAudioType() {
+        return advanceAudio.getCmbType().getSelectedItem().toString();
+    }
+
+    /**
+     *
+     * @return item selected.
+     */
+    public String getChannels() {
+        return advanceAudio.getCmbChannels().getSelectedItem().toString();
     }
 
     public static void main(String[] args) {
