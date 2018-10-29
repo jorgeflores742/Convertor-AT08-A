@@ -54,15 +54,15 @@ public class SearchController implements ActionListener {
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
-        /*if (e.getSource() == searchView.btnSearch) {
-            ArrayList<File> resultList = fileSearcher.searchFiles(searchCriteria.getPath(), searchCriteria.getName(),
+        if (e.getSource() == searchView.getBtnSearch()) {
+            ArrayList<File> resultList = fileSearcher.search(searchCriteria.getPath(), searchCriteria.getName(),
                     searchCriteria.getExt(), searchCriteria.getSize());
 
             for (File resu : resultList) {
-                searchView.listModel.addElement(resu.getAbsolutePath());
+                searchView.getListModel().addElement(resu.getAbsolutePath());
             }
 
-        }*/
+        }
 
     }
 }

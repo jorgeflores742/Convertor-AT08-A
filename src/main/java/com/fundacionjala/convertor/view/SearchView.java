@@ -324,11 +324,13 @@ public class SearchView extends JDialog implements ActionListener {
         return isOk;
     }
 
+    public JButton getBtnSearch() {
+        return btnSearch;
+    }
 
-
-
-
-
+    public DefaultListModel getListModel() {
+        return listModel;
+    }
 
     /**
      * @param e event
@@ -377,6 +379,8 @@ public class SearchView extends JDialog implements ActionListener {
             }
         }
     }
+
+
 }
 
 
