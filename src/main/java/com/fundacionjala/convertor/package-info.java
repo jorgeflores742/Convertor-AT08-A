@@ -1,4 +1,1 @@
-/**
- *
- */
 package com.fundacionjala.convertor;
