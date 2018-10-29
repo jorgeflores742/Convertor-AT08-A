@@ -83,14 +83,7 @@ public class SearchView extends JDialog implements ActionListener {
     }
 
     private JLabel lblFileFormat;
-    private JComboBox cmbFileFormat;
-
-    /**
-     * @return cmbfileformat
-     */
-    public JComboBox getCmbFileFormat() {
-        return cmbFileFormat;
-    }
+    public JComboBox cmbFileFormat;
 
     private JLabel lblFileType;
     private JComboBox cmbFileType;
@@ -103,7 +96,7 @@ public class SearchView extends JDialog implements ActionListener {
     }
 
     private JLabel lblSize;
-    private JComboBox cmbSize;
+    public JComboBox cmbSize;
 
     /**
      * @return cmbSize

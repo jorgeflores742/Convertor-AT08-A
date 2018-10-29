@@ -17,6 +17,8 @@ import java.util.ArrayList;
 public class SearchController implements ActionListener {
     private SearchView searchView;
     private FileSearcher fileSearcher;
+    private SearchCriteria searchCriteria;
+
 
     /**
      * @param searchView   searchView
@@ -26,13 +28,29 @@ public class SearchController implements ActionListener {
         this.searchView = searchView;
         this.fileSearcher = fileSearcher;
         this.searchView.btnSearch.addActionListener(this);
+        searchCriteria = new SearchCriteria();
     }
 
+    /**
+     *
+     */
+
+    public void loadCriteria() {
+        searchCriteria.setName(searchView.txtName.getText());
+        searchCriteria.setPath(searchView.txtPath.getText());
+        searchCriteria.setExt(searchView.cmbFileFormat.getSelectedItem().toString());
+        searchCriteria.setSize(searchView.cmbSize.getSelectedItem().toString());
+
+    }
+
+    /**
+     * @param e action btnConvert
+     */
     @Override
     public void actionPerformed(final ActionEvent e) {
         if (e.getSource() == searchView.btnSearch) {
-            ArrayList<File> resultList = fileSearcher.searchByName(searchView.txtName.getText(),
-                    searchView.txtPath.getText());
+            ArrayList<File> resultList = fileSearcher.searchFiles(searchCriteria.getPath(), searchCriteria.getName(),
+                    searchCriteria.getExt(), searchCriteria.getSize());
 
             for (File resu : resultList) {
                 searchView.listModel.addElement(resu.getAbsolutePath());

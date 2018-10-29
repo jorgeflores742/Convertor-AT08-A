@@ -17,6 +17,7 @@ package com.fundacionjala.convertor.model;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
 /**
@@ -150,7 +151,7 @@ public class FileSearcher {
         return fileList;
     }
 
-     /**
+    /**
      *
      * @param file Fil for meets the criteria.
      * @param size size criteria.
