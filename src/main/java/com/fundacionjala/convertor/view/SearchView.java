@@ -28,98 +28,6 @@ import java.util.ArrayList;
  */
 public class SearchView extends JDialog implements ActionListener {
 
-    private ArrayList<String> selectedResult = new ArrayList<String>();
-
-    /**
-     * @return selected result
-     */
-    public ArrayList getSelectedResult() {
-        return selectedResult;
-    }
-
-    /**
-     * @param selectedResult selected result
-     */
-    public void setSelectedResult(final ArrayList selectedResult) {
-        this.selectedResult = selectedResult;
-    }
-
-    private ArrayList<SearchResult> searchResultList = new ArrayList<SearchResult>();
-
-    /**
-     * @return searchresultlist
-     */
-    public ArrayList getSearchResultList() {
-        return searchResultList;
-    }
-
-    /**
-     * @param searchResultList search result
-     */
-    public void setSearchResultList(final ArrayList searchResultList) {
-        this.searchResultList = searchResultList;
-    }
-
-    private JPanel pnlMain;
-    private JLabel lblPath;
-    public JTextField txtPath;
-
-    /**
-     * @return txtpath
-     */
-    public JTextField getTxtPath() {
-        return txtPath;
-    }
-
-    private JButton btnPath;
-    private JLabel lblName;
-    public JTextField txtName;
-
-    /**
-     * @return txtname
-     */
-    public JTextField getTxtName() {
-        return txtName;
-    }
-
-    private JLabel lblFileFormat;
-    public JComboBox cmbFileFormat;
-
-    private JLabel lblFileType;
-    private JComboBox cmbFileType;
-
-    /**
-     * @return cmdfiletype
-     */
-    public JComboBox getCmbFileType() {
-        return cmbFileType;
-    }
-
-    private JLabel lblSize;
-    public JComboBox cmbSize;
-
-    /**
-     * @return cmbSize
-     */
-    public JComboBox getCmbSize() {
-        return cmbSize;
-    }
-
-    public JButton btnSearch;
-    private JScrollPane scrlSearchResult;
-    public DefaultListModel listModel = new DefaultListModel();
-    private JList lstSearchResult;
-    private JButton btnOk;
-    private JButton btnCancel;
-    private boolean isOk = false;
-
-    /**
-     * @return is Ok
-     */
-    public boolean getIsOk() {
-        return isOk;
-    }
-
     /**
      * @param aFrame frame
      */
@@ -145,6 +53,7 @@ public class SearchView extends JDialog implements ActionListener {
         initializeControls();
         initializeFrame();
     }
+
 
     /**
      *
@@ -315,6 +224,111 @@ public class SearchView extends JDialog implements ActionListener {
         this.setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
         lstSearchResult.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     }
+
+    private ArrayList<String> selectedResult = new ArrayList<String>();
+
+    /**
+     * @return selected result
+     */
+    public ArrayList getSelectedResult() {
+        return selectedResult;
+    }
+
+    /**
+     * @param selectedResult selected result
+     */
+    public void setSelectedResult(final ArrayList selectedResult) {
+        this.selectedResult = selectedResult;
+    }
+
+    private ArrayList<SearchResult> searchResultList = new ArrayList<SearchResult>();
+
+    /**
+     * @return searchresultlist
+     */
+    public ArrayList getSearchResultList() {
+        return searchResultList;
+    }
+
+    /**
+     * @param searchResultList search result
+     */
+    public void setSearchResultList(final ArrayList searchResultList) {
+        this.searchResultList = searchResultList;
+    }
+
+    private JPanel pnlMain;
+    private JLabel lblPath;
+    private JTextField txtPath;
+
+    /**
+     * @return txtpath
+     */
+    public JTextField getTxtPath() {
+        return txtPath;
+    }
+
+    private JButton btnPath;
+    private JLabel lblName;
+    private JTextField txtName;
+
+    /**
+     * @return txtname
+     */
+    public JTextField getTxtName() {
+        return txtName;
+    }
+
+    private JLabel lblFileFormat;
+    private JComboBox cmbFileFormat;
+
+    /**
+     * @return cmbfileformat
+     */
+    public JComboBox getCmbFileFormat() {
+        return cmbFileFormat;
+    }
+
+    private JLabel lblFileType;
+    private JComboBox cmbFileType;
+
+    /**
+     * @return cmdfiletype
+     */
+    public JComboBox getCmbFileType() {
+        return cmbFileType;
+    }
+
+    private JLabel lblSize;
+    private JComboBox cmbSize;
+
+    /**
+     * @return cmbSize
+     */
+    public JComboBox getCmbSize() {
+        return cmbSize;
+    }
+
+    private JButton btnSearch;
+    private JScrollPane scrlSearchResult;
+    private DefaultListModel listModel = new DefaultListModel();
+    private JList lstSearchResult;
+    private JButton btnOk;
+    private JButton btnCancel;
+    private boolean isOk = false;
+
+    /**
+     * @return is Ok
+     */
+    public boolean getIsOk() {
+        return isOk;
+    }
+
+
+
+
+
+
 
     /**
      * @param e event
