@@ -19,6 +19,7 @@ public class SearchController implements ActionListener {
     private FileSearcher fileSearcher;
     private SearchCriteria searchCriteria;
 
+
     /**
      * @param searchView   searchView
      * @param fileSearcher fileSearcher
@@ -48,10 +49,9 @@ public class SearchController implements ActionListener {
     @Override
     public void actionPerformed(final ActionEvent e) {
         if (e.getSource() == searchView.btnSearch) {
-            //ArrayList<File> resultList = fileSearcher.searchByName(searchView.txtName.getText(),
-            //                    searchView.txtPath.getText());
             ArrayList<File> resultList = fileSearcher.searchFiles(searchCriteria.getPath(), searchCriteria.getName(),
                     searchCriteria.getExt(), searchCriteria.getSize());
+
             for (File resu : resultList) {
                 searchView.listModel.addElement(resu.getAbsolutePath());
             }
