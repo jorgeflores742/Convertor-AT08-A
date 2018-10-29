@@ -30,7 +30,7 @@ public class SearchController implements ActionListener {
         this.searchView = searchView;
         this.advancedSearchVideo = advancedSearchVideo;
         this.fileSearcher = fileSearcher;
-        //this.searchView.btnSearch.addActionListener(this);
+        this.searchView.getBtnSearch().addActionListener(this);
         searchCriteria = new SearchCriteria();
     }
 
