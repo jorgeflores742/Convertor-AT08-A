@@ -43,7 +43,7 @@ public class FileSearcherTest {
     public void testHasExtention() {
         File file = new File("E:\\UnitTest\\ch1.mp4");
         String ext = "mp4";
-        assertTrue("Pass",search.hasExtention(file, ext));
+        assertTrue("Pass", search.hasExtention(file, ext));
     }
 
     /**
@@ -63,7 +63,7 @@ public class FileSearcherTest {
     public void testIsSize() {
         File file = new File("E:\\UnitTest\\fourier.pdf");
         String size = "medium";
-        assertTrue("Passed",search.isSize(file, size));
+        assertTrue("Passed", search.isSize(file, size));
     }
 
     /**
