@@ -1,0 +1,13 @@
+/.gradle/
+/.idea/
+/build/
+/out/
+*.iml
+/.idea/misc.xml
+/.gradle/4.8/fileHashes/fileHashes.bin
+/.gradle/4.8/fileHashes/fileHashes.lock
+/.idea/libraries/gradle_wrapper.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
