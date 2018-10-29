@@ -31,6 +31,7 @@ public class ViewConverter extends JFrame {
     JPanel advanceSearchPane = new JPanel();
     SearchViewer sView;
     AdvancedSearchVideo advanceVideo;
+    AdvancedSearchAudio advanceAudio;
 
     /**
      * Constructor.
@@ -116,12 +117,22 @@ public class ViewConverter extends JFrame {
             if (type.equals("Video")) {
                 loadAdSearchVideo();
             } else if (type.equals("All")) {
-                loadAllVideo();
+                loadAll();
+            } else if (type.equals("Audio")) {
+                loadAdSearchAudio();
             }
         };
 
         sView.getCmbFileType().addActionListener(advanced);
 
+    }
+
+    private void loadAdSearchAudio() {
+        advanceSearchPane.removeAll();
+        advanceAudio = new AdvancedSearchAudio();
+        advanceSearchPane.add(advanceAudio.getContentPane());
+        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(48,0,48,0));
+        mainPanel.updateUI();
     }
 
     /**
@@ -138,12 +149,12 @@ public class ViewConverter extends JFrame {
     /**
      * Change of pane to default search.
      */
-    public void loadAllVideo() {
+    public void loadAll() {
         advanceSearchPane.removeAll();
         JLabel textAll = new JLabel();
         textAll.setText("Busqueda por defecto");
         advanceSearchPane.add(textAll);
-        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(55,0,55,0));
+        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(52,0,52,0));
         mainPanel.updateUI();
     }
 

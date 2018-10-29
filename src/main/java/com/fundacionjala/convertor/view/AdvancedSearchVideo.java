@@ -190,5 +190,4 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
     public void actionPerformed(final ActionEvent e) {
 
     }
-
 }
