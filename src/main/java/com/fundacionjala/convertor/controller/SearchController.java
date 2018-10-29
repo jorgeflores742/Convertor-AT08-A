@@ -27,7 +27,7 @@ public class SearchController implements ActionListener {
     public SearchController(final SearchView searchView, final FileSearcher fileSearcher) {
         this.searchView = searchView;
         this.fileSearcher = fileSearcher;
-        this.searchView.btnSearch.addActionListener(this);
+        //this.searchView.btnSearch.addActionListener(this);
         searchCriteria = new SearchCriteria();
     }
 
@@ -36,10 +36,10 @@ public class SearchController implements ActionListener {
      */
 
     public void loadCriteria() {
-        searchCriteria.setName(searchView.txtName.getText());
-        searchCriteria.setPath(searchView.txtPath.getText());
-        searchCriteria.setExt(searchView.cmbFileFormat.getSelectedItem().toString());
-        searchCriteria.setSize(searchView.cmbSize.getSelectedItem().toString());
+        searchCriteria.setName(searchView.getTxtName().getText());
+        searchCriteria.setPath(searchView.getTxtPath().getText());
+        searchCriteria.setExt(searchView.getCmbFileFormat().getSelectedItem().toString());
+        searchCriteria.setSize(searchView.getCmbSize().getSelectedItem().toString());
 
     }
 
@@ -48,7 +48,7 @@ public class SearchController implements ActionListener {
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
-        if (e.getSource() == searchView.btnSearch) {
+        /*if (e.getSource() == searchView.btnSearch) {
             ArrayList<File> resultList = fileSearcher.searchFiles(searchCriteria.getPath(), searchCriteria.getName(),
                     searchCriteria.getExt(), searchCriteria.getSize());
 
@@ -56,7 +56,7 @@ public class SearchController implements ActionListener {
                 searchView.listModel.addElement(resu.getAbsolutePath());
             }
 
-        }
+        }*/
 
     }
 }
