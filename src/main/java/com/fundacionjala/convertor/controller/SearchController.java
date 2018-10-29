@@ -2,8 +2,8 @@ package com.fundacionjala.convertor.controller;
 
 import com.fundacionjala.convertor.model.FileSearcher;
 import com.fundacionjala.convertor.view.AdvancedSearchVideo;
+import com.fundacionjala.convertor.view.AdvancedSearchAudio;
 import com.fundacionjala.convertor.view.ListFileView;
-//import com.fundacionjala.convertor.view.SearchView;
 import com.fundacionjala.convertor.view.SearchViewer;
 
 import java.awt.event.ActionEvent;
