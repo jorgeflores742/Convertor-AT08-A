@@ -2,7 +2,9 @@ package com.fundacionjala.convertor.controller;
 
 import com.fundacionjala.convertor.model.FileSearcher;
 import com.fundacionjala.convertor.view.AdvancedSearchVideo;
-import com.fundacionjala.convertor.view.SearchView;
+import com.fundacionjala.convertor.view.AdvancedSearchAudio;
+import com.fundacionjala.convertor.view.ListFileView;
+import com.fundacionjala.convertor.view.SearchViewer;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,21 +18,30 @@ import java.util.ArrayList;
  * @version 1.0.
  */
 public class SearchController implements ActionListener {
-    private SearchView searchView;
+    //private SearchView searchView;
+    private SearchViewer searchViewer;
+    private AdvancedSearchVideo advancedSearchVideo;
+    private AdvancedSearchAudio advancedSearchAudio;
+    private ListFileView listFileView;
     private FileSearcher fileSearcher;
     private SearchCriteria searchCriteria;
-    private AdvancedSearchVideo advancedSearchVideo;
-
 
     /**
-     * @param searchView   searchView
+     *
+     * @param searchViewer searchViewer
+     * @param advancedSearchVideo advancedSearchVideo
+     * @param advancedSearchAudio advancedSearchAudio
+     * @param listFileView listFileView
      * @param fileSearcher fileSearcher
      */
-    public SearchController(final SearchView searchView, final AdvancedSearchVideo advancedSearchVideo,final FileSearcher fileSearcher) {
-        this.searchView = searchView;
+    public SearchController(final SearchViewer searchViewer, final AdvancedSearchVideo advancedSearchVideo,final AdvancedSearchAudio advancedSearchAudio, final ListFileView listFileView, final FileSearcher fileSearcher) {
+        //this.searchView = searchView;
+        this.searchViewer= searchViewer;
         this.advancedSearchVideo = advancedSearchVideo;
+        this.advancedSearchAudio = advancedSearchAudio;
+        this.listFileView=listFileView;
         this.fileSearcher = fileSearcher;
-        this.searchView.getBtnSearch().addActionListener(this);
+        this.searchViewer.getBtnSearch().addActionListener(this);
         searchCriteria = new SearchCriteria();
     }
 
@@ -39,13 +50,14 @@ public class SearchController implements ActionListener {
      */
 
     public void loadCriteria() {
-        searchCriteria.setName(searchView.getTxtName().getText());
-        searchCriteria.setPath(searchView.getTxtPath().getText());
-        searchCriteria.setExt(searchView.getCmbFileFormat().getSelectedItem().toString());
-        searchCriteria.setSize(searchView.getCmbSize().getSelectedItem().toString());
-        searchCriteria.setFps( Integer.parseInt(advancedSearchVideo.getCmbFps().getSelectedItem().toString()));
-        searchCriteria.setAspectRatio(advancedSearchVideo.getCmbAspectRatio().getSelectedItem().toString());
-        searchCriteria.setResolution(advancedSearchVideo.getCmbResolution().getSelectedItem().toString());
+        searchCriteria.setName(searchViewer.getTxtName());
+        searchCriteria.setPath(searchViewer.getTxtPath());
+        searchCriteria.setExt(searchViewer.getCmbFileType());
+        searchCriteria.setSize(searchViewer.getCmbSize());
+        searchCriteria.setFps(advancedSearchVideo.getCmbFps());
+        searchCriteria.setAspectRatio(advancedSearchVideo.getCmbAspectRatio());
+        searchCriteria.setResolution(advancedSearchVideo.getCmbResolution());
+        searchCriteria.setChannels(advancedSearchVideo.getCmbChannels());
 
     }
 
@@ -54,12 +66,12 @@ public class SearchController implements ActionListener {
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
-        if (e.getSource() == searchView.getBtnSearch()) {
+        if (e.getSource() == searchViewer.getBtnSearch()) {
             ArrayList<File> resultList = fileSearcher.search(searchCriteria.getPath(), searchCriteria.getName(),
                     searchCriteria.getExt(), searchCriteria.getSize());
 
             for (File resu : resultList) {
-                searchView.getListModel().addElement(resu.getAbsolutePath());
+               // listFileView.getListModel().addElement(resu.getAbsolutePath());
             }
 
         }

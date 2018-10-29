@@ -11,11 +11,12 @@ public class SearchCriteria {
     private String name;
     private String ext;
     private String size;
-    //Advanced
+    //Advanced Video
     private int fps;
     private String aspectRatio;
     private String resolution;
-
+    //Advanced Audio
+    private String channels;
 
     /**
      * @return path
@@ -119,5 +120,21 @@ public class SearchCriteria {
      */
     public void setResolution(String resolution) {
         this.resolution = resolution;
+    }
+
+    /**
+     *
+     * @return channels
+     */
+    public String getChannels() {
+        return channels;
+    }
+
+    /**
+     *
+     * @param channels channels
+     */
+    public void setChannels(String channels) {
+        this.channels = channels;
     }
 }
