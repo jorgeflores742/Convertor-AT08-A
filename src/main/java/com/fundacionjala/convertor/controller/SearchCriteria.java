@@ -12,7 +12,7 @@ public class SearchCriteria {
     private String ext;
     private String size;
     //Advanced Video
-    private int fps;
+    private String fps;
     private String aspectRatio;
     private String resolution;
     //Advanced Audio
@@ -78,7 +78,7 @@ public class SearchCriteria {
      *
      * @return fps
      */
-    public int getFps() {
+    public String getFps() {
         return fps;
     }
 
@@ -86,7 +86,7 @@ public class SearchCriteria {
      *
      * @param fps fps
      */
-    public void setFps(int fps) {
+    public void setFps(String fps) {
         this.fps = fps;
     }
 
