@@ -5,13 +5,17 @@ import java.awt.*;
 
 public class DataFiles extends JDialog {
     JPanel dataPanel;
-    JTextField data;
+    JTextArea data;
 
     public DataFiles() {
-        dataPanel = new JPanel(new GridBagLayout());
-        data = new JTextField();
-        dataPanel.add(data);
-
+        dataPanel = new JPanel(new BorderLayout());
+        data = new JTextArea();
+        data.setText("TextField");
+        data.setEditable(false);
+        data.setBorder(BorderFactory.createEmptyBorder(0,0,150,350));
+        data.setBackground(Color.ORANGE);
+        dataPanel.add(data, BorderLayout.CENTER);
+        dataPanel.setBackground(Color.green);
         this.add(dataPanel);
         this.setResizable(false);
     }

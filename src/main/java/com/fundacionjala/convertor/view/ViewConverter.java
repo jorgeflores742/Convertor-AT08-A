@@ -59,7 +59,7 @@ public class ViewConverter extends JFrame {
         //panel de busqueda
         JPanel searchPanel = new JPanel();
         searchPanel.setBackground(Color.blue);
-        searchPanel.setLayout(new BorderLayout());
+        searchPanel.setLayout(new BoxLayout(searchPanel, BoxLayout.Y_AXIS));
 
         JPanel defaultSearchPanel = new JPanel();
         // sView = new SearchViewer();
@@ -76,14 +76,16 @@ public class ViewConverter extends JFrame {
         listLayout.setLayout(new GridLayout());
         listLayout.add(listFile.getContentPane());
 
-//        JPanel dataFilePane = new JPanel();
-//        DataFiles data = new DataFiles();
-//        dataFilePane.add(data.getContentPane());
-//        dataFilePane.setBorder(BorderFactory.createEmptyBorder(50,0,50,0));
+        JPanel dataFilePane = new JPanel();
+        //dataFilePane.setMaximumSize(new Dimension(150, 350));
+        dataFilePane.setLayout(new FlowLayout(FlowLayout.LEFT));
+        DataFiles data = new DataFiles();
+        dataFilePane.add(data.getContentPane());
 
-        searchPanel.add(defaultSearchPanel, BorderLayout.NORTH);
-        searchPanel.add(listLayout, BorderLayout.SOUTH);
-        searchPanel.add(advanceSearchPane, BorderLayout.CENTER);
+        searchPanel.add(defaultSearchPanel);
+        searchPanel.add(advanceSearchPane);
+        searchPanel.add(listLayout);
+        searchPanel.add(dataFilePane);
 
 
         mainPanel.add(searchPanel);
@@ -99,7 +101,7 @@ public class ViewConverter extends JFrame {
         JPanel playerPanel = new JPanel();
         PlayerMedia playerM = new PlayerMedia();
         playerPanel.add(playerM.getContentPane());
-        playerPanel.setBorder(BorderFactory.createEmptyBorder(150,335,150,335));
+        playerPanel.setBorder(BorderFactory.createEmptyBorder(190,335,190,335));
         playerPanel.setBackground(Color.BLACK);
 
         JPanel ConverterOptions = new JPanel();
