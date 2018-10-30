@@ -221,4 +221,12 @@ public class SearchViewer extends JDialog implements ActionListener {
     public JComboBox getCmbFileType() {
         return cmbFileType;
     }
+
+    /**
+     *
+     * @return button search.
+     */
+    public JButton getBtnSearch() {
+        return btnSearch;
+    }
 }

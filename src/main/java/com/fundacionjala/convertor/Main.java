@@ -1,6 +1,6 @@
 package com.fundacionjala.convertor;
 
-import com.fundacionjala.convertor.view.MainView;
+import com.fundacionjala.convertor.view.ViewConverter;
 
 /**
  * Main Class.
@@ -10,7 +10,7 @@ public class Main {
      * @param args arguments
      */
     public static void main(final String[] args) {
-        MainView v = new MainView();
+        ViewConverter v = new ViewConverter();
         v.setVisible(true);
     }
 }

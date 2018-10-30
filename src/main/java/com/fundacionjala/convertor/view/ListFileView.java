@@ -34,6 +34,7 @@ public class ListFileView extends JDialog{
      */
     public ListFileView() {
         pnlMain = new JPanel(new GridBagLayout());
+        listModel.addElement("Resultados de busqueda. Probar file type video y audio");
         lstSearchResult = new JList(listModel);
         scrlSearchResult = new JScrollPane(lstSearchResult);
         initializeControls();
@@ -66,7 +67,15 @@ public class ListFileView extends JDialog{
      *  Set of size.
      */
     private void initializeControls() {
-        lstSearchResult.setPreferredSize(new Dimension(((int) dim.getWidth())/3, ((int) dim.getHeight())-440));
-        scrlSearchResult.setPreferredSize(new Dimension(((int) dim.getWidth())/3, ((int) dim.getHeight())-440));
+        lstSearchResult.setPreferredSize(new Dimension(((int) dim.getWidth())/3, ((int) dim.getHeight())-640));
+        scrlSearchResult.setPreferredSize(new Dimension(((int) dim.getWidth())/3, ((int) dim.getHeight())-640));
+    }
+
+    public DefaultListModel getListModel() {
+        return listModel;
+    }
+
+    public void setListModel(DefaultListModel list) {
+        listModel.clear();
     }
 }
