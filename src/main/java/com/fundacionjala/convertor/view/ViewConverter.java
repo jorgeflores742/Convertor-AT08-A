@@ -64,7 +64,7 @@ public class ViewConverter extends JFrame {
         JPanel defaultSearchPanel = new JPanel();
         // sView = new SearchViewer();
         defaultSearchPanel.add(sView.getContentPane());
-        System.out.println(sView.getSize());
+        System.out.println(dim);
 
         JLabel textAll = new JLabel();
         textAll.setText("Busqueda por defecto");

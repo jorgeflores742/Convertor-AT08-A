@@ -13,7 +13,7 @@ public class DataFiles extends JDialog {
         data.setText("TextField");
         data.setEditable(false);
         data.setBorder(BorderFactory.createEmptyBorder(0,0,150,350));
-        data.setBackground(Color.ORANGE);
+        data.setBackground(Color.white);
         dataPanel.add(data, BorderLayout.CENTER);
         dataPanel.setBackground(Color.green);
         this.add(dataPanel);

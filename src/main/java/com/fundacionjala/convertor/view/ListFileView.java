@@ -34,7 +34,7 @@ public class ListFileView extends JDialog{
      */
     public ListFileView() {
         pnlMain = new JPanel(new GridBagLayout());
-        listModel.addElement("Resultados de busqueda. Probar file type video y audio");
+        listModel.addElement("Resultados de busqueda. Click derecho para opciones");
         lstSearchResult = new JList(listModel);
         scrlSearchResult = new JScrollPane(lstSearchResult);
         initializeControls();
