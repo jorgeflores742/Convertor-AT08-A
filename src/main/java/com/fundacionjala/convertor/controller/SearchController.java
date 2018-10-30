@@ -50,14 +50,14 @@ public class SearchController implements ActionListener {
      */
 
     public void loadCriteria() {
-        searchCriteria.setName(searchViewer.getTxtName());
-        searchCriteria.setPath(searchViewer.getTxtPath());
-        searchCriteria.setExt(searchViewer.getCmbFileType());
-        searchCriteria.setSize(searchViewer.getCmbSize());
-        searchCriteria.setFps(advancedSearchVideo.getCmbFps());
-        searchCriteria.setAspectRatio(advancedSearchVideo.getCmbAspectRatio());
-        searchCriteria.setResolution(advancedSearchVideo.getCmbResolution());
-        searchCriteria.setChannels(advancedSearchVideo.getCmbChannels());
+        searchCriteria.setName(searchViewer.getTxtName().getText());
+        searchCriteria.setPath(searchViewer.getTxtPath().getText());
+        searchCriteria.setExt(searchViewer.getCmbFileType().getSelectedItem().toString());
+        searchCriteria.setSize(searchViewer.getCmbSize().getSelectedItem().toString());
+        searchCriteria.setFps(advancedSearchVideo.getCmbFps().getSelectedItem().toString());
+        searchCriteria.setAspectRatio(advancedSearchVideo.getCmbAspectRatio().getSelectedItem().toString());
+        searchCriteria.setResolution(advancedSearchVideo.getCmbResolution().getSelectedItem().toString());
+        searchCriteria.setChannels(advancedSearchAudio.getCmbChannels().getSelectedItem().toString());
 
     }
 
@@ -67,11 +67,12 @@ public class SearchController implements ActionListener {
     @Override
     public void actionPerformed(final ActionEvent e) {
         if (e.getSource() == searchViewer.getBtnSearch()) {
+            loadCriteria();
             ArrayList<File> resultList = fileSearcher.search(searchCriteria.getPath(), searchCriteria.getName(),
                     searchCriteria.getExt(), searchCriteria.getSize());
 
             for (File resu : resultList) {
-               // listFileView.getListModel().addElement(resu.getAbsolutePath());
+              listFileView.getListModel().addElement(resu.getAbsolutePath());
             }
 
         }
