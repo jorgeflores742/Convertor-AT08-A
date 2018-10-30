@@ -1,19 +1,3 @@
-
-/*
- * @Controller.java Copyright (c) 2018 Fundacion Jala. All rights reserved.
- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
- *
- * This code is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
- * version 2 for more details (a copy is included in the LICENSE file that
- * accompanied this code).
- *
- * Please contact Fundacion Jala, 2643 Av Melchor Perez de Olguin, Colquiri
- * Sud, Cochabamba, Bolivia. www.fundacion-jala.org if you need additional
- * information or have any questions.
- */
-
 package com.fundacionjala.convertor.view;
 
 import javax.swing.*;
@@ -32,11 +16,17 @@ public class ViewConverter extends JFrame {
     SearchViewer sView;
     AdvancedSearchVideo advanceVideo;
     AdvancedSearchAudio advanceAudio;
+    ListFileView listFile;
 
     /**
      * Constructor.
      */
-    public ViewConverter() {
+    public ViewConverter(SearchViewer sView,AdvancedSearchAudio advanceAudio,AdvancedSearchVideo advanceVideo,ListFileView listFile) {
+        this.sView = sView;
+        this.advanceAudio = advanceAudio;
+        this.advanceVideo = advanceVideo;
+        this.listFile = listFile;
+
         iniView();
         settingsView();
     }
@@ -72,7 +62,7 @@ public class ViewConverter extends JFrame {
         searchPanel.setLayout(new BorderLayout());
 
         JPanel defaultSearchPanel = new JPanel();
-        sView = new SearchViewer();
+        // sView = new SearchViewer();
         defaultSearchPanel.add(sView.getContentPane());
         System.out.println(sView.getSize());
 
@@ -82,7 +72,7 @@ public class ViewConverter extends JFrame {
         advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(70,0,70,0));
 
         JPanel listLayout = new JPanel();
-        ListFileView listFile = new ListFileView();
+        //ListFileView listFile = new ListFileView();
         listLayout.setLayout(new GridLayout());
         listLayout.add(listFile.getContentPane());
 
@@ -149,7 +139,7 @@ public class ViewConverter extends JFrame {
      */
     public  void loadAdSearchVideo() {
         advanceSearchPane.removeAll();
-        advanceVideo = new AdvancedSearchVideo();
+        // advanceVideo = new AdvancedSearchVideo();
         advanceSearchPane.add(advanceVideo.getContentPane());
         advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(20,0,20,0));
         mainPanel.updateUI();
@@ -169,7 +159,7 @@ public class ViewConverter extends JFrame {
 
     public void loadAdSearchAudio() {
         advanceSearchPane.removeAll();
-        advanceAudio = new AdvancedSearchAudio();
+        //advanceAudio = new AdvancedSearchAudio();
         advanceSearchPane.add(advanceAudio.getContentPane());
         advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(49,0,49,0));
         mainPanel.updateUI();
@@ -255,8 +245,10 @@ public class ViewConverter extends JFrame {
         return advanceAudio.getCmbChannels().getSelectedItem().toString();
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         ViewConverter newView = new ViewConverter();
         newView.setVisible(true);
-    }
+    }*/
 }
+
+
