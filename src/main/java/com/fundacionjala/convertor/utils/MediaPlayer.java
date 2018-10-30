@@ -30,7 +30,8 @@ public class MediaPlayer {
     private final JButton skipButton;
 
     public static void main(final String[] args) {
-        new NativeDiscovery().discover();
+        NativeLibrary.addSearchPath(
+                RuntimeUtil.getLibVlcLibraryName(), "lib");
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
