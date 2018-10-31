@@ -174,7 +174,7 @@ public class SearchViewer extends JDialog implements ActionListener {
 
         this.add(pnlMain);
 
-        this.setSize(350, 550);
+        //this.setSize(350, 550);
         this.setResizable(false);
     }
 

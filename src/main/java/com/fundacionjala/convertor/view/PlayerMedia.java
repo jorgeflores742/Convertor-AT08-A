@@ -1,6 +1,7 @@
 package com.fundacionjala.convertor.view;
 
-import javax.swing.*;
+        import javax.swing.*;
+        import java.awt.*;
 
 public class PlayerMedia extends JDialog{
     private JPanel player;
@@ -9,9 +10,8 @@ public class PlayerMedia extends JDialog{
     public PlayerMedia() {
         player = new JPanel();
         playerText = new JLabel();
-        playerText.setText("Inserte Reproductor aqui");
+        playerText.setText("Reproductor");
         player.add(playerText);
-
         this.add(player);
         this.setResizable(false);
     }

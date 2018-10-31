@@ -28,13 +28,14 @@ public class ListFileView extends JDialog{
     private JList lstSearchResult;
     private JPanel pnlMain;
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+    private int LIST_HEIGHT_37 = (int) (dim.getHeight()*37)/100;
 
     /**
      * List of data received.
      */
     public ListFileView() {
         pnlMain = new JPanel(new GridBagLayout());
-        listModel.addElement("Resultados de busqueda. Probar file type video y audio");
+        listModel.addElement("Resultados de busqueda. Click derecho para opciones");
         lstSearchResult = new JList(listModel);
         scrlSearchResult = new JScrollPane(lstSearchResult);
         initializeControls();
@@ -67,8 +68,7 @@ public class ListFileView extends JDialog{
      *  Set of size.
      */
     private void initializeControls() {
-        lstSearchResult.setPreferredSize(new Dimension(((int) dim.getWidth())/3, ((int) dim.getHeight())-640));
-        scrlSearchResult.setPreferredSize(new Dimension(((int) dim.getWidth())/3, ((int) dim.getHeight())-640));
+        scrlSearchResult.setPreferredSize(new Dimension(((int) dim.getWidth())/3, LIST_HEIGHT_37));
     }
 
     public DefaultListModel getListModel() {

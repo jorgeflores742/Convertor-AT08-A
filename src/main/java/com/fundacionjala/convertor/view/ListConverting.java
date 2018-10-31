@@ -45,7 +45,7 @@ public class ListConverting extends JDialog {
      *  Set of size.
      */
     private void initializeControls() {
-        lstSearchResult.setPreferredSize(new Dimension(250, 100));
-        scrlSearchResult.setPreferredSize(new Dimension(250, 100));
+        lstSearchResult.setPreferredSize(new Dimension(250, 150));
+        scrlSearchResult.setPreferredSize(new Dimension(250, 150));
     }
 }
