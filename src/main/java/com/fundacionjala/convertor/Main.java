@@ -19,10 +19,7 @@ public class Main {
         ListFileView listFileView = new ListFileView();
         FileSearcher fileSearcher = new FileSearcher();
         SearchController searchController = new SearchController(searchViewer, advancedSearchVideo, advancedSearchAudio,listFileView, fileSearcher);
-
-
         ViewConverter v = new ViewConverter(searchViewer ,advancedSearchAudio, advancedSearchVideo,listFileView);
-
         v.setVisible(true);
     }
 }
