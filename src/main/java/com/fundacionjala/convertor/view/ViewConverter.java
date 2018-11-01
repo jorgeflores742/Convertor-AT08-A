@@ -104,7 +104,7 @@ public class ViewConverter extends JFrame {
 
         JPanel playerPanel = new JPanel();
         PlayerMedia playerM = new PlayerMedia();
-        playerPanel.add(playerM.getContentPane());
+        playerPanel.add(playerM);
         playerPanel.setPreferredSize(new Dimension(playerWidth, playerHeight));
         playerPanel.setBackground(Color.BLACK);
 
