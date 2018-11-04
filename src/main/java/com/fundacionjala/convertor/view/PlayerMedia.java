@@ -22,17 +22,18 @@ public class PlayerMedia extends JPanel {
     private static final int MAX_VALUE = 400;
     private static int width;
     private static int height;
+    ListFileView listFV;
 
     /**
      * Method constructor, initialize file, player and methods for.
      */
 
-    public PlayerMedia(int playerWidth, int playerHeight) {
+    public PlayerMedia(ListFileView url, int playerWidth, int playerHeight) {
         height = playerHeight;
         width = playerWidth;
         NativeLibrary.addSearchPath(
                 RuntimeUtil.getLibVlcLibraryName(), "lib/pluginVlcj");
-        file = new File("C:\\Users\\user\\Downloads\\Video\\Farruko-Coolant.mp4");
+        listFV =url;
         player = new EmbeddedMediaPlayerComponent();
         iniMediaPlayer();
         createButtons();
@@ -62,7 +63,7 @@ public class PlayerMedia extends JPanel {
         btnPlay.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
-                player.getMediaPlayer().playMedia(file.getAbsolutePath());
+                player.getMediaPlayer().playMedia(listFV.getUrl().getAbsolutePath());
             }
         });
         btnSkip.addActionListener(new ActionListener() {
