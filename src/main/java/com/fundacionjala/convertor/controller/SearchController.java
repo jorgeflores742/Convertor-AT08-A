@@ -42,6 +42,7 @@ public class SearchController implements ActionListener {
         this.listFileView=listFileView;
         this.fileSearcher = fileSearcher;
         this.searchViewer.getBtnSearch().addActionListener(this);
+        this.searchViewer.getBtnClearList().addActionListener(this);
         searchCriteria = new SearchCriteria();
     }
 
@@ -75,6 +76,9 @@ public class SearchController implements ActionListener {
               listFileView.getListModel().addElement(resu.getAbsolutePath());
             }
 
+        }
+        else if(e.getSource() == searchViewer.getBtnClearList()) {
+            listFileView.setListModel(listFileView.getListModel());
         }
 
     }

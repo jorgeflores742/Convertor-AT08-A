@@ -19,18 +19,20 @@ import java.io.File;
 public class PlayerMedia extends JPanel {
     private static EmbeddedMediaPlayerComponent player;
     private static File file;
-    private static final int MAX_VALUE = 100;
-    private static final int WIDTH = 815;
-    private static final int HEIGHT = 405;
+    private static final int MAX_VALUE = 400;
+    private static int width;
+    private static int height;
 
     /**
      * Method constructor, initialize file, player and methods for.
      */
 
-    public PlayerMedia() {
+    public PlayerMedia(int playerWidth, int playerHeight) {
+        height = playerHeight;
+        width = playerWidth;
         NativeLibrary.addSearchPath(
                 RuntimeUtil.getLibVlcLibraryName(), "lib/pluginVlcj");
-        file = new File("C:\\Users\\Admin\\Documents\\gggggg\\Convertor-AT08-A-develop\\024 Crear un botón.mp4");
+        file = new File("C:\\Users\\user\\Downloads\\Video\\Farruko-Coolant.mp4");
         player = new EmbeddedMediaPlayerComponent();
         iniMediaPlayer();
         createButtons();
@@ -41,7 +43,7 @@ public class PlayerMedia extends JPanel {
      */
     private void iniMediaPlayer() {
         this.setMinimumSize(new Dimension(MAX_VALUE, MAX_VALUE));
-        this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        this.setPreferredSize(new Dimension(width, height));
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         player.setSize(this.getSize());
         player.setVisible(true);
