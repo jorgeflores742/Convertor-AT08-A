@@ -12,10 +12,12 @@ public class SearchCriteria {
     private String ext;
     private String size;
     //Advanced Video
+    private String videoType;
     private String fps;
     private String aspectRatio;
     private String resolution;
     //Advanced Audio
+    private String audioType;
     private String channels;
 
     /**
@@ -136,5 +138,37 @@ public class SearchCriteria {
      */
     public void setChannels(String channels) {
         this.channels = channels;
+    }
+
+    /**
+     *
+     * @return videotype
+     */
+    public String getVideoType() {
+        return videoType;
+    }
+
+    /**
+     *
+     * @param videoType videotype
+     */
+    public void setVideoType(String videoType) {
+        this.videoType = videoType;
+    }
+
+    /**
+     *
+     * @return audiotype
+     */
+    public String getAudioType() {
+        return audioType;
+    }
+
+    /**
+     *
+     * @param audioType audiotype
+     */
+    public void setAudioType(String audioType) {
+        this.audioType = audioType;
     }
 }
