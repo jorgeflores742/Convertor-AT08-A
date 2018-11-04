@@ -52,6 +52,7 @@ public class SearchViewer extends JDialog implements ActionListener {
 
     private JButton btnSearch;
 
+    private JButton btnClearList;
     /**
      * Pane for default search.
      */
@@ -67,6 +68,7 @@ public class SearchViewer extends JDialog implements ActionListener {
         lblFileType = new JLabel();
         cmbFileType = new JComboBox(FileTypeEnum.values());
         btnSearch = new JButton();
+        btnClearList = new JButton();
         initializeControls();
         initializeFrame();
     }
@@ -85,6 +87,7 @@ public class SearchViewer extends JDialog implements ActionListener {
         lblSize.setText("Size :");
         lblFileType.setText("File Type :");
         btnSearch.setText("Search");
+        btnClearList.setText("Clear List");
     }
 
     /**
@@ -174,7 +177,14 @@ public class SearchViewer extends JDialog implements ActionListener {
 
         this.add(pnlMain);
 
-        //this.setSize(350, 550);
+        gridPane.gridx = 0;
+        gridPane.gridy = 6;
+        gridPane.fill = GridBagConstraints.VERTICAL;
+        gridPane.anchor = GridBagConstraints.CENTER;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.6;
+        gridPane.weighty = 0;
+        pnlMain.add(btnClearList, gridPane);
         this.setResizable(false);
     }
 
@@ -228,5 +238,13 @@ public class SearchViewer extends JDialog implements ActionListener {
      */
     public JButton getBtnSearch() {
         return btnSearch;
+    }
+
+    /**
+     *
+     * @return button clear List.
+     */
+    public JButton getBtnClearList() {
+        return btnClearList;
     }
 }
