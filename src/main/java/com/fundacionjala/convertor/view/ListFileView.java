@@ -81,6 +81,10 @@ public class ListFileView extends JDialog{
         return listModel;
     }
 
+    public JList getLstSearchResult() {
+        return lstSearchResult;
+    }
+
     public void setListModel(DefaultListModel list) {
         listModel.clear();
     }

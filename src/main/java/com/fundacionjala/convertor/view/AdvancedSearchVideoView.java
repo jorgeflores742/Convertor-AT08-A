@@ -28,7 +28,7 @@ import java.util.ArrayList;
  * @author Dennis Montaño.
  * @version 1.0
  */
-public class AdvancedSearchVideo extends JDialog implements ActionListener {
+public class AdvancedSearchVideoView extends JDialog implements ActionListener {
 
     private JPanel pnlVideoMain;
 
@@ -52,7 +52,7 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
     /**
      * Search for videos with specific data.
      */
-    public AdvancedSearchVideo() {
+    public AdvancedSearchVideoView() {
         pnlVideoMain = new JPanel(new GridBagLayout());
 
         lblType = new JLabel();

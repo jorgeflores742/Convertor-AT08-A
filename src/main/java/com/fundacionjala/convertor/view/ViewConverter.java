@@ -20,18 +20,20 @@ public class ViewConverter extends JFrame {
     JPanel mainPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     JPanel advanceSearchPane = new JPanel();
     SearchViewer sView;
-    AdvancedSearchVideo advanceVideo;
-    AdvancedSearchAudio advanceAudio;
+    AdvancedSearchVideoView advanceVideo;
+    AdvancedSearchAudioView advanceAudio;
     ListFileView listFile;
+    DataFiles data;
 
     /**
      * Constructor.
      */
-    public ViewConverter(SearchViewer sView,AdvancedSearchAudio advanceAudio,AdvancedSearchVideo advanceVideo,ListFileView listFile) {
+    public ViewConverter(SearchViewer sView,AdvancedSearchAudioView advanceAudio,AdvancedSearchVideoView advanceVideo,ListFileView listFile, DataFiles data) {
         this.sView = sView;
         this.advanceAudio = advanceAudio;
         this.advanceVideo = advanceVideo;
         this.listFile = listFile;
+        this.data = data;
 
         iniView();
         settingsView();
@@ -83,7 +85,6 @@ public class ViewConverter extends JFrame {
 
         JPanel dataFilePane = new JPanel();
         dataFilePane.setLayout(new GridLayout());
-        DataFiles data = new DataFiles();
         dataFilePane.add(data.getContentPane());
 
         searchPanel.add(defaultSearchPanel);
