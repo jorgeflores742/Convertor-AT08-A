@@ -10,6 +10,12 @@ import java.awt.event.ActionListener;
 public class ViewConverter extends JFrame {
 
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+    private int ADVANCED_SEARCH7 = (int) (dim.getHeight()*7)/100;
+    private int ADV_VIDEO2 = (int) (dim.getHeight()*2)/100;
+    private int ADV_AUDIO5 = (int) (dim.getHeight()*5)/100;
+    private int playerWidth = (int) (dim.getWidth()*64)/100;
+    private int playerHeight = (int) (dim.getHeight()*40)/100;
+    private int converterHeight = (int) (dim.getHeight()*28)/100;
 
     JPanel mainPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     JPanel advanceSearchPane = new JPanel();
@@ -59,31 +65,31 @@ public class ViewConverter extends JFrame {
         //panel de busqueda
         JPanel searchPanel = new JPanel();
         searchPanel.setBackground(Color.blue);
-        searchPanel.setLayout(new BorderLayout());
+        searchPanel.setLayout(new BoxLayout(searchPanel, BoxLayout.Y_AXIS));
 
         JPanel defaultSearchPanel = new JPanel();
         // sView = new SearchViewer();
         defaultSearchPanel.add(sView.getContentPane());
-        System.out.println(sView.getSize());
+        System.out.println(dim);
 
         JLabel textAll = new JLabel();
         textAll.setText("Busqueda por defecto");
         advanceSearchPane.add(textAll);
-        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(70,0,70,0));
+        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(ADVANCED_SEARCH7,0, ADVANCED_SEARCH7,0));
 
         JPanel listLayout = new JPanel();
-        //ListFileView listFile = new ListFileView();
         listLayout.setLayout(new GridLayout());
         listLayout.add(listFile.getContentPane());
 
-//        JPanel dataFilePane = new JPanel();
-//        DataFiles data = new DataFiles();
-//        dataFilePane.add(data.getContentPane());
-//        dataFilePane.setBorder(BorderFactory.createEmptyBorder(50,0,50,0));
+        JPanel dataFilePane = new JPanel();
+        dataFilePane.setLayout(new GridLayout());
+        DataFiles data = new DataFiles();
+        dataFilePane.add(data.getContentPane());
 
-        searchPanel.add(defaultSearchPanel, BorderLayout.NORTH);
-        searchPanel.add(listLayout, BorderLayout.SOUTH);
-        searchPanel.add(advanceSearchPane, BorderLayout.CENTER);
+        searchPanel.add(defaultSearchPanel);
+        searchPanel.add(advanceSearchPane);
+        searchPanel.add(listLayout);
+        searchPanel.add(dataFilePane);
 
 
         mainPanel.add(searchPanel);
@@ -97,20 +103,21 @@ public class ViewConverter extends JFrame {
         converterPanel.setLayout(new BorderLayout());
 
         JPanel playerPanel = new JPanel();
-        PlayerMedia playerM = new PlayerMedia();
-        playerPanel.add(playerM.getContentPane());
-        playerPanel.setBorder(BorderFactory.createEmptyBorder(150,335,150,335));
-        playerPanel.setBackground(Color.BLACK);
+        PlayerMedia playerM = new PlayerMedia(listFile, playerWidth, playerHeight);
+        playerPanel.add(playerM);
+        playerPanel.setPreferredSize(new Dimension(playerWidth, playerHeight));
+        playerPanel.setBackground(Color.YELLOW);
 
         JPanel ConverterOptions = new JPanel();
         Converter converting = new Converter();
         ConverterOptions.add(converting.getContentPane());
-        ConverterOptions.setBorder(BorderFactory.createEmptyBorder(150,205,150,205));
+        ConverterOptions.setPreferredSize(new Dimension(playerWidth, converterHeight));
         ConverterOptions.setBackground(Color.darkGray);
 
         JPanel listConvertorPanel = new JPanel();
         ListConverting listConv = new ListConverting();
         listConvertorPanel.setLayout(new GridLayout());
+        listConvertorPanel.setPreferredSize(new Dimension(playerWidth, converterHeight));
         listConvertorPanel.add(listConv.getContentPane());
 
         converterPanel.add(playerPanel, BorderLayout.NORTH);
@@ -141,7 +148,7 @@ public class ViewConverter extends JFrame {
         advanceSearchPane.removeAll();
         // advanceVideo = new AdvancedSearchVideo();
         advanceSearchPane.add(advanceVideo.getContentPane());
-        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(20,0,20,0));
+        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(ADV_VIDEO2,0,ADV_VIDEO2,0));
         mainPanel.updateUI();
     }
 
@@ -153,7 +160,7 @@ public class ViewConverter extends JFrame {
         JLabel textAll = new JLabel();
         textAll.setText("Busqueda por defecto");
         advanceSearchPane.add(textAll);
-        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(70,0,70,0));
+        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(ADVANCED_SEARCH7,0, ADVANCED_SEARCH7,0));
         mainPanel.updateUI();
     }
 
@@ -161,7 +168,7 @@ public class ViewConverter extends JFrame {
         advanceSearchPane.removeAll();
         //advanceAudio = new AdvancedSearchAudio();
         advanceSearchPane.add(advanceAudio.getContentPane());
-        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(49,0,49,0));
+        advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(ADV_AUDIO5,0,ADV_AUDIO5,0));
         mainPanel.updateUI();
     }
 
@@ -252,3 +259,4 @@ public class ViewConverter extends JFrame {
 }
 
 
+    

@@ -16,6 +16,7 @@ package com.fundacionjala.convertor.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 /**
  * @author Dennis Montaño
@@ -28,13 +29,16 @@ public class ListFileView extends JDialog{
     private JList lstSearchResult;
     private JPanel pnlMain;
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+    private int LIST_HEIGHT_37 = (int) (dim.getHeight()*37)/100;
+
+    private File url = null;
 
     /**
      * List of data received.
      */
     public ListFileView() {
         pnlMain = new JPanel(new GridBagLayout());
-        listModel.addElement("Resultados de busqueda. Probar file type video y audio");
+        listModel.addElement("Resultados de busqueda. Click derecho para opciones");
         lstSearchResult = new JList(listModel);
         scrlSearchResult = new JScrollPane(lstSearchResult);
         initializeControls();
@@ -60,15 +64,17 @@ public class ListFileView extends JDialog{
         c.weighty = 1.0;
         pnlMain.add(scrlSearchResult, c);
         this.add(pnlMain);
-
+        lstSearchResult.addListSelectionListener(e -> {
+            Object p = lstSearchResult.getSelectedValue();
+            url = new File(p.toString());
+        });
     }
 
     /**
      *  Set of size.
      */
     private void initializeControls() {
-        lstSearchResult.setPreferredSize(new Dimension(((int) dim.getWidth())/3, ((int) dim.getHeight())-640));
-        scrlSearchResult.setPreferredSize(new Dimension(((int) dim.getWidth())/3, ((int) dim.getHeight())-640));
+        scrlSearchResult.setPreferredSize(new Dimension(((int) dim.getWidth())/3, LIST_HEIGHT_37));
     }
 
     public DefaultListModel getListModel() {
@@ -78,4 +84,6 @@ public class ListFileView extends JDialog{
     public void setListModel(DefaultListModel list) {
         listModel.clear();
     }
+
+    public File getUrl() { return url; }
 }
