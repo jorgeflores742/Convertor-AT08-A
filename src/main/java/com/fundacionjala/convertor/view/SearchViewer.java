@@ -14,16 +14,8 @@
  */
 package com.fundacionjala.convertor.view;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JFileChooser;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -87,7 +79,13 @@ public class SearchViewer extends JDialog implements ActionListener {
         lblSize.setText("Size :");
         lblFileType.setText("File Type :");
         btnSearch.setText("Search");
-        btnClearList.setText("Clear List");
+        btnClearList.setIcon(new ImageIcon("C:\\Users\\wiltrouble\\Downloads\\iconos\\clear.png"));
+        btnClearList.setLayout(null);
+        btnClearList.setPreferredSize(new Dimension(48,48));
+        btnClearList.setBackground(Color.white);
+        btnClearList.setBorder(BorderFactory.createEmptyBorder());
+
+        //validate();
     }
 
     /**
@@ -101,6 +99,7 @@ public class SearchViewer extends JDialog implements ActionListener {
         gridPane.gridy = 0;
         gridPane.anchor = GridBagConstraints.LINE_END;
         pnlMain.add(lblPath, gridPane);
+        pnlMain.setBackground(Color.white);
 
         gridPane.gridx = 1;
         gridPane.gridy = 0;

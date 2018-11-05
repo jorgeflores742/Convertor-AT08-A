@@ -17,7 +17,7 @@ public class ViewConverter extends JFrame {
     private int playerHeight = (int) (dim.getHeight()*40)/100;
     private int converterHeight = (int) (dim.getHeight()*28)/100;
 
-    JPanel mainPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    JPanel mainPanel = new JPanel();
     JPanel advanceSearchPane = new JPanel();
     SearchViewer sView;
     AdvancedSearchVideo advanceVideo;
@@ -41,7 +41,7 @@ public class ViewConverter extends JFrame {
      * initializing main panel.
      */
     public void iniView() {
-        setBounds(0, 0, (int) dim.getWidth(), (int)dim.getHeight());
+        setBounds(0, 0, (int) dim.getWidth(), (int)dim.getHeight()-40);
         setTitle("Convertor");
         setResizable(false);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -55,7 +55,7 @@ public class ViewConverter extends JFrame {
     public void settingsView() {
         //panel principal
 
-        mainPanel.setBackground(Color.red);
+        //mainPanel.setBackground(Color.red);
         add(mainPanel);
 
         /**
@@ -64,12 +64,13 @@ public class ViewConverter extends JFrame {
 
         //panel de busqueda
         JPanel searchPanel = new JPanel();
-        searchPanel.setBackground(Color.blue);
+        searchPanel.setBackground(Color.white);
         searchPanel.setLayout(new BoxLayout(searchPanel, BoxLayout.Y_AXIS));
 
         JPanel defaultSearchPanel = new JPanel();
         // sView = new SearchViewer();
         defaultSearchPanel.add(sView.getContentPane());
+        defaultSearchPanel.setBackground(Color.white);
         System.out.println(dim);
 
         JLabel textAll = new JLabel();
@@ -78,6 +79,7 @@ public class ViewConverter extends JFrame {
         advanceSearchPane.setBorder(BorderFactory.createEmptyBorder(ADVANCED_SEARCH7,0, ADVANCED_SEARCH7,0));
 
         JPanel listLayout = new JPanel();
+        listLayout.setBackground(Color.white);
         listLayout.setLayout(new GridLayout());
         listLayout.add(listFile.getContentPane());
 
@@ -106,18 +108,20 @@ public class ViewConverter extends JFrame {
         PlayerMedia playerM = new PlayerMedia(playerWidth, playerHeight);
         playerPanel.add(playerM);
         playerPanel.setPreferredSize(new Dimension(playerWidth, playerHeight));
-        playerPanel.setBackground(Color.YELLOW);
+        //playerPanel.setBackground(Color.red);
 
         JPanel ConverterOptions = new JPanel();
+        ConverterOptions.setBackground(Color.white);
         Converter converting = new Converter();
         ConverterOptions.add(converting.getContentPane());
         ConverterOptions.setPreferredSize(new Dimension(playerWidth, converterHeight));
         ConverterOptions.setBackground(Color.darkGray);
 
         JPanel listConvertorPanel = new JPanel();
+        listConvertorPanel.setBackground(Color.white);
         ListConverting listConv = new ListConverting();
         listConvertorPanel.setLayout(new GridLayout());
-        listConvertorPanel.setPreferredSize(new Dimension(playerWidth, converterHeight));
+        listConvertorPanel.setPreferredSize(new Dimension(playerWidth, converterHeight-60));
         listConvertorPanel.add(listConv.getContentPane());
 
         converterPanel.add(playerPanel, BorderLayout.NORTH);

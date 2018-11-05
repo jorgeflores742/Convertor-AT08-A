@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class DataFiles extends JDialog {
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-    private int listHeight = (int) (dim.getHeight()*10)/100;
+    private int listHeight = (int) (dim.getHeight()*10)/100-50;
 
     JPanel dataPanel;
     DefaultListModel defaultList = new DefaultListModel();
@@ -41,7 +41,7 @@ public class DataFiles extends JDialog {
         c.weighty = 1.0;
         dataPanel.add(scrData, c);
 
-        dataPanel.setBackground(Color.green);
+        dataPanel.setBackground(Color.orange);
         this.add(dataPanel);
         this.setResizable(false);
 

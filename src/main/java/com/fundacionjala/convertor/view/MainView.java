@@ -44,7 +44,6 @@ public class MainView extends JFrame implements ActionListener {
         super();
 
         pnlMain = new JPanel();
-
         //Search section
         btnSearch = new JButton();
         lstSearchResult = new JList(listModel);
