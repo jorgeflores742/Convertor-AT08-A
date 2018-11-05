@@ -16,6 +16,7 @@ package com.fundacionjala.convertor.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 /**
  * @author Dennis Montaño
@@ -29,6 +30,8 @@ public class ListFileView extends JDialog{
     private JPanel pnlMain;
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
     private int LIST_HEIGHT_37 = (int) (dim.getHeight()*37)/100;
+
+    private File url = null;
 
     /**
      * List of data received.
@@ -61,7 +64,10 @@ public class ListFileView extends JDialog{
         c.weighty = 1.0;
         pnlMain.add(scrlSearchResult, c);
         this.add(pnlMain);
-
+        lstSearchResult.addListSelectionListener(e -> {
+            Object p = lstSearchResult.getSelectedValue();
+            url = new File(p.toString());
+        });
     }
 
     /**
@@ -78,4 +84,6 @@ public class ListFileView extends JDialog{
     public void setListModel(DefaultListModel list) {
         listModel.clear();
     }
+
+    public File getUrl() { return url; }
 }
