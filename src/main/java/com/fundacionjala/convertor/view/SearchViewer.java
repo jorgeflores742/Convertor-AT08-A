@@ -79,7 +79,7 @@ public class SearchViewer extends JDialog implements ActionListener {
         lblSize.setText("Size :");
         lblFileType.setText("File Type :");
         btnSearch.setText("Search");
-        btnClearList.setIcon(new ImageIcon("C:\\Users\\wiltrouble\\Downloads\\iconos\\clear.png"));
+        btnClearList.setIcon(new ImageIcon("C:\\Users\\Admin\\Desktop\\m\\Convertor-AT08-A\\img\\delete.png"));
         btnClearList.setLayout(null);
         btnClearList.setPreferredSize(new Dimension(48,48));
         btnClearList.setBackground(Color.white);
