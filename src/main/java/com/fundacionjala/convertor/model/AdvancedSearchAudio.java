@@ -9,6 +9,12 @@ import java.util.ArrayList;
 
 import static com.fundacionjala.convertor.Main.PATH_TO_FFMPEG_BIN_FFPROBE;
 
+/**
+ * Module Model AdvancedSearchAudio.
+ *
+ * @author Melvi Caballero.
+ * @version 1.0.
+ */
 public class AdvancedSearchAudio {
 
     /**
@@ -45,7 +51,7 @@ public class AdvancedSearchAudio {
             }
 
         } catch (Exception e) {
-           //add to logger when available
+            //add to logger when available
         }
 
         return result;
