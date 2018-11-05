@@ -78,7 +78,7 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
 
         lblAspectRatio = new JLabel();
         cmbAspectRatio = new JComboBox();
-        cmbAspectRatio.addItem("None");
+        cmbAspectRatio.addItem("All");
         cmbAspectRatio.addItem("4:3");
         cmbAspectRatio.addItem("12:5");
         cmbAspectRatio.addItem("16:9");
@@ -86,7 +86,7 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
 
         lblResolution = new JLabel();
         cmbResolution = new JComboBox();
-        cmbResolution.addItem("None");
+        cmbResolution.addItem("All");
         cmbResolution.addItem("740 x 480");
         cmbResolution.addItem("1280 x 720");
         cmbResolution.addItem("1920 x 1080");

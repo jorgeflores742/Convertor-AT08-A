@@ -11,6 +11,10 @@ public class Converter extends JDialog{
     private JPanel converterBox2;
     private JTextField pathFile;
 
+    public JButton getBtnConvert() {
+        return btnConvert;
+    }
+
     public Converter() {
         player = new JPanel();
         playerText = new JLabel();
@@ -21,7 +25,8 @@ public class Converter extends JDialog{
         pathFile = new JTextField();
 
 
-        btnConvert.setText("CONVERT");
+        //btnConvert.setText("CONVERT");
+        btnConvert.setIcon(new ImageIcon("img\\camera.png"));
         converterBox1.add(btnConvert);
         player.add(converterBox1);
 
@@ -31,8 +36,6 @@ public class Converter extends JDialog{
         player.add(converterBox2);
         this.add(player);
         this.setResizable(false);
-
-
 
 
     }

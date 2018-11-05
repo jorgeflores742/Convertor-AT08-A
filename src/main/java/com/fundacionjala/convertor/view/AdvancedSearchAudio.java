@@ -20,7 +20,7 @@ public class AdvancedSearchAudio extends JDialog{
 
         lblType = new JLabel();
         cmbType = new JComboBox();
-        typeList.add("None");
+        typeList.add("ALl");
         typeList.add("mp3");
         typeList.add("wav");
         typeList.add("ogg");
@@ -32,7 +32,7 @@ public class AdvancedSearchAudio extends JDialog{
 
         lblChannels = new JLabel();
         cmbChannels = new JComboBox();
-        channelsList.add("None");
+        channelsList.add("All");
         channelsList.add("Mono");
         channelsList.add("Stereo");
         channelsList.add("2.1");
