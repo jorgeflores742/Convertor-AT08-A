@@ -29,7 +29,7 @@ public class AdvancedSearchVideo {
      * @return
      * @throws IOException
      */
-    public String searchByLastModifiedTime(String pathFile) throws IOException {
+    private String searchByLastModifiedTime(String pathFile) throws IOException {
         Path path = Paths.get(pathFile);
         String attribList = "basic:size,lastModifiedTime";
         Map<String, Object> attribs = Files.readAttributes(path, attribList);
@@ -41,7 +41,7 @@ public class AdvancedSearchVideo {
      * @return
      * @throws IOException
      */
-    public String creationFileTime(String creationTimeFile) throws IOException {
+    private String creationFileTime(String creationTimeFile) throws IOException {
         Path path = Paths.get(creationTimeFile);
         BasicFileAttributeView bfv = Files.getFileAttributeView(path, BasicFileAttributeView.class);
         BasicFileAttributes bfa = bfv.readAttributes();
@@ -55,7 +55,7 @@ public class AdvancedSearchVideo {
      * @return
      * @throws IOException
      */
-    public String fileOwnerAttributeView(String pathFile) throws IOException {
+    private String fileOwnerAttributeView(String pathFile) throws IOException {
         Path path = Paths.get(pathFile);
         FileOwnerAttributeView foav = Files.getFileAttributeView(path, FileOwnerAttributeView.class);
 
@@ -83,17 +83,17 @@ public class AdvancedSearchVideo {
                 Boolean correct = true;
                 ffprobeResult = ffprobe.probe(file.getAbsolutePath());
 
-                if (criteria.getVideoType() != "None") {
+                if (criteria.getVideoType() != "All") {
                     if (criteria.getVideoType() != file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1))
                         correct = false;
                 }
 
-                if (correct && criteria.getFps() != "None") {
+                if (correct && criteria.getFps() != "All") {
                     if ((int) Double.parseDouble(criteria.getFps()) != ffprobeResult.getStreams().get(0).avg_frame_rate.getNumerator())
                         correct = false;
                 }
 
-                if (correct && criteria.getResolution() != "None") {
+                if (correct && criteria.getResolution() != "All") {
                     //extract values
                     int width = 0;
                     int height = 0;
@@ -108,7 +108,7 @@ public class AdvancedSearchVideo {
                         correct = false;
                 }
 
-                if (correct && criteria.getAspectRatio() != "None") {
+                if (correct && criteria.getAspectRatio() != "All") {
                     if (criteria.getAspectRatio() != ffprobeResult.getStreams().get(0).display_aspect_ratio)
                         correct = false;
                 }

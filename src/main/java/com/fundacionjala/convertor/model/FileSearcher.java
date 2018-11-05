@@ -15,6 +15,8 @@
 
 package com.fundacionjala.convertor.model;
 
+import com.fundacionjala.convertor.controller.SearchCriteria;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -28,6 +30,7 @@ public class FileSearcher {
     public static final long LITTLE = 512000000L;
     public static final long MEDIUM = 1024000000L;
     private static final long BIG = 10240000000L;
+    ArrayList<File> finalResult;
 
     /**
      * This program searchs files using criteria of name,
@@ -39,24 +42,29 @@ public class FileSearcher {
     }
 
     /**
-     * @param path path for searching.
-     * @param name name of file.
-     * @param ext  extension for searching.
-     * @param size size for searching.
-     * @return list of files that meet the criteria searching.
-     * <p>
-     * This main method diference between files and directories.
+     * @param searchCriteria
+     * @return This main method diference between files and directories.
      */
 
-    public ArrayList<File> search(String path, String name, String ext, String size) {
+    public ArrayList<File> search(SearchCriteria searchCriteria) {
         ArrayList<File> fileList = new ArrayList<>(1);
-        File dir = new File(path);
+        File dir = new File(searchCriteria.getPath());
         for (File file : Objects.requireNonNull(dir.listFiles())) {
             if (file.isDirectory()) {
-                fileList.addAll(search(file.getPath(), name, ext, size));
-            } else if (meetCriteria(file, name, ext, size)) {
+                searchCriteria.setPath(file.getPath());
+                fileList.addAll(search(searchCriteria));
+            } else if (meetCriteria(file, searchCriteria.getName(), searchCriteria.getExt(), searchCriteria.getSize())) {
                 fileList.add(file);
             }
+        }
+        finalResult.clear();
+        if (searchCriteria.getAdvanceType().equals("Video")) {
+            AdvancedSearchVideo advancedSearchVideo = new AdvancedSearchVideo();
+            finalResult = advancedSearchVideo.FilterCriteria(fileList, searchCriteria);
+        }
+        if (searchCriteria.getAdvanceType().equals("Audio")) {
+            AdvancedSearchAudio advancedSearchAudio = new AdvancedSearchAudio();
+            finalResult = advancedSearchAudio.FilterCriteria(fileList, searchCriteria);
         }
         return fileList;
     }
@@ -129,5 +137,6 @@ public class FileSearcher {
             return true;
         }
         return false;
+
     }
 }

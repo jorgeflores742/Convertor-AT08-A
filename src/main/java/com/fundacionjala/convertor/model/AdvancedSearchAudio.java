@@ -36,12 +36,12 @@ public class AdvancedSearchAudio {
                 Boolean correct = true;
                 ffprobeResult = ffprobe.probe(file.getAbsolutePath());
 
-                if (criteria.getAudioType() != "None") {
+                if (criteria.getAudioType() != "All") {
                     if (criteria.getAudioType() != file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1))
                         correct = false;
                 }
 
-                if (correct && criteria.getChannels() != "None") {
+                if (correct && criteria.getChannels() != "All") {
                     if (criteria.getChannels() != ffprobeResult.getStreams().get(0).channel_layout)
                         correct = false;
                 }
