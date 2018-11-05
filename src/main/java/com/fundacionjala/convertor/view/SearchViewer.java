@@ -14,16 +14,8 @@
  */
 package com.fundacionjala.convertor.view;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JFileChooser;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -86,8 +78,16 @@ public class SearchViewer extends JDialog implements ActionListener {
         txtName.setColumns(20);
         lblSize.setText("Size :");
         lblFileType.setText("File Type :");
-        btnSearch.setText("Search");
-        btnClearList.setText("Clear List");
+
+        btnSearch.setIcon(new ImageIcon("img\\search.png"));
+        btnSearch.setPreferredSize(new Dimension(58, 58));
+        btnSearch.setBackground(Color.white);
+        //btnSearch.setLayout(null);
+
+        btnClearList.setIcon(new ImageIcon("img\\delete.png"));
+        btnClearList.setPreferredSize(new Dimension(48, 48));
+        btnSearch.setBackground(Color.white);
+        //btnClearList.setLayout(null);
     }
 
     /**

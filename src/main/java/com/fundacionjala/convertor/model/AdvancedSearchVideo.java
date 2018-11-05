@@ -10,17 +10,15 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.fundacionjala.convertor.controller.SearchCriteria;
-import net.bramp.ffmpeg.FFmpeg;
 import net.bramp.ffmpeg.FFprobe;
 import net.bramp.ffmpeg.probe.FFmpegProbeResult;
 
 import static com.fundacionjala.convertor.Main.PATH_TO_FFMPEG_BIN_FFPROBE;
 
-
 /**
- * Module Controller SearchController.
+ * Module Model AdvancedSearchVideo.
  *
- * @author Wilson Lopez
+ * @author Melvi Caballero.
  * @version 1.0.
  */
 
@@ -67,9 +65,8 @@ public class AdvancedSearchVideo {
     }
 
     /**
-     *
      * @param resultList List of Files
-     * @param criteria sompare criteria
+     * @param criteria   sompare criteria
      * @return filtered list
      */
     public ArrayList<File> FilterCriteria(ArrayList<File> resultList, SearchCriteria criteria) {
