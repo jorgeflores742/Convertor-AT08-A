@@ -4,11 +4,8 @@ import com.sun.jna.NativeLibrary;
 import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -56,9 +53,18 @@ public class PlayerMedia extends JPanel {
      */
     private void createButtons() {
         JPanel buttonsContainer = new JPanel();
-        JButton btnPlay = new JButton("Play");
-        JButton btnRewind = new JButton("Rewind");
-        JButton btnSkip = new JButton("Skip");
+        JButton btnPlay = new JButton();
+        btnPlay.setIcon(new ImageIcon("img\\play.png"));
+        btnPlay.setPreferredSize(new Dimension(32, 32));
+
+
+        JButton btnRewind = new JButton();
+        btnRewind.setIcon(new ImageIcon("img\\rewind.png"));
+        btnRewind.setPreferredSize(new Dimension(32, 32));
+
+        JButton btnSkip = new JButton();
+        btnSkip.setIcon(new ImageIcon("img\\fast_forward.png"));
+        btnSkip.setPreferredSize(new Dimension(32, 32));
 
         btnPlay.addActionListener(new ActionListener() {
             @Override

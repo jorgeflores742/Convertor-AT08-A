@@ -55,7 +55,7 @@ public class ViewConverter extends JFrame {
     public void settingsView() {
         //panel principal
 
-        mainPanel.setBackground(Color.red);
+        //mainPanel.setBackground(Color.white);
         add(mainPanel);
 
         /**
@@ -106,7 +106,7 @@ public class ViewConverter extends JFrame {
         PlayerMedia playerM = new PlayerMedia(listFile, playerWidth, playerHeight);
         playerPanel.add(playerM);
         playerPanel.setPreferredSize(new Dimension(playerWidth, playerHeight));
-        playerPanel.setBackground(Color.YELLOW);
+        //playerPanel.setBackground(Color.YELLOW);
 
         JPanel ConverterOptions = new JPanel();
         Converter converting = new Converter();

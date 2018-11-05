@@ -41,7 +41,7 @@ public class DataFiles extends JDialog {
         c.weighty = 1.0;
         dataPanel.add(scrData, c);
 
-        dataPanel.setBackground(Color.green);
+        //dataPanel.setBackground(Color.green);
         this.add(dataPanel);
         this.setResizable(false);
 
