@@ -46,4 +46,7 @@ public class DataFiles extends JDialog {
         this.setResizable(false);
 
     }
+    public DefaultListModel getDefaultList() {
+        return defaultList;
+    }
 }

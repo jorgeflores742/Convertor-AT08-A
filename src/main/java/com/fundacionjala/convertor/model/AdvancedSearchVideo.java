@@ -118,7 +118,7 @@ public class AdvancedSearchVideo {
             }
 
         } catch (Exception e) {
-            //add to logger when available
+            System.out.println("FAIL");//add to logger when available
         }
 
         return result;

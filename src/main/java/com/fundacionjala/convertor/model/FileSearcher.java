@@ -48,6 +48,7 @@ public class FileSearcher {
      * This main method diference between files and directories.
      */
 
+    //public ArrayList<File> search(String path, String name, String ext, String size) {
     public ArrayList<File> search(String path, String name, String ext, String size) {
         ArrayList<File> fileList = new ArrayList<>(1);
         File dir = new File(path);
