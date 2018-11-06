@@ -41,11 +41,12 @@ public class AdvancedSearchAudio {
                 }
 
                 if (criteria.getAudioType() != "All") {
-                    if (!criteria.getAudioType().equals(file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)))
+                    if (!criteria.getAudioType().equals((file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase()))
                         correct = false;
                 }
 
                 if (correct && criteria.getChannels() != "All") {
+                    System.out.println(file.getName()+" "+ffprobeResult.getStreams().get(0).channel_layout);
                     if (!criteria.getChannels().equals(ffprobeResult.getStreams().get(0).channel_layout))
                         correct = false;
                 }

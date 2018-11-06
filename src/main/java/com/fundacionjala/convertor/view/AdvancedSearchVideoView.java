@@ -64,6 +64,8 @@ public class AdvancedSearchVideoView extends JDialog implements ActionListener  
         cmbType.addItem("flv");
         cmbType.addItem("wmv");
         cmbType.addItem("mkv");
+        cmbType.addItem("mov");
+        cmbType.addItem("webm");
 
         lblFps = new JLabel();
         cmbFps = new JComboBox();
@@ -91,6 +93,7 @@ public class AdvancedSearchVideoView extends JDialog implements ActionListener  
         cmbResolution.addItem("All");
         cmbResolution.addItem("640x360");
         cmbResolution.addItem("740x480");
+        cmbResolution.addItem("768x576");
         cmbResolution.addItem("1280x720");
         cmbResolution.addItem("1920x1080");
         cmbResolution.addItem("2048x1080");

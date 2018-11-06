@@ -33,8 +33,8 @@ public class AdvancedSearchAudioView extends JDialog{
         lblChannels = new JLabel();
         cmbChannels = new JComboBox();
         channelsList.add("All");
-        channelsList.add("Mono");
-        channelsList.add("Stereo");
+        channelsList.add("mono");
+        channelsList.add("stereo");
         channelsList.add("2.1");
         channelsList.add("3.0");
         channelsList.add("3.1");
