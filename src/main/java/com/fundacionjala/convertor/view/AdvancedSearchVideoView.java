@@ -63,6 +63,7 @@ public class AdvancedSearchVideoView extends JDialog implements ActionListener  
         cmbType.addItem("mp4");
         cmbType.addItem("flv");
         cmbType.addItem("wmv");
+        cmbType.addItem("mkv");
 
         lblFps = new JLabel();
         cmbFps = new JComboBox();

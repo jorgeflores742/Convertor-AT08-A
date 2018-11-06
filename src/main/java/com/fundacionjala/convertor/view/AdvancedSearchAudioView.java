@@ -20,7 +20,7 @@ public class AdvancedSearchAudioView extends JDialog{
 
         lblType = new JLabel();
         cmbType = new JComboBox();
-        typeList.add("ALl");
+        typeList.add("All");
         typeList.add("mp3");
         typeList.add("wav");
         typeList.add("ogg");

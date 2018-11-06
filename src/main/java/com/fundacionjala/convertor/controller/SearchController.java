@@ -12,6 +12,11 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.nio.file.attribute.FileTime;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
@@ -70,14 +75,26 @@ public class SearchController implements ActionListener,ListSelectionListener {
         searchCriteria.setAdvancedType(type);
         if (type.equals("All")) {
             searchCriteria.setExt("");
+            searchCriteria.setVideoType("All");
+            searchCriteria.setFps("All");
+            searchCriteria.setAspectRatio("All");
+            searchCriteria.setResolution("All");
+            searchCriteria.setAudioType("All");
+            searchCriteria.setChannels("All");
         } else if (type.equals("Video")) {
             searchCriteria.setVideoType(advancedSearchVideo.getCmbType().getSelectedItem().toString());
             searchCriteria.setFps(advancedSearchVideo.getCmbFps().getSelectedItem().toString());
             searchCriteria.setAspectRatio(advancedSearchVideo.getCmbAspectRatio().getSelectedItem().toString());
             searchCriteria.setResolution(advancedSearchVideo.getCmbResolution().getSelectedItem().toString());
+            searchCriteria.setAudioType("All");
+            searchCriteria.setChannels("All");
         } else if (type.equals("Audio")) {
             searchCriteria.setAudioType(advancedSearchAudio.getCmbType().getSelectedItem().toString());
             searchCriteria.setChannels(advancedSearchAudio.getCmbChannels().getSelectedItem().toString());
+            searchCriteria.setVideoType("All");
+            searchCriteria.setFps("All");
+            searchCriteria.setAspectRatio("All");
+            searchCriteria.setResolution("All");
         }
 
     }
@@ -88,6 +105,7 @@ public class SearchController implements ActionListener,ListSelectionListener {
     @Override
     public void actionPerformed(final ActionEvent e) {
         if (e.getSource() == searchViewer.getBtnSearch()) {
+            listFileView.getListModel().clear();
             loadCriteria();
             advanceResult = fileSearcher.search(searchCriteria);
 
@@ -98,6 +116,7 @@ public class SearchController implements ActionListener,ListSelectionListener {
         }
         else if(e.getSource() == searchViewer.getBtnClearList()) {
             listFileView.getListModel().clear();
+            listFileView.getLstSearchResult().updateUI();
             dataFiles.getDefaultList().clear();
         }
 
@@ -112,11 +131,19 @@ public class SearchController implements ActionListener,ListSelectionListener {
             System.out.println(value);
             dataFiles.getDefaultList().addElement(value);
             File selectedFile = getFile(value);
-            dataFiles.getDefaultList().addElement(selectedFile.getName());
-            dataFiles.getDefaultList().addElement(selectedFile.length());
+            Path path = Paths.get(selectedFile.getAbsolutePath());
+            BasicFileAttributes attrib = null;
             try {
-                System.out.println(Files.probeContentType(selectedFile.toPath()));
-                dataFiles.getDefaultList().addElement(Files.probeContentType(selectedFile.toPath()));
+                attrib = Files.readAttributes(path, BasicFileAttributes.class);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+            FileTime fileTime=attrib.creationTime();
+            dataFiles.getDefaultList().addElement("Name: ".concat(selectedFile.getName()));
+            dataFiles.getDefaultList().addElement("Size: ".concat(Long.toString(attrib.size())).concat(" bytes"));
+            dataFiles.getDefaultList().addElement("Creation time: ".concat(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(fileTime.toMillis())));
+            try {
+                dataFiles.getDefaultList().addElement("Type: ".concat(Files.probeContentType(path)));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }

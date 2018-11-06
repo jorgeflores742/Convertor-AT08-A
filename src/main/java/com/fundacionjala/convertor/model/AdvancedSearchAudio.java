@@ -31,18 +31,22 @@ public class AdvancedSearchAudio {
             ffprobe = new FFprobe(PATH_TO_FFMPEG_BIN_FFPROBE);
 
             //Para cada file en la lista
-            FFmpegProbeResult ffprobeResult;
+            FFmpegProbeResult ffprobeResult = null;
             for (File file : resultList) {
                 Boolean correct = true;
-                ffprobeResult = ffprobe.probe(file.getAbsolutePath());
+                try {
+                    ffprobeResult = ffprobe.probe(file.getAbsolutePath());
+                } catch (Exception e) {
+                    correct = false;
+                }
 
                 if (criteria.getAudioType() != "All") {
-                    if (criteria.getAudioType() != file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1))
+                    if (!criteria.getAudioType().equals(file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)))
                         correct = false;
                 }
 
                 if (correct && criteria.getChannels() != "All") {
-                    if (criteria.getChannels() != ffprobeResult.getStreams().get(0).channel_layout)
+                    if (!criteria.getChannels().equals(ffprobeResult.getStreams().get(0).channel_layout))
                         correct = false;
                 }
 
@@ -52,6 +56,7 @@ public class AdvancedSearchAudio {
 
         } catch (Exception e) {
             //add to logger when available
+            System.out.println("Fail in advanced audio search.");
         }
 
         return result;
