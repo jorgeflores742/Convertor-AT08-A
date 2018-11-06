@@ -28,7 +28,7 @@ import java.util.ArrayList;
  * @author Dennis Montaño.
  * @version 1.0
  */
-public class AdvancedSearchVideo extends JDialog implements ActionListener {
+public class AdvancedSearchVideoView extends JDialog implements ActionListener  {
 
     private JPanel pnlVideoMain;
 
@@ -52,12 +52,12 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
     /**
      * Search for videos with specific data.
      */
-    public AdvancedSearchVideo() {
+    public AdvancedSearchVideoView() {
         pnlVideoMain = new JPanel(new GridBagLayout());
 
         lblType = new JLabel();
         cmbType = new JComboBox();
-        cmbType.addItem("None");
+        cmbType.addItem("All");
         cmbType.addItem("avi");
         cmbType.addItem("mpg");
         cmbType.addItem("mp4");
@@ -66,8 +66,9 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
 
         lblFps = new JLabel();
         cmbFps = new JComboBox();
-        cmbFps.addItem("None");
+        cmbFps.addItem("All");
         cmbFps.addItem(24f);
+        cmbFps.addItem(25f);
         cmbFps.addItem(27f);
         cmbFps.addItem(29.9f);
         cmbFps.addItem(30f);
@@ -87,14 +88,15 @@ public class AdvancedSearchVideo extends JDialog implements ActionListener {
         lblResolution = new JLabel();
         cmbResolution = new JComboBox();
         cmbResolution.addItem("All");
-        cmbResolution.addItem("740 x 480");
-        cmbResolution.addItem("1280 x 720");
-        cmbResolution.addItem("1920 x 1080");
-        cmbResolution.addItem("2048 x 1080");
-        cmbResolution.addItem("3840 x 2160");
-        cmbResolution.addItem("4096 x 2160");
-        cmbResolution.addItem("7680 x 4320");
-        cmbResolution.addItem("2560 x 1440");
+        cmbResolution.addItem("640x360");
+        cmbResolution.addItem("740x480");
+        cmbResolution.addItem("1280x720");
+        cmbResolution.addItem("1920x1080");
+        cmbResolution.addItem("2048x1080");
+        cmbResolution.addItem("3840x2160");
+        cmbResolution.addItem("4096x2160");
+        cmbResolution.addItem("7680x4320");
+        cmbResolution.addItem("2560x1440");
 
         initializeControls();
         initializeFrame();

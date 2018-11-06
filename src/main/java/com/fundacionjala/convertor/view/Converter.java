@@ -31,7 +31,7 @@ public class Converter extends JDialog{
         player.add(converterBox1);
 
         converterBox2 = new JPanel();
-        AdvancedSearchVideo asv = new AdvancedSearchVideo();
+        AdvancedSearchVideoView asv = new AdvancedSearchVideoView();
         converterBox2.add(asv.getContentPane());
         player.add(converterBox2);
         this.add(player);

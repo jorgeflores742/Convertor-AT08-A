@@ -78,22 +78,27 @@ public class AdvancedSearchVideo {
             ffprobe = new FFprobe(PATH_TO_FFMPEG_BIN_FFPROBE);
 
             //Para cada file en la lista
-            FFmpegProbeResult ffprobeResult;
+            FFmpegProbeResult ffprobeResult = null;
             for (File file : resultList) {
                 Boolean correct = true;
-                ffprobeResult = ffprobe.probe(file.getAbsolutePath());
-
-                if (criteria.getVideoType() != "All") {
-                    if (criteria.getVideoType() != file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1))
+                try{
+                    ffprobeResult = ffprobe.probe(file.getAbsolutePath());
+                } catch (Exception e) {
+                    correct = false;
+                }
+                if (!criteria.getVideoType().equals("All")) {
+                    if (!criteria.getVideoType().equals(file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)))
+                        correct = false;
+                }
+                if (correct && (!criteria.getFps().equals("All"))) {
+                    System.out.println((int)Float.parseFloat(criteria.getFps()));
+                    System.out.println(ffprobeResult.getStreams().get(0).avg_frame_rate.getNumerator());
+                    if ((int)Float.parseFloat(criteria.getFps())*1000 != ffprobeResult.getStreams().get(0).avg_frame_rate.getNumerator())
                         correct = false;
                 }
 
-                if (correct && criteria.getFps() != "All") {
-                    if ((int) Double.parseDouble(criteria.getFps()) != ffprobeResult.getStreams().get(0).avg_frame_rate.getNumerator())
-                        correct = false;
-                }
-
-                if (correct && criteria.getResolution() != "All") {
+                if (correct && (!criteria.getResolution().equals("All"))) {
+                    System.out.println(ffprobeResult.getStreams().get(0).width+" "+ffprobeResult.getStreams().get(0).height);
                     //extract values
                     int width = 0;
                     int height = 0;
@@ -108,8 +113,9 @@ public class AdvancedSearchVideo {
                         correct = false;
                 }
 
-                if (correct && criteria.getAspectRatio() != "All") {
-                    if (criteria.getAspectRatio() != ffprobeResult.getStreams().get(0).display_aspect_ratio)
+                if (correct && (!criteria.getAspectRatio().equals("All"))) {
+                    System.out.println(ffprobeResult.getStreams().get(0).display_aspect_ratio);
+                    if (!criteria.getAspectRatio().equals(ffprobeResult.getStreams().get(0).display_aspect_ratio))
                         correct = false;
                 }
 
@@ -119,6 +125,7 @@ public class AdvancedSearchVideo {
 
         } catch (Exception e) {
             //add to logger when available
+            System.out.println("There is a fail");
         }
 
         return result;
