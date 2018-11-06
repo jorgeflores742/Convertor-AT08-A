@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class AdvancedSearchAudio extends JDialog{
+public class AdvancedSearchAudioView extends JDialog{
     private JPanel pnlAudioMain;
 
     private JLabel lblType;
@@ -15,7 +15,7 @@ public class AdvancedSearchAudio extends JDialog{
     private JComboBox cmbChannels;
     private ArrayList<String> channelsList = new ArrayList<>(1);
 
-    public AdvancedSearchAudio() {
+    public AdvancedSearchAudioView() {
         pnlAudioMain = new JPanel(new GridBagLayout());
 
         lblType = new JLabel();

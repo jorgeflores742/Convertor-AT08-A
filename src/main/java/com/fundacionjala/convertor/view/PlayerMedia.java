@@ -2,6 +2,7 @@ package com.fundacionjala.convertor.view;
 
 import com.sun.jna.NativeLibrary;
 import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
+import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
 import javax.swing.*;
@@ -91,5 +92,12 @@ public class PlayerMedia extends JPanel {
         buttonsContainer.add(btnSkip);
 
         this.add(buttonsContainer, BorderLayout.CENTER);
+    }
+
+    public void setFile(File file) {
+        this.file=file;
+    }
+    public EmbeddedMediaPlayer getPlayer() {
+        return player.getMediaPlayer();
     }
 }

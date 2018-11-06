@@ -20,6 +20,8 @@ public class SearchCriteria {
     private String audioType;
     private String channels;
 
+    private String advancedType;
+
     /**
      * @return path
      */
@@ -170,5 +172,13 @@ public class SearchCriteria {
      */
     public void setAudioType(String audioType) {
         this.audioType = audioType;
+    }
+
+    public void setAdvancedType(String advancedType) {
+        this.advancedType=advancedType;
+    }
+
+    public String getAdvancedType () {
+        return advancedType;
     }
 }

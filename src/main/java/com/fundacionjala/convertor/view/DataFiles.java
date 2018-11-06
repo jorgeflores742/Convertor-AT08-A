@@ -44,6 +44,9 @@ public class DataFiles extends JDialog {
         //dataPanel.setBackground(Color.green);
         this.add(dataPanel);
         this.setResizable(false);
+    }
 
+    public DefaultListModel getDefaultList() {
+        return defaultList;
     }
 }

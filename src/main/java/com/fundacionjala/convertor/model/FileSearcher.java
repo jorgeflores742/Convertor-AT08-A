@@ -30,7 +30,6 @@ public class FileSearcher {
     public static final long LITTLE = 512000000L;
     public static final long MEDIUM = 1024000000L;
     private static final long BIG = 10240000000L;
-    ArrayList<File> finalResult;
 
     /**
      * This program searchs files using criteria of name,
@@ -57,16 +56,17 @@ public class FileSearcher {
                 fileList.add(file);
             }
         }
-        finalResult.clear();
-        if (searchCriteria.getAdvanceType().equals("Video")) {
+        ArrayList<File> finalResult;
+        if (searchCriteria.getAdvancedType().equals("Video")) {
             AdvancedSearchVideo advancedSearchVideo = new AdvancedSearchVideo();
             finalResult = advancedSearchVideo.FilterCriteria(fileList, searchCriteria);
-        }
-        if (searchCriteria.getAdvanceType().equals("Audio")) {
+        } else if (searchCriteria.getAdvancedType().equals("Audio")) {
             AdvancedSearchAudio advancedSearchAudio = new AdvancedSearchAudio();
             finalResult = advancedSearchAudio.FilterCriteria(fileList, searchCriteria);
+        } else {
+            finalResult = fileList;
         }
-        return fileList;
+        return finalResult;
     }
 
     /**
