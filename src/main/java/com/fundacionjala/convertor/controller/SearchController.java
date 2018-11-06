@@ -69,6 +69,7 @@ public class SearchController implements ActionListener,ListSelectionListener {
 
     public void loadCriteria() {
         searchCriteria.setName(searchViewer.getTxtName().getText());
+        System.out.println(searchViewer.getTxtPath().getText());
         searchCriteria.setPath(searchViewer.getTxtPath().getText());
         searchCriteria.setSize(searchViewer.getCmbSize().getSelectedItem().toString());
         String type = searchViewer.getCmbFileType().getSelectedItem().toString();
@@ -107,7 +108,8 @@ public class SearchController implements ActionListener,ListSelectionListener {
         if (e.getSource() == searchViewer.getBtnSearch()) {
             listFileView.getListModel().clear();
             loadCriteria();
-            advanceResult = fileSearcher.search(searchCriteria);
+            advanceResult.clear();
+            advanceResult.addAll(fileSearcher.search(searchCriteria));
 
             for (File resu : advanceResult) {
                 listFileView.getListModel().addElement(resu.getAbsolutePath());

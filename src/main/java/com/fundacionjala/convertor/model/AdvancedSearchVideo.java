@@ -87,7 +87,7 @@ public class AdvancedSearchVideo {
                     correct = false;
                 }
                 if (!criteria.getVideoType().equals("All")) {
-                    if (!criteria.getVideoType().equals(file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)))
+                    if (!criteria.getVideoType().equals((file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase()))
                         correct = false;
                 }
                 if (correct && (!criteria.getFps().equals("All"))) {
