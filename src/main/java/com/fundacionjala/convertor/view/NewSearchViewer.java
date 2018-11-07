@@ -74,25 +74,31 @@ public class NewSearchViewer extends JDialog implements ActionListener {
      * Initialize elements.
      */
     private void initializeControls() {
+        pnlMain.setBackground(Color.orange);
         lblPath.setText("Path :");
         txtPath.setColumns(20);
         txtPath.setEditable(false);
-        btnPath.setText("Choose Path");
+
+        btnPath.setIcon(new ImageIcon("img\\folder.png"));
+        btnPath.setPreferredSize(new Dimension(25, 25));
+        btnPath.setBackground(Color.orange);
+        btnPath.setBorder(null);
+
+
         btnPath.addActionListener(this);
         lblName.setText("File Name :");
         txtName.setColumns(20);
         lblSize.setText("Size :");
         lblFileType.setText("File Type :");
 
-        btnSearch.setIcon(new ImageIcon("img\\search.png"));
-        btnSearch.setPreferredSize(new Dimension(48, 48));
-        btnSearch.setBackground(Color.white);
-        //btnSearch.setLayout(null);
+        btnSearch.setIcon(new ImageIcon("img\\searchBlack.png"));
+        btnSearch.setBackground(Color.orange);
+        btnSearch.setBorder(null);
 
-        btnClearList.setIcon(new ImageIcon("img\\delete.png"));
-        btnClearList.setPreferredSize(new Dimension(48, 48));
-        btnClearList.setBackground(Color.white);
-        //btnClearList.setLayout(null);
+        btnClearList.setIcon(new ImageIcon("img\\deleteBlack.png"));
+        btnClearList.setBackground(Color.orange);
+        btnClearList.setBorder(null);
+
     }
 
     /**
@@ -112,8 +118,8 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         gridPane.fill = GridBagConstraints.HORIZONTAL;
         pnlMain.add(txtPath, gridPane);
 
-        gridPane.gridx = 1;
-        gridPane.gridy = 1;
+        gridPane.gridx = 2;
+        gridPane.gridy = 0;
         gridPane.fill = GridBagConstraints.HORIZONTAL;
         pnlMain.add(btnPath, gridPane);
 
@@ -171,8 +177,8 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         gridPane.weighty = 0;
         pnlMain.add(cmbSize, gridPane);
 
-        gridPane.gridx = 1;
-        gridPane.gridy = 6;
+        gridPane.gridx = 0;
+        gridPane.gridy = 7;
         gridPane.fill = GridBagConstraints.HORIZONTAL;
         gridPane.anchor = GridBagConstraints.CENTER;
         gridPane.ipady = 0;
