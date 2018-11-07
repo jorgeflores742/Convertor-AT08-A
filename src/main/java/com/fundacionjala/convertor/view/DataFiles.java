@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class DataFiles extends JDialog {
-    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-    private int listHeight = (int) (dim.getHeight()*10)/100;
 
     JPanel dataPanel;
     DefaultListModel defaultList = new DefaultListModel();
@@ -22,7 +20,9 @@ public class DataFiles extends JDialog {
     }
 
     private void initializeControls() {
-        scrData.setPreferredSize(new Dimension(((int) dim.getWidth())/3, listHeight));
+
+        scrData.setPreferredSize(new Dimension(290, 100));
+
     }
 
     private void initializeFrame() {

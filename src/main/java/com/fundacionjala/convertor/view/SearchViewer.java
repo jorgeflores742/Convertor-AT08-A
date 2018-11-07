@@ -63,6 +63,8 @@ public class SearchViewer extends JDialog implements ActionListener {
         btnClearList = new JButton();
         initializeControls();
         initializeFrame();
+
+
     }
 
     /**
@@ -197,6 +199,7 @@ public class SearchViewer extends JDialog implements ActionListener {
             JFileChooser chooser = new JFileChooser();
             chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             chooser.setAcceptAllFileFilterUsed(false);
+
             int returnVal = chooser.showOpenDialog(this);
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 txtPath.setText(chooser.getSelectedFile().getAbsolutePath());
