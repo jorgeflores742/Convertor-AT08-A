@@ -1,10 +1,35 @@
+/*
+ * @Controller.java Copyright (c) 2018 Fundacion Jala. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * Please contact Fundacion Jala, 2643 Av Melchor Perez de Olguin, Colquiri
+ * Sud, Cochabamba, Bolivia. www.fundacion-jala.org if you need additional
+ * information or have any questions.
+ */
 package com.fundacionjala.convertor.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
-public class NewSearchViewer extends JDialog {
+/**
+ * Module View Searchview.
+ *
+ * @author Melvi Caballero
+ * @version 1.0
+ */
+public class NewSearchViewer extends JDialog implements ActionListener {
+
     private JPanel pnlMain;
 
     private JLabel lblPath;
@@ -23,9 +48,11 @@ public class NewSearchViewer extends JDialog {
     private JButton btnSearch;
 
     private JButton btnClearList;
-
+    /**
+     * Pane for default search.
+     */
     public NewSearchViewer() {
-        pnlMain = new JPanel();
+        pnlMain = new JPanel(new GridBagLayout());
         lblPath = new JLabel();
         txtPath = new JTextField();
         btnPath = new JButton();
@@ -43,21 +70,205 @@ public class NewSearchViewer extends JDialog {
 
     }
 
-    private void initializeFrame() {
+    /**
+     * Initialize elements.
+     */
+    private void initializeControls() {
         lblPath.setText("Path :");
         txtPath.setColumns(20);
-        btnPath.setText("...");
+        txtPath.setEditable(false);
+        btnPath.setText("Choose Path");
+        btnPath.addActionListener(this);
+        lblName.setText("File Name :");
+        txtName.setColumns(20);
+        lblSize.setText("Size :");
+        lblFileType.setText("File Type :");
 
+        btnSearch.setIcon(new ImageIcon("img\\search.png"));
+        btnSearch.setPreferredSize(new Dimension(48, 48));
+        btnSearch.setBackground(Color.white);
+        //btnSearch.setLayout(null);
 
+        btnClearList.setIcon(new ImageIcon("img\\delete.png"));
+        btnClearList.setPreferredSize(new Dimension(48, 48));
+        btnClearList.setBackground(Color.white);
+        //btnClearList.setLayout(null);
     }
 
-    private void initializeControls() {
-        pnlMain.add(lblPath);
-        pnlMain.add(txtPath);
-        pnlMain.add(btnPath);
+    /**
+     * initialize panes.
+     */
+    private void initializeFrame() {
+        GridBagConstraints gridPane = new GridBagConstraints();
+        gridPane.insets = new Insets(2, 2, 2, 2);
+
+        gridPane.gridx = 0;
+        gridPane.gridy = 0;
+        gridPane.anchor = GridBagConstraints.LINE_END;
+        pnlMain.add(lblPath, gridPane);
+
+        gridPane.gridx = 1;
+        gridPane.gridy = 0;
+        gridPane.fill = GridBagConstraints.HORIZONTAL;
+        pnlMain.add(txtPath, gridPane);
+
+        gridPane.gridx = 1;
+        gridPane.gridy = 1;
+        gridPane.fill = GridBagConstraints.HORIZONTAL;
+        pnlMain.add(btnPath, gridPane);
+
+        gridPane.gridx = 0;
+        gridPane.gridy = 2;
+        gridPane.fill = GridBagConstraints.NONE;
+        gridPane.anchor = GridBagConstraints.LINE_END;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.4;
+        gridPane.weighty = 0;
+        pnlMain.add(lblName, gridPane);
+
+        gridPane.gridx = 1;
+        gridPane.gridy = 2;
+        gridPane.fill = GridBagConstraints.HORIZONTAL;
+        gridPane.anchor = GridBagConstraints.CENTER;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.6;
+        gridPane.weighty = 0;
+        pnlMain.add(txtName, gridPane);
+
+        gridPane.gridx = 0;
+        gridPane.gridy = 5;
+        gridPane.fill = GridBagConstraints.NONE;
+        gridPane.anchor = GridBagConstraints.LINE_END;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.4;
+        gridPane.weighty = 0;
+        pnlMain.add(lblFileType, gridPane);
+
+        gridPane.gridx = 1;
+        gridPane.gridy = 5;
+        gridPane.fill = GridBagConstraints.HORIZONTAL;
+        gridPane.anchor = GridBagConstraints.CENTER;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.6;
+        gridPane.weighty = 0;
+        pnlMain.add(cmbFileType, gridPane);
+
+        gridPane.gridx = 0;
+        gridPane.gridy = 3;
+        gridPane.fill = GridBagConstraints.NONE;
+        gridPane.anchor = GridBagConstraints.LINE_END;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.4;
+        gridPane.weighty = 0;
+        pnlMain.add(lblSize, gridPane);
+
+        gridPane.gridx = 1;
+        gridPane.gridy = 3;
+        gridPane.fill = GridBagConstraints.HORIZONTAL;
+        gridPane.anchor = GridBagConstraints.CENTER;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.6;
+        gridPane.weighty = 0;
+        pnlMain.add(cmbSize, gridPane);
+
+        gridPane.gridx = 1;
+        gridPane.gridy = 6;
+        gridPane.fill = GridBagConstraints.HORIZONTAL;
+        gridPane.anchor = GridBagConstraints.CENTER;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.6;
+        gridPane.weighty = 0;
+        pnlMain.add(btnSearch, gridPane);
+
         this.add(pnlMain);
 
+        gridPane.gridx = 0;
+        gridPane.gridy = 6;
+        gridPane.fill = GridBagConstraints.VERTICAL;
+        gridPane.anchor = GridBagConstraints.CENTER;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.6;
+        gridPane.weighty = 0;
+        pnlMain.add(btnClearList, gridPane);
+        this.setResizable(false);
+    }
 
+    /**
+     * @param e choose a path.
+     */
+    @Override
+    public void actionPerformed(final ActionEvent e) {
+        if (e.getSource() == btnPath) {
 
+            JFileChooser fc=new JFileChooser();
+
+            //Abrimos la ventana, guardamos la opcion seleccionada por el usuario
+            int seleccion=fc.showOpenDialog(pnlMain);
+
+            //Si el usuario, pincha en aceptar
+            if(seleccion==JFileChooser.APPROVE_OPTION){
+
+                //Seleccionamos el fichero
+                File fichero=fc.getSelectedFile();
+
+                //Ecribe la ruta del fichero seleccionado en el campo de texto
+                txtPath.setText(fichero.getAbsolutePath());
+
+                try(FileReader fr=new FileReader(fichero)){
+                    String cadena="";
+                    int valor=fr.read();
+                    while(valor!=-1){
+                        cadena=cadena+(char)valor;
+                        valor=fr.read();
+                    }
+
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }        }
+    }
+
+    /**
+     * @return txtpath path.
+     */
+    public JTextField getTxtPath() {
+        return txtPath;
+    }
+
+    /**
+     * @return txtname name of file.
+     */
+    public JTextField getTxtName() {
+        return txtName;
+    }
+
+    /**
+     * @return cmbSize size of file.
+     */
+    public JComboBox getCmbSize() {
+        return cmbSize;
+    }
+
+    /**
+     * @return cmdfiletype type of file.
+     */
+    public JComboBox getCmbFileType() {
+        return cmbFileType;
+    }
+
+    /**
+     *
+     * @return button search.
+     */
+    public JButton getBtnSearch() {
+        return btnSearch;
+    }
+
+    /**
+     *
+     * @return button clear List.
+     */
+    public JButton getBtnClearList() {
+        return btnClearList;
     }
 }
