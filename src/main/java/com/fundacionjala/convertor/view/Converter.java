@@ -1,7 +1,6 @@
 package com.fundacionjala.convertor.view;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Converter extends JDialog{
     private JPanel player;
@@ -31,7 +30,7 @@ public class Converter extends JDialog{
         player.add(converterBox1);
 
         converterBox2 = new JPanel();
-        AdvancedSearchVideoView asv = new AdvancedSearchVideoView();
+        ConvertCriteria asv = new ConvertCriteria();
         converterBox2.add(asv.getContentPane());
         player.add(converterBox2);
         this.add(player);
