@@ -22,7 +22,7 @@ public class NewWindows extends JFrame {
 
         JPanel searchResult = new JPanel();
         searchResult.setBackground(Color.BLUE);
-        searchResult.setBounds(0, 200, 300, 270);
+        searchResult.setBounds(0, 200, 350, 270);
         this.getContentPane().add(searchResult);
         ListFileView lfv = new ListFileView();
         searchResult.add(lfv.getContentPane());
@@ -33,8 +33,8 @@ public class NewWindows extends JFrame {
 
 
         JPanel dataFiles = new JPanel();
-        dataFiles.setBackground(Color.red);
-        dataFiles.setBounds(0, 470, 300, 195);
+        dataFiles.setBackground(Color.CYAN);
+        dataFiles.setBounds(0, 470, 350, 205);
         this.getContentPane().add(dataFiles);
         DataFiles df = new DataFiles();
         dataFiles.add(df.getContentPane());
@@ -45,12 +45,18 @@ public class NewWindows extends JFrame {
 
         JPanel pReproductor = new JPanel();
         pReproductor.setBackground(Color.GREEN);
-        pReproductor.setBounds(400,0,800,500);
+        pReproductor.setBounds(350,0,550,450);
         this.getContentPane().add(pReproductor);
+
+        JPanel pConverter = new JPanel();
+        pConverter.setBackground(Color.MAGENTA);
+        pConverter.setBounds(00, 0, 150, 450);
+        this.getContentPane().add(pConverter);
+
 
         JPanel pConverted = new JPanel();
         pConverted.setBackground(Color.RED);
-        pConverted.setBounds(400,500,800,200);
+        pConverted.setBounds(350,470,850,200);
         this.getContentPane().add(pConverted);
     }
 
