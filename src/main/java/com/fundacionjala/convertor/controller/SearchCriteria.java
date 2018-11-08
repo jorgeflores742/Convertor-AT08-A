@@ -16,9 +16,13 @@ public class SearchCriteria {
     private String fps;
     private String aspectRatio;
     private String resolution;
+    private String videoCodec;
+    private String videoAudioCodec;
     //Advanced Audio
     private String audioType;
     private String channels;
+    private String audioCodec;
+
 
     private String advancedType;
 
@@ -79,7 +83,6 @@ public class SearchCriteria {
     }
 
     /**
-     *
      * @return fps
      */
     public String getFps() {
@@ -87,7 +90,6 @@ public class SearchCriteria {
     }
 
     /**
-     *
      * @param fps fps
      */
     public void setFps(String fps) {
@@ -95,7 +97,6 @@ public class SearchCriteria {
     }
 
     /**
-     *
      * @return aspect ratio
      */
     public String getAspectRatio() {
@@ -103,7 +104,6 @@ public class SearchCriteria {
     }
 
     /**
-     *
      * @param aspectRatio aspect ratio
      */
     public void setAspectRatio(String aspectRatio) {
@@ -111,7 +111,6 @@ public class SearchCriteria {
     }
 
     /**
-     *
      * @return resolution
      */
     public String getResolution() {
@@ -119,7 +118,6 @@ public class SearchCriteria {
     }
 
     /**
-     *
      * @param resolution resolution
      */
     public void setResolution(String resolution) {
@@ -127,7 +125,6 @@ public class SearchCriteria {
     }
 
     /**
-     *
      * @return channels
      */
     public String getChannels() {
@@ -135,7 +132,6 @@ public class SearchCriteria {
     }
 
     /**
-     *
      * @param channels channels
      */
     public void setChannels(String channels) {
@@ -143,7 +139,6 @@ public class SearchCriteria {
     }
 
     /**
-     *
      * @return videotype
      */
     public String getVideoType() {
@@ -151,7 +146,6 @@ public class SearchCriteria {
     }
 
     /**
-     *
      * @param videoType videotype
      */
     public void setVideoType(String videoType) {
@@ -159,7 +153,6 @@ public class SearchCriteria {
     }
 
     /**
-     *
      * @return audiotype
      */
     public String getAudioType() {
@@ -167,18 +160,65 @@ public class SearchCriteria {
     }
 
     /**
-     *
      * @param audioType audiotype
      */
     public void setAudioType(String audioType) {
         this.audioType = audioType;
     }
 
+    /**
+     * @param advancedType advancedType
+     */
     public void setAdvancedType(String advancedType) {
-        this.advancedType=advancedType;
+        this.advancedType = advancedType;
     }
 
-    public String getAdvancedType () {
+    /**
+     * @return advancedType
+     */
+    public String getAdvancedType() {
         return advancedType;
+    }
+
+    /**
+     * @return audioCodec
+     */
+    public String getAudioCodec() {
+        return audioCodec;
+    }
+
+    /**
+     * @param audioCodec audioCodec
+     */
+    public void setAudioCodec(String audioCodec) {
+        this.audioCodec = audioCodec;
+    }
+
+    /**
+     * @return videoAudioCodec
+     */
+    public String getVideoAudioCodec() {
+        return videoAudioCodec;
+    }
+
+    /**
+     * @param videoAudioCodec videoAudioCodec
+     */
+    public void setVideoAudioCodec(String videoAudioCodec) {
+        this.videoAudioCodec = videoAudioCodec;
+    }
+
+    /**
+     * @return videoCodec
+     */
+    public String getVideoCodec() {
+        return videoCodec;
+    }
+
+    /**
+     * @param videoCodec videoCodec
+     */
+    public void setVideoCodec(String videoCodec) {
+        this.videoCodec = videoCodec;
     }
 }
