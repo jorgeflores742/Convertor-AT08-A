@@ -5,6 +5,7 @@ import com.fundacionjala.convertor.model.AdvancedSearchVideo;
 import com.fundacionjala.convertor.model.FileSearcher;
 import com.fundacionjala.convertor.view.*;
 
+import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
@@ -105,21 +106,32 @@ public class SearchController implements ActionListener,ListSelectionListener {
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
-        if (e.getSource() == searchViewer.getBtnSearch()) {
-            listFileView.getListModel().clear();
+        if (e.getSource() == searchViewer.getBtnSearch() && !searchViewer.getTxtPath().getText().equals("")) {
+            if (listFileView.getListModel().getSize() != 0) {
+                int ind = listFileView.getLstSearchResult().getSelectedIndex();
+                if (ind != -1) {
+                    listFileView.getListModel().removeElementAt(ind);
+                }
+                while (listFileView.getListModel().size() > 1) {
+                    System.out.println(listFileView.getListModel().getElementAt(1));
+                    listFileView.getListModel().removeElementAt(1);
+                }
+            }
             loadCriteria();
             advanceResult.clear();
             advanceResult.addAll(fileSearcher.search(searchCriteria));
-
             for (File resu : advanceResult) {
                 listFileView.getListModel().addElement(resu.getAbsolutePath());
             }
-
         }
+        else if (searchViewer.getTxtPath().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please, define a valid directory");
+        }
+
         else if(e.getSource() == searchViewer.getBtnClearList()) {
-            listFileView.getListModel().clear();
+            listFileView.getListModel().removeAllElements();
             listFileView.getLstSearchResult().updateUI();
-            dataFiles.getDefaultList().clear();
+            dataFiles.getDefaultList().removeAllElements();
         }
 
     }
@@ -145,9 +157,10 @@ public class SearchController implements ActionListener,ListSelectionListener {
             dataFiles.getDefaultList().addElement("Size: ".concat(Long.toString(attrib.size())).concat(" bytes"));
             dataFiles.getDefaultList().addElement("Creation time: ".concat(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(fileTime.toMillis())));
             try {
-                dataFiles.getDefaultList().addElement("Type: ".concat(Files.probeContentType(path)));
+                String typeFile = Files.probeContentType(path);
+                dataFiles.getDefaultList().addElement("Type: ".concat(typeFile==null? "Unknown" : typeFile));
             } catch (IOException e1) {
-                e1.printStackTrace();
+                System.out.println("Tipo no reconocido");
             }
         }
     }

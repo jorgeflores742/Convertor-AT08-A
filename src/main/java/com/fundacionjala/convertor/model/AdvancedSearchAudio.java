@@ -24,6 +24,14 @@ public class AdvancedSearchAudio {
      */
     public ArrayList<File> FilterCriteria(ArrayList<File> resultList, SearchCriteria criteria) {
         ArrayList<File> result = new ArrayList<File>();
+        ArrayList<String> audioTypes = new ArrayList<>();
+        audioTypes.add("mp3");
+        audioTypes.add("wav");
+        audioTypes.add("ogg");
+        audioTypes.add("m4a");
+        audioTypes.add("wma");
+        audioTypes.add("aac");
+        audioTypes.add("flac");
 
         FFprobe ffprobe;
 
@@ -34,6 +42,7 @@ public class AdvancedSearchAudio {
             FFmpegProbeResult ffprobeResult = null;
             for (File file : resultList) {
                 Boolean correct = true;
+                String extentionFile = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
                 try {
                     ffprobeResult = ffprobe.probe(file.getAbsolutePath());
                 } catch (Exception e) {
@@ -41,7 +50,7 @@ public class AdvancedSearchAudio {
                 }
 
                 if (criteria.getAudioType() != "All") {
-                    if (!criteria.getAudioType().equals((file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase()))
+                    if (!criteria.getAudioType().equals(extentionFile))
                         correct = false;
                 }
 
@@ -51,7 +60,7 @@ public class AdvancedSearchAudio {
                         correct = false;
                 }
 
-                if (correct)
+                if (correct && audioTypes.contains(extentionFile))
                     result.add(file);
             }
 

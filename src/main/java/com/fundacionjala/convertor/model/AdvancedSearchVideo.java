@@ -71,6 +71,15 @@ public class AdvancedSearchVideo {
      */
     public ArrayList<File> FilterCriteria(ArrayList<File> resultList, SearchCriteria criteria) {
         ArrayList<File> result = new ArrayList<File>();
+        ArrayList<String> videoTypes = new ArrayList<>();
+        videoTypes.add("avi");
+        videoTypes.add("mpg");
+        videoTypes.add("mp4");
+        videoTypes.add("flv");
+        videoTypes.add("wmv");
+        videoTypes.add("mkv");
+        videoTypes.add("mov");
+        videoTypes.add("webm");
 
         FFprobe ffprobe;
 
@@ -81,13 +90,14 @@ public class AdvancedSearchVideo {
             FFmpegProbeResult ffprobeResult = null;
             for (File file : resultList) {
                 Boolean correct = true;
+                String extentionFile = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
                 try{
                     ffprobeResult = ffprobe.probe(file.getAbsolutePath());
                 } catch (Exception e) {
                     correct = false;
                 }
                 if (!criteria.getVideoType().equals("All")) {
-                    if (!criteria.getVideoType().equals((file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase()))
+                    if (!criteria.getVideoType().equals(extentionFile))
                         correct = false;
                 }
                 if (correct && (!criteria.getFps().equals("All"))) {
@@ -119,7 +129,7 @@ public class AdvancedSearchVideo {
                         correct = false;
                 }
 
-                if (correct)
+                if (correct && videoTypes.contains(extentionFile))
                     result.add(file);
             }
 
