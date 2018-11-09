@@ -5,6 +5,7 @@ import com.fundacionjala.convertor.model.AdvancedSearchVideo;
 import com.fundacionjala.convertor.model.FileSearcher;
 import com.fundacionjala.convertor.view.*;
 
+import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
@@ -114,7 +115,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
-        if (e.getSource() == searchViewer.getBtnSearch()) {
+        if (e.getSource() == searchViewer.getBtnSearch() && !searchViewer.getTxtPath().getText().equals("")) {
             listFileView.getListModel().clear();
             loadCriteria();
             advanceResult.clear();
@@ -128,6 +129,8 @@ public class SearchController implements ActionListener, ListSelectionListener {
             listFileView.getListModel().clear();
             listFileView.getLstSearchResult().updateUI();
             dataFiles.getDefaultList().clear();
+        } else if (searchViewer.getTxtPath().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please, define a valid directory");
         }
 
     }
@@ -153,9 +156,10 @@ public class SearchController implements ActionListener, ListSelectionListener {
             dataFiles.getDefaultList().addElement("Size: ".concat(Long.toString(attrib.size())).concat(" bytes"));
             dataFiles.getDefaultList().addElement("Creation time: ".concat(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(fileTime.toMillis())));
             try {
-                dataFiles.getDefaultList().addElement("Type: ".concat(Files.probeContentType(path)));
+                String typeFile = Files.probeContentType(path);
+                dataFiles.getDefaultList().addElement("Type: ".concat(typeFile==null? "Unknown" : typeFile));
             } catch (IOException e1) {
-                e1.printStackTrace();
+                System.out.println("Tipo no reconocido");
             }
         }
     }

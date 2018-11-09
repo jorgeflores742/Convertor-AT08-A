@@ -200,8 +200,8 @@ public class SearchViewer extends JDialog implements ActionListener {
             int returnVal = chooser.showOpenDialog(this);
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 txtPath.setText(chooser.getSelectedFile().getAbsolutePath());
-                pnlMain.updateUI();
             }
+            pnlMain.updateUI();
         }
     }
 
