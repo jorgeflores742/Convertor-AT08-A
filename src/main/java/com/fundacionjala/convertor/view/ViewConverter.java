@@ -19,22 +19,16 @@ public class ViewConverter extends JFrame {
 
     JPanel mainPanel = new JPanel();
     JPanel advanceSearchPane = new JPanel();
-    SearchViewer sView;
-    AdvancedSearchVideoView advanceVideo;
-    AdvancedSearchAudioView advanceAudio;
-    ListFileView listFile;
-    DataFiles data;
+    private SearchViewer sView = new SearchViewer();
+    private AdvancedSearchVideoView advanceVideo = new AdvancedSearchVideoView();
+    private AdvancedSearchAudioView advanceAudio = new AdvancedSearchAudioView();
+    private ListFileView listFile = new ListFileView();
+    private DataFiles data = new DataFiles();
 
     /**
      * Constructor.
      */
-    public ViewConverter(SearchViewer sView,AdvancedSearchAudioView advanceAudio,AdvancedSearchVideoView advanceVideo,ListFileView listFile, DataFiles data) {
-        this.sView = sView;
-        this.advanceAudio = advanceAudio;
-        this.advanceVideo = advanceVideo;
-        this.listFile = listFile;
-        this.data = data;
-
+    public ViewConverter() {
         iniView();
         settingsView();
     }
@@ -251,6 +245,25 @@ public class ViewConverter extends JFrame {
      */
     public String getChannels() {
         return advanceAudio.getCmbChannels().getSelectedItem().toString();
+    }
+
+    public SearchViewer getSearchviewer() {
+        return sView;
+    }
+    public AdvancedSearchVideoView getAdvSearchVideoView() {
+        return advanceVideo;
+    }
+
+    public AdvancedSearchAudioView getAdvSearchAudioView() {
+        return advanceAudio;
+    }
+
+    public ListFileView getListFile() {
+        return listFile;
+    }
+
+    public DataFiles getData() {
+        return data;
     }
 
     /*public static void main(String[] args) {
