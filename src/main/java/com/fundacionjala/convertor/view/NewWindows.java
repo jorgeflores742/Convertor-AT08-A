@@ -45,19 +45,26 @@ public class NewWindows extends JFrame {
 
         JPanel pReproductor = new JPanel();
         pReproductor.setBackground(Color.GREEN);
-        pReproductor.setBounds(350,0,550,450);
+        pReproductor.setBounds(351,0,592,469);
         this.getContentPane().add(pReproductor);
+        ListFileView listFile = new ListFileView();
+        PlayerMedia playerM = new PlayerMedia(listFile, 590, 460);
+        pReproductor.add(playerM);
+        //playerPanel.setPreferredSize(new Dimension(playerWidth, playerHeight))
 
         JPanel pConverter = new JPanel();
         pConverter.setBackground(Color.MAGENTA);
-        pConverter.setBounds(00, 0, 150, 450);
+        pConverter.setBounds(943, 0, 250, 470);
         this.getContentPane().add(pConverter);
+
 
 
         JPanel pConverted = new JPanel();
         pConverted.setBackground(Color.RED);
         pConverted.setBounds(350,470,850,200);
         this.getContentPane().add(pConverted);
+        ListConverting lc = new ListConverting();
+        pConverted.add(lc.getContentPane());
     }
 
     private void starComponents(){

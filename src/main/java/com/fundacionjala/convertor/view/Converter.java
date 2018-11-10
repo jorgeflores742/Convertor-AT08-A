@@ -1,14 +1,12 @@
 package com.fundacionjala.convertor.view;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Converter extends JDialog{
-    private JPanel player;
+    private JPanel panelConverter;
     private JLabel playerText;
     private JButton btnConvert;
     private JPanel converterBox1;
-    private JPanel converterBox2;
     private JTextField pathFile;
 
     public JButton getBtnConvert() {
@@ -16,9 +14,9 @@ public class Converter extends JDialog{
     }
 
     public Converter() {
-        player = new JPanel();
+        panelConverter = new JPanel();
         playerText = new JLabel();
-        player.add(playerText);
+        panelConverter.add(playerText);
 
         converterBox1 = new JPanel();
         btnConvert = new JButton();
@@ -28,13 +26,10 @@ public class Converter extends JDialog{
         //btnConvert.setText("CONVERT");
         btnConvert.setIcon(new ImageIcon("img\\camera.png"));
         converterBox1.add(btnConvert);
-        player.add(converterBox1);
+        panelConverter.add(converterBox1);
 
-        converterBox2 = new JPanel();
-        AdvancedSearchVideoView asv = new AdvancedSearchVideoView();
-        converterBox2.add(asv.getContentPane());
-        player.add(converterBox2);
-        this.add(player);
+
+        this.add(panelConverter);
         this.setResizable(false);
 
 
