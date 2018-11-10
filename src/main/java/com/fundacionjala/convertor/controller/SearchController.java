@@ -32,34 +32,25 @@ public class SearchController implements ActionListener, ListSelectionListener {
     private AdvancedSearchVideoView advancedSearchVideo;
     private AdvancedSearchAudioView advancedSearchAudio;
     private ListFileView listFileView;
-    private FileSearcher fileSearcher;
+    private FileSearcher fileSearcher = new FileSearcher();
     private SearchCriteria searchCriteria;
     private DataFiles dataFiles;
-    private AdvancedSearchAudio audio;
-    private AdvancedSearchVideo video;
     private int lock = -1;
     private ArrayList<File> advanceResult = new ArrayList<>(1);
 
-    /**
-     * @param searchViewer        searchViewer
-     * @param advancedSearchVideo advancedSearchVideo
-     * @param advancedSearchAudio advancedSearchAudio
-     * @param listFileView        listFileView
-     * @param fileSearcher        fileSearcher
-     */
-    public SearchController(final SearchViewer searchViewer, final AdvancedSearchVideoView advancedSearchVideo, final AdvancedSearchAudioView advancedSearchAudio, final ListFileView listFileView, final FileSearcher fileSearcher, final DataFiles dataFiles, final AdvancedSearchAudio audio, final AdvancedSearchVideo video) {
-        //this.searchView = searchView;
-        this.searchViewer = searchViewer;
-        this.advancedSearchVideo = advancedSearchVideo;
-        this.advancedSearchAudio = advancedSearchAudio;
-        this.listFileView = listFileView;
-        this.listFileView.getLstSearchResult().addListSelectionListener(this);
-        this.fileSearcher = fileSearcher;
+
+    public SearchController() {
+
+        ViewConverter v = new ViewConverter();
+        v.setVisible(true);
+        this.searchViewer = v.getSearchviewer();
         this.searchViewer.getBtnSearch().addActionListener(this);
         this.searchViewer.getBtnClearList().addActionListener(this);
-        this.dataFiles = dataFiles;
-        this.audio = audio;
-        this.video = video;
+        this.advancedSearchVideo = v.getAdvSearchVideoView();
+        this.advancedSearchAudio = v.getAdvSearchAudioView();
+        this.listFileView = v.getListFile();
+        this.listFileView.getLstSearchResult().addListSelectionListener(this);
+        this.dataFiles = v.getData();
         searchCriteria = new SearchCriteria();
     }
 

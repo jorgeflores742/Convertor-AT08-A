@@ -64,6 +64,9 @@ public class AdvancedSearchVideo {
         return ownerName;
     }
 
+    public AdvancedSearchVideo() {
+    }
+
     /**
      * @param resultList List of Files
      * @param criteria   sompare criteria
@@ -94,6 +97,7 @@ public class AdvancedSearchVideo {
                 try{
                     ffprobeResult = ffprobe.probe(file.getAbsolutePath());
                 } catch (Exception e) {
+                    System.out.println(file.getAbsolutePath().concat(" No reconocido"));
                     correct = false;
                 }
                 if (!criteria.getVideoType().equals("All")) {

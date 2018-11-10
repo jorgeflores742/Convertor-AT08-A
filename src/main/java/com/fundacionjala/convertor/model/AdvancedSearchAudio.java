@@ -17,6 +17,9 @@ import static com.fundacionjala.convertor.Main.PATH_TO_FFMPEG_BIN_FFPROBE;
  */
 public class AdvancedSearchAudio {
 
+    public AdvancedSearchAudio() {
+    }
+
     /**
      * @param resultList list of Files
      * @param criteria   compare criteria
