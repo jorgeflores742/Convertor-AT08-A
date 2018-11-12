@@ -123,6 +123,16 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         gridPane.fill = GridBagConstraints.HORIZONTAL;
         pnlMain.add(btnPath, gridPane);
 
+        gridPane.gridx = 3;
+        gridPane.gridy = 0;
+        gridPane.fill = GridBagConstraints.HORIZONTAL;
+        pnlMain.add(btnSearch, gridPane);
+
+        gridPane.gridx = 4;
+        gridPane.gridy = 0;
+        gridPane.fill = GridBagConstraints.HORIZONTAL;
+        pnlMain.add(btnClearList, gridPane);
+
         gridPane.gridx = 0;
         gridPane.gridy = 2;
         gridPane.fill = GridBagConstraints.NONE;
@@ -177,25 +187,28 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         gridPane.weighty = 0;
         pnlMain.add(cmbSize, gridPane);
 
-        gridPane.gridx = 0;
+        
+
+
+/*        gridPane.gridx = 0;
         gridPane.gridy = 7;
         gridPane.fill = GridBagConstraints.HORIZONTAL;
         gridPane.anchor = GridBagConstraints.CENTER;
         gridPane.ipady = 0;
         gridPane.weightx = 0.6;
         gridPane.weighty = 0;
-        pnlMain.add(btnSearch, gridPane);
+        pnlMain.add(btnSearch, gridPane);*/
 
         this.add(pnlMain);
 
-        gridPane.gridx = 0;
+/*        gridPane.gridx = 0;
         gridPane.gridy = 6;
         gridPane.fill = GridBagConstraints.VERTICAL;
         gridPane.anchor = GridBagConstraints.CENTER;
         gridPane.ipady = 0;
         gridPane.weightx = 0.6;
         gridPane.weighty = 0;
-        pnlMain.add(btnClearList, gridPane);
+        pnlMain.add(btnClearList, gridPane);*/
         this.setResizable(false);
     }
 
@@ -206,32 +219,11 @@ public class NewSearchViewer extends JDialog implements ActionListener {
     public void actionPerformed(final ActionEvent e) {
         if (e.getSource() == btnPath) {
 
-            JFileChooser fc=new JFileChooser();
-
-            //Abrimos la ventana, guardamos la opcion seleccionada por el usuario
-            int seleccion=fc.showOpenDialog(pnlMain);
-
-            //Si el usuario, pincha en aceptar
-            if(seleccion==JFileChooser.APPROVE_OPTION){
-
-                //Seleccionamos el fichero
-                File fichero=fc.getSelectedFile();
-
-                //Ecribe la ruta del fichero seleccionado en el campo de texto
-                txtPath.setText(fichero.getAbsolutePath());
-
-                try(FileReader fr=new FileReader(fichero)){
-                    String cadena="";
-                    int valor=fr.read();
-                    while(valor!=-1){
-                        cadena=cadena+(char)valor;
-                        valor=fr.read();
-                    }
-
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-            }        }
+            JFileChooser f = new JFileChooser();
+            f.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            f.showSaveDialog(null);
+            txtPath.setText(String.valueOf(f.getCurrentDirectory()));
+        }
     }
 
     /**

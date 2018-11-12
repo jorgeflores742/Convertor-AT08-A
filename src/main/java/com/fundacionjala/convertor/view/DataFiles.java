@@ -21,7 +21,7 @@ public class DataFiles extends JDialog {
 
     private void initializeControls() {
 
-        scrData.setPreferredSize(new Dimension(290, 100));
+        dataPanel.setPreferredSize(new Dimension(290, 100));
 
     }
 
