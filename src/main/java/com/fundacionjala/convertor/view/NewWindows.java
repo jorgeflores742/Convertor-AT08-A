@@ -55,7 +55,10 @@ public class NewWindows extends JFrame {
         JPanel pConverter = new JPanel();
         pConverter.setBackground(Color.MAGENTA);
         pConverter.setBounds(943, 0, 250, 470);
+        Converter c = new Converter();
         this.getContentPane().add(pConverter);
+        pConverter.add(c.getContentPane());
+
 
 
 
