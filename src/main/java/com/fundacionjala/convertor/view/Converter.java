@@ -42,6 +42,16 @@ public class Converter extends JDialog implements ActionListener {
 
     private JButton btnConvert;
 
+    private JLabel lblVideoAC;
+    private JComboBox cmbVideoAC;
+
+    private JLabel lblVideoVC;
+    private JComboBox cmbVideoVC;
+
+    private JLabel lblAudioAC;
+    private JComboBox cmbAudioAC;
+
+
     public Converter() {
         pnlConverter = new JPanel(new GridBagLayout());
 
@@ -76,6 +86,16 @@ public class Converter extends JDialog implements ActionListener {
         btnPathSave = new JButton();
 
         btnConvert = new JButton();
+
+        lblVideoAC = new JLabel();
+        cmbVideoAC = new JComboBox();
+
+        lblVideoVC = new JLabel();
+        cmbVideoVC = new JComboBox();
+
+        lblAudioAC = new JLabel();
+        cmbAudioAC = new JComboBox();
+
 
         initializeControls();
         initializeFrame();
@@ -159,6 +179,28 @@ public class Converter extends JDialog implements ActionListener {
         cmbChannels.addItem("7.2");
         cmbChannels.addItem("8.1");
         cmbChannels.addItem("9.1");
+
+        lblVideoAC.setText("Video Codec:");
+        cmbVideoAC.addItem("Select");
+        cmbVideoAC.addItem("mpeg4");
+        cmbVideoAC.addItem("wmv1");
+        cmbVideoAC.addItem("vp9");
+        cmbVideoAC.addItem("msmpeg4v3");
+        cmbVideoAC.addItem("flv1");
+        cmbVideoAC.addItem("mpeg1video");
+        cmbVideoAC.addItem("h264");
+        cmbVideoAC.addItem("vp8");
+        cmbVideoAC.addItem("mpeg2video");
+
+        lblVideoVC.setText("Audio Codec:");
+        cmbVideoVC.addItem("Select");
+        cmbVideoVC.addItem("mp3");
+        cmbVideoVC.addItem("aac");
+
+        lblAudioAC.setText("Audio Codec:");
+        cmbAudioAC.addItem("Select");
+        cmbAudioAC.addItem("mp3");
+        cmbAudioAC.addItem("aac");
 
         txtPathSave.setColumns(20);
         btnPathSave.setIcon(new ImageIcon("img\\save.png"));
@@ -293,8 +335,44 @@ public class Converter extends JDialog implements ActionListener {
         gridPane.weighty = 0;
         pnlConverter.add(cmbResolution, gridPane);
 
+        gridPane.gridx = 0;
+        gridPane.gridy = 7;
+        gridPane.fill = GridBagConstraints.NONE;
+        gridPane.anchor = GridBagConstraints.LINE_END;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.6;
+        gridPane.weighty = 0;
+        pnlConverter.add(lblVideoAC, gridPane);
+
         gridPane.gridx = 1;
         gridPane.gridy = 7;
+        gridPane.fill = GridBagConstraints.HORIZONTAL;
+        gridPane.anchor = GridBagConstraints.CENTER;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.4;
+        gridPane.weighty = 0;
+        pnlConverter.add(cmbVideoAC, gridPane);
+
+        gridPane.gridx = 0;
+        gridPane.gridy = 8;
+        gridPane.fill = GridBagConstraints.NONE;
+        gridPane.anchor = GridBagConstraints.LINE_END;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.6;
+        gridPane.weighty = 0;
+        pnlConverter.add(lblVideoVC, gridPane);
+
+        gridPane.gridx = 1;
+        gridPane.gridy = 8;
+        gridPane.fill = GridBagConstraints.HORIZONTAL;
+        gridPane.anchor = GridBagConstraints.CENTER;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.4;
+        gridPane.weighty = 0;
+        pnlConverter.add(cmbVideoVC, gridPane);
+
+        gridPane.gridx = 1;
+        gridPane.gridy = 9;
         gridPane.fill = GridBagConstraints.CENTER;
         gridPane.anchor = GridBagConstraints.CENTER;
         gridPane.ipady = 0;
@@ -303,7 +381,7 @@ public class Converter extends JDialog implements ActionListener {
         pnlConverter.add(lblAudio, gridPane);
 
         gridPane.gridx = 0;
-        gridPane.gridy = 8;
+        gridPane.gridy = 10;
         gridPane.fill = GridBagConstraints.NONE;
         gridPane.anchor = GridBagConstraints.LINE_END;
         gridPane.ipady = 0;
@@ -312,7 +390,7 @@ public class Converter extends JDialog implements ActionListener {
         pnlConverter.add(lblTypeAudio, gridPane);
 
         gridPane.gridx = 1;
-        gridPane.gridy = 8;
+        gridPane.gridy = 10;
         gridPane.fill = GridBagConstraints.HORIZONTAL;
         gridPane.anchor = GridBagConstraints.CENTER;
         gridPane.ipady = 0;
@@ -322,7 +400,7 @@ public class Converter extends JDialog implements ActionListener {
 
 
         gridPane.gridx = 0;
-        gridPane.gridy = 9;
+        gridPane.gridy = 11;
         gridPane.fill = GridBagConstraints.NONE;
         gridPane.anchor = GridBagConstraints.LINE_END;
         gridPane.ipady = 0;
@@ -331,7 +409,7 @@ public class Converter extends JDialog implements ActionListener {
         pnlConverter.add(lblChannels, gridPane);
 
         gridPane.gridx = 1;
-        gridPane.gridy = 9;
+        gridPane.gridy = 11;
         gridPane.fill = GridBagConstraints.HORIZONTAL;
         gridPane.anchor = GridBagConstraints.CENTER;
         gridPane.ipady = 0;
@@ -341,7 +419,25 @@ public class Converter extends JDialog implements ActionListener {
 
 
         gridPane.gridx = 0;
-        gridPane.gridy = 10;
+        gridPane.gridy = 12;
+        gridPane.fill = GridBagConstraints.NONE;
+        gridPane.anchor = GridBagConstraints.LINE_END;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.6;
+        gridPane.weighty = 0;
+        pnlConverter.add(lblAudioAC, gridPane);
+
+        gridPane.gridx = 1;
+        gridPane.gridy = 12;
+        gridPane.fill = GridBagConstraints.HORIZONTAL;
+        gridPane.anchor = GridBagConstraints.CENTER;
+        gridPane.ipady = 0;
+        gridPane.weightx = 0.6;
+        gridPane.weighty = 0;
+        pnlConverter.add(cmbAudioAC, gridPane);
+
+        gridPane.gridx = 0;
+        gridPane.gridy = 13;
         gridPane.fill = GridBagConstraints.NONE;
         gridPane.anchor = GridBagConstraints.LINE_END;
         gridPane.ipady = 0;
@@ -350,7 +446,7 @@ public class Converter extends JDialog implements ActionListener {
         pnlConverter.add(btnPathSave, gridPane);
 
         gridPane.gridx = 1;
-        gridPane.gridy = 10;
+        gridPane.gridy = 13;
         gridPane.fill = GridBagConstraints.HORIZONTAL;
         gridPane.anchor = GridBagConstraints.CENTER;
         gridPane.ipady = 0;
@@ -358,8 +454,10 @@ public class Converter extends JDialog implements ActionListener {
         gridPane.weighty = 0;
         pnlConverter.add(txtPathSave, gridPane);
 
+
+
         gridPane.gridx = 1;
-        gridPane.gridy = 11;
+        gridPane.gridy = 14;
         gridPane.fill = GridBagConstraints.NONE;
         gridPane.anchor = GridBagConstraints.LINE_END;
         gridPane.ipady = 0;
@@ -425,5 +523,21 @@ public class Converter extends JDialog implements ActionListener {
 
     public JButton getBtnConvert() {
         return btnConvert;
+    }
+
+    public JPanel getPnlConverter() {
+        return pnlConverter;
+    }
+
+    public JComboBox getCmbVideoAC() {
+        return cmbVideoAC;
+    }
+
+    public JComboBox getCmbVideoVC() {
+        return cmbVideoVC;
+    }
+
+    public JComboBox getCmbAudioAC() {
+        return cmbAudioAC;
     }
 }
