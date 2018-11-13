@@ -540,4 +540,8 @@ public class Converter extends JDialog implements ActionListener {
     public JComboBox getCmbAudioAC() {
         return cmbAudioAC;
     }
+
+    public void setTxtName(String txtName) {
+        this.txtName.setText(txtName);
+    }
 }

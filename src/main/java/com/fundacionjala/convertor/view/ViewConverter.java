@@ -107,14 +107,14 @@ public class ViewConverter extends JFrame {
         JPanel ConverterOptions = new JPanel();
         converting = new Converter();
         ConverterOptions.add(converting.getContentPane());
-        ConverterOptions.setPreferredSize(new Dimension(playerWidth, converterHeight));
+        ConverterOptions.setPreferredSize(new Dimension(playerWidth, 900));
         ConverterOptions.setBackground(Color.darkGray);
 
         JPanel listConvertorPanel = new JPanel();
         ListConverting listConv = new ListConverting();
         listConvertorPanel.setLayout(new GridLayout());
         listConvertorPanel.setPreferredSize(new Dimension(playerWidth, converterHeight));
-        listConvertorPanel.add(listConv.getContentPane());
+//        listConvertorPanel.add(listConv.getContentPane());
 
         converterPanel.add(playerPanel, BorderLayout.NORTH);
         converterPanel.add(ConverterOptions, BorderLayout.CENTER);

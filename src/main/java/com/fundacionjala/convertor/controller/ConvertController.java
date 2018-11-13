@@ -35,13 +35,22 @@ public class ConvertController implements ActionListener {
         convertCriteria.setFileName(converter.getTxtName().getText());
         convertCriteria.setFormatFrom(converter.getTxtPathSave().getText());
         convertCriteria.setFormatTo(converter.getCmbType().getSelectedItem().toString());
+        convertCriteria.setPathFrom("falta");
+        convertCriteria.setPathTo(converter.getTxtPathSave().getText());
 
         convertCriteria.setCnvVideoType(converter.getCmbType().getSelectedItem().toString());
         convertCriteria.setCnvFps(converter.getCmbFps().getSelectedItem().toString());
         convertCriteria.setCnvAspectRatio(converter.getCmbAspectRatio().getSelectedItem().toString());
-        convertCriteria.setCnvResolution(converter.getCmbResolution().getSelectedItem().toString());
-        convertCriteria.setCnvAudioType(converter.getCmbType().getSelectedItem().toString());
+        String[] resolution = converter.getCmbResolution().getSelectedItem().toString().split("x");
+        convertCriteria.setCnvResolutionWidth(resolution[0]);
+        convertCriteria.setCnvResolutionHeight(resolution[1]);
+        convertCriteria.setCnvVideoCodec(converter.getCmbVideoVC().getSelectedItem().toString());
+        convertCriteria.setCnvVideoAudioCodec(converter.getCmbVideoAC().getSelectedItem().toString());
+
+        convertCriteria.setCnvAudioType(converter.getCmbTypeAudio().getSelectedItem().toString());
         convertCriteria.setCnvChannels(converter.getCmbChannels().getSelectedItem().toString());
+
+        convertCriteria.setCnvAudioCodec(converter.getCmbAudioAC().getSelectedItem().toString());
     }
 
     /**
@@ -51,13 +60,13 @@ public class ConvertController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == converter.getBtnConvert()) {
             loadConvertCriteria();
-            System.out.println("HOLA MUNDO");
 //            System.out.println(convertCriteria.getCnvAspectRatio());
 //            System.out.println(convertCriteria.getCnvAudioCodec());
 //            System.out.println(convertCriteria.getCnvAudioType());
 //            System.out.println(convertCriteria.getCnvChannels());
 //            System.out.println(convertCriteria.getCnvFps());
-//            System.out.println(convertCriteria.getCnvResolution());
+//            System.out.println(convertCriteria.getCnvResolutionWidth());
+//            System.out.println(convertCriteria.getCnvResolutionHeight());
 //            System.out.println(convertCriteria.getCnvVideoAudioCodec());
 //            System.out.println(convertCriteria.getCnvVideoCodec());
 //            System.out.println(convertCriteria.getCnvVideoType());
