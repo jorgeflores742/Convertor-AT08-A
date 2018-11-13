@@ -44,6 +44,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
 
         ViewConverter v = new ViewConverter();
         v.setVisible(true);
+        ConvertController convertController = new ConvertController(v);
         this.searchViewer = v.getSearchviewer();
         this.searchViewer.getBtnSearch().addActionListener(this);
         this.searchViewer.getBtnClearList().addActionListener(this);

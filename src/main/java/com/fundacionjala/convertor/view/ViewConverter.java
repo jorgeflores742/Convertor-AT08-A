@@ -24,6 +24,7 @@ public class ViewConverter extends JFrame {
     private AdvancedSearchAudioView advanceAudio = new AdvancedSearchAudioView();
     private ListFileView listFile = new ListFileView();
     private DataFiles data = new DataFiles();
+    private Converter converting;
 
     /**
      * Constructor.
@@ -104,7 +105,7 @@ public class ViewConverter extends JFrame {
         //playerPanel.setBackground(Color.YELLOW);
 
         JPanel ConverterOptions = new JPanel();
-        Converter converting = new Converter();
+        converting = new Converter();
         ConverterOptions.add(converting.getContentPane());
         ConverterOptions.setPreferredSize(new Dimension(playerWidth, converterHeight));
         ConverterOptions.setBackground(Color.darkGray);
@@ -265,6 +266,11 @@ public class ViewConverter extends JFrame {
     public DataFiles getData() {
         return data;
     }
+
+    public Converter getConverting() {
+        return converting;
+    }
+
 
     /*public static void main(String[] args) {
         ViewConverter newView = new ViewConverter();

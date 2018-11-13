@@ -13,5 +13,5 @@ public interface IConvertFile {
      *
      * @param convertCriteria convertCriteria
      */
-    public void Convert(ConvertCriteria convertCriteria);
+    public int convert(ConvertCriteria convertCriteria);
 }
