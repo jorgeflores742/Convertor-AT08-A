@@ -74,7 +74,7 @@ public class ListFileView extends JDialog{
      *  Set of size.
      */
     private void initializeControls() {
-        scrlSearchResult.setPreferredSize(new Dimension(290, 175));
+        scrlSearchResult.setPreferredSize(new Dimension(400, 225));
     }
 
     public DefaultListModel getListModel() {

@@ -13,41 +13,36 @@ public class NewWindows extends JFrame {
 
     private void makePanels() {
         JPanel pSearch = new JPanel();
-        pSearch.setBackground(Color.ORANGE);
-        pSearch.setBounds(0,0,430,288);
+        //pSearch.setBackground(Color.ORANGE);
+        pSearch.setBounds(0,0,430,350);
         this.getContentPane().add(pSearch);
         NewSearchViewer sv = new NewSearchViewer();
         pSearch.add(sv.getContentPane());
 
 
         JPanel searchResult = new JPanel();
-        searchResult.setBackground(Color.ORANGE);
-        searchResult.setBounds(0, 289, 430, 270);
+        //searchResult.setBackground(Color.ORANGE);
+        searchResult.setBounds(0, 351, 430, 318);
         this.getContentPane().add(searchResult);
         ListFileView lfv = new ListFileView();
         searchResult.add(lfv.getContentPane());
 
 
-
         JPanel dataFiles = new JPanel();
-        dataFiles.setBackground(Color.ORANGE);
-        dataFiles.setBounds(0, 560, 430, 110);
+        //dataFiles.setBackground(Color.blue);
+        dataFiles.setBounds(431, 351, 492, 118);
         this.getContentPane().add(dataFiles);
         DataFiles df = new DataFiles();
         dataFiles.add(df.getContentPane());
 
 
-
-
-
         JPanel pReproductor = new JPanel();
         //pReproductor.setBackground(Color.GREEN);
-        pReproductor.setBounds(431,0,492,469);
+        pReproductor.setBounds(431,0,492,350);
         this.getContentPane().add(pReproductor);
         ListFileView listFile = new ListFileView();
-        PlayerMedia playerM = new PlayerMedia(listFile, 470, 400);
+        PlayerMedia playerM = new PlayerMedia(listFile, 470, 340);
         pReproductor.add(playerM);
-        //playerPanel.setPreferredSize(new Dimension(playerWidth, playerHeight))
 
         JPanel pConverter = new JPanel();
         //pConverter.setBackground(Color.BLACK);
@@ -60,7 +55,7 @@ public class NewWindows extends JFrame {
 
 
         JPanel pConverted = new JPanel();
-        //pConverted.setBackground(Color.RED);
+        ///pConverted.setBackground(Color.RED);
         pConverted.setBounds(430,470,850,200);
         this.getContentPane().add(pConverted);
         ListConverting lc = new ListConverting();
