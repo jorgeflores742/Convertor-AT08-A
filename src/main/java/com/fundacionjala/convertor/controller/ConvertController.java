@@ -1,7 +1,10 @@
 package com.fundacionjala.convertor.controller;
 
+import com.fundacionjala.convertor.model.ConvertFileAudio;
+import com.fundacionjala.convertor.model.ConvertFileVideo;
 import com.fundacionjala.convertor.model.IConvertFile;
 import com.fundacionjala.convertor.view.Converter;
+import com.fundacionjala.convertor.view.ViewConverter;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,30 +19,29 @@ public class ConvertController implements ActionListener {
     private Converter converter;
     private IConvertFile convertFile;
     private ConvertCriteria convertCriteria;
+    private static int progress;
+
 
     /**
      *
      */
-    public ConvertController(final Converter converter, final IConvertFile convertFile) {
-        this.converter = converter;
-        this.convertFile = convertFile;
-        //this.converter.getBtnConvert().addActionListener(this);
+    public ConvertController(ViewConverter vc) {
+        this.converter = vc.getConverting();
+        converter.getBtnConvert().addActionListener(this);
         convertCriteria = new ConvertCriteria();
     }
 
     public void loadConvertCriteria() {
-//        convertCriteria.setFormatFrom(converter.getTxtFormatFrom().getText());
-//        convertCriteria.setFormatTo(converter.getCmbFormatTo().getSelectedItem().toString());
-//        convertCriteria.setFormatFrom(converter.getTxtPathFrom().getText());
-//        convertCriteria.setFormatTo(converter.getTxtPathTo().getSelectedItem().toString());
-//        convertCriteria.setFileName(converter.getTxtFileName().getTest());
-//        convertCriteria.setCnvVideoType(converter.getAsv().getCmbType().getSelectedItem().toString());
-//        convertCriteria.setCnvFps(converter.getAsv().getCmbFps().getSelectedItem().toString());
-//        convertCriteria.setCnvAspectRatio(converter.getAsv().getCmbAspectRatio().getSelectedItem().toString());
-//        convertCriteria.setCnvResolution(converter.getAsv().getCmbResolution().getSelectedItem().toString());
-        //convertCriteria.setCnvAudioType(converter.getAsv().getCmbType().getSelectedItem().toString());
-        //convertCriteria.setCnvChannels(converter.getAsv().getCmbChannels().getSelectedItem().toString());
-        //       convertCriteria.setCnvVideoType(converter);
+        convertCriteria.setFileName(converter.getTxtName().getText());
+        convertCriteria.setFormatFrom(converter.getTxtPathSave().getText());
+        convertCriteria.setFormatTo(converter.getCmbType().getSelectedItem().toString());
+
+        convertCriteria.setCnvVideoType(converter.getCmbType().getSelectedItem().toString());
+        convertCriteria.setCnvFps(converter.getCmbFps().getSelectedItem().toString());
+        convertCriteria.setCnvAspectRatio(converter.getCmbAspectRatio().getSelectedItem().toString());
+        convertCriteria.setCnvResolution(converter.getCmbResolution().getSelectedItem().toString());
+        convertCriteria.setCnvAudioType(converter.getCmbType().getSelectedItem().toString());
+        convertCriteria.setCnvChannels(converter.getCmbChannels().getSelectedItem().toString());
     }
 
     /**
@@ -47,10 +49,40 @@ public class ConvertController implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-//        if (e.getSource() == converter.getBtnConvert()) {
-//            loadConvertCriteria();
-//            convertFile.Convert(convertCriteria);
-//        }
+        if (e.getSource() == converter.getBtnConvert()) {
+            loadConvertCriteria();
+            System.out.println("HOLA MUNDO");
+//            System.out.println(convertCriteria.getCnvAspectRatio());
+//            System.out.println(convertCriteria.getCnvAudioCodec());
+//            System.out.println(convertCriteria.getCnvAudioType());
+//            System.out.println(convertCriteria.getCnvChannels());
+//            System.out.println(convertCriteria.getCnvFps());
+//            System.out.println(convertCriteria.getCnvResolution());
+//            System.out.println(convertCriteria.getCnvVideoAudioCodec());
+//            System.out.println(convertCriteria.getCnvVideoCodec());
+//            System.out.println(convertCriteria.getCnvVideoType());
+//            System.out.println(convertCriteria.getFileName());
+//            System.out.println(convertCriteria.getFormatFrom());
+//            System.out.println(convertCriteria.getFormatTo());
+//            System.out.println(convertCriteria.getPathFrom());
+//            System.out.println(convertCriteria.getPathTo());
+
+            if(converter.getCmbConvertTo().equals("Audio")) {
+                System.out.println("Es audio");
+                convertFile = new ConvertFileAudio();
+                progress = convertFile.convert(convertCriteria);
+
+            } else if(converter.getCmbConvertTo().equals("Video")){
+                System.out.println("Es video");
+                convertFile = new ConvertFileVideo();
+                progress = convertFile.convert(convertCriteria);
+            }
+        }
     }
+
+    public static int getProgress() {
+        return progress;
+    }
+
 }
 
