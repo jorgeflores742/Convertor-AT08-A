@@ -18,6 +18,13 @@ package com.fundacionjala.convertor.model;
 import com.fundacionjala.convertor.controller.SearchCriteria;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.nio.file.attribute.FileTime;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -30,6 +37,9 @@ public class FileSearcher {
     public static final long LITTLE = 512000000L;
     public static final long MEDIUM = 1024000000L;
     private static final long BIG = 10240000000L;
+    Asset fileAsset;
+    AdvancedSearchVideo advancedSearchVideo = new AdvancedSearchVideo();
+    AdvancedSearchAudio advancedSearchAudio = new AdvancedSearchAudio();
 
     /**
      * This program searchs files using criteria of name,
@@ -45,28 +55,65 @@ public class FileSearcher {
      * @return This main method diference between files and directories.
      */
 
-    public ArrayList<File> search(SearchCriteria searchCriteria) {
+    public ArrayList<Asset> search(SearchCriteria searchCriteria) {
+        ArrayList<Asset> fileListAsset = new ArrayList<>(1);
         ArrayList<File> fileList = new ArrayList<>(1);
         File dir = new File(searchCriteria.getPath());
         for (File file : Objects.requireNonNull(dir.listFiles())) {
             if (file.isDirectory()) {
                 searchCriteria.setPath(file.getPath());
-                fileList.addAll(search(searchCriteria));
+                fileListAsset.addAll(search(searchCriteria));
             } else if (meetCriteria(file, searchCriteria.getName(), searchCriteria.getExt(), searchCriteria.getSize())) {
+                fileAsset = new Asset();
+                fileAsset = fillAsset(fileAsset, file);
+                fileListAsset.add(fileAsset);
                 fileList.add(file);
             }
         }
-        ArrayList<File> finalResult;
+        ArrayList<Asset> finalResult;
         if (searchCriteria.getAdvancedType().equals("Video")) {
-            AdvancedSearchVideo advancedSearchVideo = new AdvancedSearchVideo();
-            finalResult = advancedSearchVideo.FilterCriteria(fileList, searchCriteria);
+            finalResult = advancedSearchVideo.FilterCrit(fileListAsset, searchCriteria);
         } else if (searchCriteria.getAdvancedType().equals("Audio")) {
-            AdvancedSearchAudio advancedSearchAudio = new AdvancedSearchAudio();
-            finalResult = advancedSearchAudio.FilterCriteria(fileList, searchCriteria);
+            finalResult = advancedSearchAudio.FilterCrit(fileListAsset, searchCriteria);
         } else {
-            finalResult = fileList;
+            finalResult = fileListAsset;
         }
         return finalResult;
+    }
+
+    private Asset fillAsset(Asset fAsset, File file) {
+        fAsset = fillFileAsset(file);
+        if (advancedSearchVideo.isVideoType(file)) {
+            String extentionFile = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
+            fAsset.setTypeFile("Video: ".concat(extentionFile));
+            fAsset = advancedSearchVideo.fillVideoFeatures(fAsset);
+        } else if (advancedSearchAudio.isAudioType(file)) {
+            String extentionFile = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
+            fAsset.setTypeFile("Audio: ".concat(extentionFile));
+            fAsset = advancedSearchAudio.fillAudioFeatures(fAsset);
+        }
+
+        return fAsset;
+    }
+
+    private Asset fillFileAsset(File file) {
+        Asset asset = new Asset();
+        BasicFileAttributes attrib = null;
+        Path path = Paths.get(file.getAbsolutePath());
+        try {
+            attrib = Files.readAttributes(path, BasicFileAttributes.class);
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        asset.setNameFile("Name: ".concat(file.getName()));
+        String extentionFile = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
+        asset.setTypeFile("File: ".concat(extentionFile));
+        asset.setSizeFile("Size: ".concat(Long.toString(attrib.size())).concat(" bytes"));
+        FileTime fileTime = attrib.creationTime();
+        asset.setCreationFile("Creation time: ".concat(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(fileTime.toMillis())));
+        asset.setFile(file);
+        asset.setPath(file.getAbsolutePath());
+        return asset;
     }
 
     /**

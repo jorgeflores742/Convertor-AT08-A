@@ -24,6 +24,21 @@ import static com.fundacionjala.convertor.Main.PATH_TO_FFMPEG_BIN_FFPROBE;
 
 public class AdvancedSearchVideo {
 
+    ArrayList<String> videoTypes = new ArrayList<>();
+
+
+    public AdvancedSearchVideo() {
+        videoTypes.add("avi");
+        videoTypes.add("mpg");
+        videoTypes.add("mp4");
+        videoTypes.add("flv");
+        videoTypes.add("wmv");
+        videoTypes.add("mkv");
+        videoTypes.add("mov");
+        videoTypes.add("webm");
+
+    }
+
     /**
      * @param pathFile
      * @return
@@ -64,7 +79,80 @@ public class AdvancedSearchVideo {
         return ownerName;
     }
 
-    public AdvancedSearchVideo() {
+    public boolean isVideoType(File file) {
+        String ext = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
+        return videoTypes.contains(ext)? true : false;
+    }
+
+    public Asset fillVideoFeatures(Asset assetFile) {
+        boolean done = false;
+        VideoAsset asset = new VideoAsset();
+        asset.setNameFile(assetFile.getNameFile());
+        asset.setTypeFile(assetFile.getTypeFile());
+        asset.setSizeFile(assetFile.getSizeFile());
+        asset.setCreationFile(assetFile.getCreationFile());
+        asset.setFile(assetFile.getFile());
+        asset.setPath(assetFile.getPath());
+        FFprobe ffprobe;
+        try {
+            ffprobe = new FFprobe(PATH_TO_FFMPEG_BIN_FFPROBE);
+            FFmpegProbeResult ffprobeResult = ffprobe.probe(assetFile.getPath());
+
+            //Resolucion
+            String wVideo = Integer.toString(ffprobeResult.getStreams().get(0).width);
+            String hVideo = Integer.toString(ffprobeResult.getStreams().get(0).height);
+            asset.setResolution("Resolution: ".concat(wVideo).concat("x").concat(hVideo));
+
+            //Duration
+            String duration = Double.toString(ffprobeResult.getStreams().get(0).duration);
+            asset.setDuration("Duration: ".concat(duration));
+
+            //Aspect ratio
+            String aspectRatio = ffprobeResult.getStreams().get(0).display_aspect_ratio;
+            asset.setAspectRatio(aspectRatio==null?
+                    "Aspect ratio: ".concat("Unknown"):"Aspect ratio: ".concat(aspectRatio));
+
+            //fps
+            int fps = ffprobeResult.getStreams().get(0).avg_frame_rate.getNumerator();
+            asset.setFps("Frames Per Second: ".concat(Integer.toString(fps)));
+
+            done = true;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return done ? asset : assetFile;
+    }
+
+    public  ArrayList<Asset> FilterCrit(ArrayList<Asset> resultList, SearchCriteria criteria) {
+        ArrayList<Asset> listAssetResult = new ArrayList<>(1);
+        for (Asset asset : resultList) {
+            if (asset.getTypeFile().contains("Video")) {
+                boolean right = false;
+                VideoAsset vAsset = new VideoAsset();
+                vAsset = (VideoAsset) asset;
+
+                right = criteria.getVideoType().equals("All")
+                        || vAsset.getTypeFile().contains(criteria.getVideoType());
+
+                //FPS
+                right = right &&
+                        criteria.getFps().equals("All")
+                        || vAsset.getFps().contains(criteria.getFps());
+
+                //Resolution
+                right = right &&
+                        (criteria.getResolution().equals("All")
+                                || vAsset.getResolution().contains(criteria.getResolution()));
+                //Aspect ratio
+                right = right &&
+                        (criteria.getAspectRatio().equals("All") ||
+                                vAsset.getAspectRatio().equals(criteria.getAspectRatio()));
+
+
+                if (right) listAssetResult.add(vAsset);
+            }
+        }
+        return listAssetResult;
     }
 
     /**

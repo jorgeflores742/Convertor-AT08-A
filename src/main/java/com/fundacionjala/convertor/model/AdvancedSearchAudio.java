@@ -5,6 +5,7 @@ import net.bramp.ffmpeg.FFprobe;
 import net.bramp.ffmpeg.probe.FFmpegProbeResult;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import static com.fundacionjala.convertor.Main.PATH_TO_FFMPEG_BIN_FFPROBE;
@@ -16,18 +17,9 @@ import static com.fundacionjala.convertor.Main.PATH_TO_FFMPEG_BIN_FFPROBE;
  * @version 1.0.
  */
 public class AdvancedSearchAudio {
+    ArrayList<String> audioTypes = new ArrayList<>();
 
     public AdvancedSearchAudio() {
-    }
-
-    /**
-     * @param resultList list of Files
-     * @param criteria   compare criteria
-     * @return filtered list
-     */
-    public ArrayList<File> FilterCriteria(ArrayList<File> resultList, SearchCriteria criteria) {
-        ArrayList<File> result = new ArrayList<File>();
-        ArrayList<String> audioTypes = new ArrayList<>();
         audioTypes.add("mp3");
         audioTypes.add("wav");
         audioTypes.add("ogg");
@@ -35,17 +27,77 @@ public class AdvancedSearchAudio {
         audioTypes.add("wma");
         audioTypes.add("aac");
         audioTypes.add("flac");
+    }
+
+    public boolean isAudioType(File file) {
+        String ext = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
+        return audioTypes.contains(ext)? true : false;
+    }
+
+    public Asset fillAudioFeatures(Asset assetFile) {
+        boolean done = false;
+        AudioAsset asset = new AudioAsset();
+        asset.setNameFile(assetFile.getNameFile());
+        asset.setTypeFile(assetFile.getTypeFile());
+        asset.setSizeFile(assetFile.getSizeFile());
+        asset.setCreationFile(assetFile.getCreationFile());
+        asset.setFile(assetFile.getFile());
+        asset.setPath(assetFile.getPath());
+        FFprobe ffprobe;
+        try {
+            ffprobe = new FFprobe(PATH_TO_FFMPEG_BIN_FFPROBE);
+            FFmpegProbeResult ffprobeResult = ffprobe.probe(assetFile.getPath());
+
+            //Audio channels.
+            String ch_Audio = ffprobeResult.getStreams().get(0).channel_layout;
+            asset.setChannels("Channels: ".concat(ch_Audio==null? "Unknown" : ch_Audio));
+
+            done = true;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return done ? asset : assetFile;
+    }
+
+    public  ArrayList<Asset> FilterCrit(ArrayList<Asset> resultList, SearchCriteria criteria) {
+        ArrayList<Asset> listAssetResult = new ArrayList<>(1);
+        for (Asset asset : resultList) {
+            if (asset.getTypeFile().contains("Audio")) {
+                boolean right = false;
+                AudioAsset audioAsset = new AudioAsset();
+                audioAsset = (AudioAsset) asset;
+
+                right = criteria.getVideoType().equals("All")
+                        || audioAsset.getTypeFile().contains(criteria.getAudioType());
+
+                //Channels
+                right = right &&
+                        criteria.getChannels().equals("All")
+                        || audioAsset.getChannels().contains(criteria.getChannels());
+
+                if (right) listAssetResult.add(audioAsset);
+            }
+        }
+        return listAssetResult;
+    }
+
+    /**
+     * @param resultList list of Files
+     * @param criteria   compare criteria
+     * @return filtered list
+     */
+    public ArrayList<Asset> FilterCriteria(ArrayList<File> resultList, SearchCriteria criteria) {
+        ArrayList<Asset> result = new ArrayList<Asset>();
 
         FFprobe ffprobe;
 
         try {
             ffprobe = new FFprobe(PATH_TO_FFMPEG_BIN_FFPROBE);
-
             //Para cada file en la lista
             FFmpegProbeResult ffprobeResult = null;
             for (File file : resultList) {
                 Boolean correct = true;
-
+                AudioAsset audAsset = new AudioAsset();
                 String extentionFile = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
 
                 try {
@@ -54,19 +106,32 @@ public class AdvancedSearchAudio {
                     correct = false;
                 }
 
+                //Audio Type.
                 if (criteria.getAudioType() != "All") {
-                    if (!criteria.getAudioType().equals(extentionFile))
+                    if (!criteria.getAudioType().equals(extentionFile)) {
                         correct = false;
+                    } else {
+                        audAsset.setTypeFile("Audio Type: ".concat(extentionFile));
+                    }
+                } else {
+                    audAsset.setTypeFile("Audio Type: ".concat(extentionFile));
                 }
 
+                //Audio channels.
+                String ch_Audio = ffprobeResult.getStreams().get(0).channel_layout;
                 if (correct && criteria.getChannels() != "All") {
                     System.out.println(file.getName()+" "+ffprobeResult.getStreams().get(0).channel_layout);
-                    if (!criteria.getChannels().equals(ffprobeResult.getStreams().get(0).channel_layout))
+                    if (!criteria.getChannels().equals(ch_Audio)) {
                         correct = false;
+                    } else {
+                        audAsset.setChannels(ch_Audio);
+                    }
+                } else {
+                    audAsset.setChannels(ch_Audio);
                 }
 
                 if (correct && audioTypes.contains(extentionFile))
-                    result.add(file);
+                    result.add(audAsset);
             }
 
         } catch (Exception e) {
