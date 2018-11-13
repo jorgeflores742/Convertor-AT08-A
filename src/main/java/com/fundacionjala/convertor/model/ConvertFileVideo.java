@@ -10,6 +10,7 @@ import net.bramp.ffmpeg.job.FFmpegJob;
 import net.bramp.ffmpeg.probe.FFmpegProbeResult;
 import net.bramp.ffmpeg.progress.Progress;
 import net.bramp.ffmpeg.progress.ProgressListener;
+import sun.security.krb5.internal.crypto.crc32;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -26,7 +27,7 @@ public class ConvertFileVideo implements IConvertFile {
         try {
             ffmpeg = new FFmpeg("lib\\filesff\\ffmpeg");
             ffprobe = new FFprobe("lib\\filesff\\ffprobe");
-            in = ffprobe.probe("C:\\Users\\Admin\\Desktop\\filessss\\768x576d.avi");
+            in = ffprobe.probe(convertCriteria.getPathFrom());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -34,21 +35,21 @@ public class ConvertFileVideo implements IConvertFile {
         FFmpegBuilder builder = new FFmpegBuilder()
                 .setInput(in) // Or filename
                 .overrideOutputFiles(true) // Override the output if it exists
-                .addOutput("C:\\Users\\Admin\\Desktop\\filessss\\768x576d.mp4")  // Filename for the destination
+                .addOutput(convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvVideoType())  // Filename for the destination
 
-                .setFormat("mp4")        // Format is inferred from filename, or can be set
-                .setTargetSize(250_000)  // Aim for a 250KB file
+                .setFormat(convertCriteria.getCnvVideoType()) //vvat is inferred from filename, or can be set
+//                .setTargetSize(250000)  // Aim for a 250KB file
 
-                .disableSubtitle()       // No subtiles
+//                .disableSubtitle()       // No subtiles
 
-                .setAudioChannels(1)         // Mono audio
-                .setAudioCodec("aac")        // using the aac codec
-                .setAudioSampleRate(48_000)  // at 48KHz
-                .setAudioBitRate(32768)      // at 32 kbit/s
+                .setAudioChannels(Integer.parseInt(convertCriteria.getCnvChannels()))         // Mono audio
+                .setAudioCodec(convertCriteria.getCnvVideoAudioCodec())        // using the aac codec
+                .setAudioSampleRate(Integer.parseInt(convertCriteria.getCnvAspectRatio()))  // at 48KHz
+//                .setAudioBitRate(32768)      // at 32 kbit/s
 
-                .setVideoCodec("libx264")     // Video using x264
-                .setVideoFrameRate(24, 1)     // at 24 frames per second
-                .setVideoResolution(640, 480) // at 640x480 resolution
+                .setVideoCodec(convertCriteria.getCnvVideoCodec())     // Video using libx264
+                .setVideoFrameRate(Integer.parseInt(convertCriteria.getCnvFps()), 1)     // at 24 frames per second
+                .setVideoResolution(Integer.parseInt(convertCriteria.getCnvResolutionWidth()), Integer.parseInt(convertCriteria.getCnvResolutionHeight())) // at 640x480 resolution
                 .done();
         FFmpegProbeResult finalIn = in;
         FFmpegJob job = executor.createJob(builder, new ProgressListener() {

@@ -38,11 +38,12 @@ public class SearchController implements ActionListener, ListSelectionListener {
     private DataFiles dataFiles;
     private int lock = -1;
     private ArrayList<Asset> advanceResult = new ArrayList<>(1);
+    private ViewConverter v;
 
 
     public SearchController() {
 
-        ViewConverter v = new ViewConverter();
+        v = new ViewConverter();
         v.setVisible(true);
         ConvertController convertController = new ConvertController(v);
         this.searchViewer = v.getSearchviewer();
@@ -140,12 +141,18 @@ public class SearchController implements ActionListener, ListSelectionListener {
 
             infoAsset = getInfoAsset(value);
 
+
+
             dataFiles.getDefaultList().addElement(infoAsset.getPath());
             dataFiles.getDefaultList().addElement(infoAsset.getNameFile());
             dataFiles.getDefaultList().addElement(infoAsset.getSizeFile());
             dataFiles.getDefaultList().addElement(infoAsset.getCreationFile());
 
             if (infoAsset.getTypeFile().contains("Video")) {
+                v.getConverting().setTxtName(
+                        infoAsset.getNameFile().substring(infoAsset.getNameFile().lastIndexOf(':') + 1,
+                                infoAsset.getNameFile().lastIndexOf('.'))
+                );
                 dataFiles.getDefaultList().addElement(infoAsset.getTypeFile());
                 VideoAsset video = new VideoAsset();
                 video = (VideoAsset) infoAsset;
@@ -154,6 +161,10 @@ public class SearchController implements ActionListener, ListSelectionListener {
                 dataFiles.getDefaultList().addElement(video.getResolution());
                 dataFiles.getDefaultList().addElement(video.getDuration());
             } else if (infoAsset.getTypeFile().contains("Audio")) {
+                v.getConverting().setTxtName(
+                        infoAsset.getNameFile().substring(infoAsset.getNameFile().lastIndexOf(':') + 1,
+                                infoAsset.getNameFile().lastIndexOf('.'))
+                );
                 dataFiles.getDefaultList().addElement(infoAsset.getTypeFile());
                 AudioAsset audio = new AudioAsset();
                 audio = (AudioAsset) infoAsset;

@@ -7,17 +7,19 @@ package com.fundacionjala.convertor.controller;
  * @version 1.0.
  */
 public class ConvertCriteria {
-    private String fileName;
-    private String formatFrom;
-    private String formatTo;
-    private String pathFrom;
-    private String pathTo;
+    private String fileName; //example.mp4
+    private String formatFrom; // mp4
+    private String formatTo; // avi
+    private String pathFrom; //c:users
+    private String pathTo;  //c:usersDocuments
 
     //Advanced Video
     private String cnvVideoType;
-    private String cnvFps;
+    private String cnvFps; //24
     private String cnvAspectRatio;
-    private String cnvResolution;
+
+    private String cnvResolutionWidth;
+    private String cnvResolutionHeight;
     private String cnvVideoCodec;
     private String cnvVideoAudioCodec;
     //Advanced Audio
@@ -138,20 +140,6 @@ public class ConvertCriteria {
     }
 
     /**
-     * @return cnvResolution
-     */
-    public String getCnvResolution() {
-        return cnvResolution;
-    }
-
-    /**
-     * @param cnvResolution cnvResolution
-     */
-    public void setCnvResolution(String cnvResolution) {
-        this.cnvResolution = cnvResolution;
-    }
-
-    /**
      * @return cnvVideoCodec
      */
     public String getCnvVideoCodec() {
@@ -219,5 +207,21 @@ public class ConvertCriteria {
      */
     public void setCnvAudioCodec(String cnvAudioCodec) {
         this.cnvAudioCodec = cnvAudioCodec;
+    }
+
+    public String getCnvResolutionWidth() {
+        return cnvResolutionWidth;
+    }
+
+    public void setCnvResolutionWidth(String cnvResolutionWidth) {
+        this.cnvResolutionWidth = cnvResolutionWidth;
+    }
+
+    public String getCnvResolutionHeight() {
+        return cnvResolutionHeight;
+    }
+
+    public void setCnvResolutionHeight(String cnvResolutionHeight) {
+        this.cnvResolutionHeight = cnvResolutionHeight;
     }
 }
