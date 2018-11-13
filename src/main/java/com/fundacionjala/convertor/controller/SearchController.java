@@ -1,8 +1,9 @@
 package com.fundacionjala.convertor.controller;
 
-import com.fundacionjala.convertor.model.AdvancedSearchAudio;
-import com.fundacionjala.convertor.model.AdvancedSearchVideo;
+import com.fundacionjala.convertor.model.Asset;
+import com.fundacionjala.convertor.model.AudioAsset;
 import com.fundacionjala.convertor.model.FileSearcher;
+import com.fundacionjala.convertor.model.VideoAsset;
 import com.fundacionjala.convertor.view.*;
 
 import javax.swing.*;
@@ -36,7 +37,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
     private SearchCriteria searchCriteria;
     private DataFiles dataFiles;
     private int lock = -1;
-    private ArrayList<File> advanceResult = new ArrayList<>(1);
+    private ArrayList<Asset> advanceResult = new ArrayList<>(1);
 
 
     public SearchController() {
@@ -112,8 +113,8 @@ public class SearchController implements ActionListener, ListSelectionListener {
             advanceResult.clear();
             advanceResult.addAll(fileSearcher.search(searchCriteria));
 
-            for (File resu : advanceResult) {
-                listFileView.getListModel().addElement(resu.getAbsolutePath());
+            for (Asset resu : advanceResult) {
+                listFileView.getListModel().addElement(resu.getPath());
             }
 
         } else if (e.getSource() == searchViewer.getBtnClearList()) {
@@ -133,35 +134,41 @@ public class SearchController implements ActionListener, ListSelectionListener {
             dataFiles.getDefaultList().clear();
             String value = listFileView.getLstSearchResult().getSelectedValue().toString();
             System.out.println(value);
-            dataFiles.getDefaultList().addElement(value);
-            File selectedFile = getFile(value);
-            Path path = Paths.get(selectedFile.getAbsolutePath());
-            BasicFileAttributes attrib = null;
-            try {
-                attrib = Files.readAttributes(path, BasicFileAttributes.class);
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-            FileTime fileTime = attrib.creationTime();
-            dataFiles.getDefaultList().addElement("Name: ".concat(selectedFile.getName()));
-            dataFiles.getDefaultList().addElement("Size: ".concat(Long.toString(attrib.size())).concat(" bytes"));
-            dataFiles.getDefaultList().addElement("Creation time: ".concat(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(fileTime.toMillis())));
-            try {
-                String typeFile = Files.probeContentType(path);
-                dataFiles.getDefaultList().addElement("Type: ".concat(typeFile==null? "Unknown" : typeFile));
-            } catch (IOException e1) {
-                System.out.println("Tipo no reconocido");
+
+            Asset infoAsset = new Asset();
+
+            infoAsset = getInfoAsset(value);
+
+            dataFiles.getDefaultList().addElement(infoAsset.getPath());
+            dataFiles.getDefaultList().addElement(infoAsset.getNameFile());
+            dataFiles.getDefaultList().addElement(infoAsset.getSizeFile());
+            dataFiles.getDefaultList().addElement(infoAsset.getCreationFile());
+
+            if (infoAsset.getTypeFile().contains("Video")) {
+                dataFiles.getDefaultList().addElement(infoAsset.getTypeFile());
+                VideoAsset video = new VideoAsset();
+                video = (VideoAsset) infoAsset;
+                dataFiles.getDefaultList().addElement(video.getFps());
+                dataFiles.getDefaultList().addElement(video.getAspectRatio());
+                dataFiles.getDefaultList().addElement(video.getResolution());
+                dataFiles.getDefaultList().addElement(video.getDuration());
+            } else if (infoAsset.getTypeFile().contains("Audio")) {
+                dataFiles.getDefaultList().addElement(infoAsset.getTypeFile());
+                AudioAsset audio = new AudioAsset();
+                audio = (AudioAsset) infoAsset;
+                dataFiles.getDefaultList().addElement(audio.getChannels());
             }
         }
     }
 
 
-    public File getFile(String value) {
-        for (File f : advanceResult) {
-            if (f.getAbsolutePath().equals(value)) {
-                return f;
+    private Asset getInfoAsset(String value) {
+        Asset assetSelected = new Asset();
+        for (Asset as : advanceResult) {
+            if (as.getPath().equals(value)) {
+                assetSelected = as;
             }
         }
-        return null;
+        return assetSelected;
     }
 }

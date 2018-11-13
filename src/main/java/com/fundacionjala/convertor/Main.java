@@ -8,7 +8,7 @@ import com.fundacionjala.convertor.controller.SearchController;
  */
 public class Main {
 
-    public static final String PATH_TO_FFMPEG_BIN_FFPROBE = "C:\\Convertor\\Convertor-AT08-A\\lib\\filesff\\ffprobe";
+    public static final String PATH_TO_FFMPEG_BIN_FFPROBE = "lib\\filesff\\ffprobe";
 
     /**
      * @param args arguments
