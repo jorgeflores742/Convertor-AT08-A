@@ -7,6 +7,7 @@ public class VideoAsset extends Asset {
     private String aspectRatio;
     private String fps;
     private String videoCodec;
+    private String audioCodec;
 
     public VideoAsset() {
         super();
@@ -50,5 +51,14 @@ public class VideoAsset extends Asset {
 
     public String getVideoCodec() {
         return videoCodec;
+    }
+
+
+    public String getAudioCodec() {
+        return audioCodec;
+    }
+
+    public void setAudioCodec(String audioCodec) {
+        this.audioCodec = audioCodec;
     }
 }

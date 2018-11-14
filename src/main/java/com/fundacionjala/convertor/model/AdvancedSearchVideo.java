@@ -134,6 +134,17 @@ public class AdvancedSearchVideo {
             String codec = ffprobeResult.getStreams().get(0).codec_name;
             asset.setVideoCodec("Video codec: ".concat(codec));
 
+            //Audio codec
+            try {
+                String acodec = ffprobeResult.getStreams().get(1).codec_name;
+                asset.setAudioCodec("Audio codec: ".concat(acodec));
+                System.out.println(ffprobeResult.getStreams().get(1).codec_long_name);
+//            System.out.println(ffprobeResult.getStreams().get(0).codec_tag);
+            } catch (IndexOutOfBoundsException e) {
+                asset.setAudioCodec("Audio codec: NonSpecified");
+                System.out.println("None");
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -165,6 +176,15 @@ public class AdvancedSearchVideo {
                         (criteria.getAspectRatio().equals("All") ||
                                 vAsset.getAspectRatio().contains(criteria.getAspectRatio()));
 
+                //Video Codec
+                right = right &&
+                        (criteria.getVideoCodec().equals("All") ||
+                                vAsset.getVideoCodec().contains(criteria.getVideoCodec()));
+
+                //Audio Codec
+                right = right &&
+                        (criteria.getVideoAudioCodec().equals("All") ||
+                                vAsset.getAudioCodec().contains(criteria.getVideoAudioCodec()));
 
                 if (right) listAssetResult.add(vAsset);
             }

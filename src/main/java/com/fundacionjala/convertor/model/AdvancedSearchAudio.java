@@ -87,13 +87,18 @@ public class AdvancedSearchAudio {
                 AudioAsset audioAsset = new AudioAsset();
                 audioAsset = (AudioAsset) asset;
 
-                right = criteria.getVideoType().equals("All")
+                right = criteria.getAudioType().equals("All")
                         || audioAsset.getTypeFile().contains(criteria.getAudioType());
 
                 //Channels
                 right = right &&
                         criteria.getChannels().equals("All")
                         || audioAsset.getChannels().contains(criteria.getChannels());
+
+                //Audio codec
+                right = right &&
+                        criteria.getAudioCodec().equals("All")
+                        || audioAsset.getAudioCodec().contains(criteria.getAudioCodec());
 
                 if (right) listAssetResult.add(audioAsset);
             }
