@@ -57,17 +57,13 @@ public class FileSearcher {
 
     public ArrayList<Asset> search(SearchCriteria searchCriteria) {
         ArrayList<Asset> fileListAsset = new ArrayList<>(1);
-        ArrayList<File> fileList = new ArrayList<>(1);
         File dir = new File(searchCriteria.getPath());
         for (File file : Objects.requireNonNull(dir.listFiles())) {
             if (file.isDirectory()) {
                 searchCriteria.setPath(file.getPath());
                 fileListAsset.addAll(search(searchCriteria));
             } else if (meetCriteria(file, searchCriteria.getName(), searchCriteria.getExt(), searchCriteria.getSize())) {
-                fileAsset = new Asset();
-                fileAsset = fillAsset(fileAsset, file);
-                fileListAsset.add(fileAsset);
-                fileList.add(file);
+                fileListAsset.add(fillAsset(file));
             }
         }
         ArrayList<Asset> finalResult;
@@ -81,23 +77,19 @@ public class FileSearcher {
         return finalResult;
     }
 
-    private Asset fillAsset(Asset fAsset, File file) {
-        fAsset = fillFileAsset(file);
+    private Asset fillAsset(File file) {
         if (advancedSearchVideo.isVideoType(file)) {
-            String extentionFile = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
-            fAsset.setTypeFile("Video: ".concat(extentionFile));
-            fAsset = advancedSearchVideo.fillVideoFeatures(fAsset);
+            return advancedSearchVideo.fillVideoFeatures(file);
         } else if (advancedSearchAudio.isAudioType(file)) {
-            String extentionFile = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
-            fAsset.setTypeFile("Audio: ".concat(extentionFile));
-            fAsset = advancedSearchAudio.fillAudioFeatures(fAsset);
+            return advancedSearchAudio.fillAudioFeatures(file);
+        } else {
+            return fillCommonFeatures(file);
         }
-
-        return fAsset;
     }
 
-    private Asset fillFileAsset(File file) {
-        Asset asset = new Asset();
+    private CommonAsset fillCommonFeatures(File file) {
+        CommonAsset asset = new CommonAsset();
+
         BasicFileAttributes attrib = null;
         Path path = Paths.get(file.getAbsolutePath());
         try {
@@ -105,6 +97,7 @@ public class FileSearcher {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
+
         asset.setNameFile("Name: ".concat(file.getName()));
         String extentionFile = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
         asset.setTypeFile("File: ".concat(extentionFile));
