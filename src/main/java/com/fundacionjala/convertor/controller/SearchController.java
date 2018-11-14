@@ -11,14 +11,6 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.nio.file.attribute.FileTime;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
@@ -29,28 +21,24 @@ import java.util.ArrayList;
  */
 public class SearchController implements ActionListener, ListSelectionListener {
     //private SearchView searchView;
-    private SearchViewer searchViewer;
-    private AdvancedSearchVideoView advancedSearchVideo;
-    private AdvancedSearchAudioView advancedSearchAudio;
+    private NewSearchViewer searchViewer;
     private ListFileView listFileView;
     private FileSearcher fileSearcher = new FileSearcher();
     private SearchCriteria searchCriteria;
     private DataFiles dataFiles;
     private int lock = -1;
     private ArrayList<Asset> advanceResult = new ArrayList<>(1);
-    private ViewConverter v;
+    private NewWindows v;
 
 
     public SearchController() {
 
-        v = new ViewConverter();
+        v = new NewWindows();
         v.setVisible(true);
         ConvertController convertController = new ConvertController(v);
-        this.searchViewer = v.getSearchviewer();
+        this.searchViewer = v.getsView();
         this.searchViewer.getBtnSearch().addActionListener(this);
         this.searchViewer.getBtnClearList().addActionListener(this);
-        this.advancedSearchVideo = v.getAdvSearchVideoView();
-        this.advancedSearchAudio = v.getAdvSearchAudioView();
         this.listFileView = v.getListFile();
         this.listFileView.getLstSearchResult().addListSelectionListener(this);
         this.dataFiles = v.getData();
@@ -80,10 +68,10 @@ public class SearchController implements ActionListener, ListSelectionListener {
             searchCriteria.setVideoAudioCodec("All");
             searchCriteria.setAudioCodec("All");
         } else if (type.equals("Video")) {
-            searchCriteria.setVideoType(advancedSearchVideo.getCmbType().getSelectedItem().toString());
-            searchCriteria.setFps(advancedSearchVideo.getCmbFps().getSelectedItem().toString());
-            searchCriteria.setAspectRatio(advancedSearchVideo.getCmbAspectRatio().getSelectedItem().toString());
-            searchCriteria.setResolution(advancedSearchVideo.getCmbResolution().getSelectedItem().toString());
+            searchCriteria.setVideoType(searchViewer.getCmbType().getSelectedItem().toString());
+            searchCriteria.setFps(searchViewer.getCmbFps().getSelectedItem().toString());
+            searchCriteria.setAspectRatio(searchViewer.getCmbAspectRatio().getSelectedItem().toString());
+            searchCriteria.setResolution(searchViewer.getCmbResolution().getSelectedItem().toString());
             //searchCriteria.setVideoCodec(advancedSearchVideo);
             //searchCriteria.setVideoAudioCodec(advancedSearchVideo);
             //searchCriteria.setAudioCodec(advancedSearchAudio);
@@ -91,8 +79,8 @@ public class SearchController implements ActionListener, ListSelectionListener {
             searchCriteria.setChannels("All");
             searchCriteria.setAudioCodec("All");
         } else if (type.equals("Audio")) {
-            searchCriteria.setAudioType(advancedSearchAudio.getCmbType().getSelectedItem().toString());
-            searchCriteria.setChannels(advancedSearchAudio.getCmbChannels().getSelectedItem().toString());
+            searchCriteria.setAudioType(searchViewer.getCmbType().getSelectedItem().toString());
+            searchCriteria.setChannels(searchViewer.getCmbChannels().getSelectedItem().toString());
             //searchCriteria.setAudioCodec(advancedSearchAudio);
             searchCriteria.setVideoType("All");
             searchCriteria.setFps("All");

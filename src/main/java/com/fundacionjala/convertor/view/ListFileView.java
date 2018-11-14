@@ -38,7 +38,7 @@ public class ListFileView extends JDialog{
      */
     public ListFileView() {
         pnlMain = new JPanel(new GridBagLayout());
-        listModel.addElement("Resultados de busqueda. Click derecho para opciones");
+        listModel.addElement("Resultados de busqueda.");
         lstSearchResult = new JList(listModel);
         scrlSearchResult = new JScrollPane(lstSearchResult);
         initializeControls();
@@ -74,7 +74,7 @@ public class ListFileView extends JDialog{
      *  Set of size.
      */
     private void initializeControls() {
-        scrlSearchResult.setPreferredSize(new Dimension(((int) dim.getWidth())/3, LIST_HEIGHT_37));
+        scrlSearchResult.setPreferredSize(new Dimension(400, 225));
     }
 
     public DefaultListModel getListModel() {

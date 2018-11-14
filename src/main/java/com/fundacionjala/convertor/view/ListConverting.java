@@ -23,7 +23,7 @@ public class ListConverting extends JDialog {
      * initialize elements.
      */
     private void initializeFrame() {
-
+        //pnlMain.setSize(1000,200);
         GridBagConstraints c = new GridBagConstraints();
         c.insets = new Insets(2, 2, 2, 2);
 
@@ -45,7 +45,7 @@ public class ListConverting extends JDialog {
      *  Set of size.
      */
     private void initializeControls() {
-        lstSearchResult.setPreferredSize(new Dimension(250, 150));
-        scrlSearchResult.setPreferredSize(new Dimension(250, 150));
+        lstSearchResult.setPreferredSize(new Dimension(820, 105));
+        scrlSearchResult.setPreferredSize(new Dimension(820, 105));
     }
 }
