@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -84,19 +85,29 @@ public class AdvancedSearchVideo {
         return videoTypes.contains(ext)? true : false;
     }
 
-    public Asset fillVideoFeatures(Asset assetFile) {
-        boolean done = false;
+    public Asset fillVideoFeatures(File file) {
         VideoAsset asset = new VideoAsset();
-        asset.setNameFile(assetFile.getNameFile());
-        asset.setTypeFile(assetFile.getTypeFile());
-        asset.setSizeFile(assetFile.getSizeFile());
-        asset.setCreationFile(assetFile.getCreationFile());
-        asset.setFile(assetFile.getFile());
-        asset.setPath(assetFile.getPath());
+        BasicFileAttributes attrib = null;
+        Path path = Paths.get(file.getAbsolutePath());
+        try {
+            attrib = Files.readAttributes(path, BasicFileAttributes.class);
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+
+        asset.setNameFile("Name: ".concat(file.getName()));
+        String extentionFile = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
+        asset.setTypeFile("Video: ".concat(extentionFile));
+        asset.setSizeFile("Size: ".concat(Long.toString(attrib.size())).concat(" bytes"));
+        FileTime fileTime = attrib.creationTime();
+        asset.setCreationFile("Creation time: ".concat(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(fileTime.toMillis())));
+        asset.setFile(file);
+        asset.setPath(file.getAbsolutePath());
+
         FFprobe ffprobe;
         try {
             ffprobe = new FFprobe(PATH_TO_FFMPEG_BIN_FFPROBE);
-            FFmpegProbeResult ffprobeResult = ffprobe.probe(assetFile.getPath());
+            FFmpegProbeResult ffprobeResult = ffprobe.probe(asset.getPath());
 
             //Resolucion
             String wVideo = Integer.toString(ffprobeResult.getStreams().get(0).width);
@@ -105,7 +116,7 @@ public class AdvancedSearchVideo {
 
             //Duration
             String duration = Double.toString(ffprobeResult.getStreams().get(0).duration);
-            asset.setDuration("Duration: ".concat(duration));
+            asset.setDuration("Duration: ".concat(duration).concat(" seconds"));
 
             //Aspect ratio
             String aspectRatio = ffprobeResult.getStreams().get(0).display_aspect_ratio;
@@ -114,13 +125,19 @@ public class AdvancedSearchVideo {
 
             //fps
             int fps = ffprobeResult.getStreams().get(0).avg_frame_rate.getNumerator();
-            asset.setFps("Frames Per Second: ".concat(Integer.toString(fps)));
+            float fpsFloat = fps;
+            fpsFloat = fpsFloat >= 1000 ? (fpsFloat / 1000) : fpsFloat;
+            asset.setFps("Frames Per Second: ".concat(Float.toString(fpsFloat)));
+            System.out.println(file.getName().concat(" ").concat(Integer.toString(fps)));
 
-            done = true;
+            //Video codec
+            String codec = ffprobeResult.getStreams().get(0).codec_name;
+            asset.setVideoCodec("Video codec: ".concat(codec));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return done ? asset : assetFile;
+        return asset;
     }
 
     public  ArrayList<Asset> FilterCrit(ArrayList<Asset> resultList, SearchCriteria criteria) {
@@ -146,7 +163,7 @@ public class AdvancedSearchVideo {
                 //Aspect ratio
                 right = right &&
                         (criteria.getAspectRatio().equals("All") ||
-                                vAsset.getAspectRatio().equals(criteria.getAspectRatio()));
+                                vAsset.getAspectRatio().contains(criteria.getAspectRatio()));
 
 
                 if (right) listAssetResult.add(vAsset);

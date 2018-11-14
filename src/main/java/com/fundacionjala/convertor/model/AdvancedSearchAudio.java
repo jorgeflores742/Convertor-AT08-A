@@ -6,6 +6,12 @@ import net.bramp.ffmpeg.probe.FFmpegProbeResult;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.nio.file.attribute.FileTime;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import static com.fundacionjala.convertor.Main.PATH_TO_FFMPEG_BIN_FFPROBE;
@@ -34,29 +40,43 @@ public class AdvancedSearchAudio {
         return audioTypes.contains(ext)? true : false;
     }
 
-    public Asset fillAudioFeatures(Asset assetFile) {
-        boolean done = false;
+    public Asset fillAudioFeatures(File file) {
         AudioAsset asset = new AudioAsset();
-        asset.setNameFile(assetFile.getNameFile());
-        asset.setTypeFile(assetFile.getTypeFile());
-        asset.setSizeFile(assetFile.getSizeFile());
-        asset.setCreationFile(assetFile.getCreationFile());
-        asset.setFile(assetFile.getFile());
-        asset.setPath(assetFile.getPath());
+
+        BasicFileAttributes attrib = null;
+        Path path = Paths.get(file.getAbsolutePath());
+        try {
+            attrib = Files.readAttributes(path, BasicFileAttributes.class);
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+
+        asset.setNameFile("Name: ".concat(file.getName()));
+        String extentionFile = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
+        asset.setTypeFile("Audio: ".concat(extentionFile));
+        asset.setSizeFile("Size: ".concat(Long.toString(attrib.size())).concat(" bytes"));
+        FileTime fileTime = attrib.creationTime();
+        asset.setCreationFile("Creation time: ".concat(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(fileTime.toMillis())));
+        asset.setFile(file);
+        asset.setPath(file.getAbsolutePath());
+
         FFprobe ffprobe;
         try {
             ffprobe = new FFprobe(PATH_TO_FFMPEG_BIN_FFPROBE);
-            FFmpegProbeResult ffprobeResult = ffprobe.probe(assetFile.getPath());
+            FFmpegProbeResult ffprobeResult = ffprobe.probe(asset.getPath());
 
             //Audio channels.
             String ch_Audio = ffprobeResult.getStreams().get(0).channel_layout;
             asset.setChannels("Channels: ".concat(ch_Audio==null? "Unknown" : ch_Audio));
 
-            done = true;
+            //Audio codec
+            String codec = ffprobeResult.getStreams().get(0).codec_name;
+            asset.setAudioCodec("Audio codec: ".concat(codec));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return done ? asset : assetFile;
+        return asset;
     }
 
     public  ArrayList<Asset> FilterCrit(ArrayList<Asset> resultList, SearchCriteria criteria) {
