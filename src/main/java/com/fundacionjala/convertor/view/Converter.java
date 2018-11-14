@@ -192,6 +192,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbVideoAC.addItem("flv1");
         cmbVideoAC.addItem("mpeg1video");
         cmbVideoAC.addItem("h264");
+        cmbVideoAC.addItem("libx264");
         cmbVideoAC.addItem("vp8");
         cmbVideoAC.addItem("mpeg2video");
 
@@ -215,7 +216,6 @@ public class Converter extends JDialog implements ActionListener {
         lblVideo.setIcon(new ImageIcon("img\\video.png"));
 
         progressBar.setStringPainted(true);
-        progressBar.setValue(0);
         progressBar.setMaximum(100);
 
 
@@ -559,5 +559,9 @@ public class Converter extends JDialog implements ActionListener {
 
     public void setTxtName(String txtName) {
         this.txtName.setText(txtName);
+    }
+
+    public void setProgressBar(int value) {
+        this.progressBar.setValue(value);
     }
 }

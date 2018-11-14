@@ -185,6 +185,12 @@ public class ConvertCriteria {
      * @return cnvChannels
      */
     public String getCnvChannels() {
+        if (cnvChannels == "Mono") {
+            return "1";
+
+        }else if(cnvChannels == "Stereo") {
+            return "2";
+        }
         return cnvChannels;
     }
 
