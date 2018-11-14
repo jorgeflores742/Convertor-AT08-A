@@ -34,9 +34,9 @@ public class ConvertController implements ActionListener {
 
     public void loadConvertCriteria() {
         convertCriteria.setFileName(converter.getTxtName().getText());
-        convertCriteria.setFormatFrom(converter.getTxtPathSave().getText());
+        convertCriteria.setFormatFrom("holaaaa");
         convertCriteria.setFormatTo(converter.getCmbType().getSelectedItem().toString());
-        convertCriteria.setPathFrom("falta");
+//        convertCriteria.setPathFrom(converter.getTxtPathSave().getText());
         convertCriteria.setPathTo(converter.getTxtPathSave().getText());
 
         convertCriteria.setCnvVideoType(converter.getCmbType().getSelectedItem().toString());
@@ -61,31 +61,18 @@ public class ConvertController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == converter.getBtnConvert()) {
             loadConvertCriteria();
-//            System.out.println(convertCriteria.getCnvAspectRatio());
-//            System.out.println(convertCriteria.getCnvAudioCodec());
-//            System.out.println(convertCriteria.getCnvAudioType());
-//            System.out.println(convertCriteria.getCnvChannels());
-//            System.out.println(convertCriteria.getCnvFps());
-//            System.out.println(convertCriteria.getCnvResolutionWidth());
-//            System.out.println(convertCriteria.getCnvResolutionHeight());
-//            System.out.println(convertCriteria.getCnvVideoAudioCodec());
-//            System.out.println(convertCriteria.getCnvVideoCodec());
-//            System.out.println(convertCriteria.getCnvVideoType());
-//            System.out.println(convertCriteria.getFileName());
-//            System.out.println(convertCriteria.getFormatFrom());
-//            System.out.println(convertCriteria.getFormatTo());
-//            System.out.println(convertCriteria.getPathFrom());
-//            System.out.println(convertCriteria.getPathTo());
-
             if(converter.getCmbConvertTo().equals("Audio")) {
                 System.out.println("Es audio");
                 convertFile = new ConvertFileAudio();
                 progress = convertFile.convert(convertCriteria);
+                converter.setProgressBar(progress);
 
-            } else if(converter.getCmbConvertTo().equals("Video")){
+            } else if(converter.getCmbConvertTo().getSelectedItem().toString().equals("Video")){
                 System.out.println("Es video");
+
                 convertFile = new ConvertFileVideo();
                 progress = convertFile.convert(convertCriteria);
+                converter.setProgressBar(progress);
             }
         }
     }
@@ -94,5 +81,8 @@ public class ConvertController implements ActionListener {
         return progress;
     }
 
+    public ConvertCriteria getConvertCriteria() {
+        return convertCriteria;
+    }
 }
 
