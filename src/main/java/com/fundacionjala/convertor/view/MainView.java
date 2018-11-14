@@ -101,7 +101,7 @@ public class MainView extends JFrame implements ActionListener {
         if (e.getSource() == btnSearch) {
 
             SearchView searchView = new SearchView(this);
-            AdvancedSearchVideoView advancedSearchVideo = new AdvancedSearchVideoView();
+            NewSearchViewer advancedSearchVideo = new NewSearchViewer();
             FileSearcher fileSearcher = new FileSearcher();
             //SearchController searchController = new SearchController(searchView, advancedSearchVideo, fileSearcher);
             // searchView.pack();
