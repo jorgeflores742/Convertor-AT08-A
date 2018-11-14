@@ -225,8 +225,8 @@ public class NewSearchViewer extends JDialog implements ActionListener {
 
         lblChannels.setText("Channels");
         cmbChannels.addItem("All");
-        cmbChannels.addItem("Mono");
-        cmbChannels.addItem("Stereo");
+        cmbChannels.addItem("mono");
+        cmbChannels.addItem("stereo");
         cmbChannels.addItem("2.1");
         cmbChannels.addItem("3.0");
         cmbChannels.addItem("3.1");
@@ -240,27 +240,35 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbChannels.addItem("8.1");
         cmbChannels.addItem("9.1");
 
-        lblVideoAC.setText("Video Codec:");
-        cmbVideoAC.addItem("All");
-        cmbVideoAC.addItem("mpeg4");
-        cmbVideoAC.addItem("wmv1");
-        cmbVideoAC.addItem("vp9");
-        cmbVideoAC.addItem("msmpeg4v3");
-        cmbVideoAC.addItem("flv1");
-        cmbVideoAC.addItem("mpeg1video");
-        cmbVideoAC.addItem("h264");
-        cmbVideoAC.addItem("vp8");
-        cmbVideoAC.addItem("mpeg2video");
-
-        lblVideoVC.setText("Audio Codec:");
+        lblVideoVC.setText("Video Codec:");
         cmbVideoVC.addItem("All");
-        cmbVideoVC.addItem("mp3");
-        cmbVideoVC.addItem("aac");
+        cmbVideoVC.addItem("mpeg4");
+        cmbVideoVC.addItem("wmv1");
+        cmbVideoVC.addItem("vp9");
+        cmbVideoVC.addItem("msmpeg4v3");
+        cmbVideoVC.addItem("flv1");
+        cmbVideoVC.addItem("mpeg1video");
+        cmbVideoVC.addItem("h264");
+        cmbVideoVC.addItem("vp8");
+        cmbVideoVC.addItem("mpeg2video");
+
+        lblVideoAC.setText("Audio Codec:");
+        cmbVideoAC.addItem("All");
+        cmbVideoAC.addItem("mp3");
+        cmbVideoAC.addItem("aac");
+        cmbVideoAC.addItem("wmav2");
+        cmbVideoAC.addItem("opus");
+        cmbVideoAC.addItem("vorbis");
+        cmbVideoAC.addItem("mp2");
 
         lblAudioAC.setText("Audio Codec:");
         cmbAudioAC.addItem("All");
         cmbAudioAC.addItem("mp3");
         cmbAudioAC.addItem("aac");
+        cmbAudioAC.addItem("wmav2");
+        cmbAudioAC.addItem("opus");
+        cmbAudioAC.addItem("vorbis");
+        cmbAudioAC.addItem("mp2");
     }
 
     /**

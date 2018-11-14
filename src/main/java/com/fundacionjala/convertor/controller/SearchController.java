@@ -63,26 +63,25 @@ public class SearchController implements ActionListener, ListSelectionListener {
             searchCriteria.setFps("All");
             searchCriteria.setAspectRatio("All");
             searchCriteria.setResolution("All");
-            searchCriteria.setAudioType("All");
-            searchCriteria.setChannels("All");
             searchCriteria.setVideoCodec("All");
             searchCriteria.setVideoAudioCodec("All");
+            searchCriteria.setAudioType("All");
+            searchCriteria.setChannels("All");
             searchCriteria.setAudioCodec("All");
         } else if (type.equals("Video")) {
             searchCriteria.setVideoType(searchViewer.getCmbType().getSelectedItem().toString());
             searchCriteria.setFps(searchViewer.getCmbFps().getSelectedItem().toString());
             searchCriteria.setAspectRatio(searchViewer.getCmbAspectRatio().getSelectedItem().toString());
             searchCriteria.setResolution(searchViewer.getCmbResolution().getSelectedItem().toString());
-            //searchCriteria.setVideoCodec(advancedSearchVideo);
-            //searchCriteria.setVideoAudioCodec(advancedSearchVideo);
-            //searchCriteria.setAudioCodec(advancedSearchAudio);
+            searchCriteria.setVideoCodec(searchViewer.getCmbVideoVC().getSelectedItem().toString());
+            searchCriteria.setVideoAudioCodec(searchViewer.getCmbVideoAC().getSelectedItem().toString());
             searchCriteria.setAudioType("All");
             searchCriteria.setChannels("All");
             searchCriteria.setAudioCodec("All");
         } else if (type.equals("Audio")) {
-            searchCriteria.setAudioType(searchViewer.getCmbType().getSelectedItem().toString());
+            searchCriteria.setAudioType(searchViewer.getCmbTypeAudio().getSelectedItem().toString());
             searchCriteria.setChannels(searchViewer.getCmbChannels().getSelectedItem().toString());
-            //searchCriteria.setAudioCodec(advancedSearchAudio);
+            searchCriteria.setAudioCodec(searchViewer.getCmbAudioAC().getSelectedItem().toString());
             searchCriteria.setVideoType("All");
             searchCriteria.setFps("All");
             searchCriteria.setAspectRatio("All");
@@ -149,6 +148,8 @@ public class SearchController implements ActionListener, ListSelectionListener {
                 dataFiles.getDefaultList().addElement(video.getAspectRatio());
                 dataFiles.getDefaultList().addElement(video.getResolution());
                 dataFiles.getDefaultList().addElement(video.getDuration());
+                dataFiles.getDefaultList().addElement(video.getVideoCodec());
+                dataFiles.getDefaultList().addElement(video.getAudioCodec());
             } else if (infoAsset.getTypeFile().contains("Audio")) {
                 v.getConverting().setTxtName(
                         infoAsset.getNameFile().substring(infoAsset.getNameFile().lastIndexOf(':') + 2,
@@ -158,6 +159,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
                 AudioAsset audio = new AudioAsset();
                 audio = (AudioAsset) infoAsset;
                 dataFiles.getDefaultList().addElement(audio.getChannels());
+                dataFiles.getDefaultList().addElement(audio.getAudioCodec());
             }
         }
     }
