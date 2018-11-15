@@ -28,22 +28,25 @@ public class ConvertFileAudio implements IConvertFile {
         try {
             ffmpeg = new FFmpeg("lib\\filesff\\ffmpeg");
             ffprobe = new FFprobe("lib\\filesff\\ffprobe");
-            in = ffprobe.probe("C:\\Users\\user\\Downloads\\Video\\PONTUVIDEO.mp4");
+            in = ffprobe.probe(convertCriteria.getPathFrom());
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("input>"+convertCriteria.getPathFrom());
+        System.out.println("output>"+convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvAudioType());
+
         FFmpegExecutor executor = new FFmpegExecutor(ffmpeg, ffprobe);
         FFmpegBuilder builder = new FFmpegBuilder()
                 .setInput(in) // Or filename
-                .overrideOutputFiles(true)
                 .overrideOutputFiles(true) // Override the output if it exists
-                .addOutput("C:\\Users\\user\\Documents\\Repositorio\\output.mp4")  // Filename for the destination
-                .setAudioCodec("ELCOF¡DIGO")
-                .setAudioChannels(FFmpeg.AUDIO_MONO)
-                .setAudioBitRate(FFmpeg.AUDIO_SAMPLE_48000)
-                .setAudioSampleRate(FFmpeg.AUDIO_SAMPLE_16000)
+                .addOutput(convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvAudioType())  // Filename for the destination
+                .setFormat(convertCriteria.getCnvAudioType()) //format to video PASSED
+                .setAudioCodec(convertCriteria.getCnvAudioCodec())
+                .setAudioChannels(Integer.parseInt(convertCriteria.getCnvChannels()))
                 .done();
         FFmpegProbeResult finalIn = in;
+        System.out.println(".setAudioCodec|"+convertCriteria.getCnvVideoAudioCodec());
+        System.out.println(".setAudioChannels"+convertCriteria.getCnvVideoCodec());
         FFmpegJob job = executor.createJob(builder, new ProgressListener() {
 
             // Using the FFmpegProbeResult determine the duration of the input

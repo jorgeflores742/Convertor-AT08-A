@@ -34,24 +34,34 @@ public class ConvertController implements ActionListener {
 
     public void loadConvertCriteria() {
         convertCriteria.setFileName(converter.getTxtName().getText());
-        convertCriteria.setFormatFrom("holaaaa");
+
         convertCriteria.setFormatTo(converter.getCmbType().getSelectedItem().toString());
 //        convertCriteria.setPathFrom(converter.getTxtPathSave().getText());
         convertCriteria.setPathTo(converter.getTxtPathSave().getText());
 
-        convertCriteria.setCnvVideoType(converter.getCmbType().getSelectedItem().toString());
-        convertCriteria.setCnvFps(converter.getCmbFps().getSelectedItem().toString());
-        convertCriteria.setCnvAspectRatio(converter.getCmbAspectRatio().getSelectedItem().toString());
-        String[] resolution = converter.getCmbResolution().getSelectedItem().toString().split("x");
-        convertCriteria.setCnvResolutionWidth(resolution[0]);
-        convertCriteria.setCnvResolutionHeight(resolution[1]);
-        convertCriteria.setCnvVideoCodec(converter.getCmbVideoVC().getSelectedItem().toString());
-        convertCriteria.setCnvVideoAudioCodec(converter.getCmbVideoAC().getSelectedItem().toString());
+        if(converter.getCmbConvertTo().getSelectedItem().toString().equals("Video")) {
+            convertCriteria.setCnvVideoType(converter.getCmbType().getSelectedItem().toString());
+            convertCriteria.setCnvFps(converter.getCmbFps().getSelectedItem().toString());
+            convertCriteria.setCnvAspectRatio(converter.getCmbAspectRatio().getSelectedItem().toString());
+            String[] resolution = converter.getCmbResolution().getSelectedItem().toString().split("x");
+            convertCriteria.setCnvResolutionWidth(resolution[0]);
+            convertCriteria.setCnvResolutionHeight(resolution[1]);
+            convertCriteria.setCnvVideoCodec(converter.getCmbVideoVC().getSelectedItem().toString());
+            convertCriteria.setCnvVideoAudioCodec(converter.getCmbVideoAC().getSelectedItem().toString());
+        }else {
+            convertCriteria.setCnvAudioType(converter.getCmbTypeAudio().getSelectedItem().toString());
+            if(converter.getCmbChannels().getSelectedItem().toString().equals("Stereo")){
+                convertCriteria.setCnvChannels("2");
+            }else{
+                convertCriteria.setCnvChannels("1");
+            }
+//            convertCriteria.setCnvChannels(converter.getCmbChannels().getSelectedItem().toString());
+            convertCriteria.setCnvAudioCodec(converter.getCmbAudioAC().getSelectedItem().toString());
 
-        convertCriteria.setCnvAudioType(converter.getCmbTypeAudio().getSelectedItem().toString());
-        convertCriteria.setCnvChannels(converter.getCmbChannels().getSelectedItem().toString());
-
-        convertCriteria.setCnvAudioCodec(converter.getCmbAudioAC().getSelectedItem().toString());
+            System.out.println(">"+converter.getCmbTypeAudio().getSelectedItem().toString());
+            System.out.println(">>"+converter.getCmbChannels().getSelectedItem().toString());
+            System.out.println(">>>"+converter.getCmbAudioAC().getSelectedItem().toString());
+        }
     }
 
     /**
@@ -61,7 +71,7 @@ public class ConvertController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == converter.getBtnConvert()) {
             loadConvertCriteria();
-            if(converter.getCmbConvertTo().equals("Audio")) {
+            if(converter.getCmbConvertTo().getSelectedItem().toString().equals("Audio")) {
                 System.out.println("Es audio");
                 convertFile = new ConvertFileAudio();
                 progress = convertFile.convert(convertCriteria);
