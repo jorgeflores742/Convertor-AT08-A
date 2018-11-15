@@ -55,18 +55,13 @@ public class ConvertFileAudio implements IConvertFile {
             @Override
             public void progress(Progress progress) {
 
-                progBar.setMaximum(100);
+
                 double percentage = progress.out_time_ns / duration_ns;
                 process = Integer.parseInt(String.format(
                         "%.0f",
                         percentage * 100,
                         progress.status
                 ));
-                progBar.setValue(Integer.parseInt(String.format(
-                        "%.0f",
-                        percentage * 100,
-                        progress.status
-                )));
 
                 // Print out interesting information about the progress
                 System.out.println(String.format(
