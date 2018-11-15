@@ -48,6 +48,7 @@ public class PlayerMedia extends JPanel {
         player.setSize(this.getSize());
         player.setVisible(true);
         this.add(player);
+        this.setBackground(new Colors().backgroundColor);
     }
 
     /**
@@ -121,6 +122,11 @@ public class PlayerMedia extends JPanel {
         buttonsContainer.add(btnSkip);
 
         this.add(buttonsContainer, BorderLayout.CENTER);
+        btnPause.setBackground(new Colors().btnColor);
+        btnPlay.setBackground(new Colors().btnColor);
+        btnRewind.setBackground(new Colors().btnColor);
+        btnSkip.setBackground(new Colors().btnColor);
+        btnStop.setBackground(new Colors().btnColor);
     }
 
     public void setFile(File file) {

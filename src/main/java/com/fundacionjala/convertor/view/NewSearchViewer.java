@@ -145,14 +145,17 @@ public class NewSearchViewer extends JDialog implements ActionListener {
      * Initialize elements.
      */
     private void initializeControls() {
-        //pnlMain.setBackground(Color.orange);
+        pnlMain.setBackground(new Colors().backgroundColor);
         lblPath.setText("Path :");
         txtPath.setColumns(10);
         txtPath.setEditable(false);
 
         btnPath.setIcon(new ImageIcon("img\\folder.png"));
         btnPath.setPreferredSize(new Dimension(35, 25));
-        //btnPath.setBackground(Color.orange);
+        btnPath.setBackground(new Colors().btnColor);
+        btnClearList.setBackground(new Colors().btnColor);
+        btnSearch.setBackground(new Colors().btnColor);
+        //btnPath.setBackground(new Colors());
         //btnPath.setBorder(null);
 
 
@@ -181,6 +184,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbType.addItem("flv");
         cmbType.addItem("wmv");
         cmbType.addItem("mkv");
+        cmbType.setForeground(new Colors().textColor);
 
         lblFps.setText("Frames:");
         cmbFps.addItem("All");
@@ -193,6 +197,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbFps.addItem(120f);
         cmbFps.addItem(144f);
         cmbFps.addItem(240f);
+        cmbFps.setForeground(new Colors().textColor);
 
         lblAspectRatio.setText("Aspect Ratio:");
         cmbAspectRatio.addItem("All");
@@ -200,6 +205,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbAspectRatio.addItem("12:5");
         cmbAspectRatio.addItem("16:9");
         cmbAspectRatio.addItem("17:9");
+        cmbAspectRatio.setForeground(new Colors().textColor);
 
         lblResolution.setText("Resolution:");
         cmbResolution.addItem("All");
@@ -212,6 +218,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbResolution.addItem("4096x2160");
         cmbResolution.addItem("7680x4320");
         cmbResolution.addItem("2560x1440");
+        cmbResolution.setForeground(new Colors().textColor);
 
         lblTypeAudio.setText("Type audio:");
         cmbTypeAudio.addItem("All");
@@ -222,6 +229,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbTypeAudio.addItem("wma");
         cmbTypeAudio.addItem("aac");
         cmbTypeAudio.addItem("flac");
+        cmbTypeAudio.setForeground(new Colors().textColor);
 
         lblChannels.setText("Channels");
         cmbChannels.addItem("All");
@@ -239,6 +247,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbChannels.addItem("7.2");
         cmbChannels.addItem("8.1");
         cmbChannels.addItem("9.1");
+        cmbChannels.setForeground(new Colors().textColor);
 
         lblVideoVC.setText("Video Codec:");
         cmbVideoVC.addItem("All");
@@ -251,6 +260,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbVideoVC.addItem("h264");
         cmbVideoVC.addItem("vp8");
         cmbVideoVC.addItem("mpeg2video");
+        cmbVideoVC.setForeground(new Colors().textColor);
 
         lblVideoAC.setText("Audio Codec:");
         cmbVideoAC.addItem("All");
@@ -260,6 +270,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbVideoAC.addItem("opus");
         cmbVideoAC.addItem("vorbis");
         cmbVideoAC.addItem("mp2");
+        cmbVideoAC.setForeground(new Colors().textColor);
 
         lblAudioAC.setText("Audio Codec:");
         cmbAudioAC.addItem("All");
@@ -269,6 +280,42 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbAudioAC.addItem("opus");
         cmbAudioAC.addItem("vorbis");
         cmbAudioAC.addItem("mp2");
+        cmbAudioAC.setForeground(new Colors().textColor);
+
+        cmbAspectRatio.setBackground(new Colors().cmbColor);
+        cmbAudioAC.setBackground(new Colors().cmbColor);
+        cmbChannels.setBackground(new Colors().cmbColor);
+        cmbFileType.setBackground(new Colors().cmbColor);
+        cmbFps.setBackground(new Colors().cmbColor);
+        cmbResolution.setBackground(new Colors().cmbColor);
+        cmbSize.setBackground(new Colors().cmbColor);
+        cmbType.setBackground(new Colors().cmbColor);
+        cmbTypeAudio.setBackground(new Colors().cmbColor);
+        cmbVideoAC.setBackground(new Colors().cmbColor);
+        cmbVideoVC.setBackground(new Colors().cmbColor);
+        txtPath.setBackground(new Colors().cmbColor);
+        txtName.setBackground(new Colors().cmbColor);
+        txtPath.setForeground(new Colors().textColor);
+        txtName.setForeground(new Colors().textColor);
+
+
+        lblPath.setForeground(new Colors().textColor);
+        lblName.setForeground(new Colors().textColor);
+        lblFileType.setForeground(new Colors().textColor);
+        lblSize.setForeground(new Colors().textColor);
+        lblType.setForeground(new Colors().textColor);
+        lblFps.setForeground(new Colors().textColor);
+        lblAspectRatio.setForeground(new Colors().textColor);
+        lblResolution.setForeground(new Colors().textColor);
+        lblVideoVC.setForeground(new Colors().textColor);
+        lblVideoAC.setForeground(new Colors().textColor);
+
+        lblTypeAudio.setForeground(new Colors().textColor);
+        lblAudioAC.setForeground(new Colors().textColor);
+        lblChannels.setForeground(new Colors().textColor);
+
+
+
     }
 
     /**

@@ -4,9 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 
 public class Converter extends JDialog implements ActionListener {
     private JPanel pnlConverter;
@@ -115,6 +112,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbConvertTo.addItem("Select");
         cmbConvertTo.addItem("Audio");
         cmbConvertTo.addItem("Video");
+        cmbConvertTo.setForeground(new Colors().textColor);
 
         lblType.setText("Type:");
         cmbType.addItem("Select");
@@ -124,6 +122,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbType.addItem("flv");
         cmbType.addItem("wmv");
         cmbType.addItem("mkv");
+        cmbType.setForeground(new Colors().textColor);
 
         lblFps.setText("Frames:");
         cmbFps.addItem("Select");
@@ -136,6 +135,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbFps.addItem(120f);
         cmbFps.addItem(144f);
         cmbFps.addItem(240f);
+        cmbFps.setForeground(new Colors().textColor);
 
         lblAspectRatio.setText("Aspect Ratio:");
         cmbAspectRatio.addItem("Select");
@@ -143,6 +143,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbAspectRatio.addItem("12:5");
         cmbAspectRatio.addItem("16:9");
         cmbAspectRatio.addItem("17:9");
+        cmbAspectRatio.setForeground(new Colors().textColor);
 
         lblResolution.setText("Resolution:");
         cmbResolution.addItem("Select");
@@ -155,6 +156,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbResolution.addItem("4096x2160");
         cmbResolution.addItem("7680x4320");
         cmbResolution.addItem("2560x1440");
+        cmbResolution.setForeground(new Colors().textColor);
 
         lblTypeAudio.setText("Type audio:");
         cmbTypeAudio.addItem("Select");
@@ -165,6 +167,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbTypeAudio.addItem("wma");
         cmbTypeAudio.addItem("aac");
         cmbTypeAudio.addItem("flac");
+        cmbTypeAudio.setForeground(new Colors().textColor);
 
         lblChannels.setText("Channels");
         cmbChannels.addItem("Select");
@@ -182,6 +185,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbChannels.addItem("7.2");
         cmbChannels.addItem("8.1");
         cmbChannels.addItem("9.1");
+        cmbChannels.setForeground(new Colors().textColor);
 
         lblVideoAC.setText("Video Codec:");
         cmbVideoAC.addItem("Select");
@@ -195,25 +199,62 @@ public class Converter extends JDialog implements ActionListener {
         cmbVideoAC.addItem("libx264");
         cmbVideoAC.addItem("vp8");
         cmbVideoAC.addItem("mpeg2video");
+        cmbVideoAC.setForeground(new Colors().textColor);
 
         lblVideoVC.setText("Audio Codec:");
         cmbVideoVC.addItem("Select");
         cmbVideoVC.addItem("mp3");
         cmbVideoVC.addItem("aac");
+        cmbVideoVC.setForeground(new Colors().textColor);
 
         lblAudioAC.setText("Audio Codec:");
         cmbAudioAC.addItem("Select");
         cmbAudioAC.addItem("mp3");
         cmbAudioAC.addItem("aac");
+        cmbAudioAC.setForeground(new Colors().textColor);
 
         txtPathSave.setColumns(20);
         btnPathSave.setIcon(new ImageIcon("img\\save.png"));
         btnPathSave.addActionListener(this);
-        txtPathSave.setText("C:\\Videos\\");
 
 
         lblAudio.setIcon(new ImageIcon("img\\music.png"));
         lblVideo.setIcon(new ImageIcon("img\\video.png"));
+
+        cmbConvertTo.setBackground(new Colors().cmbColor);
+        cmbAspectRatio.setBackground(new Colors().cmbColor);
+        cmbAudioAC.setBackground(new Colors().cmbColor);
+        cmbChannels.setBackground(new Colors().cmbColor);
+        cmbFps.setBackground(new Colors().cmbColor);
+        cmbResolution.setBackground(new Colors().cmbColor);
+        cmbType.setBackground(new Colors().cmbColor);
+        cmbTypeAudio.setBackground(new Colors().cmbColor);
+        cmbVideoAC.setBackground(new Colors().cmbColor);
+        cmbVideoVC.setBackground(new Colors().cmbColor);
+        txtName.setBackground(new Colors().cmbColor);
+        txtName.setForeground(new Colors().textColor);
+        txtPathSave.setBackground(new Colors().cmbColor);
+        txtPathSave.setForeground(new Colors().textColor);
+
+        lblSelectConvertTo.setForeground(new Colors().textColor);
+        lblName.setForeground(new Colors().textColor);
+        lblAspectRatio.setForeground(new Colors().textColor);
+        lblAudio.setForeground(new Colors().textColor);
+        lblAudioAC.setForeground(new Colors().textColor);
+        lblChannels.setForeground(new Colors().textColor);
+        lblFps.setForeground(new Colors().textColor);
+        lblSelectConvertTo.setForeground(new Colors().textColor);
+        lblResolution.setForeground(new Colors().textColor);
+        lblType.setForeground(new Colors().textColor);
+        lblTypeAudio.setForeground(new Colors().textColor);
+        lblVideoAC.setForeground(new Colors().textColor);
+        lblVideoVC.setForeground(new Colors().textColor);
+
+
+
+
+
+
 
         progressBar.setStringPainted(true);
         progressBar.setMaximum(100);
@@ -227,6 +268,8 @@ public class Converter extends JDialog implements ActionListener {
         GridBagConstraints gridPane = new GridBagConstraints();
         gridPane.insets = new Insets(2, 2, 2, 2);
 
+        btnConvert.setBackground(new Colors().btnColor);
+        btnPathSave.setBackground(new Colors().btnColor);
         gridPane.gridx = 0;
         gridPane.gridy = 0;
         gridPane.fill = GridBagConstraints.NONE;
@@ -485,6 +528,7 @@ public class Converter extends JDialog implements ActionListener {
 
         this.setSize(350, 550);
         this.setResizable(false);
+        pnlConverter.setBackground(new Colors().backgroundColor);
     }
 
     @Override
