@@ -41,6 +41,7 @@ public class ListFileView extends JDialog{
         listModel.addElement("Resultados de busqueda.");
         lstSearchResult = new JList(listModel);
         scrlSearchResult = new JScrollPane(lstSearchResult);
+        lstSearchResult.setBackground(new Colors().cmbColor);
         initializeControls();
         initializeFrame();
     }

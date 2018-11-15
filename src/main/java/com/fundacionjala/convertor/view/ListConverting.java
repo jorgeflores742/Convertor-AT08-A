@@ -13,7 +13,9 @@ public class ListConverting extends JDialog {
     public ListConverting() {
         pnlMain = new JPanel(new GridBagLayout());
         listModel.addElement("Lista de archivos convertidos y en proceso de conversion");
+        pnlMain.setBackground(new Colors().cmbColor);
         lstSearchResult = new JList(listModel);
+        lstSearchResult.setBackground(new Colors().cmbColor);
         scrlSearchResult = new JScrollPane(lstSearchResult);
         initializeControls();
         initializeFrame();
@@ -24,6 +26,7 @@ public class ListConverting extends JDialog {
      */
     private void initializeFrame() {
         //pnlMain.setSize(1000,200);
+
         GridBagConstraints c = new GridBagConstraints();
         c.insets = new Insets(2, 2, 2, 2);
 

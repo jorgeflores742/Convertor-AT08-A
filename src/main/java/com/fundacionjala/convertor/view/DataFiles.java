@@ -15,6 +15,7 @@ public class DataFiles extends JDialog {
         defaultList.addElement("Informacion de archivo seleccionado.");
         dataList = new JList(defaultList);
         scrData = new JScrollPane(dataList);
+        dataList.setBackground(new Colors().cmbColor);
         initializeControls();
         initializeFrame();
     }
@@ -26,7 +27,7 @@ public class DataFiles extends JDialog {
     }
 
     private void initializeFrame() {
-
+        dataPanel.setBackground(new Colors().cmbColor);
         GridBagConstraints c = new GridBagConstraints();
         c.insets = new Insets(2, 2, 2, 2);
 
