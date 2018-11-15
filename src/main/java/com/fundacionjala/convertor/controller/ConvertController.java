@@ -36,7 +36,6 @@ public class ConvertController implements ActionListener {
         convertCriteria.setFileName(converter.getTxtName().getText());
 
         convertCriteria.setFormatTo(converter.getCmbType().getSelectedItem().toString());
-//        convertCriteria.setPathFrom(converter.getTxtPathSave().getText());
         convertCriteria.setPathTo(converter.getTxtPathSave().getText());
 
         if(converter.getCmbConvertTo().getSelectedItem().toString().equals("Video")) {
@@ -55,12 +54,7 @@ public class ConvertController implements ActionListener {
             }else{
                 convertCriteria.setCnvChannels("1");
             }
-//            convertCriteria.setCnvChannels(converter.getCmbChannels().getSelectedItem().toString());
             convertCriteria.setCnvAudioCodec(converter.getCmbAudioAC().getSelectedItem().toString());
-
-            System.out.println(">"+converter.getCmbTypeAudio().getSelectedItem().toString());
-            System.out.println(">>"+converter.getCmbChannels().getSelectedItem().toString());
-            System.out.println(">>>"+converter.getCmbAudioAC().getSelectedItem().toString());
         }
     }
 
