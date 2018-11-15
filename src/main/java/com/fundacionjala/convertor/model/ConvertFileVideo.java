@@ -58,9 +58,9 @@ public class ConvertFileVideo implements IConvertFile {
 
                 .setFormat(convertCriteria.getCnvVideoType()) //format to video PASSED
 
-//                .setAudioCodec(convertCriteria.getCnvVideoAudioCodec())        // using the aac codec PASSED
+                .setAudioCodec(convertCriteria.getCnvVideoCodec())        // using the aac codec PASSED
 
-                .setVideoCodec("libx264")     // Video using libx264 PASSED
+                .setVideoCodec(convertCriteria.getCnvVideoAudioCodec())     // Video using libx264 PASSED
                 .setVideoFrameRate(n)     // at 24 frames per second VERIFY
                 .setVideoResolution(Integer.parseInt(convertCriteria.getCnvResolutionWidth()), Integer.parseInt(convertCriteria.getCnvResolutionHeight())) // at 640x480 resolution
 
