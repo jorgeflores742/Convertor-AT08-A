@@ -42,14 +42,14 @@ public class ConvertFileVideo implements IConvertFile {
         }
         System.out.println("input>"+convertCriteria.getPathFrom());
         System.out.println("output>"+convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvVideoType());
-        System.out.println("parametros----------------");
-                System.out.println(".setFormat "+(convertCriteria.getCnvVideoType()));
-                System.out.println(".setAudioChannels"+(Integer.parseInt(convertCriteria.getCnvChannels())));
-                System.out.println(".setAudioCodec|"+convertCriteria.getCnvVideoAudioCodec());
-                System.out.println(".setVideoCodec"+(convertCriteria.getCnvVideoCodec()));
-                System.out.println(".setVideoFrameRate"+n);
-                System.out.println(".setVideoResolution"+(Integer.parseInt(convertCriteria.getCnvResolutionWidth())+" "+Integer.parseInt(convertCriteria.getCnvResolutionHeight())));
-        System.out.println("fin de parametros-----------------");
+//        System.out.println("parametros----------------");
+//                System.out.println(".setFormat "+(convertCriteria.getCnvVideoType()));
+//                System.out.println(".setAudioChannels"+(Integer.parseInt(convertCriteria.getCnvChannels())));
+//                System.out.println(".setAudioCodec|"+convertCriteria.getCnvVideoAudioCodec());
+//                System.out.println(".setVideoCodec"+convertCriteria.getCnvVideoCodec());
+//                System.out.println(".setVideoFrameRate"+n);
+//                System.out.println(".setVideoResolution"+(Integer.parseInt(convertCriteria.getCnvResolutionWidth())+" "+Integer.parseInt(convertCriteria.getCnvResolutionHeight())));
+//        System.out.println("fin de parametros-----------------");
         FFmpegExecutor executor = new FFmpegExecutor(ffmpeg, ffprobe);
         FFmpegBuilder builder = new FFmpegBuilder()
                 .setInput(in) // Or filename
@@ -58,9 +58,9 @@ public class ConvertFileVideo implements IConvertFile {
 
                 .setFormat(convertCriteria.getCnvVideoType()) //format to video PASSED
 
-//                .setAudioCodec(convertCriteria.getCnvVideoAudioCodec())        // using the aac codec PASSED
+                .setAudioCodec(convertCriteria.getCnvVideoCodec())        // using the aac codec PASSED
 
-                .setVideoCodec("libx264")     // Video using libx264 PASSED
+                .setVideoCodec(convertCriteria.getCnvVideoAudioCodec())     // Video using libx264 PASSED
                 .setVideoFrameRate(n)     // at 24 frames per second VERIFY
                 .setVideoResolution(Integer.parseInt(convertCriteria.getCnvResolutionWidth()), Integer.parseInt(convertCriteria.getCnvResolutionHeight())) // at 640x480 resolution
 
