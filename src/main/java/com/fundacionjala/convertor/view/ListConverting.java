@@ -12,7 +12,7 @@ public class ListConverting extends JDialog {
 
     public ListConverting() {
         pnlMain = new JPanel(new GridBagLayout());
-        listModel.addElement("Lista de archivos convertidos y en proceso de conversion");
+        listModel.addElement("Converted files list");
         pnlMain.setBackground(new Colors().cmbColor);
         lstSearchResult = new JList(listModel);
         lstSearchResult.setBackground(new Colors().cmbColor);

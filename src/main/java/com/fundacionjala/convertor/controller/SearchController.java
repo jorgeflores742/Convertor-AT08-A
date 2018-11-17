@@ -120,7 +120,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
     @Override
     public void valueChanged(ListSelectionEvent e) {
         lock = (lock * (-1));
-        if (lock == 1) {
+        if (lock == 1 && listFileView.getLstSearchResult().getSelectedIndex() != (-1)) {
             dataFiles.getDefaultList().clear();
             String value = listFileView.getLstSearchResult().getSelectedValue().toString();
             System.out.println(value);
@@ -136,7 +136,9 @@ public class SearchController implements ActionListener, ListSelectionListener {
             dataFiles.getDefaultList().addElement(infoAsset.getSizeFile());
             dataFiles.getDefaultList().addElement(infoAsset.getCreationFile());
 
-            if (infoAsset.getTypeFile().contains("Video")) {
+            if (infoAsset.getTypeFile() == null) {
+
+            } else if (infoAsset.getTypeFile().contains("Video")) {
                 v.getConverting().setTxtName(
                         infoAsset.getNameFile().substring(infoAsset.getNameFile().lastIndexOf(':') + 2,
                                 infoAsset.getNameFile().lastIndexOf('.'))
