@@ -12,7 +12,7 @@ public class DataFiles extends JDialog {
 
     public DataFiles() {
         dataPanel = new JPanel(new GridBagLayout());
-        defaultList.addElement("Informacion de archivo seleccionado.");
+        defaultList.addElement("Selected file Info");
         dataList = new JList(defaultList);
         scrData = new JScrollPane(dataList);
         dataList.setBackground(new Colors().cmbColor);

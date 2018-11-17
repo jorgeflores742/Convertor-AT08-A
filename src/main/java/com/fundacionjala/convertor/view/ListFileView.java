@@ -38,7 +38,7 @@ public class ListFileView extends JDialog{
      */
     public ListFileView() {
         pnlMain = new JPanel(new GridBagLayout());
-        listModel.addElement("Resultados de busqueda.");
+        listModel.addElement("Search List result");
         lstSearchResult = new JList(listModel);
         scrlSearchResult = new JScrollPane(lstSearchResult);
         lstSearchResult.setBackground(new Colors().cmbColor);
@@ -67,7 +67,7 @@ public class ListFileView extends JDialog{
         this.add(pnlMain);
         lstSearchResult.addListSelectionListener(e -> {
             Object p = lstSearchResult.getSelectedValue();
-            url = new File(p.toString());
+            if (p != null) url = new File(p.toString());
         });
     }
 
