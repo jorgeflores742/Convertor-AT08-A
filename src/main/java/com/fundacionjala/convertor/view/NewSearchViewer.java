@@ -84,7 +84,6 @@ public class NewSearchViewer extends JDialog implements ActionListener {
 
     private JLabel lblAudioAC;
     private JComboBox cmbAudioAC;
-    private ItemHandler handler = new ItemHandler();
 
     /**
      * Pane for default search.
@@ -317,9 +316,18 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         lblAudioAC.setForeground(new Colors().textColor);
         lblChannels.setForeground(new Colors().textColor);
 
-        cmbFileType.addItemListener(handler);
 
-
+        ActionListener advanced = e -> {
+            String type = getCmbFileType().getSelectedItem().toString();
+            if (type.equals("Video")) {
+                System.out.println("Video");
+            } else if (type.equals("All")) {
+                System.out.println("all");
+            } else if (type.equals("Audio")) {
+                System.out.println("Audio");
+            }
+        };
+        getCmbFileType().addActionListener(advanced);
 
     }
 
@@ -617,14 +625,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
 
 
 
-    private class ItemHandler implements ItemListener{
-        @Override
-        public void itemStateChanged(ItemEvent e) {
-            if(cmbFileType.getSelectedItem().equals("Video")){
-                System.out.println("Estamos en video");
-            }
-        }
-    }
+
 
 
     /**
