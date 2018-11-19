@@ -32,7 +32,7 @@ public class PlayerMedia extends JPanel {
         width = playerWidth;
         NativeLibrary.addSearchPath(
                 RuntimeUtil.getLibVlcLibraryName(), "lib/pluginVlcj");
-        listFV =url;
+        listFV = url;
         player = new EmbeddedMediaPlayerComponent();
         iniMediaPlayer();
         createButtons();

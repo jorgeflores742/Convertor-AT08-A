@@ -53,7 +53,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
      */
 
     public void loadCriteria() {
-        searchCriteria.setName(searchViewer.getTxtName().getText());
+        searchCriteria.setName(searchViewer.getTxtName().getText().toLowerCase());
         System.out.println(searchViewer.getTxtPath().getText());
         searchCriteria.setPath(searchViewer.getTxtPath().getText());
         searchCriteria.setSize(searchViewer.getCmbSize().getSelectedItem().toString());

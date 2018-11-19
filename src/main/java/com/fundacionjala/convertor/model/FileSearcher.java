@@ -33,13 +33,12 @@ import java.util.Objects;
  */
 public class FileSearcher {
 
-    public static final long MINUS = 102400000L;
-    public static final long LITTLE = 512000000L;
-    public static final long MEDIUM = 1024000000L;
+    private static final long MINUS = 102400000L;
+    private static final long LITTLE = 512000000L;
+    private static final long MEDIUM = 1024000000L;
     private static final long BIG = 10240000000L;
-    Asset fileAsset;
-    AdvancedSearchVideo advancedSearchVideo = new AdvancedSearchVideo();
-    AdvancedSearchAudio advancedSearchAudio = new AdvancedSearchAudio();
+    private AdvancedSearchVideo advancedSearchVideo = new AdvancedSearchVideo();
+    private AdvancedSearchAudio advancedSearchAudio = new AdvancedSearchAudio();
 
     /**
      * This program searchs files using criteria of name,
@@ -51,7 +50,7 @@ public class FileSearcher {
     }
 
     /**
-     * @param searchCriteria
+     * @param searchCriteria Object that contains the criteria for search files
      * @return This main method diference between files and directories.
      */
 
@@ -118,21 +117,11 @@ public class FileSearcher {
      * <p>
      * this method compares the file with the criteria data.
      */
-    public boolean meetCriteria(File file, String name, String ext, String size) {
+    private boolean meetCriteria(File file, String name, String ext, String size) {
         boolean criteria;
-        criteria = (name == null || name.equals("")) || file.getName().contains(name);
-        criteria = criteria && isSearchExtention(file, ext);
+        criteria = (name == null || name.equals("")) || file.getName().toLowerCase().contains(name.toLowerCase());
         criteria = criteria && isSearchSize(file, size);
         return criteria;
-    }
-
-    /**
-     * @param file File for meets criteria.
-     * @param ext  extension criteria.
-     * @return true if file meets the criteria.
-     */
-    public boolean isSearchExtention(File file, String ext) {
-        return (ext == null || ext.equals("") || ext.equals("All")) || hasExtention(file, ext);
     }
 
     /**
@@ -140,18 +129,8 @@ public class FileSearcher {
      * @param size size criteria.
      * @return true if file meets criteria.
      */
-    public boolean isSearchSize(File file, String size) {
+    private boolean isSearchSize(File file, String size) {
         return (size == null || size.equals("") || size.equals("All")) || isSize(file, size);
-    }
-
-    /**
-     * @param file file.
-     * @param ext  extention.
-     * @return true if the extention meets criteria.
-     */
-    public boolean hasExtention(File file, String ext) {
-        String[] parts = file.getName().split("[.]");
-        return parts[parts.length - 1].equals(ext);
     }
 
     /**
@@ -159,7 +138,7 @@ public class FileSearcher {
      * @param siz  size.
      * @return true if file is in range of size.
      */
-    public boolean isSize(File file, String siz) {
+    private boolean isSize(File file, String siz) {
         long sizeFile = file.length();
         if (sizeFile <= MINUS && siz.equals("minus")) {
             return true;
@@ -173,10 +152,7 @@ public class FileSearcher {
         if (sizeFile <= BIG && sizeFile > MEDIUM && siz.equals("big")) {
             return true;
         }
-        if (sizeFile > BIG && siz.equals("very big")) {
-            return true;
-        }
-        return false;
+        return sizeFile > BIG && siz.equals("very big");
 
     }
 }
