@@ -7,7 +7,6 @@ public class Asset {
     private String sizeFile;
     private String creationFile;
     private String typeFile;
-    private String newAtrib;
     private File file;
     private String path;
 
@@ -45,14 +44,6 @@ public class Asset {
 
     public void setTypeFile(String typeFile) {
         this.typeFile = typeFile;
-    }
-
-    public String getNewAtrib() {
-        return newAtrib;
-    }
-
-    public void setNewAtrib(String newAtrib) {
-        this.newAtrib = newAtrib;
     }
 
     public File getFile() {
