@@ -39,6 +39,7 @@ public class ConvertFileAudio implements IConvertFile {
         FFmpegBuilder builder = new FFmpegBuilder()
                 .setInput(in) // Or filename
                 .overrideOutputFiles(true) // Override the output if it exists
+                .addExtraArgs("-vn")
                 .addOutput(convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvAudioType())  // Filename for the destination
                 .setFormat(convertCriteria.getCnvAudioType()) //format to video PASSED
                 .setAudioCodec(convertCriteria.getCnvAudioCodec())
