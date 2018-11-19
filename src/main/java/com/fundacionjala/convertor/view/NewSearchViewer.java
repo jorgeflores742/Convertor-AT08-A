@@ -155,9 +155,6 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         btnPath.setBackground(new Colors().btnColor);
         btnClearList.setBackground(new Colors().btnColor);
         btnSearch.setBackground(new Colors().btnColor);
-        //btnPath.setBackground(new Colors());
-        //btnPath.setBorder(null);
-
 
         btnPath.addActionListener(this);
         lblName.setText("File Name :");
@@ -166,12 +163,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         lblFileType.setText("File Type :");
 
         btnSearch.setIcon(new ImageIcon("img\\searchBlack.png"));
-        //btnSearch.setBackground(Color.orange);
-        //btnSearch.setBorder(null);
-
         btnClearList.setIcon(new ImageIcon("img\\deleteBlack.png"));
-        //btnClearList.setBackground(Color.orange);
-        //btnClearList.setBorder(null);
 
         lblVideo.setIcon(new ImageIcon("img\\video.png"));
         lblAudio.setIcon(new ImageIcon("img\\music.png"));
@@ -184,7 +176,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbType.addItem("flv");
         cmbType.addItem("wmv");
         cmbType.addItem("mkv");
-        cmbType.setForeground(new Colors().textColor);
+        cmbType.setForeground(new Colors().textCmbColor);
 
         lblFps.setText("Frames:");
         cmbFps.addItem("All");
@@ -197,7 +189,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbFps.addItem(120f);
         cmbFps.addItem(144f);
         cmbFps.addItem(240f);
-        cmbFps.setForeground(new Colors().textColor);
+        cmbFps.setForeground(new Colors().textCmbColor);
 
         lblAspectRatio.setText("Aspect Ratio:");
         cmbAspectRatio.addItem("All");
@@ -205,7 +197,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbAspectRatio.addItem("12:5");
         cmbAspectRatio.addItem("16:9");
         cmbAspectRatio.addItem("17:9");
-        cmbAspectRatio.setForeground(new Colors().textColor);
+        cmbAspectRatio.setForeground(new Colors().textCmbColor);
 
         lblResolution.setText("Resolution:");
         cmbResolution.addItem("All");
@@ -218,7 +210,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbResolution.addItem("4096x2160");
         cmbResolution.addItem("7680x4320");
         cmbResolution.addItem("2560x1440");
-        cmbResolution.setForeground(new Colors().textColor);
+        cmbResolution.setForeground(new Colors().textCmbColor);
 
         lblTypeAudio.setText("Type audio:");
         cmbTypeAudio.addItem("All");
@@ -229,7 +221,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbTypeAudio.addItem("wma");
         cmbTypeAudio.addItem("aac");
         cmbTypeAudio.addItem("flac");
-        cmbTypeAudio.setForeground(new Colors().textColor);
+        cmbTypeAudio.setForeground(new Colors().textCmbColor);
 
         lblChannels.setText("Channels");
         cmbChannels.addItem("All");
@@ -247,7 +239,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbChannels.addItem("7.2");
         cmbChannels.addItem("8.1");
         cmbChannels.addItem("9.1");
-        cmbChannels.setForeground(new Colors().textColor);
+        cmbChannels.setForeground(new Colors().textCmbColor);
 
         lblVideoVC.setText("Video Codec:");
         cmbVideoVC.addItem("All");
@@ -260,7 +252,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbVideoVC.addItem("h264");
         cmbVideoVC.addItem("vp8");
         cmbVideoVC.addItem("mpeg2video");
-        cmbVideoVC.setForeground(new Colors().textColor);
+        cmbVideoVC.setForeground(new Colors().textCmbColor);
 
         lblVideoAC.setText("Audio Codec:");
         cmbVideoAC.addItem("All");
@@ -270,7 +262,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbVideoAC.addItem("opus");
         cmbVideoAC.addItem("vorbis");
         cmbVideoAC.addItem("mp2");
-        cmbVideoAC.setForeground(new Colors().textColor);
+        cmbVideoAC.setForeground(new Colors().textCmbColor);
 
         lblAudioAC.setText("Audio Codec:");
         cmbAudioAC.addItem("All");
@@ -280,7 +272,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbAudioAC.addItem("opus");
         cmbAudioAC.addItem("vorbis");
         cmbAudioAC.addItem("mp2");
-        cmbAudioAC.setForeground(new Colors().textColor);
+        cmbAudioAC.setForeground(new Colors().textCmbColor);
 
         cmbAspectRatio.setBackground(new Colors().cmbColor);
         cmbAudioAC.setBackground(new Colors().cmbColor);
@@ -295,8 +287,8 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbVideoVC.setBackground(new Colors().cmbColor);
         txtPath.setBackground(new Colors().cmbColor);
         txtName.setBackground(new Colors().cmbColor);
-        txtPath.setForeground(new Colors().textColor);
-        txtName.setForeground(new Colors().textColor);
+        txtPath.setForeground(new Colors().textCmbColor);
+        txtName.setForeground(new Colors().textCmbColor);
 
 
         lblPath.setForeground(new Colors().textColor);

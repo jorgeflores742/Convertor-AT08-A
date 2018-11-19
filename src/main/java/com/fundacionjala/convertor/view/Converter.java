@@ -112,7 +112,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbConvertTo.addItem("Select");
         cmbConvertTo.addItem("Audio");
         cmbConvertTo.addItem("Video");
-        cmbConvertTo.setForeground(new Colors().textColor);
+        cmbConvertTo.setForeground(new Colors().textCmbColor);
 
         lblType.setText("Type:");
         cmbType.addItem("Select");
@@ -122,7 +122,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbType.addItem("flv");
         cmbType.addItem("wmv");
         cmbType.addItem("mkv");
-        cmbType.setForeground(new Colors().textColor);
+        cmbType.setForeground(new Colors().textCmbColor);
 
         lblFps.setText("Frames:");
         cmbFps.addItem("Select");
@@ -132,7 +132,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbFps.addItem(29.9f);
         cmbFps.addItem(30f);
         cmbFps.addItem(60f);;
-        cmbFps.setForeground(new Colors().textColor);
+        cmbFps.setForeground(new Colors().textCmbColor);
 
         lblAspectRatio.setText("Aspect Ratio:");
         cmbAspectRatio.addItem("Select");
@@ -140,7 +140,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbAspectRatio.addItem("12:5");
         cmbAspectRatio.addItem("16:9");
         cmbAspectRatio.addItem("17:9");
-        cmbAspectRatio.setForeground(new Colors().textColor);
+        cmbAspectRatio.setForeground(new Colors().textCmbColor);
 
         lblResolution.setText("Resolution:");
         cmbResolution.addItem("Select");
@@ -153,7 +153,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbResolution.addItem("4096x2160");
         cmbResolution.addItem("7680x4320");
         cmbResolution.addItem("2560x1440");
-        cmbResolution.setForeground(new Colors().textColor);
+        cmbResolution.setForeground(new Colors().textCmbColor);
 
         lblTypeAudio.setText("Type audio:");
         cmbTypeAudio.addItem("Select");
@@ -164,13 +164,13 @@ public class Converter extends JDialog implements ActionListener {
         cmbTypeAudio.addItem("wma");
         cmbTypeAudio.addItem("aac");
         cmbTypeAudio.addItem("flac");
-        cmbTypeAudio.setForeground(new Colors().textColor);
+        cmbTypeAudio.setForeground(new Colors().textCmbColor);
 
         lblChannels.setText("Channels");
         cmbChannels.addItem("Select");
         cmbChannels.addItem("Mono");
         cmbChannels.addItem("Stereo");
-        cmbChannels.setForeground(new Colors().textColor);
+        cmbChannels.setForeground(new Colors().textCmbColor);
 
         lblVideoAC.setText("Video Codec:");
         cmbVideoAC.addItem("Select");
@@ -184,19 +184,19 @@ public class Converter extends JDialog implements ActionListener {
         cmbVideoAC.addItem("libx264");
         cmbVideoAC.addItem("vp8");
         cmbVideoAC.addItem("mpeg2video");
-        cmbVideoAC.setForeground(new Colors().textColor);
+        cmbVideoAC.setForeground(new Colors().textCmbColor);
 
         lblVideoVC.setText("Audio Codec:");
         cmbVideoVC.addItem("Select");
         cmbVideoVC.addItem("mp3");
         cmbVideoVC.addItem("aac");
-        cmbVideoVC.setForeground(new Colors().textColor);
+        cmbVideoVC.setForeground(new Colors().textCmbColor);
 
         lblAudioAC.setText("Audio Codec:");
         cmbAudioAC.addItem("Select");
         cmbAudioAC.addItem("mp3");
         cmbAudioAC.addItem("aac");
-        cmbAudioAC.setForeground(new Colors().textColor);
+        cmbAudioAC.setForeground(new Colors().textCmbColor);
 
         txtPathSave.setColumns(20);
         btnPathSave.setIcon(new ImageIcon("img\\save.png"));
@@ -217,9 +217,9 @@ public class Converter extends JDialog implements ActionListener {
         cmbVideoAC.setBackground(new Colors().cmbColor);
         cmbVideoVC.setBackground(new Colors().cmbColor);
         txtName.setBackground(new Colors().cmbColor);
-        txtName.setForeground(new Colors().textColor);
+        txtName.setForeground(new Colors().textCmbColor);
         txtPathSave.setBackground(new Colors().cmbColor);
-        txtPathSave.setForeground(new Colors().textColor);
+        txtPathSave.setForeground(new Colors().textCmbColor);
 
         lblSelectConvertTo.setForeground(new Colors().textColor);
         lblName.setForeground(new Colors().textColor);
