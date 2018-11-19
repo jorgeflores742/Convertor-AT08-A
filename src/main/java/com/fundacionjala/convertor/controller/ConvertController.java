@@ -2,8 +2,10 @@ package com.fundacionjala.convertor.controller;
 
 import com.fundacionjala.convertor.model.ConvertFileAudio;
 import com.fundacionjala.convertor.model.ConvertFileVideo;
+import com.fundacionjala.convertor.model.ConvertList;
 import com.fundacionjala.convertor.model.IConvertFile;
 import com.fundacionjala.convertor.view.Converter;
+import com.fundacionjala.convertor.view.ListConverting;
 import com.fundacionjala.convertor.view.NewWindows;
 //import com.fundacionjala.convertor.view.newWindows1;
 
@@ -20,14 +22,16 @@ public class ConvertController implements ActionListener {
     private Converter converter;
     private IConvertFile convertFile;
     private ConvertCriteria convertCriteria;
+    private ListConverting listConverting;
     private static int progress;
 
 
     /**
      *
      */
-    public ConvertController(NewWindows vc) {
-        this.converter = vc.getConverting();
+    public ConvertController(NewWindows nW) {
+        this.converter = nW.getConverting();
+        this.listConverting = nW.getListConv();
         converter.getBtnConvert().addActionListener(this);
         convertCriteria = new ConvertCriteria();
     }
@@ -78,6 +82,17 @@ public class ConvertController implements ActionListener {
                 progress = convertFile.convert(convertCriteria);
                 converter.setProgressBar(progress);
             }
+            if(progress == 100) {
+                ConvertList convertList = new ConvertList();
+                convertList.writeConvert(converter.getTxtPathSave().getText()
+                        .concat("\\")
+                        .concat(converter.getTxtName().getText())
+                        .concat(".")
+                        .concat(converter.getCmbType().getSelectedItem().toString())
+                );
+                listConverting.getListModel().clear();
+                showList(convertList.convertLis());
+            }
         }
     }
 
@@ -87,6 +102,12 @@ public class ConvertController implements ActionListener {
 
     public ConvertCriteria getConvertCriteria() {
         return convertCriteria;
+    }
+
+    protected void showList(String[] convertLis) {
+        for (int j = convertLis.length - 1; j >= 0; j-- ) {
+            listConverting.getListModel().addElement(convertLis[j]);
+        }
     }
 }
 
