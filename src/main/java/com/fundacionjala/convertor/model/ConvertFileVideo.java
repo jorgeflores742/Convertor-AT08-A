@@ -32,8 +32,10 @@ public class ConvertFileVideo implements IConvertFile {
             e.printStackTrace();
         }
         Fraction n=null;
-        n = getFractionSelected(convertCriteria.getCnvFps());
-
+        if(convertCriteria.getCnvFps()!=null) {
+            n = getFractionSelected(convertCriteria.getCnvFps());
+        }
+        String format = getCodec(convertCriteria.getCnvVideoType());
         System.out.println("input>"+convertCriteria.getPathFrom());
         System.out.println("output>"+convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvVideoType());
 
@@ -43,7 +45,7 @@ public class ConvertFileVideo implements IConvertFile {
                 .overrideOutputFiles(true) // Override the output if it exists
                 .addOutput(convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvVideoType())  // Filename for the destination
 
-                .setFormat(convertCriteria.getCnvVideoType()) //format to video PASSED
+                .setFormat(format) //format to video PASSED
 
                 .setAudioCodec(convertCriteria.getCnvVideoCodec())        // using the aac codec PASSED
 
@@ -85,6 +87,16 @@ public class ConvertFileVideo implements IConvertFile {
 
         job.run();
         return process;
+    }
+
+    private String getCodec(String cnvVideoType) {
+        String format = null;
+        if(cnvVideoType.equals("mkv")) {
+            format = "matroska";
+        }else {
+            format = cnvVideoType;
+        }
+        return format;
     }
 
     private Fraction getFractionSelected(String cnvFps) {

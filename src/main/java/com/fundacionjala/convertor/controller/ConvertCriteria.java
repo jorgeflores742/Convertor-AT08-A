@@ -7,25 +7,25 @@ package com.fundacionjala.convertor.controller;
  * @version 1.0.
  */
 public class ConvertCriteria {
-    private String fileName; //example.mp4
-    private String formatFrom; // mp4
-    private String formatTo; // avi
-    private String pathFrom; //c:users
-    private String pathTo;  //c:usersDocuments
+    private String fileName = null; //example.mp4
+    private String formatFrom = null; // mp4
+    private String formatTo = null; // avi
+    private String pathFrom = null; //c:users
+    private String pathTo = null;  //c:usersDocuments
 
     //Advanced Video
-    private String cnvVideoType;
-    private String cnvFps; //24
-    private String cnvAspectRatio;
+    private String cnvVideoType = null;
+    private String cnvFps = null; //24
+    private String cnvAspectRatio = null;
 
-    private String cnvResolutionWidth;
-    private String cnvResolutionHeight;
-    private String cnvVideoCodec;
-    private String cnvVideoAudioCodec;
+    private String cnvResolutionWidth = null;
+    private String cnvResolutionHeight = null;
+    private String cnvVideoCodec = null;
+    private String cnvVideoAudioCodec = null;
     //Advanced Audio
-    private String cnvAudioType;
-    private String cnvChannels;
-    private String cnvAudioCodec;
+    private String cnvAudioType = null;
+    private String cnvChannels = null;
+    private String cnvAudioCodec = null;
 
     /**
      * @return file name

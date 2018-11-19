@@ -27,7 +27,6 @@ public class SearchController implements ActionListener, ListSelectionListener {
     private ArrayList<Asset> advanceResult = new ArrayList<>(1);
     private NewWindows v;
     private ConvertController convertController;
-    private ListConverting listConverting = new ListConverting();
 
 
     public SearchController() {
@@ -40,12 +39,8 @@ public class SearchController implements ActionListener, ListSelectionListener {
         this.listFileView = v.getListFile();
         this.listFileView.getLstSearchResult().addListSelectionListener(this);
         this.dataFiles = v.getData();
-        this.listConverting = v.getListConv();
         searchCriteria = new SearchCriteria();
-        ConvertList convertList = new ConvertList();
-        String[] listConv = convertList.convertLis();
         convertController = new ConvertController(v);
-        convertController.showList(convertList.convertLis());
     }
 
     /**
