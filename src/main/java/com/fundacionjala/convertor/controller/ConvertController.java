@@ -7,8 +7,6 @@ import com.fundacionjala.convertor.model.IConvertFile;
 import com.fundacionjala.convertor.view.Converter;
 import com.fundacionjala.convertor.view.ListConverting;
 import com.fundacionjala.convertor.view.NewWindows;
-//import com.fundacionjala.convertor.view.newWindows1;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
