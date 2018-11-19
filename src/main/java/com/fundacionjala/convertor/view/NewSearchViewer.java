@@ -18,6 +18,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.ArrayList;
 
 /**
@@ -82,6 +84,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
 
     private JLabel lblAudioAC;
     private JComboBox cmbAudioAC;
+    private ItemHandler handler = new ItemHandler();
 
     /**
      * Pane for default search.
@@ -313,6 +316,8 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         lblTypeAudio.setForeground(new Colors().textColor);
         lblAudioAC.setForeground(new Colors().textColor);
         lblChannels.setForeground(new Colors().textColor);
+
+        cmbFileType.addItemListener(handler);
 
 
 
@@ -593,6 +598,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
 
         this.add(pnlMain);
         this.setResizable(false);
+
     }
 
     /**
@@ -607,6 +613,19 @@ public class NewSearchViewer extends JDialog implements ActionListener {
             txtPath.setText(f.getSelectedFile().getAbsolutePath());
         }
     }
+
+
+
+
+    private class ItemHandler implements ItemListener{
+        @Override
+        public void itemStateChanged(ItemEvent e) {
+            if(cmbFileType.getSelectedItem().equals("Video")){
+                System.out.println("Estamos en video");
+            }
+        }
+    }
+
 
     /**
      * @return txtpath path.
