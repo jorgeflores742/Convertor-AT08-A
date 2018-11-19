@@ -11,12 +11,9 @@ import net.bramp.ffmpeg.probe.FFmpegProbeResult;
 import net.bramp.ffmpeg.progress.Progress;
 import net.bramp.ffmpeg.progress.ProgressListener;
 import org.apache.commons.lang3.math.Fraction;
-import sun.security.krb5.internal.crypto.crc32;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
-import static net.bramp.ffmpeg.FFmpeg.*;
 
 public class ConvertFileVideo implements IConvertFile {
 
@@ -35,13 +32,11 @@ public class ConvertFileVideo implements IConvertFile {
             e.printStackTrace();
         }
         Fraction n=null;
-        if(convertCriteria.getCnvFps().equals("24.0")){
-            n=FPS_24;
-        }else if(convertCriteria.getCnvFps().equals("30.0")) {
-            n=FPS_30;
-        }
+        n = getFractionSelected(convertCriteria.getCnvFps());
+
         System.out.println("input>"+convertCriteria.getPathFrom());
         System.out.println("output>"+convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvVideoType());
+
         FFmpegExecutor executor = new FFmpegExecutor(ffmpeg, ffprobe);
         FFmpegBuilder builder = new FFmpegBuilder()
                 .setInput(in) // Or filename
@@ -90,5 +85,23 @@ public class ConvertFileVideo implements IConvertFile {
 
         job.run();
         return process;
+    }
+
+    private Fraction getFractionSelected(String cnvFps) {
+        Fraction f = null;
+        if(cnvFps.equals("24.0")) {
+            f = Fraction.getFraction(24, 1);
+        }else if(cnvFps.equals("25.0")) {
+            f = Fraction.getFraction(25, 1);
+        }else if(cnvFps.equals("27.0")) {
+            f = Fraction.getFraction(27, 1);
+        }else if(cnvFps.equals("29.9")) {
+            f = Fraction.getFraction(30000, 1001);
+        }else if(cnvFps.equals("30.0")) {
+            f = Fraction.getFraction(30, 1);
+        }else if(cnvFps.equals("60.0")) {
+            f = Fraction.getFraction(60, 1);
+        }
+        return f;
     }
 }

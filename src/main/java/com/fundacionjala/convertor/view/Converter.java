@@ -131,10 +131,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbFps.addItem(27f);
         cmbFps.addItem(29.9f);
         cmbFps.addItem(30f);
-        cmbFps.addItem(60f);
-        cmbFps.addItem(120f);
-        cmbFps.addItem(144f);
-        cmbFps.addItem(240f);
+        cmbFps.addItem(60f);;
         cmbFps.setForeground(new Colors().textColor);
 
         lblAspectRatio.setText("Aspect Ratio:");
@@ -173,18 +170,6 @@ public class Converter extends JDialog implements ActionListener {
         cmbChannels.addItem("Select");
         cmbChannels.addItem("Mono");
         cmbChannels.addItem("Stereo");
-        cmbChannels.addItem("2.1");
-        cmbChannels.addItem("3.0");
-        cmbChannels.addItem("3.1");
-        cmbChannels.addItem("4.0");
-        cmbChannels.addItem("4.1");
-        cmbChannels.addItem("5.0");
-        cmbChannels.addItem("5.1");
-        cmbChannels.addItem("6.1");
-        cmbChannels.addItem("7.1");
-        cmbChannels.addItem("7.2");
-        cmbChannels.addItem("8.1");
-        cmbChannels.addItem("9.1");
         cmbChannels.setForeground(new Colors().textColor);
 
         lblVideoAC.setText("Video Codec:");
