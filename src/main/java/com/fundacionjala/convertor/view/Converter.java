@@ -122,6 +122,7 @@ public class Converter extends JDialog implements ActionListener {
         cmbType.addItem("flv");
         cmbType.addItem("wmv");
         cmbType.addItem("mkv");
+        cmbType.addItem("mov");
         cmbType.setForeground(new Colors().textCmbColor);
 
         lblFps.setText("Frames:");
