@@ -1,9 +1,6 @@
 package com.fundacionjala.convertor.controller;
 
-import com.fundacionjala.convertor.model.Asset;
-import com.fundacionjala.convertor.model.AudioAsset;
-import com.fundacionjala.convertor.model.FileSearcher;
-import com.fundacionjala.convertor.model.VideoAsset;
+import com.fundacionjala.convertor.model.*;
 import com.fundacionjala.convertor.view.*;
 
 import javax.swing.*;
@@ -30,20 +27,25 @@ public class SearchController implements ActionListener, ListSelectionListener {
     private ArrayList<Asset> advanceResult = new ArrayList<>(1);
     private NewWindows v;
     private ConvertController convertController;
+    private ListConverting listConverting = new ListConverting();
 
 
     public SearchController() {
 
         v = new NewWindows();
         v.setVisible(true);
-        convertController = new ConvertController(v);
         this.searchViewer = v.getsView();
         this.searchViewer.getBtnSearch().addActionListener(this);
         this.searchViewer.getBtnClearList().addActionListener(this);
         this.listFileView = v.getListFile();
         this.listFileView.getLstSearchResult().addListSelectionListener(this);
         this.dataFiles = v.getData();
+        this.listConverting = v.getListConv();
         searchCriteria = new SearchCriteria();
+        ConvertList convertList = new ConvertList();
+        String[] listConv = convertList.convertLis();
+        convertController = new ConvertController(v);
+        convertController.showList(convertList.convertLis());
     }
 
     /**
