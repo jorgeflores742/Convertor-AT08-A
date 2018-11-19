@@ -248,6 +248,7 @@ public class Converter extends JDialog implements ActionListener {
 
         btnConvert.setText("Convert");
 
+
         ActionListener advanced = e -> {
             String type = getCmbConvertTo().getSelectedItem().toString();
             if (type.equals("Video")) {
@@ -556,6 +557,16 @@ public class Converter extends JDialog implements ActionListener {
         this.setSize(350, 550);
         this.setResizable(false);
         pnlConverter.setBackground(new Colors().backgroundColor);
+
+        cmbType.setEnabled(false);
+        cmbFps.setEnabled(false);
+        cmbAspectRatio.setEnabled(false);
+        cmbResolution.setEnabled(false);
+        cmbVideoVC.setEnabled(false);
+        cmbVideoAC.setEnabled(false);
+        cmbTypeAudio.setEnabled(false);
+        cmbChannels.setEnabled(false);
+        cmbAudioAC.setEnabled(false);
     }
 
     @Override

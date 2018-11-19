@@ -623,7 +623,16 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         gridPane.weighty = 0;
         pnlMain.add(cmbVideoAC, gridPane);
 
-
+        cmbType.setEnabled(false);
+        cmbFps.setEnabled(false);
+        cmbAspectRatio.setEnabled(false);
+        cmbResolution.setEnabled(false);
+        cmbVideoVC.setEnabled(false);
+        cmbVideoAC.setEnabled(false);
+        cmbTypeAudio.setEnabled(false);
+        cmbChannels.setEnabled(false);
+        cmbAudioAC.setEnabled(false);
+        
         this.add(pnlMain);
         this.setResizable(false);
     }
