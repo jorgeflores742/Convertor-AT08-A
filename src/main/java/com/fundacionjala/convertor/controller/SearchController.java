@@ -134,6 +134,9 @@ public class SearchController implements ActionListener, ListSelectionListener {
 
             convertController.getConvertCriteria().setPathFrom(value);
 
+                v.getPlayerM().setRouteFile(value);
+
+
             dataFiles.getDefaultList().addElement(infoAsset.getPath());
             dataFiles.getDefaultList().addElement(infoAsset.getNameFile());
             dataFiles.getDefaultList().addElement(infoAsset.getSizeFile());
