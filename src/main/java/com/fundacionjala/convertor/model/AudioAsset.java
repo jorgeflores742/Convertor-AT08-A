@@ -1,11 +1,15 @@
 package com.fundacionjala.convertor.model;
 
+import com.fundacionjala.convertor.utils.SingleLogger;
+
 public class AudioAsset extends Asset {
     private String channels;
     private String audioCodec;
+    private static SingleLogger sL = SingleLogger.getInstanceLogger();
 
     public AudioAsset() {
         super();
+        sL.register(null, "INFO", "Successful - AudioAsset - start");
     }
 
     public String getChannels() {

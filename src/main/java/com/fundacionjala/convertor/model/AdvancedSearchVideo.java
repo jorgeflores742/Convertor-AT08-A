@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.fundacionjala.convertor.controller.SearchCriteria;
+import com.fundacionjala.convertor.utils.SingleLogger;
 import net.bramp.ffmpeg.FFprobe;
 import net.bramp.ffmpeg.probe.FFmpegProbeResult;
 
@@ -26,9 +27,10 @@ import static com.fundacionjala.convertor.Main.PATH_TO_FFMPEG_BIN_FFPROBE;
 public class AdvancedSearchVideo {
 
     ArrayList<String> videoTypes = new ArrayList<>();
-
+    private static SingleLogger sL = SingleLogger.getInstanceLogger();
 
     public AdvancedSearchVideo() {
+        sL.register(null, "INFO", "Successful - AdvancedSearchVideo - start");
         videoTypes.add("avi");
         videoTypes.add("mpg");
         videoTypes.add("mp4");
@@ -37,22 +39,26 @@ public class AdvancedSearchVideo {
         videoTypes.add("mkv");
         videoTypes.add("mov");
         videoTypes.add("webm");
-
+        sL.register(null, "INFO", "Successful - AdvancedSearchVideo - finished");
     }
 
     public boolean isVideoType(File file) {
+        sL.register(null, "INFO", "Successful - isVideoType - start");
         String ext = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
+        sL.register(null, "INFO", "Successful - isVideoType - finished");
         return videoTypes.contains(ext)? true : false;
     }
 
     public Asset fillVideoFeatures(File file) {
+        sL.register(null, "INFO", "Successful - fillVideoFeatures - finished");
         VideoAsset asset = new VideoAsset();
         BasicFileAttributes attrib = null;
         Path path = Paths.get(file.getAbsolutePath());
         try {
+            sL.register(null, "INFO", "Successful - register - start");
             attrib = Files.readAttributes(path, BasicFileAttributes.class);
         } catch (IOException e1) {
-            e1.printStackTrace();
+            sL.register(e1, "SEVERE", "Successful - register - finished");
         }
 
         asset.setNameFile("Name: ".concat(file.getName()));
@@ -66,6 +72,7 @@ public class AdvancedSearchVideo {
 
         FFprobe ffprobe;
         try {
+            sL.register(null, "INFO", "Successful - fillVideoFeatures - FFprobe - start");
             ffprobe = new FFprobe(PATH_TO_FFMPEG_BIN_FFPROBE);
             FFmpegProbeResult ffprobeResult = ffprobe.probe(asset.getPath());
 
@@ -96,22 +103,22 @@ public class AdvancedSearchVideo {
 
             //Audio codec
             try {
+                sL.register(null, "INFO", "Successful - fillVideoFeatures - ffprobeResult - finished");
                 String acodec = ffprobeResult.getStreams().get(1).codec_name;
                 asset.setAudioCodec("Audio codec: ".concat(acodec));
-                System.out.println(ffprobeResult.getStreams().get(1).codec_long_name);
-//            System.out.println(ffprobeResult.getStreams().get(0).codec_tag);
             } catch (IndexOutOfBoundsException e) {
                 asset.setAudioCodec("Audio codec: NonSpecified");
-                System.out.println("None");
+                sL.register(e, "INFO", "Successful - fillVideoFeatures - ffprobeResult - finished");
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            sL.register(e, "SEVERE", "Successful - fillVideoFeatures - FFprobe - finished");
         }
         return asset;
     }
 
     public  ArrayList<Asset> FilterCrit(ArrayList<Asset> resultList, SearchCriteria criteria) {
+        sL.register(null, "INFO", "Successful - FilterCrit - start");
         ArrayList<Asset> listAssetResult = new ArrayList<>(1);
         for (Asset asset : resultList) {
             if (asset.getTypeFile().contains("Video")) {
@@ -149,6 +156,7 @@ public class AdvancedSearchVideo {
                 if (right) listAssetResult.add(vAsset);
             }
         }
+        sL.register(null, "INFO", "Successful - FilterCrit - finished");
         return listAssetResult;
     }
 }

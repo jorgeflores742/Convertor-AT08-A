@@ -1,6 +1,7 @@
 package com.fundacionjala.convertor.model;
 
 import com.fundacionjala.convertor.controller.ConvertCriteria;
+import com.fundacionjala.convertor.utils.SingleLogger;
 import net.bramp.ffmpeg.FFmpeg;
 import net.bramp.ffmpeg.FFmpegExecutor;
 import net.bramp.ffmpeg.FFmpegUtils;
@@ -18,19 +19,21 @@ import java.util.concurrent.TimeUnit;
 
 public class ConvertFileVideo implements IConvertFile {
 
-    FFmpeg ffmpeg;
-    FFprobe ffprobe;
-    FFmpegProbeResult in;
-    static int process = 0;
+    private FFmpeg ffmpeg;
+    private FFprobe ffprobe;
+    private FFmpegProbeResult in;
+    private static int process = 0;
+    private static SingleLogger sL = SingleLogger.getInstanceLogger();
 
     @Override
     public int convert(ConvertCriteria convertCriteria) {
+        sL.register(null, "INFO", "Successful - convertVideo - start");
         try {
             ffmpeg = new FFmpeg("lib\\filesff\\ffmpeg");
             ffprobe = new FFprobe("lib\\filesff\\ffprobe");
             in = ffprobe.probe(convertCriteria.getPathFrom());
         } catch (IOException e) {
-            e.printStackTrace();
+            sL.register(e, "SEVERE", "Successful - convert - ffmpeg/ffmprobe - failed");
         }
         String format = getCodec(convertCriteria.getCnvVideoType());
 //        System.out.println("input>" + convertCriteria.getPathFrom());
@@ -57,6 +60,7 @@ public class ConvertFileVideo implements IConvertFile {
 
             @Override
             public void progress(Progress progress) {
+                sL.register(null, "INFO", "Successful - convert - progress - start");
                 double percentage = progress.out_time_ns / duration_ns;
                 process = Integer.parseInt(String.format(
                         "%.0f",
@@ -64,7 +68,7 @@ public class ConvertFileVideo implements IConvertFile {
                         progress.status
                 ));
                 // Print out interesting information about the progress
-                System.out.println(String.format(
+                sL.register(null, "INFO", "Successful - convert - progress - start "+(String.format(
                         "[%.0f%%] status:%s frame:%d time:%s ms fps:%.0f speed:%.2fx",
                         percentage * 100,
                         progress.status,
@@ -72,15 +76,19 @@ public class ConvertFileVideo implements IConvertFile {
                         FFmpegUtils.toTimecode(progress.out_time_ns, TimeUnit.NANOSECONDS),
                         progress.fps.doubleValue(),
                         progress.speed
-                ));
+                )));
+                sL.register(null, "INFO", "Successful - convert - progress - finished");
             }
         });
 
         job.run();
+        sL.register(null, "INFO", "Successful - convertVideo - finished");
+
         return process;
     }
 
     private ArrayList<Object> getParams(ConvertCriteria criteria) {
+        sL.register(null, "INFO", "Successful - getParams - start");
         ArrayList<Object> criteriaAux = new ArrayList<Object>() {};
         if (criteria.getCnvVideoCodec() == null) {
             System.out.println("audioCodec="+in.getStreams().get(1).codec_name);
@@ -121,21 +129,24 @@ public class ConvertFileVideo implements IConvertFile {
         } else {
             criteriaAux.add(Integer.parseInt(criteria.getCnvResolutionHeight()));
         }
-        ;
+        sL.register(null, "INFO", "Successful - getParams - finished");
         return criteriaAux;
     }
 
     private String getCodec(String cnvVideoType) {
+        sL.register(null, "INFO", "Successful - getCodec - start");
         String format = null;
         if (cnvVideoType.equals("mkv")) {
             format = "matroska";
         } else {
             format = cnvVideoType;
         }
+        sL.register(null, "INFO", "Successful - getCodec - finished");
         return format;
     }
 
     private Fraction getFractionSelected(String cnvFps) {
+        sL.register(null, "INFO", "Successful - getFractionSelected - start");
         Fraction f = null;
         if (cnvFps.equals("24.0")) {
             f = Fraction.getFraction(24, 1);
@@ -150,6 +161,7 @@ public class ConvertFileVideo implements IConvertFile {
         } else if (cnvFps.equals("60.0")) {
             f = Fraction.getFraction(60, 1);
         }
+        sL.register(null, "INFO", "Successful - getFractionSelected - start");
         return f;
     }
 }

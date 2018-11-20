@@ -1,5 +1,7 @@
 package com.fundacionjala.convertor.model;
 
+import com.fundacionjala.convertor.utils.SingleLogger;
+
 import java.io.File;
 
 public class Asset {
@@ -9,9 +11,10 @@ public class Asset {
     private String typeFile;
     private File file;
     private String path;
+    private static SingleLogger sL = SingleLogger.getInstanceLogger();
 
     public Asset () {
-
+        sL.register(null, "INFO", "Successful - AdvancedSearchVideo - start");
     }
 
     public String getNameFile() {
