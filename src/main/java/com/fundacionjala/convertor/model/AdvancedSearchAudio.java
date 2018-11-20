@@ -27,6 +27,8 @@ public class AdvancedSearchAudio {
     ArrayList<String> audioTypes = new ArrayList<>();
 
     public AdvancedSearchAudio() {
+        sL.setLogger(AdvancedSearchAudio.class.getName());
+
         sL.register(null, "INFO", "Successful - AdvancedSearchAudio - start");
         audioTypes.add("mp3");
         audioTypes.add("wav");

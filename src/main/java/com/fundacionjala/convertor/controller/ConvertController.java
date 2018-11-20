@@ -31,6 +31,7 @@ public class ConvertController implements ActionListener {
      *
      */
     public ConvertController(NewWindows nW) {
+        sL.setLogger(ConvertController.class.getName());
         sL.register(null, "INFO", "Successful - ConvertController - start");
         this.converter = nW.getConverting();
         this.listConverting = nW.getListConv();

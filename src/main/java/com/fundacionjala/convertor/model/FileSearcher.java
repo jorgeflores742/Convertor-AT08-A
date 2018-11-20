@@ -16,6 +16,7 @@
 package com.fundacionjala.convertor.model;
 
 import com.fundacionjala.convertor.controller.SearchCriteria;
+import com.fundacionjala.convertor.utils.SingleLogger;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,6 +40,8 @@ public class FileSearcher {
     private static final long BIG = 10240000000L;
     private AdvancedSearchVideo advancedSearchVideo = new AdvancedSearchVideo();
     private AdvancedSearchAudio advancedSearchAudio = new AdvancedSearchAudio();
+    private static SingleLogger sL = SingleLogger.getInstanceLogger();
+
 
     /**
      * This program searchs files using criteria of name,
@@ -46,7 +49,7 @@ public class FileSearcher {
      * There will be error if there is no a real path.
      */
     public FileSearcher() {
-
+        sL.register(null, "INFO", "Successful - FileSearcher - start");
     }
 
     /**
@@ -55,6 +58,7 @@ public class FileSearcher {
      */
 
     public ArrayList<Asset> search(SearchCriteria searchCriteria) {
+        sL.register(null, "INFO", "Successful - search - start");
         ArrayList<Asset> fileListAsset = new ArrayList<>(1);
         File dir = new File(searchCriteria.getPath());
         for (File file : Objects.requireNonNull(dir.listFiles())) {
@@ -73,28 +77,36 @@ public class FileSearcher {
         } else {
             finalResult = fileListAsset;
         }
+        sL.register(null, "INFO", "Successful - search - finished");
+
         return finalResult;
     }
 
     private Asset fillAsset(File file) {
+        sL.register(null, "INFO", "Successful - fillAsset - start");
         if (advancedSearchVideo.isVideoType(file)) {
+            sL.register(null, "INFO", "Successful - fillAsset - finished");
             return advancedSearchVideo.fillVideoFeatures(file);
         } else if (advancedSearchAudio.isAudioType(file)) {
+            sL.register(null, "INFO", "Successful - fillAsset - finished");
             return advancedSearchAudio.fillAudioFeatures(file);
         } else {
+            sL.register(null, "INFO", "Successful - fillAsset - finished");
             return fillCommonFeatures(file);
         }
     }
 
     private CommonAsset fillCommonFeatures(File file) {
+        sL.register(null, "INFO", "Successful - fillCommonFeatures - start");
         CommonAsset asset = new CommonAsset();
 
         BasicFileAttributes attrib = null;
         Path path = Paths.get(file.getAbsolutePath());
         try {
+            sL.register(null, "INFO", "Successful - fillCommonFeatures - readAttributes - start");
             attrib = Files.readAttributes(path, BasicFileAttributes.class);
         } catch (IOException e1) {
-            e1.printStackTrace();
+            sL.register(e1, "SEVERE", "Successful - fillCommonFeatures - readAttributes - start");
         }
 
         asset.setNameFile("Name: ".concat(file.getName()));
@@ -105,6 +117,7 @@ public class FileSearcher {
         asset.setCreationFile("Creation time: ".concat(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(fileTime.toMillis())));
         asset.setFile(file);
         asset.setPath(file.getAbsolutePath());
+        sL.register(null, "INFO", "Successful - fillCommonFeatures - finished");
         return asset;
     }
 
@@ -118,9 +131,11 @@ public class FileSearcher {
      * this method compares the file with the criteria data.
      */
     private boolean meetCriteria(File file, String name, String ext, String size) {
+        sL.register(null, "INFO", "Successful - meetCriteria - start");
         boolean criteria;
         criteria = (name == null || name.equals("")) || file.getName().toLowerCase().contains(name.toLowerCase());
         criteria = criteria && isSearchSize(file, size);
+        sL.register(null, "INFO", "Successful - meetCriteria - finished");
         return criteria;
     }
 
@@ -130,6 +145,7 @@ public class FileSearcher {
      * @return true if file meets criteria.
      */
     private boolean isSearchSize(File file, String size) {
+        sL.register(null, "INFO", "Successful - isSearchSize - start");
         return (size == null || size.equals("") || size.equals("All")) || isSize(file, size);
     }
 
@@ -139,6 +155,7 @@ public class FileSearcher {
      * @return true if file is in range of size.
      */
     private boolean isSize(File file, String siz) {
+        sL.register(null, "INFO", "Successful - isSize - start");
         long sizeFile = file.length();
         if (sizeFile <= MINUS && siz.equals("minus")) {
             return true;
@@ -152,6 +169,8 @@ public class FileSearcher {
         if (sizeFile <= BIG && sizeFile > MEDIUM && siz.equals("big")) {
             return true;
         }
+        sL.register(null, "INFO", "Successful - isSize - finished");
+
         return sizeFile > BIG && siz.equals("very big");
 
     }

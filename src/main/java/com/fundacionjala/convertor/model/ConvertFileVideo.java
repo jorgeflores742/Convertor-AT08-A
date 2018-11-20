@@ -27,6 +27,7 @@ public class ConvertFileVideo implements IConvertFile {
 
     @Override
     public int convert(ConvertCriteria convertCriteria) {
+        sL.setLogger(ConvertFileVideo.class.getName());
         sL.register(null, "INFO", "Successful - convertVideo - start");
         try {
             ffmpeg = new FFmpeg("lib\\filesff\\ffmpeg");
