@@ -8,7 +8,6 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Map;
 
 import com.fundacionjala.convertor.controller.SearchCriteria;
 import com.fundacionjala.convertor.utils.SingleLogger;
@@ -30,6 +29,8 @@ public class AdvancedSearchVideo {
     private static SingleLogger sL = SingleLogger.getInstanceLogger();
 
     public AdvancedSearchVideo() {
+        sL.setLogger(AdvancedSearchVideo.class.getName());
+
         sL.register(null, "INFO", "Successful - AdvancedSearchVideo - start");
         videoTypes.add("avi");
         videoTypes.add("mpg");

@@ -7,6 +7,7 @@ public class CommonAsset extends Asset {
 
     public CommonAsset () {
         super();
+        sL.setLogger(CommonAsset.class.getName());
         sL.register(null, "INFO", "Successful - CommonAsset - start");
     }
 }

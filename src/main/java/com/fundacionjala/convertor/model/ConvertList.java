@@ -15,6 +15,8 @@
 
 package com.fundacionjala.convertor.model;
 
+import com.fundacionjala.convertor.utils.SingleLogger;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -32,11 +34,12 @@ import java.util.List;
  */
 
 public class ConvertList {
-
-    List<String> listTxt;
+    private static SingleLogger sL = SingleLogger.getInstanceLogger();
+    private List<String> listTxt;
 
     public String[] convertLis() {
         try {
+            sL.register(null, "INFO", "Successful - convertLis - start");
             File file = new File("records.txt");
             // Si el archivo no existe, se crea!
             if (!file.exists()) {
@@ -44,16 +47,18 @@ public class ConvertList {
             }
             listTxt =  Files.readAllLines(Paths.get("records.txt"), StandardCharsets.UTF_8);
         } catch (IOException e) {
-            e.printStackTrace();
+            sL.register(e, "INFO", "Successful - convertLis - finished");
         }
         return listTxt.toArray(new String[listTxt.size()]);
     }
 
     public void writeConvert(String route) {
+        sL.register(null, "INFO", "Successful - writeConvert - start");
         BufferedWriter bw = null;
         FileWriter fw = null;
 
         try {
+            sL.register(null, "INFO", "Successful - FileWriter/BufferedWriter - start");
             String data = route;
             File file = new File("records.txt");
             // Si el archivo no existe, se crea!
@@ -66,7 +71,7 @@ public class ConvertList {
             bw.write(data+"\n");
             System.out.println("información agregada!");
         } catch (IOException e) {
-            e.printStackTrace();
+            sL.register(e, "SEVERE", "Successful - FileWriter/BufferedWriter - failed");
         } finally {
             try {
                 //Cierra instancias de FileWriter y BufferedWriter

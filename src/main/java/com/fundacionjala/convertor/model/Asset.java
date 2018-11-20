@@ -14,6 +14,7 @@ public class Asset {
     private static SingleLogger sL = SingleLogger.getInstanceLogger();
 
     public Asset () {
+        sL.setLogger(Asset.class.getName());
         sL.register(null, "INFO", "Successful - AdvancedSearchVideo - start");
     }
 

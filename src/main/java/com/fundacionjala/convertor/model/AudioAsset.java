@@ -9,6 +9,7 @@ public class AudioAsset extends Asset {
 
     public AudioAsset() {
         super();
+        sL.setLogger(AudioAsset.class.getName());
         sL.register(null, "INFO", "Successful - AudioAsset - start");
     }
 

@@ -26,6 +26,7 @@ public class ConvertFileAudio implements IConvertFile {
 
     @Override
     public int convert(ConvertCriteria convertCriteria) {
+        sL.setLogger(ConvertFileAudio.class.getName());
         sL.register(null, "INFO", "Successful - convertAudio - start");
         try {
             sL.register(null, "INFO", "Successful - convert - ffmpeg/ffmprobe - start");
