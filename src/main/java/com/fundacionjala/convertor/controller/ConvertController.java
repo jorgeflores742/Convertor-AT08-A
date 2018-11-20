@@ -7,6 +7,8 @@ import com.fundacionjala.convertor.model.IConvertFile;
 import com.fundacionjala.convertor.view.Converter;
 import com.fundacionjala.convertor.view.ListConverting;
 import com.fundacionjala.convertor.view.NewWindows;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -94,6 +96,7 @@ public class ConvertController implements ActionListener {
                 );
                 listConverting.getListModel().clear();
                 showList(convertList.convertLis());
+                JOptionPane.showMessageDialog(null, "File was converted successfully!");
             }
         }
     }
