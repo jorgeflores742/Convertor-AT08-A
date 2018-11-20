@@ -4,6 +4,7 @@ import com.fundacionjala.convertor.model.ConvertFileAudio;
 import com.fundacionjala.convertor.model.ConvertFileVideo;
 import com.fundacionjala.convertor.model.ConvertList;
 import com.fundacionjala.convertor.model.IConvertFile;
+import com.fundacionjala.convertor.utils.SingleLogger;
 import com.fundacionjala.convertor.view.Converter;
 import com.fundacionjala.convertor.view.ListConverting;
 import com.fundacionjala.convertor.view.NewWindows;
@@ -22,12 +23,15 @@ public class ConvertController implements ActionListener {
     private ConvertCriteria convertCriteria;
     private ListConverting listConverting;
     private static int progress;
+    private static SingleLogger sL = SingleLogger.getInstanceLogger();
+
 
 
     /**
      *
      */
     public ConvertController(NewWindows nW) {
+        sL.register(null, "INFO", "Successful - ConvertController - start");
         this.converter = nW.getConverting();
         this.listConverting = nW.getListConv();
         converter.getBtnConvert().addActionListener(this);
@@ -35,9 +39,12 @@ public class ConvertController implements ActionListener {
         ConvertList convertList = new ConvertList();
         String[] listConv = convertList.convertLis();
         showList(listConv);
+        sL.register(null, "INFO", "Successful - ConvertController - finished");
     }
 
     public void loadConvertCriteria(ConvertCriteria convertCriteria) {
+        sL.register(null, "INFO", "Successful - loadConvertCriteria - start");
+
         convertCriteria.setFileName(converter.getTxtName().getText());
 
         convertCriteria.setFormatTo(converter.getCmbType().getSelectedItem().toString());
@@ -58,6 +65,7 @@ public class ConvertController implements ActionListener {
             if(!converter.getCmbChannels().getSelectedItem().toString().equals("Select")) {convertCriteria.setCnvChannels(converter.getCmbChannels().getSelectedItem().toString());}
             if(!converter.getCmbAudioAC().getSelectedItem().toString().equals("Select")) {convertCriteria.setCnvAudioCodec(converter.getCmbAudioAC().getSelectedItem().toString());}
         }
+        sL.register(null, "INFO", "Successful - loadConvertCriteria - finished");
     }
 
     /**
@@ -65,6 +73,7 @@ public class ConvertController implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+        sL.register(null, "INFO", "Successful - actionPerformed - start");
         if (e.getSource() == converter.getBtnConvert()) {
             loadConvertCriteria(convertCriteria);
             if(converter.getCmbConvertTo().getSelectedItem().toString().equals("Audio")) {
@@ -96,6 +105,8 @@ public class ConvertController implements ActionListener {
                 showList(convertList.convertLis());
             }
         }
+        sL.register(null, "INFO", "Successful - actionPerformed - finished");
+
     }
 
     public static int getProgress() {
@@ -107,9 +118,11 @@ public class ConvertController implements ActionListener {
     }
 
     protected void showList(String[] convertLis) {
+        sL.register(null, "INFO", "Successful - showList - start");
         for (int j = convertLis.length - 1; j >= 0; j-- ) {
             listConverting.getListModel().addElement(convertLis[j]);
         }
+        sL.register(null, "INFO", "Successful - showList - finished");
     }
 }
 

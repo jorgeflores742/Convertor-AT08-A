@@ -47,7 +47,7 @@ public class SingleLogger {
      *
      * @return an instance of Abstract Logger class.
      */
-    public static SingleLogger getInstance() {
+    public static SingleLogger getInstanceLogger() {
         createInstance();
         return ourInstance;
     }
@@ -70,7 +70,7 @@ public class SingleLogger {
     /**
      * Private constructor in order to implement Singleton Pattern.
      */
-    protected SingleLogger() {
+    public SingleLogger() {
         String path = SingleLogger.class.getClassLoader()
                 .getResource("logging.properties")
                 .getFile();

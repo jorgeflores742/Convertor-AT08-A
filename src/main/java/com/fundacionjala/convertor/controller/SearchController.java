@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import com.fundacionjala.convertor.utils.SingleLogger;
+
 /**
  * Module Controller SearchController.
  *
@@ -30,9 +32,12 @@ public class SearchController implements ActionListener, ListSelectionListener {
     private ListConverting listConverting = new ListConverting();
     private int emptyPathFlag = 0;
     private StringBuilder dataFilesMessage = new StringBuilder("message for valued changed");
+    private static SingleLogger sL = SingleLogger.getInstanceLogger();
 
     public SearchController() {
+        sL.setLogger(SearchController.class.getName());
 
+        sL.register(null, "INFO", "Successful - SearchController - start");
         v = new NewWindows();
         v.setVisible(true);
         this.searchViewer = v.getsView();
@@ -43,6 +48,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
         this.dataFiles = v.getData();
         searchCriteria = new SearchCriteria();
         convertController = new ConvertController(v);
+        sL.register(null, "INFO", "Successful - SearchController - finished");
     }
 
     /**
@@ -50,6 +56,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
      */
 
     private void loadCriteria() {
+        sL.register(null, "INFO", "Successful - loadCriteria - start");
         searchCriteria.setName(searchViewer.getTxtName().getText().toLowerCase());
         System.out.println(searchViewer.getTxtPath().getText());
         searchCriteria.setPath(searchViewer.getTxtPath().getText());
@@ -88,7 +95,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
             searchCriteria.setVideoCodec("All");
             searchCriteria.setVideoAudioCodec("All");
         }
-
+        sL.register(null, "INFO", "Successful - loadCriteria - finished");
     }
 
     /**
@@ -96,6 +103,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
+        sL.register(null, "INFO", "Successful - actionPerformed - start");
         if (e.getSource() == searchViewer.getBtnSearch() && !searchViewer.getTxtPath().getText().equals("")) {
             emptyPathFlag = 0;
             listFileView.getListModel().clear();
@@ -117,11 +125,13 @@ public class SearchController implements ActionListener, ListSelectionListener {
             emptyPathFlag = 1;
             JOptionPane.showMessageDialog(null, "Please, define a valid directory");
         }
-
+        sL.register(null, "INFO", "Successful - actionPerformed finished");
     }
 
     @Override
     public void valueChanged(ListSelectionEvent e) {
+        sL.register(null, "INFO", "Successful - valueChanged - start");
+
         lock = (lock * (-1));
         if (lock == 1 && listFileView.getLstSearchResult().getSelectedIndex() != (-1)) {
             dataFiles.getDefaultList().clear();
@@ -134,7 +144,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
 
             convertController.getConvertCriteria().setPathFrom(value);
 
-                v.getPlayerM().setRouteFile(value);
+            v.getPlayerM().setRouteFile(value);
 
 
             dataFiles.getDefaultList().addElement(infoAsset.getPath());
@@ -158,7 +168,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
                 dataFiles.getDefaultList().addElement(video.getDuration());
                 dataFiles.getDefaultList().addElement(video.getVideoCodec());
                 dataFiles.getDefaultList().addElement(video.getAudioCodec());
-                dataFilesMessage.delete(0,dataFilesMessage.length());
+                dataFilesMessage.delete(0, dataFilesMessage.length());
                 dataFilesMessage.append("video");
                 System.out.println(dataFilesMessage);
             } else if (infoAsset.getTypeFile().contains("Audio")) {
@@ -171,21 +181,25 @@ public class SearchController implements ActionListener, ListSelectionListener {
                 audio = (AudioAsset) infoAsset;
                 dataFiles.getDefaultList().addElement(audio.getChannels());
                 dataFiles.getDefaultList().addElement(audio.getAudioCodec());
-                dataFilesMessage.delete(0,dataFilesMessage.length());
+                dataFilesMessage.delete(0, dataFilesMessage.length());
                 dataFilesMessage.append("audio");
                 System.out.println(dataFilesMessage);
             }
         }
+        sL.register(null, "INFO", "Successful - valueChanged - finished");
     }
 
 
     private Asset getInfoAsset(String value) {
         Asset assetSelected = new Asset();
+        sL.register(null, "INFO", "Successful - getInfoAsset - start");
+
         for (Asset as : advanceResult) {
             if (as.getPath().equals(value)) {
                 assetSelected = as;
             }
         }
+        sL.register(null, "INFO", "Successful - getInfoAsset - finished");
         return assetSelected;
     }
 
