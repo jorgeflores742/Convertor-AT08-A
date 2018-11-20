@@ -31,8 +31,6 @@ public class SearchController implements ActionListener, ListSelectionListener {
     private int emptyPathFlag = 0;
     private StringBuilder dataFilesMessage = new StringBuilder("message for valued changed");
 
-
-
     public SearchController() {
 
         v = new NewWindows();
@@ -43,12 +41,8 @@ public class SearchController implements ActionListener, ListSelectionListener {
         this.listFileView = v.getListFile();
         this.listFileView.getLstSearchResult().addListSelectionListener(this);
         this.dataFiles = v.getData();
-        this.listConverting = v.getListConv();
         searchCriteria = new SearchCriteria();
-        ConvertList convertList = new ConvertList();
-        String[] listConv = convertList.convertLis();
         convertController = new ConvertController(v);
-        convertController.showList(convertList.convertLis());
     }
 
     /**
