@@ -37,7 +37,7 @@ public class ConvertController implements ActionListener {
         showList(listConv);
     }
 
-    public void loadConvertCriteria() {
+    public void loadConvertCriteria(ConvertCriteria convertCriteria) {
         convertCriteria.setFileName(converter.getTxtName().getText());
 
         convertCriteria.setFormatTo(converter.getCmbType().getSelectedItem().toString());
@@ -80,7 +80,7 @@ public class ConvertController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == converter.getBtnConvert()) {
-            loadConvertCriteria();
+            loadConvertCriteria(convertCriteria);
             if(converter.getCmbConvertTo().getSelectedItem().toString().equals("Audio")) {
                 System.out.println("Es audio");
                 convertFile = new ConvertFileAudio();

@@ -33,10 +33,10 @@ public class ConvertFileVideo implements IConvertFile {
             e.printStackTrace();
         }
 
-        Fraction n = null;
-        if (convertCriteria.getCnvFps() != null) {
-            n = getFractionSelected(convertCriteria.getCnvFps());
-        }
+//        Fraction n = null;
+//        if (convertCriteria.getCnvFps() != null) {
+//            n = getFractionSelected(convertCriteria.getCnvFps());
+//        }
         String format = getCodec(convertCriteria.getCnvVideoType());
         System.out.println("input>" + convertCriteria.getPathFrom());
         System.out.println("output>" + convertCriteria.getPathTo() + "\\" + convertCriteria.getFileName() + "." + convertCriteria.getCnvVideoType());
@@ -55,7 +55,7 @@ public class ConvertFileVideo implements IConvertFile {
 
                 .setVideoCodec((String) parameters.get(1))     // Video using libx264 PASSED
                 .setVideoFrameRate((Fraction) parameters.get(2))     // at 24 frames per second VERIFY
-                .setVideoResolution(Integer.parseInt((String) parameters.get(3)), Integer.parseInt((String) parameters.get(4))) // at 640x480 resolution
+                .setVideoResolution((Integer)parameters.get(3), (Integer)parameters.get(4)) // at 640x480 resolution
 
 
                 .done();
@@ -96,33 +96,43 @@ public class ConvertFileVideo implements IConvertFile {
     private ArrayList<Object> getParams(ConvertCriteria criteria) {
         ArrayList<Object> criteriaAux = new ArrayList<Object>() {};
         if (criteria.getCnvVideoCodec() == null) {
+            System.out.println("audioCodec="+in.getStreams().get(1).codec_name);
             criteriaAux.add(in.getStreams().get(1).codec_name);
         } else {
+            System.out.println("audioCodec="+criteria.getCnvVideoCodec());
             criteriaAux.add(criteria.getCnvVideoCodec());
         }
         ;
         if (criteria.getCnvVideoAudioCodec() == null) {
-            criteriaAux.add(in.getStreams().get(1).codec_name);
+            System.out.println("videoCodec="+in.getStreams().get(0).codec_name);
+            criteriaAux.add(in.getStreams().get(0).codec_name);
         } else {
+            System.out.println("videoCodec="+criteria.getCnvVideoAudioCodec());
             criteriaAux.add(criteria.getCnvVideoAudioCodec());
         }
         ;
-        if (getFractionSelected(criteria.getCnvFps()) == null) {
-            criteriaAux.add(in.getStreams().get(0).avg_frame_rate);
+        if (criteria.getCnvFps() == null) {
+            int fps = in.getStreams().get(0).avg_frame_rate.getNumerator();
+            float fpsFloat = fps;
+            fpsFloat = fpsFloat >= 1000 ? (fpsFloat / 1000) : fpsFloat;
+            System.out.println("framerate="+fpsFloat);
+            criteriaAux.add(getFractionSelected(Float.toString(fpsFloat)));
         } else {
             criteriaAux.add(getFractionSelected(criteria.getCnvFps()));
         }
         ;
         if (criteria.getCnvResolutionWidth() == null) {
-            criteriaAux.add(in.getStreams().get(0).width);
+            int w = in.getStreams().get(0).width;
+            criteriaAux.add(w);
         } else {
-            criteriaAux.add(criteria.getCnvResolutionWidth());
+            criteriaAux.add(Integer.parseInt(criteria.getCnvResolutionWidth()));
         }
         ;
         if (criteria.getCnvResolutionHeight() == null) {
-            criteriaAux.add(in.getStreams().get(0).height);
+            int h = in.getStreams().get(0).height;
+            criteriaAux.add(h);
         } else {
-            criteriaAux.add(criteria.getCnvResolutionHeight());
+            criteriaAux.add(Integer.parseInt(criteria.getCnvResolutionHeight()));
         }
         ;
 
