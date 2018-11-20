@@ -8,6 +8,8 @@ import com.fundacionjala.convertor.utils.SingleLogger;
 import com.fundacionjala.convertor.view.Converter;
 import com.fundacionjala.convertor.view.ListConverting;
 import com.fundacionjala.convertor.view.NewWindows;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -103,6 +105,8 @@ public class ConvertController implements ActionListener {
                 );
                 listConverting.getListModel().clear();
                 showList(convertList.convertLis());
+                JOptionPane.showMessageDialog(null, "File was converted successfully!", "Information message", JOptionPane.INFORMATION_MESSAGE);
+                converter.setProgressBar(0);
             }
         }
         sL.register(null, "INFO", "Successful - actionPerformed - finished");
