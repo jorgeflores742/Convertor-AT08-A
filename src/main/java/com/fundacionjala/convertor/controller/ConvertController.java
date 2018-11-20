@@ -96,7 +96,8 @@ public class ConvertController implements ActionListener {
                 );
                 listConverting.getListModel().clear();
                 showList(convertList.convertLis());
-                JOptionPane.showMessageDialog(null, "File was converted successfully!");
+                JOptionPane.showMessageDialog(null, "File was converted successfully!", "Information message", JOptionPane.INFORMATION_MESSAGE);
+                converter.setProgressBar(0);
             }
         }
     }
