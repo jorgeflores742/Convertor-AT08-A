@@ -13,6 +13,7 @@ import net.bramp.ffmpeg.progress.ProgressListener;
 import org.apache.commons.lang3.math.Fraction;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class ConvertFileVideo implements IConvertFile {
@@ -31,27 +32,30 @@ public class ConvertFileVideo implements IConvertFile {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Fraction n=null;
-        if(convertCriteria.getCnvFps()!=null) {
+
+        Fraction n = null;
+        if (convertCriteria.getCnvFps() != null) {
             n = getFractionSelected(convertCriteria.getCnvFps());
         }
         String format = getCodec(convertCriteria.getCnvVideoType());
-        System.out.println("input>"+convertCriteria.getPathFrom());
-        System.out.println("output>"+convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvVideoType());
+        System.out.println("input>" + convertCriteria.getPathFrom());
+        System.out.println("output>" + convertCriteria.getPathTo() + "\\" + convertCriteria.getFileName() + "." + convertCriteria.getCnvVideoType());
+
+        ArrayList<Object> parameters = getParams(convertCriteria);
 
         FFmpegExecutor executor = new FFmpegExecutor(ffmpeg, ffprobe);
         FFmpegBuilder builder = new FFmpegBuilder()
                 .setInput(in) // Or filename
                 .overrideOutputFiles(true) // Override the output if it exists
-                .addOutput(convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvVideoType())  // Filename for the destination
+                .addOutput(convertCriteria.getPathTo() + "\\" + convertCriteria.getFileName() + "." + convertCriteria.getCnvVideoType())  // Filename for the destination
 
                 .setFormat(format) //format to video PASSED
 
-                .setAudioCodec(convertCriteria.getCnvVideoCodec())        // using the aac codec PASSED
+                .setAudioCodec((String) parameters.get(0))        // using the aac codec PASSED
 
-                .setVideoCodec(convertCriteria.getCnvVideoAudioCodec())     // Video using libx264 PASSED
-                .setVideoFrameRate(n)     // at 24 frames per second VERIFY
-                .setVideoResolution(Integer.parseInt(convertCriteria.getCnvResolutionWidth()), Integer.parseInt(convertCriteria.getCnvResolutionHeight())) // at 640x480 resolution
+                .setVideoCodec((String) parameters.get(1))     // Video using libx264 PASSED
+                .setVideoFrameRate((Fraction) parameters.get(2))     // at 24 frames per second VERIFY
+                .setVideoResolution(Integer.parseInt((String) parameters.get(3)), Integer.parseInt((String) parameters.get(4))) // at 640x480 resolution
 
 
                 .done();
@@ -89,11 +93,60 @@ public class ConvertFileVideo implements IConvertFile {
         return process;
     }
 
+    private ArrayList<Object> getParams(ConvertCriteria criteria) {
+        ArrayList<Object> criteriaAux = new ArrayList<Object>() {};
+        if (criteria.getCnvVideoCodec() == null) {
+            criteriaAux.add(in.getStreams().get(1).codec_name);
+        } else {
+            criteriaAux.add(criteria.getCnvVideoCodec());
+        }
+        ;
+        if (criteria.getCnvVideoAudioCodec() == null) {
+            criteriaAux.add(in.getStreams().get(1).codec_name);
+        } else {
+            criteriaAux.add(criteria.getCnvVideoAudioCodec());
+        }
+        ;
+        if (getFractionSelected(criteria.getCnvFps()) == null) {
+            criteriaAux.add(in.getStreams().get(0).avg_frame_rate);
+        } else {
+            criteriaAux.add(getFractionSelected(criteria.getCnvFps()));
+        }
+        ;
+        if (criteria.getCnvResolutionWidth() == null) {
+            criteriaAux.add(in.getStreams().get(0).width);
+        } else {
+            criteriaAux.add(criteria.getCnvResolutionWidth());
+        }
+        ;
+        if (criteria.getCnvResolutionHeight() == null) {
+            criteriaAux.add(in.getStreams().get(0).height);
+        } else {
+            criteriaAux.add(criteria.getCnvResolutionHeight());
+        }
+        ;
+
+
+//        criteriaAux.add(in.getStreams().get(0).codec_name);
+//        criteriaAux.add(in.getStreams().get(1).codec_name);
+//        int fps = in.getStreams().get(0).avg_frame_rate.getProperNumerator();
+//        float fpsFloat = fps;
+//        fpsFloat = fpsFloat >= 1000 ? (fpsFloat / 1000) : fpsFloat;
+//        criteriaAux.add(fpsFloat);
+//        criteriaAux.add(in.getStreams().get(0).display_aspect_ratio);
+//        criteriaAux.add(Integer.toString(in.getStreams().get(0).width));
+//        criteriaAux.add(Integer.toString(in.getStreams().get(0).height));
+//        for (Object o : criteriaAux) {
+//            System.out.println(o);
+//        }
+        return criteriaAux;
+    }
+
     private String getCodec(String cnvVideoType) {
         String format = null;
-        if(cnvVideoType.equals("mkv")) {
+        if (cnvVideoType.equals("mkv")) {
             format = "matroska";
-        }else {
+        } else {
             format = cnvVideoType;
         }
         return format;
@@ -101,17 +154,17 @@ public class ConvertFileVideo implements IConvertFile {
 
     private Fraction getFractionSelected(String cnvFps) {
         Fraction f = null;
-        if(cnvFps.equals("24.0")) {
+        if (cnvFps.equals("24.0")) {
             f = Fraction.getFraction(24, 1);
-        }else if(cnvFps.equals("25.0")) {
+        } else if (cnvFps.equals("25.0")) {
             f = Fraction.getFraction(25, 1);
-        }else if(cnvFps.equals("27.0")) {
+        } else if (cnvFps.equals("27.0")) {
             f = Fraction.getFraction(27, 1);
-        }else if(cnvFps.equals("29.9")) {
+        } else if (cnvFps.equals("29.9")) {
             f = Fraction.getFraction(30000, 1001);
-        }else if(cnvFps.equals("30.0")) {
+        } else if (cnvFps.equals("30.0")) {
             f = Fraction.getFraction(30, 1);
-        }else if(cnvFps.equals("60.0")) {
+        } else if (cnvFps.equals("60.0")) {
             f = Fraction.getFraction(60, 1);
         }
         return f;

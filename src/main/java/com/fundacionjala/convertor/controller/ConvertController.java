@@ -42,7 +42,6 @@ public class ConvertController implements ActionListener {
 
         convertCriteria.setFormatTo(converter.getCmbType().getSelectedItem().toString());
         convertCriteria.setPathTo(converter.getTxtPathSave().getText());
-
         if(converter.getCmbConvertTo().getSelectedItem().toString().equals("Video")) {
             if(!converter.getCmbType().getSelectedItem().toString().equals("Select")) {convertCriteria.setCnvVideoType(converter.getCmbType().getSelectedItem().toString());}
 
