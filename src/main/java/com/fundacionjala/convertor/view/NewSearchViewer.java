@@ -348,6 +348,27 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         };
         getCmbFileType().addActionListener(advanced);
 
+        ActionListener aspectRatioResolution = e -> {
+            String type = getCmbAspectRatio().getSelectedItem().toString();
+            if (type.equals("4:3")) {
+                cmbResolution.removeAllItems();
+                cmbResolution.addItem("640x480");
+
+            } else if (type.equals("16:9")) {
+                cmbResolution.removeAllItems();
+                cmbResolution.addItem("640x360");
+                cmbResolution.addItem("1280x720");
+                cmbResolution.addItem("1920x1080");
+                cmbResolution.addItem("2560x1440");
+                cmbResolution.addItem("3840x2160");
+
+            } else if (type.equals("17:9")) {
+                cmbResolution.removeAllItems();
+                cmbResolution.addItem("4096x2160");
+            }
+        };
+        getCmbAspectRatio().addActionListener(aspectRatioResolution);
+
 
     }
 
