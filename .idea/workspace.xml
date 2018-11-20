@@ -8,18 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da66e749-b498-4deb-97e7-1d42c75d188e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileAudio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileVideo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertCriteria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertCriteria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/IConvertFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/IConvertFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ViewConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ViewConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileAudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileAudio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileVideo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileVideo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/Converter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/Converter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/controller/SearchControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/controller/SearchControllerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -31,15 +28,39 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testValueChanged.ic" NAME="SearchControllerTest.testValueChanged Coverage Results" MODIFIED="1542675476675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testActionPerformedAll.ic" NAME="SearchControllerTest.testActionPerformedAll Coverage Results" MODIFIED="1542670547690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testActionPerformedVideo.ic" NAME="SearchControllerTest.testActionPerformedVideo Coverage Results" MODIFIED="1542672248706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testValueChangedAudio.ic" NAME="SearchControllerTest.testValueChangedAudio Coverage Results" MODIFIED="1542675847909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Convertor_AT08_A$FileSearcherTest_testIsSize.ic" NAME="FileSearcherTest.testIsSize Coverage Results" MODIFIED="1540143665726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.fundacionjala.convertor.model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testActionPerformedClearList.ic" NAME="SearchControllerTest.testActionPerformedClearList Coverage Results" MODIFIED="1542671987596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testActionPerformedEmptyPath.ic" NAME="SearchControllerTest.testActionPerformedEmptyPath Coverage Results" MODIFIED="1542675586346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_actionPerformed.ic" NAME="SearchControllerTest.actionPerformed Coverage Results" MODIFIED="1542668060706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testActionPerformedAudio.ic" NAME="SearchControllerTest.testActionPerformedAudio Coverage Results" MODIFIED="1542672132847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Convertor_AT08_A$FileSearcherTest.ic" NAME="FileSearcherTest Coverage Results" MODIFIED="1540145259367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.fundacionjala.convertor.model.*</FILTER>
     </SUITE>
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="227" />
+    <option name="myElementSize" value="92" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -68,24 +89,24 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="2" />
-          <entry key="java" value="28" />
+          <entry key="java" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="28" />
+          <entry key="JAVA" value="43" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="17" />
-          <entry key="java" value="3780" />
+          <entry key="java" value="5082" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3780" />
+          <entry key="JAVA" value="5082" />
           <entry key="PLAIN_TEXT" value="17" />
         </counts>
       </usages-collector>
@@ -179,113 +200,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ViewConverter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="272" selection-start-line="272" selection-end-line="272" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#7469#7470#0" expanded="true" />
-                <element signature="e#7497#7498#0" expanded="true" />
-                <element signature="e#7891#7892#0" expanded="true" />
-                <element signature="e#7924#7925#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/SearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="46" column="54" lean-forward="true" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
+            <state relative-caret-position="493">
+              <caret line="29" column="51" lean-forward="true" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#8003#8004#0" expanded="true" />
+                <element signature="e#8037#8038#0" expanded="true" />
+                <element signature="e#8083#8084#0" expanded="true" />
+                <element signature="e#8117#8118#0" expanded="true" />
+                <element signature="e#8339#8340#0" expanded="true" />
+                <element signature="e#8374#8375#0" expanded="true" />
+                <element signature="e#8404#8405#0" expanded="true" />
+                <element signature="e#8435#8436#0" expanded="true" />
+                <element signature="e#8927#8928#0" expanded="true" />
+                <element signature="e#8975#8976#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertController.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/controller/SearchControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+            <state relative-caret-position="388">
+              <caret line="87" column="53" selection-start-line="87" selection-start-column="53" selection-end-line="87" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3533#3534#0" expanded="true" />
-                <element signature="e#3564#3565#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/Converter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5644">
-              <caret line="333" column="21" selection-start-line="333" selection-start-column="21" selection-end-line="333" selection-end-column="21" />
-              <folding>
-                <element signature="e#11785#11786#0" expanded="true" />
-                <element signature="e#11818#11819#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/IConvertFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileVideo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="45" column="38" lean-forward="true" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileAudio.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertCriteria.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1081">
-              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-              <folding>
-                <element signature="e#1126#1127#0" expanded="true" />
-                <element signature="e#1170#1171#0" expanded="true" />
-                <element signature="e#2126#2127#0" expanded="true" />
-                <element signature="e#2174#2175#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -296,8 +239,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -712,13 +655,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/AdvancedSearchVideoView.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/PlayerMedia.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/Converter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ViewConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertCriteria.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/IConvertFile.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileVideo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileAudio.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/controller/SearchControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/SearchController.java" />
       </list>
     </option>
@@ -735,7 +679,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -794,18 +737,78 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="convertor" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="testfiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="testfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="Folder2" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542134290591" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542676676065" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java" />
@@ -816,6 +819,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.fundacionjala.convertor.controller" />
       <recent name="com.fundacionjala.convertor.model" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -837,20 +841,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.RUN">
-    <configuration name="MainView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.fundacionjala.convertor.view.MainView" />
-      <module name="main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fundacionjala.convertor.view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.SearchControllerTest.testValueChangedAudio">
     <configuration name="RUN" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -860,31 +851,81 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileSearcherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchControllerTest.testActionPerformedAudio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Convertor-AT08-A_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fundacionjala.convertor.view.*" />
+          <option name="PATTERN" value="com.fundacionjala.convertor.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.fundacionjala.convertor.model" />
-      <option name="MAIN_CLASS_NAME" value="com.fundacionjala.convertor.model.FileSearcherTest" />
+      <option name="PACKAGE_NAME" value="com.fundacionjala.convertor.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.fundacionjala.convertor.controller.SearchControllerTest" />
+      <option name="METHOD_NAME" value="testActionPerformedAudio" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileSearcherTest.testSearchAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchControllerTest.testActionPerformedEmptyPath" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Convertor-AT08-A_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fundacionjala.convertor.model.*" />
+          <option name="PATTERN" value="com.fundacionjala.convertor.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.fundacionjala.convertor.model" />
-      <option name="MAIN_CLASS_NAME" value="com.fundacionjala.convertor.model.FileSearcherTest" />
-      <option name="METHOD_NAME" value="testSearchAll" />
+      <option name="PACKAGE_NAME" value="com.fundacionjala.convertor.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.fundacionjala.convertor.controller.SearchControllerTest" />
+      <option name="METHOD_NAME" value="testActionPerformedEmptyPath" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchControllerTest.testActionPerformedVideo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Convertor-AT08-A_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fundacionjala.convertor.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fundacionjala.convertor.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.fundacionjala.convertor.controller.SearchControllerTest" />
+      <option name="METHOD_NAME" value="testActionPerformedVideo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchControllerTest.testValueChanged" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Convertor-AT08-A_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fundacionjala.convertor.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fundacionjala.convertor.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.fundacionjala.convertor.controller.SearchControllerTest" />
+      <option name="METHOD_NAME" value="testValueChanged" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchControllerTest.testValueChangedAudio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Convertor-AT08-A_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fundacionjala.convertor.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fundacionjala.convertor.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.fundacionjala.convertor.controller.SearchControllerTest" />
+      <option name="METHOD_NAME" value="testValueChangedAudio" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -892,13 +933,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.RUN" />
-      <item itemvalue="JUnit.FileSearcherTest" />
-      <item itemvalue="JUnit.FileSearcherTest.testSearchAll" />
+      <item itemvalue="JUnit.SearchControllerTest.testActionPerformedVideo" />
+      <item itemvalue="JUnit.SearchControllerTest.testActionPerformedAudio" />
+      <item itemvalue="JUnit.SearchControllerTest.testActionPerformedEmptyPath" />
+      <item itemvalue="JUnit.SearchControllerTest.testValueChanged" />
+      <item itemvalue="JUnit.SearchControllerTest.testValueChangedAudio" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FileSearcherTest" />
-        <item itemvalue="JUnit.FileSearcherTest.testSearchAll" />
+        <item itemvalue="JUnit.SearchControllerTest.testValueChangedAudio" />
+        <item itemvalue="JUnit.SearchControllerTest.testActionPerformedEmptyPath" />
+        <item itemvalue="JUnit.SearchControllerTest.testValueChanged" />
+        <item itemvalue="JUnit.SearchControllerTest.testActionPerformedVideo" />
+        <item itemvalue="JUnit.SearchControllerTest.testActionPerformedAudio" />
       </list>
     </recent_temporary>
   </component>
@@ -916,42 +963,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FileSearcherTest - 2018.10.21 at 13h 58m 35s.xml">
-      <configuration name="FileSearcherTest" configurationId="JUnit" />
+    <history-entry file="SearchControllerTest_testActionPerformedEmptyPath - 2018.11.19 at 19h 53m 49s.xml">
+      <configuration name="SearchControllerTest.testActionPerformedEmptyPath" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileSearcherTest - 2018.10.21 at 13h 59m 40s.xml">
-      <configuration name="FileSearcherTest" configurationId="JUnit" />
+    <history-entry file="SearchControllerTest_testActionPerformedEmptyPath - 2018.11.19 at 19h 56m 42s.xml">
+      <configuration name="SearchControllerTest.testActionPerformedEmptyPath" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileSearcherTest - 2018.10.21 at 13h 59m 48s.xml">
-      <configuration name="FileSearcherTest" configurationId="JUnit" />
+    <history-entry file="SearchControllerTest_testActionPerformedEmptyPath - 2018.11.19 at 19h 58m 52s.xml">
+      <configuration name="SearchControllerTest.testActionPerformedEmptyPath" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileSearcherTest - 2018.10.21 at 14h 01m 08s.xml">
-      <configuration name="FileSearcherTest" configurationId="JUnit" />
+    <history-entry file="SearchControllerTest_testActionPerformedClearList - 2018.11.19 at 20h 01m 36s.xml">
+      <configuration name="SearchControllerTest.testActionPerformedClearList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileSearcherTest_testDfinitiveList - 2018.10.21 at 14h 05m 04s.xml">
-      <configuration name="FileSearcherTest.testDfinitiveList" configurationId="JUnit" />
+    <history-entry file="SearchControllerTest_testActionPerformedAudio - 2018.11.19 at 20h 03m 49s.xml">
+      <configuration name="SearchControllerTest.testActionPerformedAudio" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileSearcherTest_testSearchAll - 2018.10.21 at 14h 06m 35s.xml">
-      <configuration name="FileSearcherTest.testSearchAll" configurationId="JUnit" />
+    <history-entry file="SearchControllerTest_testActionPerformedVideo - 2018.11.19 at 20h 05m 35s.xml">
+      <configuration name="SearchControllerTest.testActionPerformedVideo" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileSearcherTest_testSearchAll - 2018.10.21 at 14h 07m 14s.xml">
-      <configuration name="FileSearcherTest.testSearchAll" configurationId="JUnit" />
+    <history-entry file="SearchControllerTest_testValueChanged - 2018.11.19 at 20h 59m 14s.xml">
+      <configuration name="SearchControllerTest.testValueChanged" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileSearcherTest_testSearchAll - 2018.10.21 at 14h 07m 32s.xml">
-      <configuration name="FileSearcherTest.testSearchAll" configurationId="JUnit" />
+    <history-entry file="SearchControllerTest_testActionPerformedEmptyPath - 2018.11.19 at 21h 01m 01s.xml">
+      <configuration name="SearchControllerTest.testActionPerformedEmptyPath" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileSearcherTest - 2018.10.21 at 14h 07m 41s.xml">
-      <configuration name="FileSearcherTest" configurationId="JUnit" />
+    <history-entry file="SearchControllerTest_testValueChangedAudio - 2018.11.19 at 21h 03m 51s.xml">
+      <configuration name="SearchControllerTest.testValueChangedAudio" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileSearcherTest - 2018.10.23 at 21h 51m 47s.xml">
-      <configuration name="FileSearcherTest" configurationId="JUnit" />
+    <history-entry file="SearchControllerTest_testValueChangedAudio - 2018.11.19 at 21h 05m 21s.xml">
+      <configuration name="SearchControllerTest.testValueChangedAudio" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27427185" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32038835" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -960,7 +1007,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290993" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.47289503" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30023095" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3995381" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -979,7 +1026,7 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.3295302" />
       <window_info anchor="right" id="Gradle" order="8" weight="0.3295302" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3295302" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.22006473" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27427185" />
@@ -1032,27 +1079,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/AdvancedSearchVideoCriteria.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/AdvancedSearchVideoController.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/model/FileSearcherTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="55" column="56" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/SearchResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/SearchView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4788">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/SearchView.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/TableFileView.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/AdvancedSearchVideo.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/AdvancedSearchAudio.java" />
@@ -1063,13 +1090,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/MainView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="105" column="14" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/MainView.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ListConverting.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1077,13 +1098,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/SearchViewer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="211" selection-start-line="211" selection-end-line="211" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/SearchViewer.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/javax/swing/AbstractButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1098,44 +1113,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ListFileView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/AdvancedSearchVideoView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="103" selection-start-line="103" selection-end-line="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/FileSearcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/AdvancedSearchAudio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/PlayerMedia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="83" column="41" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/AdvancedSearchVideoView.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/DataFiles.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1146,41 +1124,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/AdvancedSearchVideo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="177" column="62" selection-start-line="177" selection-start-column="62" selection-end-line="177" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/AdvancedSearchAudioView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/AdvancedSearchAudioView.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/Converter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5644">
-          <caret line="333" column="21" selection-start-line="333" selection-start-column="21" selection-end-line="333" selection-end-column="21" />
-          <folding>
-            <element signature="e#11785#11786#0" expanded="true" />
-            <element signature="e#11818#11819#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertCriteria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1081">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-          <folding>
-            <element signature="e#1126#1127#0" expanded="true" />
-            <element signature="e#1170#1171#0" expanded="true" />
-            <element signature="e#2126#2127#0" expanded="true" />
-            <element signature="e#2174#2175#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1515">
+          <caret line="376" column="21" selection-start-line="376" selection-start-column="21" selection-end-line="376" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1193,39 +1141,133 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileAudio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="459">
           <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileVideo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="45" column="38" lean-forward="true" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+        <state relative-caret-position="765">
+          <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ViewConverter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ViewConverter.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="272" selection-start-line="272" selection-end-line="272" />
+        <state relative-caret-position="578">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7469#7470#0" expanded="true" />
-            <element signature="e#7497#7498#0" expanded="true" />
-            <element signature="e#7891#7892#0" expanded="true" />
-            <element signature="e#7924#7925#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertCriteria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="323">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/AdvancedSearchVideo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/AdvancedSearchAudio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/model/FileSearcherTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="24" column="41" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ListFileView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-480">
+          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/SearchResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/NewWindows.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1296">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/FileSizeEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/FileTypeEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/NewSearchViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5797">
+          <caret line="424" column="26" lean-forward="true" selection-start-line="424" selection-start-column="26" selection-end-line="424" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/PlayerMedia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-309">
+          <caret line="83" column="41" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/FileSearcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/controller/SearchControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="87" column="53" selection-start-line="87" selection-start-column="53" selection-end-line="87" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1234,22 +1276,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/SearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="46" column="54" lean-forward="true" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
+        <state relative-caret-position="493">
+          <caret line="29" column="51" lean-forward="true" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3533#3534#0" expanded="true" />
-            <element signature="e#3564#3565#0" expanded="true" />
+            <element signature="e#8003#8004#0" expanded="true" />
+            <element signature="e#8037#8038#0" expanded="true" />
+            <element signature="e#8083#8084#0" expanded="true" />
+            <element signature="e#8117#8118#0" expanded="true" />
+            <element signature="e#8339#8340#0" expanded="true" />
+            <element signature="e#8374#8375#0" expanded="true" />
+            <element signature="e#8404#8405#0" expanded="true" />
+            <element signature="e#8435#8436#0" expanded="true" />
+            <element signature="e#8927#8928#0" expanded="true" />
+            <element signature="e#8975#8976#0" expanded="true" />
           </folding>
         </state>
       </provider>
