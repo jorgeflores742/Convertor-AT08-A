@@ -13,6 +13,7 @@ import net.bramp.ffmpeg.progress.ProgressListener;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class ConvertFileAudio implements IConvertFile {
@@ -36,17 +37,18 @@ public class ConvertFileAudio implements IConvertFile {
         System.out.println("output>"+convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvAudioType());
 
         FFmpegExecutor executor = new FFmpegExecutor(ffmpeg, ffprobe);
+        String format = getCodec(convertCriteria.getCnvAudioType());
+        ArrayList<Object> parameters = getParams(convertCriteria);
         FFmpegBuilder builder = new FFmpegBuilder()
                 .setInput(in) // Or filename
                 .overrideOutputFiles(true) // Override the output if it exists
+                .addExtraArgs("-vn")
                 .addOutput(convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvAudioType())  // Filename for the destination
-                .setFormat(convertCriteria.getCnvAudioType()) //format to video PASSED
-                .setAudioCodec(convertCriteria.getCnvAudioCodec())
-                .setAudioChannels(Integer.parseInt(convertCriteria.getCnvChannels()))
+                .setFormat(format) //format to video PASSED
+                .setAudioCodec((String) parameters.get(0))
+                .setAudioChannels(Integer.parseInt((String) parameters.get(1)))
                 .done();
         FFmpegProbeResult finalIn = in;
-        System.out.println(".setAudioCodec|"+convertCriteria.getCnvVideoAudioCodec());
-        System.out.println(".setAudioChannels"+convertCriteria.getCnvVideoCodec());
         FFmpegJob job = executor.createJob(builder, new ProgressListener() {
 
             // Using the FFmpegProbeResult determine the duration of the input
@@ -78,5 +80,46 @@ public class ConvertFileAudio implements IConvertFile {
 
         job.run();
         return process;
+    }
+
+    private ArrayList<Object> getParams(ConvertCriteria criteria) {
+        ArrayList<Object> criteriaAux = new ArrayList<Object>() {};
+        if (criteria.getCnvAudioCodec() == null) {
+            System.out.println("audioCodec="+in.getStreams().get(0).codec_name);
+            criteriaAux.add(in.getStreams().get(0).codec_name);
+        } else {
+            System.out.println("audioCodec="+criteria.getCnvAudioCodec());
+            criteriaAux.add(criteria.getCnvAudioCodec());
+        }
+
+        if (criteria.getCnvChannels() == null) {
+            String s = in.getStreams().get(0).channel_layout;
+            System.out.println("channels="+getChannels(s));
+            criteriaAux.add(getChannels(s));
+        } else {
+            System.out.println("channels="+getChannels(criteria.getCnvChannels()));
+            criteriaAux.add(getChannels(criteria.getCnvChannels()));
+        }
+        return criteriaAux;
+    }
+
+    private String getCodec(String cnvVideoType) {
+        String format = null;
+        if (cnvVideoType.equals("mkv")) {
+            format = "matroska";
+        } else {
+            format = cnvVideoType;
+        }
+        return format;
+    }
+
+    private String getChannels(String var) {
+        String channel = null;
+        if(var.toLowerCase().equals("mono")) {
+            channel = "1";
+        }else{
+            channel = "2";
+        }
+        return channel;
     }
 }

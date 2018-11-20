@@ -28,7 +28,8 @@ public class SearchController implements ActionListener, ListSelectionListener {
     private NewWindows v;
     private ConvertController convertController;
     private ListConverting listConverting = new ListConverting();
-
+    private int emptyPathFlag = 0;
+    private StringBuilder dataFilesMessage = new StringBuilder("message for valued changed");
 
     public SearchController() {
 
@@ -40,20 +41,16 @@ public class SearchController implements ActionListener, ListSelectionListener {
         this.listFileView = v.getListFile();
         this.listFileView.getLstSearchResult().addListSelectionListener(this);
         this.dataFiles = v.getData();
-        this.listConverting = v.getListConv();
         searchCriteria = new SearchCriteria();
-        ConvertList convertList = new ConvertList();
-        String[] listConv = convertList.convertLis();
         convertController = new ConvertController(v);
-        convertController.showList(convertList.convertLis());
     }
 
     /**
      *
      */
 
-    public void loadCriteria() {
-        searchCriteria.setName(searchViewer.getTxtName().getText());
+    private void loadCriteria() {
+        searchCriteria.setName(searchViewer.getTxtName().getText().toLowerCase());
         System.out.println(searchViewer.getTxtPath().getText());
         searchCriteria.setPath(searchViewer.getTxtPath().getText());
         searchCriteria.setSize(searchViewer.getCmbSize().getSelectedItem().toString());
@@ -100,6 +97,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
     @Override
     public void actionPerformed(final ActionEvent e) {
         if (e.getSource() == searchViewer.getBtnSearch() && !searchViewer.getTxtPath().getText().equals("")) {
+            emptyPathFlag = 0;
             listFileView.getListModel().clear();
             loadCriteria();
             advanceResult.clear();
@@ -108,12 +106,15 @@ public class SearchController implements ActionListener, ListSelectionListener {
             for (Asset resu : advanceResult) {
                 listFileView.getListModel().addElement(resu.getPath());
             }
+            System.out.println("That is working well");
 
         } else if (e.getSource() == searchViewer.getBtnClearList()) {
+            emptyPathFlag = 0;
             listFileView.getListModel().clear();
             listFileView.getLstSearchResult().updateUI();
             dataFiles.getDefaultList().clear();
         } else if (searchViewer.getTxtPath().getText().equals("")) {
+            emptyPathFlag = 1;
             JOptionPane.showMessageDialog(null, "Please, define a valid directory");
         }
 
@@ -132,6 +133,9 @@ public class SearchController implements ActionListener, ListSelectionListener {
             infoAsset = getInfoAsset(value);
 
             convertController.getConvertCriteria().setPathFrom(value);
+
+                v.getPlayerM().setRouteFile(value);
+
 
             dataFiles.getDefaultList().addElement(infoAsset.getPath());
             dataFiles.getDefaultList().addElement(infoAsset.getNameFile());
@@ -154,6 +158,9 @@ public class SearchController implements ActionListener, ListSelectionListener {
                 dataFiles.getDefaultList().addElement(video.getDuration());
                 dataFiles.getDefaultList().addElement(video.getVideoCodec());
                 dataFiles.getDefaultList().addElement(video.getAudioCodec());
+                dataFilesMessage.delete(0,dataFilesMessage.length());
+                dataFilesMessage.append("video");
+                System.out.println(dataFilesMessage);
             } else if (infoAsset.getTypeFile().contains("Audio")) {
                 v.getConverting().setTxtName(
                         infoAsset.getNameFile().substring(infoAsset.getNameFile().lastIndexOf(':') + 2,
@@ -164,6 +171,9 @@ public class SearchController implements ActionListener, ListSelectionListener {
                 audio = (AudioAsset) infoAsset;
                 dataFiles.getDefaultList().addElement(audio.getChannels());
                 dataFiles.getDefaultList().addElement(audio.getAudioCodec());
+                dataFilesMessage.delete(0,dataFilesMessage.length());
+                dataFilesMessage.append("audio");
+                System.out.println(dataFilesMessage);
             }
         }
     }
@@ -177,5 +187,25 @@ public class SearchController implements ActionListener, ListSelectionListener {
             }
         }
         return assetSelected;
+    }
+
+    public NewSearchViewer getSearchViewer() {
+        return searchViewer;
+    }
+
+    public ListFileView getListFileView() {
+        return listFileView;
+    }
+
+    public int getEmptyPathFlag() {
+        return emptyPathFlag;
+    }
+
+    public void setLock(int lock) {
+        this.lock = lock;
+    }
+
+    public String getDataFilesName() {
+        return dataFiles.getDefaultList().getElementAt(1).toString();
     }
 }

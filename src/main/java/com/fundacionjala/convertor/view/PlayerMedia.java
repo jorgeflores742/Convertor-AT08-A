@@ -5,6 +5,7 @@ import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
 import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,23 +17,21 @@ import java.io.File;
  */
 public class PlayerMedia extends JPanel {
     private static EmbeddedMediaPlayerComponent player;
-    private static File file;
     private static final int MAX_VALUE = 400;
     private static int width;
     private static int height;
-    ListFileView listFV;
     boolean continuePlay = false;
+    private String routeFile="img/camaleon32.png";
 
     /**
      * Method constructor, initialize file, player and methods for.
      */
 
-    public PlayerMedia(ListFileView url, int playerWidth, int playerHeight) {
+    public PlayerMedia(int playerWidth, int playerHeight) {
         height = playerHeight;
         width = playerWidth;
         NativeLibrary.addSearchPath(
                 RuntimeUtil.getLibVlcLibraryName(), "lib/pluginVlcj");
-        listFV =url;
         player = new EmbeddedMediaPlayerComponent();
         iniMediaPlayer();
         createButtons();
@@ -84,7 +83,7 @@ public class PlayerMedia extends JPanel {
                     player.getMediaPlayer().start();
                     continuePlay = false;
                 } else {
-                    player.getMediaPlayer().playMedia(listFV.getUrl().getAbsolutePath());
+                    player.getMediaPlayer().playMedia(routeFile);
                 }
             }
         });
@@ -129,10 +128,11 @@ public class PlayerMedia extends JPanel {
         btnStop.setBackground(new Colors().btnColor);
     }
 
-    public void setFile(File file) {
-        this.file=file;
-    }
     public EmbeddedMediaPlayer getPlayer() {
         return player.getMediaPlayer();
+    }
+
+    public void setRouteFile(String routeFile) {
+        this.routeFile = routeFile;
     }
 }

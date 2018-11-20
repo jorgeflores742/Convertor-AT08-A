@@ -54,7 +54,7 @@ public class NewWindows extends JFrame {
         pReproductor.setBackground(new Colors().backgroundColor);
         pReproductor.setBounds(430,0,492,350);
         this.getContentPane().add(pReproductor);
-        playerM = new PlayerMedia(listFile, 470, 340);
+        playerM = new PlayerMedia( 470, 340);
         pReproductor.add(playerM);
 
         JPanel pConverter = new JPanel();

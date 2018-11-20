@@ -53,7 +53,6 @@ public class VideoAsset extends Asset {
         return videoCodec;
     }
 
-
     public String getAudioCodec() {
         return audioCodec;
     }

@@ -306,6 +306,47 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         lblAudioAC.setForeground(new Colors().textColor);
         lblChannels.setForeground(new Colors().textColor);
 
+        ActionListener advanced = e -> {
+            String type = getCmbFileType().getSelectedItem().toString();
+            if (type.equals("Video")) {
+                System.out.println("Video");
+                cmbType.setEnabled(true);
+                cmbType.setEnabled(true);
+                cmbFps.setEnabled(true);
+                cmbAspectRatio.setEnabled(true);
+                cmbResolution.setEnabled(true);
+                cmbVideoVC.setEnabled(true);
+                cmbVideoAC.setEnabled(true);
+
+                cmbTypeAudio.setEnabled(false);
+                cmbChannels.setEnabled(false);
+                cmbAudioAC.setEnabled(false);
+            } else if (type.equals("All")) {
+                System.out.println("all");
+                cmbType.setEnabled(false);
+                cmbFps.setEnabled(false);
+                cmbAspectRatio.setEnabled(false);
+                cmbResolution.setEnabled(false);
+                cmbVideoVC.setEnabled(false);
+                cmbVideoAC.setEnabled(false);
+                cmbTypeAudio.setEnabled(false);
+                cmbChannels.setEnabled(false);
+                cmbAudioAC.setEnabled(false);
+            } else if (type.equals("Audio")) {
+                System.out.println("Audio");
+                cmbType.setEnabled(false);
+                cmbFps.setEnabled(false);
+                cmbAspectRatio.setEnabled(false);
+                cmbResolution.setEnabled(false);
+                cmbVideoVC.setEnabled(false);
+                cmbVideoAC.setEnabled(false);
+
+                cmbTypeAudio.setEnabled(true);
+                cmbChannels.setEnabled(true);
+                cmbAudioAC.setEnabled(true);
+            }
+        };
+        getCmbFileType().addActionListener(advanced);
 
 
     }
@@ -582,7 +623,16 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         gridPane.weighty = 0;
         pnlMain.add(cmbVideoAC, gridPane);
 
-
+        cmbType.setEnabled(false);
+        cmbFps.setEnabled(false);
+        cmbAspectRatio.setEnabled(false);
+        cmbResolution.setEnabled(false);
+        cmbVideoVC.setEnabled(false);
+        cmbVideoAC.setEnabled(false);
+        cmbTypeAudio.setEnabled(false);
+        cmbChannels.setEnabled(false);
+        cmbAudioAC.setEnabled(false);
+        
         this.add(pnlMain);
         this.setResizable(false);
     }
