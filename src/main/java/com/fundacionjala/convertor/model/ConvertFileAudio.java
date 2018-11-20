@@ -105,7 +105,7 @@ public class ConvertFileAudio implements IConvertFile {
 
     private String getCodec(String cnvVideoType) {
         String format = null;
-        if (cnvVideoType.equals("mkv")) {
+        if (cnvVideoType.equals("null")) {
             format = "matroska";
         } else {
             format = cnvVideoType;

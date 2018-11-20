@@ -7,6 +7,8 @@ import com.fundacionjala.convertor.model.IConvertFile;
 import com.fundacionjala.convertor.view.Converter;
 import com.fundacionjala.convertor.view.ListConverting;
 import com.fundacionjala.convertor.view.NewWindows;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -37,7 +39,7 @@ public class ConvertController implements ActionListener {
         showList(listConv);
     }
 
-    public void loadConvertCriteria(ConvertCriteria convertCriteria) {
+    private void loadConvertCriteria(ConvertCriteria convertCriteria) {
         convertCriteria.setFileName(converter.getTxtName().getText());
 
         convertCriteria.setFormatTo(converter.getCmbType().getSelectedItem().toString());
@@ -54,7 +56,11 @@ public class ConvertController implements ActionListener {
             if(!converter.getCmbVideoVC().getSelectedItem().toString().equals("Select")) {convertCriteria.setCnvVideoCodec(converter.getCmbVideoVC().getSelectedItem().toString());}
             if(!converter.getCmbVideoAC().getSelectedItem().toString().equals("Select")) {convertCriteria.setCnvVideoAudioCodec(converter.getCmbVideoAC().getSelectedItem().toString());}
         }else if(converter.getCmbConvertTo().getSelectedItem().toString().equals("Audio")){
-            if(!converter.getCmbTypeAudio().getSelectedItem().toString().equals("Select")) {convertCriteria.setCnvAudioType(converter.getCmbTypeAudio().getSelectedItem().toString());}
+            converter.getCmbType().setSelectedItem("Select");
+            if(!converter.getCmbTypeAudio().getSelectedItem().toString().equals("Select")) {
+                convertCriteria.setCnvAudioType(converter.getCmbTypeAudio().getSelectedItem().toString());
+                convertCriteria.setFormatTo(converter.getCmbTypeAudio().getSelectedItem().toString());
+            }
             if(!converter.getCmbChannels().getSelectedItem().toString().equals("Select")) {convertCriteria.setCnvChannels(converter.getCmbChannels().getSelectedItem().toString());}
             if(!converter.getCmbAudioAC().getSelectedItem().toString().equals("Select")) {convertCriteria.setCnvAudioCodec(converter.getCmbAudioAC().getSelectedItem().toString());}
         }
@@ -65,7 +71,15 @@ public class ConvertController implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == converter.getBtnConvert()) {
+        if (converter.getTxtName().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please, define a name file.");
+        } else if (converter.getCmbConvertTo().getSelectedItem().toString().equals("Select")) {
+            JOptionPane.showMessageDialog(null, "Please, define a Video or Audio conversion.");
+        } else if (converter.getTxtPathSave().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Please, define a valid path to save.");
+        } else if (converter.getCmbType().getSelectedItem().toString().equals("Select") && converter.getCmbTypeAudio().getSelectedItem().toString().equals("Select")) {
+            JOptionPane.showMessageDialog(null, "Please, define a type to conversion.");
+        } else if (e.getSource() == converter.getBtnConvert()) {
             loadConvertCriteria(convertCriteria);
             if(converter.getCmbConvertTo().getSelectedItem().toString().equals("Audio")) {
                 System.out.println("Es audio");
@@ -110,6 +124,14 @@ public class ConvertController implements ActionListener {
         for (int j = convertLis.length - 1; j >= 0; j-- ) {
             listConverting.getListModel().addElement(convertLis[j]);
         }
+    }
+
+    public Converter getConverter() {
+        return converter;
+    }
+
+    public ListConverting getListConverting() {
+        return listConverting;
     }
 }
 

@@ -221,6 +221,7 @@ public class Converter extends JDialog implements ActionListener {
         txtName.setForeground(new Colors().textCmbColor);
         txtPathSave.setBackground(new Colors().cmbColor);
         txtPathSave.setForeground(new Colors().textCmbColor);
+        txtPathSave.setEditable(false);
 
         lblSelectConvertTo.setForeground(new Colors().textColor);
         lblName.setForeground(new Colors().textColor);
