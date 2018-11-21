@@ -95,4 +95,148 @@ public class ConvertFileVideoTest {
         int result = convertFileVideo.convert(convertCriteria);
         assertEquals(FINISHED, result);
     }
+
+    //codec mpeg4
+    @Test
+    public void testConvertToVideoCodec_Mpeg4AudioCodec_Aac() {
+        convertCriteria.setCnvVideoCodec("aac");
+        convertCriteria.setCnvVideoAudioCodec("mpeg4");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    @Test
+    public void testConvertToVideoCodec_wmv1AudioCodec_Mp3() {
+        convertCriteria.setCnvVideoCodec("mp3");
+        convertCriteria.setCnvVideoAudioCodec("mpeg4");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    //codec wmv1
+    @Test
+    public void testConvertToVideoCodec_wmv1AudioCodec_aac() {
+        convertCriteria.setCnvVideoCodec("aac");
+        convertCriteria.setCnvVideoAudioCodec("wmv1");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    @Test
+    public void testConvertToVideoCodec_wmv1AudioCodec_mp3() {
+        convertCriteria.setCnvVideoCodec("mp3");
+        convertCriteria.setCnvVideoAudioCodec("wmv1");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    //codec vp9
+    @Test
+    public void testConvertToVideoCodec_vp9AudioCodec_Mp3() {
+        convertCriteria.setCnvVideoCodec("mp3");
+        convertCriteria.setCnvVideoAudioCodec("vp9");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    @Test
+    public void testConvertToVideoCodec_vp9AudioCodec_aac() {
+        convertCriteria.setCnvVideoCodec("aac");
+        convertCriteria.setCnvVideoAudioCodec("vp9");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    //codec msmpeg4v3
+    @Test
+    public void testConvertToVideoCodec_msmpeg4v3AudioCodec_aac() {
+        convertCriteria.setCnvVideoCodec("aac");
+        convertCriteria.setCnvVideoAudioCodec("msmpeg4v3");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    @Test
+    public void testConvertToVideoCodec_msmpeg4v3AudioCodec_Mp3() {
+        convertCriteria.setCnvVideoCodec("mp3");
+        convertCriteria.setCnvVideoAudioCodec("msmpeg4v3");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    //codec flv1
+    @Test
+    public void testConvertToVideoCodec_flv1AudioCodec_aac() {
+        convertCriteria.setCnvVideoCodec("aac");
+        convertCriteria.setCnvVideoAudioCodec("flv1");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    @Test
+    public void testConvertToVideoCodec_flv1AudioCodec_Mp3() {
+        convertCriteria.setCnvVideoCodec("mp3");
+        convertCriteria.setCnvVideoAudioCodec("flv1");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    //codec mpg1
+    @Test
+    public void testConvertToVideoCodec_mpeg1videoAudioCodec_aac() {
+        convertCriteria.setFileName("MkvtoAvi");
+        convertCriteria.setCnvVideoCodec("aac");
+        convertCriteria.setCnvVideoAudioCodec("mpeg1video");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    @Test
+    public void testConvertToVideoCodec_mpeg1videoAudioCodec_Mp3() {
+        convertCriteria.setFileName("MkvtoAvi");
+        convertCriteria.setCnvVideoCodec("mp3");
+        convertCriteria.setCnvVideoAudioCodec("mpeg1video");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    //codec libx264
+    @Test
+    public void testConvertToVideoCodec_libx264videoAudioCodec_aac() {
+        convertCriteria.setFileName("MkvtoAvi");
+        convertCriteria.setCnvVideoCodec("aac");
+        convertCriteria.setCnvVideoAudioCodec("libx264");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    @Test
+    public void testConvertToVideoCodec_libx264videoAudioCodec_Mp3() {
+        convertCriteria.setFileName("MkvtoAvi");
+        convertCriteria.setCnvVideoCodec("mp3");
+        convertCriteria.setCnvVideoAudioCodec("libx264");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    //codec vp8
+    @Test
+    public void testConvertToVideoCodec_vp8videoAudioCodec_aac() {
+        convertCriteria.setFileName("MkvtoAvi");
+        convertCriteria.setCnvVideoCodec("aac");
+        convertCriteria.setCnvVideoAudioCodec("vp8");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    @Test
+    public void testConvertToVideoCodec_vp8videoAudioCodec_Mp3() {
+        convertCriteria.setFileName("MkvtoAvi");
+        convertCriteria.setCnvVideoCodec("mp3");
+        convertCriteria.setCnvVideoAudioCodec("vp8");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    //codec mpeg2
+    @Test
+    public void testConvertToVideoCodec_mpeg2videovideoAudioCodec_aac() {
+        convertCriteria.setFileName("MkvtoAvi");
+        convertCriteria.setCnvVideoCodec("aac");
+        convertCriteria.setCnvVideoAudioCodec("mpeg2video");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
+    @Test
+    public void testConvertToVideoCodec_mpeg2videovideoAudioCodec_Mp3() {
+        convertCriteria.setFileName("MkvtoAvi");
+        convertCriteria.setCnvVideoCodec("mp3");
+        convertCriteria.setCnvVideoAudioCodec("mpeg2video");
+        int result = convertFileVideo.convert(convertCriteria);
+        assertEquals(FINISHED, result);
+    }
 }
