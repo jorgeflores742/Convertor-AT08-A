@@ -590,8 +590,10 @@ public class Converter extends JDialog implements ActionListener {
         if (e.getSource() == btnPathSave) {
             JFileChooser f = new JFileChooser();
             f.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            f.showSaveDialog(null);
-            txtPathSave.setText(f.getSelectedFile().getAbsolutePath());
+            int selection = f.showSaveDialog(null);
+            if (selection == JFileChooser.APPROVE_OPTION){
+                txtPathSave.setText(f.getSelectedFile().getAbsolutePath());
+            }
         }
     }
 

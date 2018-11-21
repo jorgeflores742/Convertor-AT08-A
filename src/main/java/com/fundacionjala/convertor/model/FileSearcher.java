@@ -98,8 +98,7 @@ public class FileSearcher {
 
     private CommonAsset fillCommonFeatures(File file) {
         sL.register(null, "INFO", "Successful - fillCommonFeatures - start");
-        CommonAsset asset = new CommonAsset();
-
+        CommonAsset asset = (CommonAsset) FactoryAsset.getAsset("Common asset");
         BasicFileAttributes attrib = null;
         Path path = Paths.get(file.getAbsolutePath());
         try {

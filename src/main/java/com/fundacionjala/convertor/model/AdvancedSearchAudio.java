@@ -48,7 +48,7 @@ public class AdvancedSearchAudio {
 
     public Asset fillAudioFeatures(File file) {
         sL.register(null, "INFO", "Successful - fillAudioFeatures - start");
-        AudioAsset asset = new AudioAsset();
+        AudioAsset asset = (AudioAsset) FactoryAsset.getAsset("Audio asset");
         BasicFileAttributes attrib = null;
         Path path = Paths.get(file.getAbsolutePath());
         try {

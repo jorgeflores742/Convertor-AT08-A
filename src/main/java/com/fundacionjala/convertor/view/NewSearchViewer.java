@@ -677,8 +677,10 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         if (e.getSource() == btnPath) {
             JFileChooser f = new JFileChooser();
             f.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            f.showSaveDialog(null);
-            txtPath.setText(f.getSelectedFile().getAbsolutePath());
+            int selection = f.showSaveDialog(null);
+            if (selection == JFileChooser.APPROVE_OPTION) {
+                txtPath.setText(f.getSelectedFile().getAbsolutePath());
+            }
         }
         sL.register(null, "INFO", "Successful - actionPerformed - finished");
 
