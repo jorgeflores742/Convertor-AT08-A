@@ -24,7 +24,6 @@ import static com.fundacionjala.convertor.Main.PATH_TO_FFMPEG_BIN_FFPROBE;
  */
 
 public class AdvancedSearchVideo {
-
     ArrayList<String> videoTypes = new ArrayList<>();
     private static SingleLogger sL = SingleLogger.getInstanceLogger();
 

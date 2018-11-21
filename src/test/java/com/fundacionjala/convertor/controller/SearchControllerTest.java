@@ -1,5 +1,6 @@
 package com.fundacionjala.convertor.controller;
 
+import com.fundacionjala.convertor.utils.SingleLogger;
 import com.fundacionjala.convertor.view.FileTypeEnum;
 import com.fundacionjala.convertor.view.NewSearchViewer;
 import org.junit.Before;
@@ -10,6 +11,7 @@ import static org.junit.Assert.*;
 public class SearchControllerTest {
     SearchController searchController;
     NewSearchViewer searchViewer;
+    static SingleLogger sL = SingleLogger.getInstanceLogger();
 
     @Before
     public void setUp() throws Exception {
@@ -87,6 +89,4 @@ public class SearchControllerTest {
         String nameFile = searchController.getDataFilesName();
         assertEquals("Name: Big Man - John Mayall.ogg", nameFile);
     }
-
-
 }

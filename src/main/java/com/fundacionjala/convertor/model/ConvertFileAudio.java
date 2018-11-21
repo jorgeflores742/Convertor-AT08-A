@@ -12,7 +12,6 @@ import net.bramp.ffmpeg.probe.FFmpegProbeResult;
 import net.bramp.ffmpeg.progress.Progress;
 import net.bramp.ffmpeg.progress.ProgressListener;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -112,7 +111,7 @@ public class ConvertFileAudio implements IConvertFile {
     private String getCodec(String cnvVideoType) {
         sL.register(null, "INFO", "Successful - getCodec - start");
         String format = null;
-        if (cnvVideoType.equals("mkv")) {
+        if (cnvVideoType.equals("null")) {
             format = "matroska";
         } else {
             format = cnvVideoType;

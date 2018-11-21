@@ -16,7 +16,6 @@ public class NewWindows extends JFrame {
     private ListConverting listConv = new ListConverting();
     private static SingleLogger sL = SingleLogger.getInstanceLogger();
 
-
     public NewWindows() {
         sL.register(null, "INFO", "Successful - NewWindows - start");
 
@@ -41,7 +40,6 @@ public class NewWindows extends JFrame {
         pSearch.setBounds(0,0,430,350);
         this.getContentPane().add(pSearch);
         pSearch.add(sView.getContentPane());
-
         sL.register(null, "INFO", "Successful - makePanels - panelSearchResult");
         JPanel searchResult = new JPanel();
         searchResult.setBackground(new Colors().backgroundColor);

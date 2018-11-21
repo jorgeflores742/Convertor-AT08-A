@@ -126,13 +126,6 @@ public class ConvertCriteria {
     }
 
     /**
-     * @return cnvAspectRatio
-     */
-    public String getCnvAspectRatio() {
-        return cnvAspectRatio;
-    }
-
-    /**
      * @param cnvAspectRatio cnvAspectRatio
      */
     public void setCnvAspectRatio(String cnvAspectRatio) {

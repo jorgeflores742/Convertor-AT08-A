@@ -1,6 +1,7 @@
 package com.fundacionjala.convertor.model;
 
 import com.fundacionjala.convertor.controller.SearchCriteria;
+import com.fundacionjala.convertor.utils.SingleLogger;
 import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,6 +18,7 @@ public class FileSearcherTest {
     FileSearcher fSearcher;
     ArrayList<Asset> List;
     int sizeList;
+    static SingleLogger sL = SingleLogger.getInstanceLogger();
 
     @Before
     public void initialize () {
@@ -141,14 +143,14 @@ public class FileSearcherTest {
         }
     }
 
-//    @Test
-//    public void testAssetCreationFile() {
-//        searchCriteria.setPath("testfiles");
-//        searchCriteria.setAdvancedType("Video");
-//        searchCriteria.setVideoAudioCodec("vorbis");
-//        result = fSearcher.search(searchCriteria);
-//        assertEquals("Creation time: 19/11/2018 15:28:45", result.get(0).getCreationFile());
-//    }
+    @Test
+    public void testAssetCreationFile() {
+        searchCriteria.setPath("testfiles");
+        searchCriteria.setAdvancedType("Video");
+        searchCriteria.setVideoAudioCodec("vorbis");
+        result = fSearcher.search(searchCriteria);
+        assertEquals("Creation time: 19/11/2018 17:42:29", result.get(0).getCreationFile());
+    }
 
     @Test
     public void testAssetVideoResolution() {
