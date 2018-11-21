@@ -137,7 +137,8 @@ public class SearchController implements ActionListener, ListSelectionListener {
             Asset infoAsset = new Asset();
             infoAsset = getInfoAsset(value);
             convertController.getConvertCriteria().setPathFrom(value);
-            v.getPlayerM().setRouteFile(value);
+            String ext = infoAsset.getNameFile().substring(infoAsset.getNameFile().lastIndexOf('.') + 1);
+            playervlcj(value,ext);
             dataFiles.getDefaultList().addElement(infoAsset.getPath());
             dataFiles.getDefaultList().addElement(infoAsset.getNameFile());
             dataFiles.getDefaultList().addElement(infoAsset.getSizeFile());
@@ -191,6 +192,26 @@ public class SearchController implements ActionListener, ListSelectionListener {
         }
         sL.register(null, "INFO", "Successful - getInfoAsset - finished");
         return assetSelected;
+    }
+
+    private void playervlcj(String value, String ext) {
+        ArrayList<String> conteinerAV= new ArrayList<String>();
+        for(int i = 1; i < searchViewer.getCmbType().getItemCount(); i++)
+        {
+            conteinerAV.add(searchViewer.getCmbType().getItemAt(i).toString());
+        }
+        for(int i = 1; i < searchViewer.getCmbTypeAudio().getItemCount(); i++)
+        {
+            conteinerAV.add(searchViewer.getCmbTypeAudio().getItemAt(i).toString());
+        }
+        if(conteinerAV.contains(ext)) {
+            v.getPlayerM().setRouteFile(value,true);
+        }else if(conteinerAV.contains(ext)) {
+            v.getPlayerM().setRouteFile(value,true);
+        }else{
+            v.getPlayerM().setRouteFile(value,false);
+            JOptionPane.showMessageDialog(null, "File is not multimedia, is not posible to play. \n Last file multimedia wil be played again", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public NewSearchViewer getSearchViewer() {

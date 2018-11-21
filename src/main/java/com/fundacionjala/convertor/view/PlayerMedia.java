@@ -132,7 +132,11 @@ public class PlayerMedia extends JPanel {
         return player.getMediaPlayer();
     }
 
-    public void setRouteFile(String routeFile) {
-        this.routeFile = routeFile;
+    public void setRouteFile(String routeFile,boolean v) {
+        if(v){
+            this.routeFile = routeFile;
+        }else{
+            this.routeFile = "img/camaleon32.png";
+        }
     }
 }
