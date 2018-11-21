@@ -9,14 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="da66e749-b498-4deb-97e7-1d42c75d188e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertCriteria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertCriteria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileAudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileAudio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileVideo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileVideo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/Converter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/Converter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/controller/SearchControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/controller/SearchControllerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -200,36 +192,94 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/SearchController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/controller/SearchControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="51" lean-forward="true" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
+            <state relative-caret-position="1411">
+              <caret line="89" column="53" selection-start-line="89" selection-start-column="53" selection-end-line="89" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/model/ConvertFileAudioTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/model/ConvertFileVideoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/model/FileSearcherTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="24" column="41" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8003#8004#0" expanded="true" />
-                <element signature="e#8037#8038#0" expanded="true" />
-                <element signature="e#8083#8084#0" expanded="true" />
-                <element signature="e#8117#8118#0" expanded="true" />
-                <element signature="e#8339#8340#0" expanded="true" />
-                <element signature="e#8374#8375#0" expanded="true" />
-                <element signature="e#8404#8405#0" expanded="true" />
-                <element signature="e#8435#8436#0" expanded="true" />
-                <element signature="e#8927#8928#0" expanded="true" />
-                <element signature="e#8975#8976#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/controller/SearchControllerTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="87" column="53" selection-start-line="87" selection-start-column="53" selection-end-line="87" selection-end-column="53" />
+            <state relative-caret-position="360">
+              <caret line="35" column="56" lean-forward="true" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/out/production/classes/com/fundacionjala/convertor/model/ConvertList.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#2500#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/controller/ConvertControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/NewSearchViewer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="93" column="36" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -679,12 +729,69 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
               <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fundacionjala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fundacionjala" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fundacionjala" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
@@ -802,9 +909,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -998,7 +1104,7 @@
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32038835" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32605177" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1118,9 +1224,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1159,8 +1262,8 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ViewConverter.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+        <state relative-caret-position="360">
+          <caret line="35" column="56" lean-forward="true" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1176,8 +1279,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        <state relative-caret-position="357">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1197,7 +1303,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/model/FileSearcherTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
+        <state relative-caret-position="284">
           <caret line="24" column="41" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1242,8 +1348,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/NewSearchViewer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5797">
-          <caret line="424" column="26" lean-forward="true" selection-start-line="424" selection-start-column="26" selection-end-line="424" selection-end-column="26" />
+        <state relative-caret-position="186">
+          <caret line="93" column="36" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1266,11 +1372,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/controller/SearchControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="87" column="53" selection-start-line="87" selection-start-column="53" selection-end-line="87" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1411">
+          <caret line="89" column="53" selection-start-line="89" selection-start-column="53" selection-end-line="89" selection-end-column="53" />
         </state>
       </provider>
     </entry>
