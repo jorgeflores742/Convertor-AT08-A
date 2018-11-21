@@ -345,10 +345,12 @@ public class NewSearchViewer extends JDialog implements ActionListener {
             String type = getCmbAspectRatio().getSelectedItem().toString();
             if (type.equals("4:3")) {
                 cmbResolution.removeAllItems();
+                cmbResolution.addItem("All");
                 cmbResolution.addItem("640x480");
 
             } else if (type.equals("16:9")) {
                 cmbResolution.removeAllItems();
+                cmbResolution.addItem("All");
                 cmbResolution.addItem("640x360");
                 cmbResolution.addItem("1280x720");
                 cmbResolution.addItem("1920x1080");
@@ -357,6 +359,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
 
             } else if (type.equals("17:9")) {
                 cmbResolution.removeAllItems();
+                cmbResolution.addItem("All");
                 cmbResolution.addItem("4096x2160");
             }
         };
