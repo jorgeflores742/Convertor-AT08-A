@@ -37,8 +37,6 @@ public class ConvertFileVideo implements IConvertFile {
             sL.register(e, "SEVERE", "Successful - convert - ffmpeg/ffmprobe - failed");
         }
         String format = getCodec(convertCriteria.getCnvVideoType());
-//        System.out.println("input>" + convertCriteria.getPathFrom());
-//        System.out.println("output>" + convertCriteria.getPathTo() + "\\" + convertCriteria.getFileName() + "." + convertCriteria.getCnvVideoType());
 
         ArrayList<Object> parameters = getParams(convertCriteria);
 
@@ -92,18 +90,14 @@ public class ConvertFileVideo implements IConvertFile {
         sL.register(null, "INFO", "Successful - getParams - start");
         ArrayList<Object> criteriaAux = new ArrayList<Object>() {};
         if (criteria.getCnvVideoCodec() == null) {
-            System.out.println("audioCodec="+in.getStreams().get(1).codec_name);
             criteriaAux.add(in.getStreams().get(1).codec_name);
         } else {
-            System.out.println("audioCodec="+criteria.getCnvVideoCodec());
             criteriaAux.add(criteria.getCnvVideoCodec());
         }
         ;
         if (criteria.getCnvVideoAudioCodec() == null) {
-            System.out.println("videoCodec="+in.getStreams().get(0).codec_name);
             criteriaAux.add(in.getStreams().get(0).codec_name);
         } else {
-            System.out.println("videoCodec="+criteria.getCnvVideoAudioCodec());
             criteriaAux.add(criteria.getCnvVideoAudioCodec());
         }
         ;
@@ -111,7 +105,6 @@ public class ConvertFileVideo implements IConvertFile {
             int fps = in.getStreams().get(0).avg_frame_rate.getNumerator();
             float fpsFloat = fps;
             fpsFloat = fpsFloat >= 1000 ? (fpsFloat / 1000) : fpsFloat;
-            System.out.println("framerate="+fpsFloat);
             criteriaAux.add(getFractionSelected(Float.toString(fpsFloat)));
         } else {
             criteriaAux.add(getFractionSelected(criteria.getCnvFps()));

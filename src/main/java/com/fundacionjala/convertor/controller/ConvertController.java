@@ -1,3 +1,17 @@
+/*
+ * @ConvertController.java Copyright (c) 2018 Fundacion Jala. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * Please contact Fundacion Jala, 2643 Av Melchor Perez de Olguin, Colquiri
+ * Sud, Cochabamba, Bolivia. www.fundacion-jala.org if you need additional
+ * information or have any questions.
+ */
 package com.fundacionjala.convertor.controller;
 
 import com.fundacionjala.convertor.model.ConvertFileAudio;
@@ -8,15 +22,16 @@ import com.fundacionjala.convertor.utils.SingleLogger;
 import com.fundacionjala.convertor.view.Converter;
 import com.fundacionjala.convertor.view.ListConverting;
 import com.fundacionjala.convertor.view.NewWindows;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Module View MainView.
+ * Module Controller to conversion.
+ * Controller obtains data setting in UI for conversion and then,
+ *  sends those data to convert model.
  *
- * @author Melvi Caballero.
+ * @author Jorge Flores.
  * @version 1.0.
  */
 public class ConvertController implements ActionListener {
@@ -27,10 +42,9 @@ public class ConvertController implements ActionListener {
     private static int progress;
     private static SingleLogger sL = SingleLogger.getInstanceLogger();
 
-
-
     /**
-     *
+     * Constructor receives the main window.
+     * @param nW main class of View part.
      */
     public ConvertController(NewWindows nW) {
         sL.setLogger(ConvertController.class.getName());
@@ -45,11 +59,13 @@ public class ConvertController implements ActionListener {
         sL.register(null, "INFO", "Successful - ConvertController - finished");
     }
 
+    /**
+     * Criteria for conversion is loaded from UI.
+     * @param convertCriteria class to fill criteria conversion.
+     */
     private void loadConvertCriteria(ConvertCriteria convertCriteria) {
         sL.register(null, "INFO", "Successful - loadConvertCriteria - start");
-
         convertCriteria.setFileName(converter.getTxtName().getText());
-
         convertCriteria.setFormatTo(converter.getCmbType().getSelectedItem().toString());
         convertCriteria.setPathTo(converter.getTxtPathSave().getText());
         if(converter.getCmbConvertTo().getSelectedItem().toString().equals("Video")) {
@@ -75,8 +91,10 @@ public class ConvertController implements ActionListener {
         sL.register(null, "INFO", "Successful - loadConvertCriteria - finished");
     }
 
+
     /**
-     * @param e actionEvent
+     * Method runs when convert button is pressed.
+     * @param e action event.
      */
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -92,14 +110,10 @@ public class ConvertController implements ActionListener {
         } else if (e.getSource() == converter.getBtnConvert()) {
             loadConvertCriteria(convertCriteria);
             if(converter.getCmbConvertTo().getSelectedItem().toString().equals("Audio")) {
-                System.out.println("Es audio");
                 convertFile = new ConvertFileAudio();
                 progress = convertFile.convert(convertCriteria);
                 converter.setProgressBar(progress);
-
             } else if(converter.getCmbConvertTo().getSelectedItem().toString().equals("Video")){
-                System.out.println("Es video");
-
                 convertFile = new ConvertFileVideo();
                 progress = convertFile.convert(convertCriteria);
                 converter.setProgressBar(progress);
@@ -129,10 +143,18 @@ public class ConvertController implements ActionListener {
         return progress;
     }
 
+    /**
+     * Class to obtain criteria instance.
+     * @return criteria for conversion.
+     */
     public ConvertCriteria getConvertCriteria() {
         return convertCriteria;
     }
 
+    /**
+     * Class for fill list of converted files.
+     * @param convertLis list of converted files.
+     */
     protected void showList(String[] convertLis) {
         sL.register(null, "INFO", "Successful - showList - start");
         for (int j = convertLis.length - 1; j >= 0; j-- ) {
@@ -141,10 +163,18 @@ public class ConvertController implements ActionListener {
         sL.register(null, "INFO", "Successful - showList - finished");
     }
 
+    /**
+     * Class for obtain converter instance.
+     * @return converter instance.
+     */
     public Converter getConverter() {
         return converter;
     }
 
+    /**
+     * Class for obtain ListConverting instance.
+     * @return ListConverting instance.
+     */
     public ListConverting getListConverting() {
         return listConverting;
     }

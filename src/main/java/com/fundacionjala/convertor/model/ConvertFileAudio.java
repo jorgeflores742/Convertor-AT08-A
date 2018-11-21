@@ -35,8 +35,6 @@ public class ConvertFileAudio implements IConvertFile {
         } catch (IOException e) {
             sL.register(e, "SEVERE", "Successful - convert - ffmpeg/ffmprobe - failed");
         }
-        System.out.println("input>"+convertCriteria.getPathFrom());
-        System.out.println("output>"+convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvAudioType());
 
         FFmpegExecutor executor = new FFmpegExecutor(ffmpeg, ffprobe);
         String format = getCodec(convertCriteria.getCnvAudioType());
@@ -89,19 +87,15 @@ public class ConvertFileAudio implements IConvertFile {
         sL.register(null, "INFO", "Successful - getParams - start");
         ArrayList<Object> criteriaAux = new ArrayList<Object>() {};
         if (criteria.getCnvAudioCodec() == null) {
-            System.out.println("audioCodec="+in.getStreams().get(0).codec_name);
             criteriaAux.add(in.getStreams().get(0).codec_name);
         } else {
-            System.out.println("audioCodec="+criteria.getCnvAudioCodec());
             criteriaAux.add(criteria.getCnvAudioCodec());
         }
 
         if (criteria.getCnvChannels() == null) {
             String s = in.getStreams().get(0).channel_layout;
-            System.out.println("channels="+getChannels(s));
             criteriaAux.add(getChannels(s));
         } else {
-            System.out.println("channels="+getChannels(criteria.getCnvChannels()));
             criteriaAux.add(getChannels(criteria.getCnvChannels()));
         }
         sL.register(null, "INFO", "Successful - getParams - finished");
