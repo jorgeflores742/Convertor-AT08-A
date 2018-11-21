@@ -91,6 +91,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
      * Pane for default search.
      */
     public NewSearchViewer() {
+        sL.setLogger(NewSearchViewer.class.getName());
         sL.register(null, "INFO", "Successful - NewSearchViewer - start");
         pnlMain = new JPanel(new GridBagLayout());
         lblPath = new JLabel();
