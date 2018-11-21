@@ -182,6 +182,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbType.addItem("flv");
         cmbType.addItem("wmv");
         cmbType.addItem("mkv");
+        cmbType.addItem("mov");
         cmbType.setForeground(new Colors().textCmbColor);
 
         lblFps.setText("Frames:");
@@ -233,18 +234,6 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbChannels.addItem("All");
         cmbChannels.addItem("mono");
         cmbChannels.addItem("stereo");
-        cmbChannels.addItem("2.1");
-        cmbChannels.addItem("3.0");
-        cmbChannels.addItem("3.1");
-        cmbChannels.addItem("4.0");
-        cmbChannels.addItem("4.1");
-        cmbChannels.addItem("5.0");
-        cmbChannels.addItem("5.1");
-        cmbChannels.addItem("6.1");
-        cmbChannels.addItem("7.1");
-        cmbChannels.addItem("7.2");
-        cmbChannels.addItem("8.1");
-        cmbChannels.addItem("9.1");
         cmbChannels.setForeground(new Colors().textCmbColor);
 
         lblVideoVC.setText("Video Codec:");
@@ -315,7 +304,6 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         ActionListener advanced = e -> {
             String type = getCmbFileType().getSelectedItem().toString();
             if (type.equals("Video")) {
-                System.out.println("Video");
                 cmbType.setEnabled(true);
                 cmbType.setEnabled(true);
                 cmbFps.setEnabled(true);
@@ -328,7 +316,6 @@ public class NewSearchViewer extends JDialog implements ActionListener {
                 cmbChannels.setEnabled(false);
                 cmbAudioAC.setEnabled(false);
             } else if (type.equals("All")) {
-                System.out.println("all");
                 cmbType.setEnabled(false);
                 cmbFps.setEnabled(false);
                 cmbAspectRatio.setEnabled(false);
@@ -339,7 +326,6 @@ public class NewSearchViewer extends JDialog implements ActionListener {
                 cmbChannels.setEnabled(false);
                 cmbAudioAC.setEnabled(false);
             } else if (type.equals("Audio")) {
-                System.out.println("Audio");
                 cmbType.setEnabled(false);
                 cmbFps.setEnabled(false);
                 cmbAspectRatio.setEnabled(false);

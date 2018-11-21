@@ -95,7 +95,6 @@ public class AdvancedSearchVideo {
             float fpsFloat = fps;
             fpsFloat = fpsFloat >= 1000 ? (fpsFloat / 1000) : fpsFloat;
             asset.setFps("Frames Per Second: ".concat(Float.toString(fpsFloat)));
-            System.out.println(file.getName().concat(" ").concat(Integer.toString(fps)));
 
             //Video codec
             String codec = ffprobeResult.getStreams().get(0).codec_name;

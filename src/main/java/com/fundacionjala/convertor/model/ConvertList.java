@@ -69,7 +69,6 @@ public class ConvertList {
             fw = new FileWriter(file.getAbsoluteFile(), true);
             bw = new BufferedWriter(fw);
             bw.write(data+"\n");
-            System.out.println("información agregada!");
         } catch (IOException e) {
             sL.register(e, "SEVERE", "Successful - FileWriter/BufferedWriter - failed");
         } finally {

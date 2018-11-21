@@ -1,9 +1,24 @@
+/*
+ * @ConvertCriteria.java Copyright (c) 2018 Fundacion Jala. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * Please contact Fundacion Jala, 2643 Av Melchor Perez de Olguin, Colquiri
+ * Sud, Cochabamba, Bolivia. www.fundacion-jala.org if you need additional
+ * information or have any questions.
+ */
 package com.fundacionjala.convertor.controller;
 
 /**
- * Module View MainView.
+ * Convert criteria.
+ * This class has only variables that will be filled with criteria UI set by user.
  *
- * @author Melvi Caballero.
+ * @author Jorge Flores.
  * @version 1.0.
  */
 public class ConvertCriteria {
@@ -28,20 +43,23 @@ public class ConvertCriteria {
     private String cnvAudioCodec = null;
 
     /**
-     * @return file name
+     * Get name of file.
+     * @return name.
      */
     public String getFileName() {
         return fileName;
     }
 
     /**
-     * @param fileName file name
+     * Set name of file.
+     * @param fileName file name.
      */
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
 
     /**
+     *
      * @return format from convert
      */
     public String getFormatFrom() {
@@ -63,48 +81,55 @@ public class ConvertCriteria {
     }
 
     /**
-     * @param formatTo format to convert
+     * Set output format.
+     * @param formatTo format to convert.
      */
     public void setFormatTo(String formatTo) {
         this.formatTo = formatTo;
     }
 
     /**
-     * @return pathFrom
+     * Obtain path source.
+     * @return pathFrom.
      */
     public String getPathFrom() {
         return pathFrom;
     }
 
     /**
-     * @param pathFrom pathFrom
+     * Set path source.
+     * @param pathFrom pathFrom.
      */
     public void setPathFrom(String pathFrom) {
         this.pathFrom = pathFrom;
     }
 
     /**
-     * @return pathTo
+     * Obtain output path.
+     * @return pathTo.
      */
     public String getPathTo() {
         return pathTo;
     }
 
     /**
-     * @param pathTo pathTo
+     * Set output path.
+     * @param pathTo pathTo.
      */
     public void setPathTo(String pathTo) {
         this.pathTo = pathTo;
     }
 
     /**
-     * @return cnvVideoType
+     * Obtain type video.
+     * @return cnvVideoType.
      */
     public String getCnvVideoType() {
         return cnvVideoType;
     }
 
     /**
+     * Set type video.
      * @param cnvVideoType cnvVideoType
      */
     public void setCnvVideoType(String cnvVideoType) {
@@ -112,27 +137,31 @@ public class ConvertCriteria {
     }
 
     /**
-     * @return cnvFps
+     * Obtain frames per second set.
+     * @return cnvFps.
      */
     public String getCnvFps() {
         return cnvFps;
     }
 
     /**
-     * @param cnvFps cnvFps
+     * Set Frames per second UI set.
+     * @param cnvFps cnvFps.
      */
     public void setCnvFps(String cnvFps) {
         this.cnvFps = cnvFps;
     }
 
     /**
-     * @param cnvAspectRatio cnvAspectRatio
+     * Set Asoect Ratio from UI.
+     * @param cnvAspectRatio cnvAspectRatio.
      */
     public void setCnvAspectRatio(String cnvAspectRatio) {
         this.cnvAspectRatio = cnvAspectRatio;
     }
 
     /**
+     * Obtain Video Codec set by user UI.
      * @return cnvVideoCodec
      */
     public String getCnvVideoCodec() {
@@ -140,80 +169,105 @@ public class ConvertCriteria {
     }
 
     /**
-     * @param cnvVideoCodec cnvVideoCodec
+     * Set Video Codec.
+     * @param cnvVideoCodec cnvVideoCodec.
      */
     public void setCnvVideoCodec(String cnvVideoCodec) {
         this.cnvVideoCodec = cnvVideoCodec;
     }
 
     /**
-     * @return cnvVideoAudioCodec
+     * Obtain Audio codec from a video.
+     * @return cnvVideoAudioCodec.
      */
     public String getCnvVideoAudioCodec() {
         return cnvVideoAudioCodec;
     }
 
     /**
-     * @param cnvVideoAudioCodec cnvVideoAudioCodec
+     * Set Audio codec for a video.
+     * @param cnvVideoAudioCodec cnvVideoAudioCodec.
      */
     public void setCnvVideoAudioCodec(String cnvVideoAudioCodec) {
         this.cnvVideoAudioCodec = cnvVideoAudioCodec;
     }
 
     /**
-     * @return cnvAudioType
+     * Obtain Audio codec from an audio.
+     * @return cnvAudioType.
      */
     public String getCnvAudioType() {
         return cnvAudioType;
     }
 
     /**
-     * @param cnvAudioType cnvAudioType
+     * Set Audio codec for an audio.
+     * @param cnvAudioType cnvAudioType.
      */
     public void setCnvAudioType(String cnvAudioType) {
         this.cnvAudioType = cnvAudioType;
     }
 
     /**
-     * @return cnvChannels
+     * Obtain channels of UI set.
+     * @return cnvChannels.
      */
     public String getCnvChannels() {
         return cnvChannels;
     }
 
     /**
-     * @param cnvChannels cnvChannels
+     *Set Channels for audio conversion.
+     * @param cnvChannels cnvChannels.
      */
     public void setCnvChannels(String cnvChannels) {
         this.cnvChannels = cnvChannels;
     }
 
     /**
-     * @return cnvAudioCodec
+     * Obtain Audio codec.
+     * @return cnvAudioCodec.
      */
     public String getCnvAudioCodec() {
         return cnvAudioCodec;
     }
 
     /**
-     * @param cnvAudioCodec cnvAudioCodec
+     * Set Audio codec.
+     * @param cnvAudioCodec cnvAudioCodec.
      */
     public void setCnvAudioCodec(String cnvAudioCodec) {
         this.cnvAudioCodec = cnvAudioCodec;
     }
 
+    /**
+     * Obtain Width resolution.
+     * @return Width resolution.
+     */
     public String getCnvResolutionWidth() {
         return cnvResolutionWidth;
     }
 
+    /**
+     * Set Width resolution.
+     * @param cnvResolutionWidth Width resolution.
+     */
     public void setCnvResolutionWidth(String cnvResolutionWidth) {
         this.cnvResolutionWidth = cnvResolutionWidth;
     }
 
+    /**
+     * Obtain Height resolution.
+     * @return Height resolution.
+     */
     public String getCnvResolutionHeight() {
         return cnvResolutionHeight;
     }
 
+    /**
+     * Obtain Height resolution.
+     * @param cnvResolutionHeight Height resolution.
+     */
     public void setCnvResolutionHeight(String cnvResolutionHeight) {
         this.cnvResolutionHeight = cnvResolutionHeight;
     }

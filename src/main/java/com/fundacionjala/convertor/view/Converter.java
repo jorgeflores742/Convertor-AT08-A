@@ -247,7 +247,6 @@ public class Converter extends JDialog implements ActionListener {
         ActionListener advanced = e -> {
             String type = getCmbConvertTo().getSelectedItem().toString();
             if (type.equals("Video")) {
-                System.out.println("Video");
                 cmbType.setEnabled(true);
                 cmbType.setEnabled(true);
                 cmbFps.setEnabled(true);
@@ -255,12 +254,10 @@ public class Converter extends JDialog implements ActionListener {
                 cmbResolution.setEnabled(true);
                 cmbVideoVC.setEnabled(true);
                 cmbVideoAC.setEnabled(true);
-
                 cmbTypeAudio.setEnabled(false);
                 cmbChannels.setEnabled(false);
                 cmbAudioAC.setEnabled(false);
             } else if (type.equals("Select")) {
-                System.out.println("all");
                 cmbType.setEnabled(false);
                 cmbFps.setEnabled(false);
                 cmbAspectRatio.setEnabled(false);
@@ -271,7 +268,6 @@ public class Converter extends JDialog implements ActionListener {
                 cmbChannels.setEnabled(false);
                 cmbAudioAC.setEnabled(false);
             } else if (type.equals("Audio")) {
-                System.out.println("Audio");
                 cmbType.setEnabled(false);
                 cmbFps.setEnabled(false);
                 cmbAspectRatio.setEnabled(false);
