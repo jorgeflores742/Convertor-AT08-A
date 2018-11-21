@@ -13,6 +13,7 @@ import net.bramp.ffmpeg.progress.Progress;
 import net.bramp.ffmpeg.progress.ProgressListener;
 import org.apache.commons.lang3.math.Fraction;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -41,7 +42,10 @@ public class ConvertFileVideo implements IConvertFile {
         ArrayList<Object> parameters = getParams(convertCriteria);
 
         FFmpegExecutor executor = new FFmpegExecutor(ffmpeg, ffprobe);
-        FFmpegBuilder builder = new FFmpegBuilder()
+        FFmpegBuilder builder = null;
+        try{
+            sL.register(null, "INFO", "Successful - convert - FileConvert - start");
+            builder = new FFmpegBuilder()
                 .setInput(in) // Or filename
                 .overrideOutputFiles(true) // Override the output if it exists
                 .addOutput(convertCriteria.getPathTo() + "\\" + convertCriteria.getFileName() + "." + convertCriteria.getCnvVideoType())  // Filename for the destination
@@ -51,6 +55,10 @@ public class ConvertFileVideo implements IConvertFile {
                 .setVideoFrameRate((Fraction) parameters.get(2))     // at 24 frames per second VERIFY
                 .setVideoResolution((Integer)parameters.get(3), (Integer)parameters.get(4)) // at 640x480 resolution
                 .done();
+            }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Error in the Selects parameter for convert", "ERROR", JOptionPane.ERROR_MESSAGE);
+            sL.register(e, "SEVERE", "Successful - convert - FileConvert - failed");
+        }
         FFmpegProbeResult finalIn = in;
         FFmpegJob job = executor.createJob(builder, new ProgressListener() {
 
