@@ -138,22 +138,15 @@ public class Converter extends JDialog implements ActionListener {
         lblAspectRatio.setText("Aspect Ratio:");
         cmbAspectRatio.addItem("Select");
         cmbAspectRatio.addItem("4:3");
-        cmbAspectRatio.addItem("12:5");
+
         cmbAspectRatio.addItem("16:9");
+
         cmbAspectRatio.addItem("17:9");
         cmbAspectRatio.setForeground(new Colors().textCmbColor);
 
         lblResolution.setText("Resolution:");
         cmbResolution.addItem("Select");
-        cmbResolution.addItem("640x360");
-        cmbResolution.addItem("740x480");
-        cmbResolution.addItem("1280x720");
-        cmbResolution.addItem("1920x1080");
-        cmbResolution.addItem("2048x1080");
-        cmbResolution.addItem("3840x2160");
-        cmbResolution.addItem("4096x2160");
-        cmbResolution.addItem("7680x4320");
-        cmbResolution.addItem("2560x1440");
+
         cmbResolution.setForeground(new Colors().textCmbColor);
 
         lblTypeAudio.setText("Type audio:");
@@ -292,6 +285,27 @@ public class Converter extends JDialog implements ActionListener {
             }
         };
         getCmbConvertTo().addActionListener(advanced);
+
+        ActionListener aspectRatioResolution = e -> {
+            String type = getCmbAspectRatio().getSelectedItem().toString();
+            if (type.equals("4:3")) {
+                cmbResolution.removeAllItems();
+                cmbResolution.addItem("640x480");
+
+            } else if (type.equals("16:9")) {
+                cmbResolution.removeAllItems();
+                cmbResolution.addItem("640x360");
+                cmbResolution.addItem("1280x720");
+                cmbResolution.addItem("1920x1080");
+                cmbResolution.addItem("2560x1440");
+                cmbResolution.addItem("3840x2160");
+
+            } else if (type.equals("17:9")) {
+                cmbResolution.removeAllItems();
+                cmbResolution.addItem("4096x2160");
+            }
+        };
+        getCmbAspectRatio().addActionListener(aspectRatioResolution);
     }
 
     private void initializeFrame() {

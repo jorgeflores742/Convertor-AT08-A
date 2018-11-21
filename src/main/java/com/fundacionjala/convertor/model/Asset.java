@@ -1,5 +1,6 @@
 package com.fundacionjala.convertor.model;
 
+
 import java.io.File;
 
 public class Asset {

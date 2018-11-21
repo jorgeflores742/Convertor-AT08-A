@@ -14,7 +14,6 @@ public class NewWindows extends JFrame {
     private ListConverting listConv = new ListConverting();
 
 
-
     public NewWindows() {
         setWindow();
         starComponents();
@@ -23,9 +22,7 @@ public class NewWindows extends JFrame {
             this.setIconImage(img);
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
-            System.out.println(e);
         }
-
     }
 
     private void makePanels() {
@@ -35,20 +32,17 @@ public class NewWindows extends JFrame {
         this.getContentPane().add(pSearch);
         pSearch.add(sView.getContentPane());
 
-
         JPanel searchResult = new JPanel();
         searchResult.setBackground(new Colors().backgroundColor);
         searchResult.setBounds(0, 350, 430, 320);
         this.getContentPane().add(searchResult);
         searchResult.add(listFile.getContentPane());
 
-
         JPanel dataFiles = new JPanel();
         dataFiles.setBackground(new Colors().backgroundColor);
         dataFiles.setBounds(430, 350, 492, 120);
         this.getContentPane().add(dataFiles);
         dataFiles.add(data.getContentPane());
-
 
         JPanel pReproductor = new JPanel();
         pReproductor.setBackground(new Colors().backgroundColor);
@@ -64,9 +58,6 @@ public class NewWindows extends JFrame {
         this.getContentPane().add(pConverter);
         pConverter.add(converting.getContentPane());
 
-
-
-
         JPanel pConverted = new JPanel();
         pConverted.setBackground(new Colors().backgroundColor);
         pConverted.setBounds(430,470,850,200);
@@ -80,14 +71,13 @@ public class NewWindows extends JFrame {
 
     private void setWindow() {
         setSize(1280, 700);
-        setTitle("Converter Team A");
+        setTitle("Chamaleon Converter");
         this.setBackground(new Colors().cmbColor);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setLayout(null);
         setResizable(false);
         this.setBackground(new Colors().backgroundColor);
-
 
     }
 

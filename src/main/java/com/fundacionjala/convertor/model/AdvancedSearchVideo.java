@@ -8,7 +8,6 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Map;
 
 import com.fundacionjala.convertor.controller.SearchCriteria;
 import net.bramp.ffmpeg.FFprobe;
@@ -24,9 +23,7 @@ import static com.fundacionjala.convertor.Main.PATH_TO_FFMPEG_BIN_FFPROBE;
  */
 
 public class AdvancedSearchVideo {
-
     ArrayList<String> videoTypes = new ArrayList<>();
-
 
     public AdvancedSearchVideo() {
         videoTypes.add("avi");
@@ -37,7 +34,6 @@ public class AdvancedSearchVideo {
         videoTypes.add("mkv");
         videoTypes.add("mov");
         videoTypes.add("webm");
-
     }
 
     public boolean isVideoType(File file) {
@@ -52,7 +48,6 @@ public class AdvancedSearchVideo {
         try {
             attrib = Files.readAttributes(path, BasicFileAttributes.class);
         } catch (IOException e1) {
-            e1.printStackTrace();
         }
 
         asset.setNameFile("Name: ".concat(file.getName()));
@@ -98,15 +93,11 @@ public class AdvancedSearchVideo {
             try {
                 String acodec = ffprobeResult.getStreams().get(1).codec_name;
                 asset.setAudioCodec("Audio codec: ".concat(acodec));
-                System.out.println(ffprobeResult.getStreams().get(1).codec_long_name);
-//            System.out.println(ffprobeResult.getStreams().get(0).codec_tag);
             } catch (IndexOutOfBoundsException e) {
                 asset.setAudioCodec("Audio codec: NonSpecified");
-                System.out.println("None");
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
         }
         return asset;
     }

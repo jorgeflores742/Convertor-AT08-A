@@ -45,7 +45,6 @@ public class AdvancedSearchAudio {
         try {
             attrib = Files.readAttributes(path, BasicFileAttributes.class);
         } catch (IOException e1) {
-            e1.printStackTrace();
         }
         asset.setNameFile("Name: ".concat(file.getName()));
         String extentionFile = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
@@ -66,7 +65,6 @@ public class AdvancedSearchAudio {
             String codec = ffprobeResult.getStreams().get(0).codec_name;
             asset.setAudioCodec("Audio codec: ".concat(codec));
         } catch (IOException e) {
-            e.printStackTrace();
         }
         return asset;
     }

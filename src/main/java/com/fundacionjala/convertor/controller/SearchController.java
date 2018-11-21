@@ -88,7 +88,6 @@ public class SearchController implements ActionListener, ListSelectionListener {
             searchCriteria.setVideoCodec("All");
             searchCriteria.setVideoAudioCodec("All");
         }
-
     }
 
     /**
@@ -117,7 +116,6 @@ public class SearchController implements ActionListener, ListSelectionListener {
             emptyPathFlag = 1;
             JOptionPane.showMessageDialog(null, "Please, define a valid directory");
         }
-
     }
 
     @Override
@@ -134,7 +132,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
 
             convertController.getConvertCriteria().setPathFrom(value);
 
-                v.getPlayerM().setRouteFile(value);
+            v.getPlayerM().setRouteFile(value);
 
 
             dataFiles.getDefaultList().addElement(infoAsset.getPath());
@@ -158,7 +156,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
                 dataFiles.getDefaultList().addElement(video.getDuration());
                 dataFiles.getDefaultList().addElement(video.getVideoCodec());
                 dataFiles.getDefaultList().addElement(video.getAudioCodec());
-                dataFilesMessage.delete(0,dataFilesMessage.length());
+                dataFilesMessage.delete(0, dataFilesMessage.length());
                 dataFilesMessage.append("video");
                 System.out.println(dataFilesMessage);
             } else if (infoAsset.getTypeFile().contains("Audio")) {
@@ -171,7 +169,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
                 audio = (AudioAsset) infoAsset;
                 dataFiles.getDefaultList().addElement(audio.getChannels());
                 dataFiles.getDefaultList().addElement(audio.getAudioCodec());
-                dataFilesMessage.delete(0,dataFilesMessage.length());
+                dataFilesMessage.delete(0, dataFilesMessage.length());
                 dataFilesMessage.append("audio");
                 System.out.println(dataFilesMessage);
             }

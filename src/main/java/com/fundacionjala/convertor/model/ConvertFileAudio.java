@@ -11,18 +11,15 @@ import net.bramp.ffmpeg.probe.FFmpegProbeResult;
 import net.bramp.ffmpeg.progress.Progress;
 import net.bramp.ffmpeg.progress.ProgressListener;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class ConvertFileAudio implements IConvertFile {
-    static JFrame frame = new JFrame();
-    static JProgressBar progBar = new JProgressBar();
-    FFmpeg ffmpeg;
-    FFprobe ffprobe;
-    FFmpegProbeResult in;
-    static int process;
+    private FFmpeg ffmpeg;
+    private FFprobe ffprobe;
+    private FFmpegProbeResult in;
+    private static int process;
 
     @Override
     public int convert(ConvertCriteria convertCriteria) {
@@ -31,7 +28,6 @@ public class ConvertFileAudio implements IConvertFile {
             ffprobe = new FFprobe("lib\\filesff\\ffprobe");
             in = ffprobe.probe(convertCriteria.getPathFrom());
         } catch (IOException e) {
-            e.printStackTrace();
         }
         System.out.println("input>"+convertCriteria.getPathFrom());
         System.out.println("output>"+convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvAudioType());
@@ -56,8 +52,6 @@ public class ConvertFileAudio implements IConvertFile {
 
             @Override
             public void progress(Progress progress) {
-
-
                 double percentage = progress.out_time_ns / duration_ns;
                 process = Integer.parseInt(String.format(
                         "%.0f",

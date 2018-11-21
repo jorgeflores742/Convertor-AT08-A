@@ -7,14 +7,13 @@ import java.util.logging.Logger;
  **/
 public class MiniMain {
 
-    static SingleLogger sL = new SingleLogger();
+    static SingleLogger sL = SingleLogger.getInstanceLogger();
 
     /**
      *Class Main.
      * @param args is of type String.
      **/
     public static void main(String[] args) {
-        sL.getInstance();
         sL.setLogger(MiniMain.class.getName());
         try {
             int a=4,b=0;

@@ -18,10 +18,10 @@ import java.util.concurrent.TimeUnit;
 
 public class ConvertFileVideo implements IConvertFile {
 
-    FFmpeg ffmpeg;
-    FFprobe ffprobe;
-    FFmpegProbeResult in;
-    static int process = 0;
+    private FFmpeg ffmpeg;
+    private FFprobe ffprobe;
+    private FFmpegProbeResult in;
+    private static int process = 0;
 
     @Override
     public int convert(ConvertCriteria convertCriteria) {
@@ -30,7 +30,6 @@ public class ConvertFileVideo implements IConvertFile {
             ffprobe = new FFprobe("lib\\filesff\\ffprobe");
             in = ffprobe.probe(convertCriteria.getPathFrom());
         } catch (IOException e) {
-            e.printStackTrace();
         }
         String format = getCodec(convertCriteria.getCnvVideoType());
 //        System.out.println("input>" + convertCriteria.getPathFrom());
@@ -77,6 +76,7 @@ public class ConvertFileVideo implements IConvertFile {
         });
 
         job.run();
+
         return process;
     }
 
@@ -121,7 +121,6 @@ public class ConvertFileVideo implements IConvertFile {
         } else {
             criteriaAux.add(Integer.parseInt(criteria.getCnvResolutionHeight()));
         }
-        ;
         return criteriaAux;
     }
 

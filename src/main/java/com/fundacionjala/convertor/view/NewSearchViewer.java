@@ -104,7 +104,6 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         lblAudio = new JLabel();
 
 
-
         lblType = new JLabel();
         cmbType = new JComboBox();
 
@@ -137,7 +136,6 @@ public class NewSearchViewer extends JDialog implements ActionListener {
 
         initializeControls();
         initializeFrame();
-
 
     }
 
@@ -348,13 +346,33 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         };
         getCmbFileType().addActionListener(advanced);
 
+        ActionListener aspectRatioResolution = e -> {
+            String type = getCmbAspectRatio().getSelectedItem().toString();
+            if (type.equals("4:3")) {
+                cmbResolution.removeAllItems();
+                cmbResolution.addItem("640x480");
 
+            } else if (type.equals("16:9")) {
+                cmbResolution.removeAllItems();
+                cmbResolution.addItem("640x360");
+                cmbResolution.addItem("1280x720");
+                cmbResolution.addItem("1920x1080");
+                cmbResolution.addItem("2560x1440");
+                cmbResolution.addItem("3840x2160");
+
+            } else if (type.equals("17:9")) {
+                cmbResolution.removeAllItems();
+                cmbResolution.addItem("4096x2160");
+            }
+        };
+        getCmbAspectRatio().addActionListener(aspectRatioResolution);
     }
 
     /**
      * initialize panes.
      */
     private void initializeFrame() {
+
         GridBagConstraints gridPane = new GridBagConstraints();
         gridPane.insets = new Insets(1, 1, 1, 1);
 
@@ -632,7 +650,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         cmbTypeAudio.setEnabled(false);
         cmbChannels.setEnabled(false);
         cmbAudioAC.setEnabled(false);
-        
+
         this.add(pnlMain);
         this.setResizable(false);
     }
@@ -648,6 +666,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
             f.showSaveDialog(null);
             txtPath.setText(f.getSelectedFile().getAbsolutePath());
         }
+
     }
 
     /**
@@ -679,7 +698,6 @@ public class NewSearchViewer extends JDialog implements ActionListener {
     }
 
     /**
-     *
      * @return button search.
      */
     public JButton getBtnSearch() {
@@ -687,7 +705,6 @@ public class NewSearchViewer extends JDialog implements ActionListener {
     }
 
     /**
-     *
      * @return button clear List.
      */
     public JButton getBtnClearList() {
