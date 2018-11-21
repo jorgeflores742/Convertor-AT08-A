@@ -28,6 +28,7 @@ public class ConvertController implements ActionListener {
     private static SingleLogger sL = SingleLogger.getInstanceLogger();
 
 
+
     /**
      *
      */
@@ -44,10 +45,9 @@ public class ConvertController implements ActionListener {
         sL.register(null, "INFO", "Successful - ConvertController - finished");
     }
 
-
-
     private void loadConvertCriteria(ConvertCriteria convertCriteria) {
         sL.register(null, "INFO", "Successful - loadConvertCriteria - start");
+
         convertCriteria.setFileName(converter.getTxtName().getText());
 
         convertCriteria.setFormatTo(converter.getCmbType().getSelectedItem().toString());
@@ -118,6 +118,8 @@ public class ConvertController implements ActionListener {
                 );
                 listConverting.getListModel().clear();
                 showList(convertList.convertLis());
+                JOptionPane.showMessageDialog(null, "File was converted successfully!", "Information message", JOptionPane.INFORMATION_MESSAGE);
+                converter.setProgressBar(0);
             }
         }
         sL.register(null, "INFO", "Successful - actionPerformed - finished");

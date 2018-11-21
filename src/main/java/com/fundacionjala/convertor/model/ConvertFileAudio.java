@@ -1,6 +1,7 @@
 package com.fundacionjala.convertor.model;
 
 import com.fundacionjala.convertor.controller.ConvertCriteria;
+import com.fundacionjala.convertor.utils.SingleLogger;
 import net.bramp.ffmpeg.FFmpeg;
 import net.bramp.ffmpeg.FFmpegExecutor;
 import net.bramp.ffmpeg.FFmpegUtils;
@@ -20,14 +21,19 @@ public class ConvertFileAudio implements IConvertFile {
     private FFprobe ffprobe;
     private FFmpegProbeResult in;
     private static int process;
+    private static SingleLogger sL = SingleLogger.getInstanceLogger();
 
     @Override
     public int convert(ConvertCriteria convertCriteria) {
+        sL.setLogger(ConvertFileAudio.class.getName());
+        sL.register(null, "INFO", "Successful - convertAudio - start");
         try {
+            sL.register(null, "INFO", "Successful - convert - ffmpeg/ffmprobe - start");
             ffmpeg = new FFmpeg("lib\\filesff\\ffmpeg");
             ffprobe = new FFprobe("lib\\filesff\\ffprobe");
             in = ffprobe.probe(convertCriteria.getPathFrom());
         } catch (IOException e) {
+            sL.register(e, "SEVERE", "Successful - convert - ffmpeg/ffmprobe - failed");
         }
         System.out.println("input>"+convertCriteria.getPathFrom());
         System.out.println("output>"+convertCriteria.getPathTo()+"\\"+convertCriteria.getFileName()+"."+convertCriteria.getCnvAudioType());
@@ -52,6 +58,7 @@ public class ConvertFileAudio implements IConvertFile {
 
             @Override
             public void progress(Progress progress) {
+                sL.register(null, "INFO", "Successful - convert - progress - start");
                 double percentage = progress.out_time_ns / duration_ns;
                 process = Integer.parseInt(String.format(
                         "%.0f",
@@ -60,7 +67,7 @@ public class ConvertFileAudio implements IConvertFile {
                 ));
 
                 // Print out interesting information about the progress
-                System.out.println(String.format(
+                sL.register(null, "INFO", "Successful - convert - progress - start "+(String.format(
                         "[%.0f%%] status:%s frame:%d time:%s ms fps:%.0f speed:%.2fx",
                         percentage * 100,
                         progress.status,
@@ -68,15 +75,18 @@ public class ConvertFileAudio implements IConvertFile {
                         FFmpegUtils.toTimecode(progress.out_time_ns, TimeUnit.NANOSECONDS),
                         progress.fps.doubleValue(),
                         progress.speed
-                ));
+                )));
+                sL.register(null, "INFO", "Successful - convert - progress - finished");
             }
         });
 
         job.run();
+        sL.register(null, "INFO", "Successful - convertAudio - finished");
         return process;
     }
 
     private ArrayList<Object> getParams(ConvertCriteria criteria) {
+        sL.register(null, "INFO", "Successful - getParams - start");
         ArrayList<Object> criteriaAux = new ArrayList<Object>() {};
         if (criteria.getCnvAudioCodec() == null) {
             System.out.println("audioCodec="+in.getStreams().get(0).codec_name);
@@ -94,26 +104,31 @@ public class ConvertFileAudio implements IConvertFile {
             System.out.println("channels="+getChannels(criteria.getCnvChannels()));
             criteriaAux.add(getChannels(criteria.getCnvChannels()));
         }
+        sL.register(null, "INFO", "Successful - getParams - finished");
         return criteriaAux;
     }
 
     private String getCodec(String cnvVideoType) {
+        sL.register(null, "INFO", "Successful - getCodec - start");
         String format = null;
         if (cnvVideoType.equals("null")) {
             format = "matroska";
         } else {
             format = cnvVideoType;
         }
+        sL.register(null, "INFO", "Successful - getCodec - finished");
         return format;
     }
 
     private String getChannels(String var) {
+        sL.register(null, "INFO", "Successful - getChannels - start");
         String channel = null;
         if(var.toLowerCase().equals("mono")) {
             channel = "1";
         }else{
             channel = "2";
         }
+        sL.register(null, "INFO", "Successful - getChannels - finished");
         return channel;
     }
 }

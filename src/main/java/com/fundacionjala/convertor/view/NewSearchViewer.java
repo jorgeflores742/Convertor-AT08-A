@@ -20,6 +20,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import com.fundacionjala.convertor.utils.SingleLogger;
+
 /**
  * Module View Searchview.
  *
@@ -27,6 +29,8 @@ import java.util.ArrayList;
  * @version 1.0
  */
 public class NewSearchViewer extends JDialog implements ActionListener {
+
+    private static SingleLogger sL = SingleLogger.getInstanceLogger();
 
     private JPanel pnlMain;
 
@@ -87,6 +91,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
      * Pane for default search.
      */
     public NewSearchViewer() {
+        sL.register(null, "INFO", "Successful - NewSearchViewer - start");
         pnlMain = new JPanel(new GridBagLayout());
         lblPath = new JLabel();
         txtPath = new JTextField();
@@ -136,6 +141,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
 
         initializeControls();
         initializeFrame();
+        sL.register(null, "INFO", "Successful - NewSearchViewer - start");
 
     }
 
@@ -143,6 +149,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
      * Initialize elements.
      */
     private void initializeControls() {
+        sL.register(null, "INFO", "Successful - initializeControls - start");
         pnlMain.setBackground(new Colors().backgroundColor);
         lblPath.setText("Path :");
         txtPath.setColumns(10);
@@ -347,6 +354,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
         getCmbFileType().addActionListener(advanced);
 
         ActionListener aspectRatioResolution = e -> {
+            sL.register(null, "INFO", "Successful - initializeControls - finished");
             String type = getCmbAspectRatio().getSelectedItem().toString();
             if (type.equals("4:3")) {
                 cmbResolution.removeAllItems();
@@ -372,6 +380,7 @@ public class NewSearchViewer extends JDialog implements ActionListener {
      * initialize panes.
      */
     private void initializeFrame() {
+        sL.register(null, "INFO", "Successful - initializeFrame - start");
 
         GridBagConstraints gridPane = new GridBagConstraints();
         gridPane.insets = new Insets(1, 1, 1, 1);
@@ -653,6 +662,8 @@ public class NewSearchViewer extends JDialog implements ActionListener {
 
         this.add(pnlMain);
         this.setResizable(false);
+        sL.register(null, "INFO", "Successful - initializeFrame - finished");
+
     }
 
     /**
@@ -660,12 +671,15 @@ public class NewSearchViewer extends JDialog implements ActionListener {
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
+        sL.register(null, "INFO", "Successful - actionPerformed - start");
+
         if (e.getSource() == btnPath) {
             JFileChooser f = new JFileChooser();
             f.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             f.showSaveDialog(null);
             txtPath.setText(f.getSelectedFile().getAbsolutePath());
         }
+        sL.register(null, "INFO", "Successful - actionPerformed - finished");
 
     }
 

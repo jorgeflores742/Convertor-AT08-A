@@ -1,6 +1,7 @@
 package com.fundacionjala.convertor.model;
 
 import com.fundacionjala.convertor.controller.SearchCriteria;
+import com.fundacionjala.convertor.utils.SingleLogger;
 import net.bramp.ffmpeg.FFprobe;
 import net.bramp.ffmpeg.probe.FFmpegProbeResult;
 import java.io.File;
@@ -21,9 +22,14 @@ import static com.fundacionjala.convertor.Main.PATH_TO_FFMPEG_BIN_FFPROBE;
  * @version 1.0.
  */
 public class AdvancedSearchAudio {
+    private static SingleLogger sL = SingleLogger.getInstanceLogger();
+
     ArrayList<String> audioTypes = new ArrayList<>();
 
     public AdvancedSearchAudio() {
+        sL.setLogger(AdvancedSearchAudio.class.getName());
+
+        sL.register(null, "INFO", "Successful - AdvancedSearchAudio - start");
         audioTypes.add("mp3");
         audioTypes.add("wav");
         audioTypes.add("ogg");
@@ -31,20 +37,25 @@ public class AdvancedSearchAudio {
         audioTypes.add("wma");
         audioTypes.add("aac");
         audioTypes.add("flac");
+        sL.register(null, "INFO", "Successful - AdvancedSearchAudio - finished");
     }
 
     public boolean isAudioType(File file) {
+        sL.register(null, "INFO", "Successful - isAudioType - start");
         String ext = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
         return audioTypes.contains(ext)? true : false;
     }
 
     public Asset fillAudioFeatures(File file) {
+        sL.register(null, "INFO", "Successful - fillAudioFeatures - start");
         AudioAsset asset = new AudioAsset();
         BasicFileAttributes attrib = null;
         Path path = Paths.get(file.getAbsolutePath());
         try {
+            sL.register(null, "INFO", "Successful - fillAudioFeatures - readAttributes- start");
             attrib = Files.readAttributes(path, BasicFileAttributes.class);
         } catch (IOException e1) {
+            sL.register(e1, "SEVERE", "Successful - fillAudioFeatures - readAttributes - Failed");
         }
         asset.setNameFile("Name: ".concat(file.getName()));
         String extentionFile = (file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(".") + 1)).toLowerCase();
@@ -56,6 +67,7 @@ public class AdvancedSearchAudio {
         asset.setPath(file.getAbsolutePath());
         FFprobe ffprobe;
         try {
+            sL.register(null, "INFO", "Successful - fillAudioFeatures - readAttributes- start");
             ffprobe = new FFprobe(PATH_TO_FFMPEG_BIN_FFPROBE);
             FFmpegProbeResult ffprobeResult = ffprobe.probe(asset.getPath());
             //Audio channels.
@@ -65,11 +77,13 @@ public class AdvancedSearchAudio {
             String codec = ffprobeResult.getStreams().get(0).codec_name;
             asset.setAudioCodec("Audio codec: ".concat(codec));
         } catch (IOException e) {
+            sL.register(e, "SEVERE", "Successful - fillAudioFeatures - FFprobe - Failed");
         }
         return asset;
     }
 
     public  ArrayList<Asset> FilterCrit(ArrayList<Asset> resultList, SearchCriteria criteria) {
+        sL.register(null, "INFO", "Successful - FilterCrit - start");
         ArrayList<Asset> listAssetResult = new ArrayList<>(1);
         for (Asset asset : resultList) {
             if (asset.getTypeFile().contains("Audio")) {

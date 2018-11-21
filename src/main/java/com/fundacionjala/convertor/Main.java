@@ -15,9 +15,9 @@ public class Main {
      * @param args arguments
      */
     public static void main(final String[] args) {
-        sL.setLogger(Main.class.getName());
-        sL.register(null,"INFO","Successful - SearchController - start");
-        SearchController searchController = new SearchController();
-        sL.register(null,"INFO","Successful - SearchController - finished");
+            sL.setLogger(Main.class.getName());
+            sL.register(null,"INFO","Successful - SearchController - start");
+            SearchController searchController = new SearchController();
+            sL.register(null,"INFO","Successful - SearchController - finished");
     }
 }
