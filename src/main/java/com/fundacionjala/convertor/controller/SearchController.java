@@ -114,8 +114,6 @@ public class SearchController implements ActionListener, ListSelectionListener {
             for (Asset resu : advanceResult) {
                 listFileView.getListModel().addElement(resu.getPath());
             }
-            System.out.println("That is working well");
-
         } else if (e.getSource() == searchViewer.getBtnClearList()) {
             emptyPathFlag = 0;
             listFileView.getListModel().clear();
@@ -136,22 +134,14 @@ public class SearchController implements ActionListener, ListSelectionListener {
         if (lock == 1 && listFileView.getLstSearchResult().getSelectedIndex() != (-1)) {
             dataFiles.getDefaultList().clear();
             String value = listFileView.getLstSearchResult().getSelectedValue().toString();
-            System.out.println(value);
-
             Asset infoAsset = new Asset();
-
             infoAsset = getInfoAsset(value);
-
             convertController.getConvertCriteria().setPathFrom(value);
-
             v.getPlayerM().setRouteFile(value);
-
-
             dataFiles.getDefaultList().addElement(infoAsset.getPath());
             dataFiles.getDefaultList().addElement(infoAsset.getNameFile());
             dataFiles.getDefaultList().addElement(infoAsset.getSizeFile());
             dataFiles.getDefaultList().addElement(infoAsset.getCreationFile());
-
             if (infoAsset.getTypeFile() == null) {
 
             } else if (infoAsset.getTypeFile().contains("Video")) {

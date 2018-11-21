@@ -51,7 +51,7 @@ public class AdvancedSearchVideo {
 
     public Asset fillVideoFeatures(File file) {
         sL.register(null, "INFO", "Successful - fillVideoFeatures - finished");
-        VideoAsset asset = new VideoAsset();
+        VideoAsset asset = (VideoAsset) FactoryAsset.getAsset("Video asset");
         BasicFileAttributes attrib = null;
         Path path = Paths.get(file.getAbsolutePath());
         try {
