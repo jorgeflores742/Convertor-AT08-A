@@ -12,6 +12,7 @@ import net.bramp.ffmpeg.probe.FFmpegProbeResult;
 import net.bramp.ffmpeg.progress.Progress;
 import net.bramp.ffmpeg.progress.ProgressListener;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -39,7 +40,10 @@ public class ConvertFileAudio implements IConvertFile {
         FFmpegExecutor executor = new FFmpegExecutor(ffmpeg, ffprobe);
         String format = getCodec(convertCriteria.getCnvAudioType());
         ArrayList<Object> parameters = getParams(convertCriteria);
-        FFmpegBuilder builder = new FFmpegBuilder()
+        FFmpegBuilder builder = null;
+        try{
+            sL.register(null, "INFO", "Successful - convert - FileConvert - start");
+            builder = new FFmpegBuilder()
                 .setInput(in) // Or filename
                 .overrideOutputFiles(true) // Override the output if it exists
                 .addExtraArgs("-vn")
@@ -48,6 +52,10 @@ public class ConvertFileAudio implements IConvertFile {
                 .setAudioCodec((String) parameters.get(0))
                 .setAudioChannels(Integer.parseInt((String) parameters.get(1)))
                 .done();
+            }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Error in the Selects parameter for convert", "ERROR", JOptionPane.ERROR_MESSAGE);
+            sL.register(e, "SEVERE", "Successful - convert - FileConvert - failed");
+        }
         FFmpegProbeResult finalIn = in;
         FFmpegJob job = executor.createJob(builder, new ProgressListener() {
 
