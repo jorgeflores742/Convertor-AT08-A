@@ -89,7 +89,7 @@ public class NewWindows extends JFrame {
     private void setWindow() {
         sL.register(null, "INFO", "Successful - setWindow - start");
         setSize(1280, 700);
-        setTitle("Chamaleon Converter");
+        setTitle("Chameleon Converter");
         this.setBackground(new Colors().cmbColor);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
