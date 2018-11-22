@@ -208,20 +208,24 @@ public class SearchController implements ActionListener, ListSelectionListener {
     }
 
     private void playervlcj(String value, String ext) {
-        ArrayList<String> conteinerAV= new ArrayList<String>();
+        ArrayList<String> conteinerA= new ArrayList<String>();
+        ArrayList<String> conteinerV= new ArrayList<String>();
         for(int i = 1; i < searchViewer.getCmbType().getItemCount(); i++)
         {
-            conteinerAV.add(searchViewer.getCmbType().getItemAt(i).toString());
+            conteinerV.add(searchViewer.getCmbType().getItemAt(i).toString());
         }
         for(int i = 1; i < searchViewer.getCmbTypeAudio().getItemCount(); i++)
         {
-            conteinerAV.add(searchViewer.getCmbTypeAudio().getItemAt(i).toString());
+            conteinerA.add(searchViewer.getCmbTypeAudio().getItemAt(i).toString());
         }
-        if(conteinerAV.contains(ext)) {
+        if(conteinerA.contains(ext)) {
+            v.getConverting().Multimedia();
             v.getPlayerM().setRouteFile(value,true);
-        }else if(conteinerAV.contains(ext)) {
+        }else if(conteinerV.contains(ext)) {
+            v.getConverting().Multimedia();
             v.getPlayerM().setRouteFile(value,true);
         }else{
+            v.getConverting().noFileMultimedia();
             v.getPlayerM().setRouteFile(value,false);
             JOptionPane.showMessageDialog(null, "File is not multimedia, is not posible to play. \n Last file multimedia wil be played again", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
