@@ -5,12 +5,10 @@ import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
 import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
 /**
  * Class PlayerMedia extends JPanel.
@@ -21,7 +19,8 @@ public class PlayerMedia extends JPanel {
     private static int width;
     private static int height;
     boolean continuePlay = false;
-    private String routeFile="img/camaleon32.png";
+    private static final String DEFAULT = "img\\chamaleonDefault.png";
+    private String routeFile = DEFAULT;
 
     /**
      * Method constructor, initialize file, player and methods for.
@@ -103,6 +102,7 @@ public class PlayerMedia extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 player.getMediaPlayer().stop();
+                player.getMediaPlayer().playMedia(DEFAULT);
             }
         });
         btnPause.addActionListener(new ActionListener() {
@@ -135,8 +135,12 @@ public class PlayerMedia extends JPanel {
     public void setRouteFile(String routeFile,boolean v) {
         if(v){
             this.routeFile = routeFile;
+            if(this.routeFile==DEFAULT) {
+                player.getMediaPlayer().playMedia(this.routeFile);
+            }
         }else{
-            this.routeFile = "img/camaleon32.png";
+            this.routeFile = DEFAULT;
+            player.getMediaPlayer().playMedia(this.routeFile);
         }
     }
 }

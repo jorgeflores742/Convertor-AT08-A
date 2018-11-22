@@ -60,6 +60,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
         searchCriteria = new SearchCriteria();
         convertController = new ConvertController(v);
         sL.register(null, "INFO", "Successful - SearchController - finished");
+        playervlcj("img\\chamaleonDefault.png","mp4");
     }
 
     /**
