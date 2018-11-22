@@ -52,6 +52,7 @@ public class SearchController implements ActionListener, ListSelectionListener {
         v = new NewWindows();
         v.setVisible(true);
         this.searchViewer = v.getsView();
+        playervlcj("img\\chamaleonDefault.png","mp4");
         this.searchViewer.getBtnSearch().addActionListener(this);
         this.searchViewer.getBtnClearList().addActionListener(this);
         this.listFileView = v.getListFile();
@@ -60,7 +61,6 @@ public class SearchController implements ActionListener, ListSelectionListener {
         searchCriteria = new SearchCriteria();
         convertController = new ConvertController(v);
         sL.register(null, "INFO", "Successful - SearchController - finished");
-        playervlcj("img\\chamaleonDefault.png","mp4");
     }
 
     /**
