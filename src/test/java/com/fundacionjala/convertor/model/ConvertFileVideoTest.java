@@ -1,7 +1,10 @@
 package com.fundacionjala.convertor.model;
 
+import com.fundacionjala.convertor.controller.ConvertController;
 import com.fundacionjala.convertor.controller.ConvertCriteria;
 import com.fundacionjala.convertor.utils.SingleLogger;
+import com.fundacionjala.convertor.view.Converter;
+import com.fundacionjala.convertor.view.NewWindows;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -238,5 +241,25 @@ public class ConvertFileVideoTest {
         convertCriteria.setCnvVideoAudioCodec("mpeg2video");
         int result = convertFileVideo.convert(convertCriteria);
         assertEquals(FINISHED, result);
+    }
+
+    @Test
+    public void testConvertList() {
+        NewWindows newWindows = new NewWindows();
+        ConvertController convertController = new ConvertController(newWindows);
+        convertController.getConvertCriteria().setPathFrom("testfiles\\Count.avi");
+        convertController.getConvertCriteria().setFileName("");
+        Converter converter = convertController.getConverter();
+        converter.getTxtName().setText("newFile");
+        converter.getCmbConvertTo().setSelectedItem("Video");
+        converter.getTxtPathSave().setText("C:\\Users\\Admin\\Videos");
+        converter.getCmbType().setSelectedItem("mkv");
+        converter.getCmbFps().setSelectedItem("29.9");
+        converter.getCmbVideoVC().setSelectedItem("mp3");
+        converter.getCmbVideoAC().setSelectedItem("mpeg4");
+        ConvertList list = new ConvertList();
+        converter.getBtnConvert().doClick();
+        String[] resultString = list.convertLis();
+        assertEquals("C:\\Users\\Admin\\Videos\\newFile.mkv", resultString[0]);
     }
 }

@@ -1,5 +1,6 @@
 package com.fundacionjala.convertor.controller;
 
+import com.fundacionjala.convertor.model.ConvertList;
 import com.fundacionjala.convertor.utils.SingleLogger;
 import com.fundacionjala.convertor.view.Converter;
 import com.fundacionjala.convertor.view.NewWindows;
@@ -12,6 +13,7 @@ public class ConvertControllerTest {
     ConvertController convertController;
     Converter converter;
     NewWindows newWindows;
+    ConvertList list;
     static SingleLogger sL = SingleLogger.getInstanceLogger();
 
     @Before
@@ -28,6 +30,7 @@ public class ConvertControllerTest {
         converter.getCmbFps().setSelectedItem("29.9");
         converter.getCmbVideoVC().setSelectedItem("mp3");
         converter.getCmbVideoAC().setSelectedItem("mpeg4");
+        list = new ConvertList();
     }
 
     @Test
@@ -58,5 +61,19 @@ public class ConvertControllerTest {
         converter.getBtnConvert().doClick();
         String result = convertController.getListConverting().getListModel().getElementAt(0).toString();
         assertEquals("C:\\Users\\Admin\\Music\\BigMan.mp3", result);
+    }
+
+    @Test
+    public void testListConvertedFiles() {
+        converter.getBtnConvert().doClick();
+        String[] resultString = list.convertLis();
+        assertEquals("C:\\Users\\Admin\\Videos\\newFile.mkv", resultString[0]);
+    }
+
+    @Test
+    public void testWriteListConvertedFioles() {
+        list.writeConvert("C:\\Users\\Admin\\Music\\BigMan.ogg");
+        String[] resultString = list.convertLis();
+        assertEquals("C:\\Users\\Admin\\Music\\BigMan.ogg", resultString[resultString.length-1]);
     }
 }
