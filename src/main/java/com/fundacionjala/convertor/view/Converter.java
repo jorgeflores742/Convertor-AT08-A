@@ -593,6 +593,20 @@ public class Converter extends JDialog implements ActionListener {
         }
     }
 
+    public void Multimedia() {
+        getCmbConvertTo().setEnabled(true);
+        getTxtName().setEnabled(true);
+        getBtnPathSave().setEnabled(true);
+        getBtnConvert().setEnabled(true);
+    }
+
+    public void noFileMultimedia() {
+        getCmbConvertTo().setEnabled(false);
+        getTxtName().setEnabled(false);
+        getBtnPathSave().setEnabled(false);
+        getBtnConvert().setEnabled(false);
+    }
+
     public JTextField getTxtName() {
         return txtName;
     }
