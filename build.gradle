@@ -13,4 +13,6 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'net.bramp.ffmpeg:ffmpeg:0.6.2'
+    compile 'uk.co.caprica:vlcj:3.0.1'
 }
