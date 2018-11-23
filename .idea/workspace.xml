@@ -1,0 +1,1090 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="52c47d7a-912f-4698-b7b3-83723312e180" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IMPORTANT FOR UNIT TESTS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation/Chameleon converter.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation/Re__UMLs/CC-Controller-View.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation/Re__UMLs/CC-ControllerUML.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation/Re__UMLs/CC-ModelUML.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation/Re__UMLs/CC-Model_Controller.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation/Re__UMLs/newDiagram2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/Pause.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/Stop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/camaleon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/camaleon32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/chamaleonDefault.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/delete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/deleteBlack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/directory.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/fast_forward.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/folder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/music.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/rewind.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/save.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/searchBlack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/video.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-io-2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-lang3-3.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ffmpeg-0.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/filesff/ffmpeg.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/filesff/ffprobe.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/gson-2.8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/guava-20.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/java/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/java/jna-3.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/java/platform-3.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/java/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/java/vlcj-3.0.1-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/java/vlcj-3.0.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/java/vlcj-3.0.1-test-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/java/vlcj-3.0.1-tests.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/java/vlcj-3.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/java/vlcj.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax/swing/annotations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jna-3.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/modelmapper-0.7.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/platform-3.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/libvlc.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/libvlccore.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/npvlc.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libaccess_concat_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libaccess_imem_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libaccess_mms_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libaccess_realrtsp_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libaccess_srt_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libaccess_wasapi_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libattachment_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libcdda_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libdcp_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libdshow_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libdtv_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libdvdnav_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libdvdread_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libfilesystem_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libftp_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libhttp_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libhttps_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libidummy_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libimem_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/liblibbluray_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/liblive555_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libnfs_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/librtp_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libsatip_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libscreen_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libsdp_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libsftp_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libshm_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libsmb_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libtcp_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libtimecode_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libudp_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libvcd_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libvdr_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/access/libvnc_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libaudio_format_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libaudiobargraph_a_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libchorus_flanger_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libcompressor_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libdolby_surround_decoder_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libequalizer_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libgain_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libheadphone_channel_mixer_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libkaraoke_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libmad_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libmono_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libnormvol_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libparam_eq_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libremap_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libsamplerate_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libscaletempo_pitch_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libscaletempo_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libsimple_channel_mixer_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libspatialaudio_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libspatializer_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libspeex_resampler_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libstereo_widen_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libtospdif_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libtrivial_channel_mixer_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_filter/libugly_resampler_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_mixer/libfloat_mixer_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_mixer/libinteger_mixer_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_output/libadummy_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_output/libafile_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_output/libamem_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_output/libdirectsound_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_output/libmmdevice_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_output/libwasapi_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/audio_output/libwaveout_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/liba52_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libadpcm_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libaes3_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libaraw_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libaribsub_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libavcodec_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libcc_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libcdg_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libcrystalhd_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libcvdsub_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libd3d11va_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libdca_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libddummy_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libdmo_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libdvbsub_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libdxva2_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libedummy_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libfaad_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libflac_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libfluidsynth_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libg711_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libjpeg_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libkate_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/liblibass_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/liblibmpeg2_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/liblpcm_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libmft_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libmpg123_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/liboggspots_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libopus_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libpng_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libqsv_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/librawvideo_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/librtpvideo_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libschroedinger_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libscte18_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libscte27_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libsdl_image_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libspdif_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libspeex_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libspudec_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libstl_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libsubsdec_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libsubstx3g_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libsubsusf_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libsvcdsub_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libt140_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libtextst_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libtheora_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libttml_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libtwolame_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libuleaddvaudio_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libvorbis_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libvpx_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libwebvtt_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libx264_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libx265_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/codec/libzvbi_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/d3d11/libdirect3d11_filters_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/d3d9/libdirect3d9_filters_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libadaptive_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libaiff_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libasf_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libau_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libavi_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libcaf_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libdemux_cdg_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libdemux_chromecast_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libdemux_stl_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libdemuxdump_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libdiracsys_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libdirectory_demux_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libes_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libflacsys_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libgme_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libh26x_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libimage_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libmjpeg_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libmkv_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libmod_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libmp4_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libmpc_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libmpgv_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libnoseek_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libnsc_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libnsv_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libnuv_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libogg_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libplaylist_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libps_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libpva_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/librawaud_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/librawdv_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/librawvid_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libreal_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libsid_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libsmf_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libsubtitle_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libts_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libtta_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libty_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libvc1_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libvobsub_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libvoc_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libwav_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/demux/libxa_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/keystore/libfile_keystore_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/keystore/libmemory_keystore_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/logger/libconsole_logger_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/logger/libfile_logger_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/lua/liblua_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/meta_engine/libfolder_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/meta_engine/libtaglib_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/stream_extractor/libarchive_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/stream_filter/libadf_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/stream_filter/libaribcam_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/stream_filter/libcache_block_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/stream_filter/libcache_read_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/stream_filter/libhds_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/stream_filter/libinflate_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/stream_filter/libprefetch_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/stream_filter/librecord_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/stream_filter/libskiptags_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/text_renderer/libfreetype_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/text_renderer/libsapi_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/text_renderer/libtdummy_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libchain_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libgrey_yuv_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libi420_10_p010_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libi420_nv12_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libi420_rgb_mmx_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libi420_rgb_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libi420_rgb_sse2_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libi420_yuy2_mmx_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libi420_yuy2_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libi420_yuy2_sse2_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libi422_i420_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libi422_yuy2_mmx_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libi422_yuy2_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libi422_yuy2_sse2_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/librv32_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libswscale_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libyuvp_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libyuy2_i420_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_chroma/libyuy2_i422_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libcaca_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libdirect3d11_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libdirect3d9_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libdirectdraw_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libdrawable_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libflaschen_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libgl_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libglwin32_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libvdummy_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libvmem_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libwgl_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libwingdi_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libwinhibit_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pluginVlcj/plugins/video_output/libyuv_plugin.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/slf4j-api-1.7.25.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/vlcj-3.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/ConvertCriteria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/SearchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/controller/SearchCriteria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/AdvancedSearchAudio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/AdvancedSearchVideo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/Asset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/AudioAsset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/CommonAsset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileAudio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertFileVideo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/ConvertList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/FactoryAsset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/FileSearcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/IConvertFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/VideoAsset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/utils/MiniMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/utils/SingleLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/Colors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/Converter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/DataFiles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/FileSizeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ListConverting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ListFileView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/NewSearchViewer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/NewWindows.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/PlayerMedia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logging.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/controller/ConvertControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/controller/SearchControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/model/ConvertFileAudioTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/model/ConvertFileVideoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/model/FileSearcherTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfiles/092 Setting-up-Eclipse-for-ARM-Cortex-M-processor-based-MCUs-Summary.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfiles/Big Man - John Mayall.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfiles/CharlieChaplin.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfiles/Count.avi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfiles/Folder2/HumanCover.MKV" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfiles/Folder2/Marc Martel - We Are the Champions.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfiles/It stones.avi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfiles/Keane_-_Everybodys_Changing.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfiles/Nena Boba - Pescado Rabioso.m4a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfiles/Pink_Floyd_-_Coming_Back_To_Life.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfiles/Queen_-_Killer_Queen.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testfiles/The Cranberries - Just My Imagination.aac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/fundacionjala/convertor/model/FileSearcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/fundacionjala/convertor/model/FileSearcher.class" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testValueChanged.ic" NAME="SearchControllerTest.testValueChanged Coverage Results" MODIFIED="1542675476675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testActionPerformedAll.ic" NAME="SearchControllerTest.testActionPerformedAll Coverage Results" MODIFIED="1542670547690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testActionPerformedVideo.ic" NAME="SearchControllerTest.testActionPerformedVideo Coverage Results" MODIFIED="1542672248706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testValueChangedAudio.ic" NAME="SearchControllerTest.testValueChangedAudio Coverage Results" MODIFIED="1542675847909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$FileSearcherTest_testIsSize.ic" NAME="FileSearcherTest.testIsSize Coverage Results" MODIFIED="1540143665726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testActionPerformedClearList.ic" NAME="SearchControllerTest.testActionPerformedClearList Coverage Results" MODIFIED="1542671987596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testActionPerformedEmptyPath.ic" NAME="SearchControllerTest.testActionPerformedEmptyPath Coverage Results" MODIFIED="1542675586346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_actionPerformed.ic" NAME="SearchControllerTest.actionPerformed Coverage Results" MODIFIED="1542668060706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$SearchControllerTest_testActionPerformedAudio.ic" NAME="SearchControllerTest.testActionPerformedAudio Coverage Results" MODIFIED="1542672132847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Convertor_AT08_A$FileSearcherTest.ic" NAME="FileSearcherTest Coverage Results" MODIFIED="1540145259367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.fundacionjala.convertor.model.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1408231833">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="iml" value="1" />
+          <entry key="java" value="6" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="6" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/model/FileSearcherTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-426">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ListFileView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-338">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/NewSearchViewer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="411">
+              <caret line="104" column="42" selection-start-line="104" selection-start-column="42" selection-end-line="104" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/FileSizeEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/FileSearcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1241">
+              <caret line="100" column="59" selection-start-line="100" selection-start-column="59" selection-end-line="100" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/records.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Convertor-AT08-A.iml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="myGradleHomes">
+      <map>
+        <entry key="$PROJECT_DIR$" value="C:\Users\Admin\.gradle\wrapper\dists\gradle-4.8-bin\divx0s2uj4thofgytb7gf9fsi\gradle-4.8" />
+      </map>
+    </option>
+    <option name="myGradleVersions">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4.8" />
+      </map>
+    </option>
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="Convertor-AT08-A" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="Convertor-AT08-A" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="availableTasks">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by root project 'Convertor-AT08-A'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of root project 'Convertor-AT08-A'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the dependent components of components in root project 'Convertor-AT08-A'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependentComponents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'Convertor-AT08-A'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildEnvironment" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Gradle wrapper files." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="wrapper" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles test classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="testClasses" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a jar archive containing the main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="jar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of root project 'Convertor-AT08-A'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes main resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from root project 'Convertor-AT08-A'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Initializes a new Gradle build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="init" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs the unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles main Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in root project 'Convertor-AT08-A'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the outputs of this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles test Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in root project 'Convertor-AT08-A'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes test resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of root project 'Convertor-AT08-A'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="6171670067654" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="2887733112" />
+        <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2007532874" />
+        <entry key="$PROJECT_DIR$/settings.gradle" value="2839417711" />
+      </map>
+    </option>
+    <option name="projectBuildClasspath">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <ExternalProjectBuildClasspathPojo>
+              <option name="modulesBuildClasspath">
+                <map>
+                  <entry key="$PROJECT_DIR$">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="path" value="$PROJECT_DIR$" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="name" value="Convertor-AT08-A" />
+              <option name="projectBuildClasspath">
+                <list>
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/ant-1.9.11.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/ant-launcher-1.9.11.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-base-services-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-base-services-groovy-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-build-cache-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-build-option-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-cli-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-core-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-core-api-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-docs-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-installation-beacon-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-jvm-services-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-kotlin-dsl-0.17.5.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-kotlin-dsl-provider-plugins-0.17.5.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-kotlin-dsl-provider-spi-0.17.5.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-kotlin-dsl-tooling-builders-0.17.5.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-kotlin-dsl-tooling-models-0.17.5.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-launcher-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-logging-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-messaging-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-model-core-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-model-groovy-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-native-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-persistent-cache-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-process-services-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-resources-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-runtime-api-info-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-tooling-api-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/gradle-wrapper-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/groovy-all-2.4.12.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-announce-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-antlr-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-build-cache-http-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-build-comparison-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-build-init-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-code-quality-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-composite-builds-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-dependency-management-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-diagnostics-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-ear-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-ide-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-ide-native-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-ide-play-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-ivy-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-jacoco-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-javascript-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-language-groovy-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-language-java-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-language-jvm-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-language-native-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-language-scala-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-maven-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-osgi-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-platform-base-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-platform-jvm-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-platform-native-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-platform-play-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-plugin-development-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-plugin-use-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-plugins-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-publish-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-reporting-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-resources-gcs-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-resources-http-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-resources-s3-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-resources-sftp-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-scala-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-signing-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-test-kit-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-testing-base-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-testing-junit-platform-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-testing-jvm-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-testing-native-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-tooling-api-builders-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-version-control-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/gradle-workers-4.8.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.8-bin/divx0s2uj4thofgytb7gf9fsi/gradle-4.8/lib/plugins/ivy-2.2.0.jar" />
+                </list>
+              </option>
+            </ExternalProjectBuildClasspathPojo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="47" />
+    <option name="y" value="18" />
+    <option name="width" value="1292" />
+    <option name="height" value="970" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Convertor-AT08-A" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="convertor" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Convertor-AT08-A" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542999238253" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fundacionjala.convertor.Main" />
+      <module name="Convertor-AT08-A_main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fundacionjala.convertor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da66e749-b498-4deb-97e7-1d42c75d188e" name="Default Changelist" comment="" />
+      <created>1540398921633</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1540398921633</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25161812" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3290993" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30023095" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995381" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" order="10" weight="0.32871974" />
+      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.07505774" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.3295302" />
+      <window_info anchor="right" id="Gradle" order="8" weight="0.3295302" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.22006473" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2184466" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3290993" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30023095" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995381" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" order="10" weight="0.32871974" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.07505774" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.3295302" />
+      <window_info anchor="right" id="Gradle" order="8" weight="0.3295302" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.22006473" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/REG.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/model/FileSearcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="100" column="59" selection-start-line="100" selection-start-column="59" selection-end-line="100" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/records.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Convertor-AT08-A.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/fundacionjala/convertor/model/FileSearcherTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-426">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/ListFileView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-338">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/FileSizeEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fundacionjala/convertor/view/NewSearchViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="104" column="42" selection-start-line="104" selection-start-column="42" selection-end-line="104" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
